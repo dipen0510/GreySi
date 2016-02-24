@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fTN-rk-2jx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Splash View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SplashViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,89 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zTQ-3m-Ojm">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zTQ-3m-Ojm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="5ud-p8-KtM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zTQ-3m-Ojm" secondAttribute="trailing" constant="-20" id="9aQ-YH-Ryf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zTQ-3m-Ojm" secondAttribute="bottom" id="ty9-90-U9J"/>
+                            <constraint firstItem="zTQ-3m-Ojm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="xjY-Li-3UB"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="F6U-AS-Vdo"/>
+                    <connections>
+                        <segue destination="QSo-wE-Z9E" kind="show" identifier="showLoginSegue" id="q6P-wg-L9k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1377" y="418"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="sqL-N6-dG1">
+            <objects>
+                <viewController id="QSo-wE-Z9E" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mMR-ss-CnK"/>
+                        <viewControllerLayoutGuide type="bottom" id="fYf-6u-nZp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Oi-yx-XxW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="QjT-2x-sWg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kjy-oH-Xl4">
+                                <rect key="frame" x="250" y="99" width="100" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="DFA-Qf-0PG"/>
+                                    <constraint firstAttribute="height" constant="108" id="bCC-Y4-fPs"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kjy-oH-Xl4" firstAttribute="centerX" secondItem="5Oi-yx-XxW" secondAttribute="centerX" id="1G7-5b-vpV"/>
+                            <constraint firstItem="QjT-2x-sWg" firstAttribute="top" secondItem="5Oi-yx-XxW" secondAttribute="topMargin" id="IiI-fM-WnX"/>
+                            <constraint firstItem="Kjy-oH-Xl4" firstAttribute="top" secondItem="mMR-ss-CnK" secondAttribute="bottom" constant="79" id="V0e-Xm-vKy"/>
+                            <constraint firstItem="fYf-6u-nZp" firstAttribute="top" secondItem="QjT-2x-sWg" secondAttribute="bottom" id="fwn-9Q-cso"/>
+                            <constraint firstItem="QjT-2x-sWg" firstAttribute="leading" secondItem="5Oi-yx-XxW" secondAttribute="leadingMargin" constant="-20" id="hYD-JH-9dZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QjT-2x-sWg" secondAttribute="trailing" constant="-20" id="iEU-yL-78C"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ubw-d8-E6r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2164" y="975"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GeC-Sa-snu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="fTN-rk-2jx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O0k-bN-Oi0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="s39-nS-ZdM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Enq-kr-pLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="555" y="418"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background.png" width="423" height="752"/>
+        <image name="logo.png" width="200" height="215"/>
+        <image name="splash.jpg" width="423" height="752"/>
+    </resources>
 </document>

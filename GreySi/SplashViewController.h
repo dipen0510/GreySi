@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SplashViewController.h
 //  GreySi
 //
 //  Created by Dipen Sekhsaria on 24/02/16.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface SplashViewController : UIViewController
 
 
 @end
