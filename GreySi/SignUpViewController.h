@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PECropViewController.h"
 
-@interface SignUpViewController : UIViewController
+@interface SignUpViewController : UIViewController<UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PECropViewControllerDelegate>  {
+    UIActionSheet* actSheet;
+    UIImage* profileImage;
+}
+
 
 @property (strong, nonatomic) IBOutlet UIButton *profileButton;
 @property (strong, nonatomic) IBOutlet UITextField *nameTextField;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4366A1903A93415D6183C322 /* libPods-GreySi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7793179DCCE4D0DE2B3ACD /* libPods-GreySi.a */; };
 		D455C4701C7EDABA00C6D1CB /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = D455C46A1C7EDABA00C6D1CB /* appicon.png */; };
 		D455C4711C7EDABA00C6D1CB /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D455C46B1C7EDABA00C6D1CB /* background.png */; };
 		D455C4721C7EDABA00C6D1CB /* login_fb.png in Resources */ = {isa = PBXBuildFile; fileRef = D455C46C1C7EDABA00C6D1CB /* login_fb.png */; };
@@ -65,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A7793179DCCE4D0DE2B3ACD /* libPods-GreySi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GreySi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2A3C6C8B51C1DE3923EABCA /* Pods-GreySi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreySi.release.xcconfig"; path = "Pods/Target Support Files/Pods-GreySi/Pods-GreySi.release.xcconfig"; sourceTree = "<group>"; };
 		D455C46A1C7EDABA00C6D1CB /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		D455C46B1C7EDABA00C6D1CB /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		D455C46C1C7EDABA00C6D1CB /* login_fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_fb.png; sourceTree = "<group>"; };
@@ -115,6 +118,7 @@
 		D4CA5CC01C7DCF48000E185A /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
 		D4CA5CC11C7DCF48000E185A /* wallet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallet.png; sourceTree = "<group>"; };
 		D4CA5CC21C7DCF48000E185A /* wallet_id.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallet_id.png; sourceTree = "<group>"; };
+		D930F527C0F72C20148401A2 /* Pods-GreySi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreySi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GreySi/Pods-GreySi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4366A1903A93415D6183C322 /* libPods-GreySi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +147,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11B6F61DD731C1EB015E3417 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A7793179DCCE4D0DE2B3ACD /* libPods-GreySi.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC08323C21E1A2DBEAF93D7C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D930F527C0F72C20148401A2 /* Pods-GreySi.debug.xcconfig */,
+				C2A3C6C8B51C1DE3923EABCA /* Pods-GreySi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D4CA5C6A1C7DCDF6000E185A = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +171,8 @@
 				D4CA5C8F1C7DCDF8000E185A /* GreySiTests */,
 				D4CA5C9A1C7DCDF8000E185A /* GreySiUITests */,
 				D4CA5C741C7DCDF7000E185A /* Products */,
+				BC08323C21E1A2DBEAF93D7C /* Pods */,
+				11B6F61DD731C1EB015E3417 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -253,9 +277,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4CA5CA01C7DCDF8000E185A /* Build configuration list for PBXNativeTarget "GreySi" */;
 			buildPhases = (
+				21CCD1380CFC46E657CD7E92 /* Check Pods Manifest.lock */,
 				D4CA5C6F1C7DCDF7000E185A /* Sources */,
 				D4CA5C701C7DCDF7000E185A /* Frameworks */,
 				D4CA5C711C7DCDF7000E185A /* Resources */,
+				B1DAB3F7A8E36D4E10224902 /* Embed Pods Frameworks */,
+				6B0C987852EDB260B6E03C8D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -396,6 +423,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21CCD1380CFC46E657CD7E92 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6B0C987852EDB260B6E03C8D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GreySi/Pods-GreySi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1DAB3F7A8E36D4E10224902 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GreySi/Pods-GreySi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D4CA5C6F1C7DCDF7000E185A /* Sources */ = {
@@ -545,6 +620,7 @@
 		};
 		D4CA5CA11C7DCDF8000E185A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D930F527C0F72C20148401A2 /* Pods-GreySi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GreySi/Info.plist;
@@ -557,6 +633,7 @@
 		};
 		D4CA5CA21C7DCDF8000E185A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2A3C6C8B51C1DE3923EABCA /* Pods-GreySi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GreySi/Info.plist;

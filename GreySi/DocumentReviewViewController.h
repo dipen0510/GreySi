@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PECropViewController.h"
 
-@interface DocumentReviewViewController : UIViewController
+@interface DocumentReviewViewController : UIViewController<UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PECropViewControllerDelegate> {
+    UIActionSheet* actSheet;
+    UIImage* diplomaImage;
+}
 
 @property (strong, nonatomic) IBOutlet UIImageView *diplomaImageView;
 @property (strong, nonatomic) IBOutlet UIButton *sendForReviewButton;
