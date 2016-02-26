@@ -15,6 +15,8 @@
 		D455C4751C7EDABA00C6D1CB /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = D455C46F1C7EDABA00C6D1CB /* splash.png */; };
 		D455C4781C7F15C300C6D1CB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D455C4771C7F15C300C6D1CB /* LoginViewController.m */; };
 		D455C47B1C7F203900C6D1CB /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D455C47A1C7F203900C6D1CB /* SignUpViewController.m */; };
+		D4A7DD771C806CE100F82033 /* WhatAreYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A7DD761C806CE100F82033 /* WhatAreYouViewController.m */; };
+		D4A7DD7A1C806CF900F82033 /* DocumentReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A7DD791C806CF900F82033 /* DocumentReviewViewController.m */; };
 		D4CA5C781C7DCDF7000E185A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CA5C771C7DCDF7000E185A /* main.m */; };
 		D4CA5C7B1C7DCDF7000E185A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CA5C7A1C7DCDF7000E185A /* AppDelegate.m */; };
 		D4CA5C7E1C7DCDF7000E185A /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CA5C7D1C7DCDF7000E185A /* SplashViewController.m */; };
@@ -73,6 +75,10 @@
 		D455C4771C7F15C300C6D1CB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D455C4791C7F203900C6D1CB /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		D455C47A1C7F203900C6D1CB /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		D4A7DD751C806CE100F82033 /* WhatAreYouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhatAreYouViewController.h; sourceTree = "<group>"; };
+		D4A7DD761C806CE100F82033 /* WhatAreYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhatAreYouViewController.m; sourceTree = "<group>"; };
+		D4A7DD781C806CF900F82033 /* DocumentReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentReviewViewController.h; sourceTree = "<group>"; };
+		D4A7DD791C806CF900F82033 /* DocumentReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentReviewViewController.m; sourceTree = "<group>"; };
 		D4CA5C731C7DCDF7000E185A /* GreySi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreySi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CA5C771C7DCDF7000E185A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D4CA5C791C7DCDF7000E185A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -173,6 +179,10 @@
 				D455C4771C7F15C300C6D1CB /* LoginViewController.m */,
 				D455C4791C7F203900C6D1CB /* SignUpViewController.h */,
 				D455C47A1C7F203900C6D1CB /* SignUpViewController.m */,
+				D4A7DD751C806CE100F82033 /* WhatAreYouViewController.h */,
+				D4A7DD761C806CE100F82033 /* WhatAreYouViewController.m */,
+				D4A7DD781C806CF900F82033 /* DocumentReviewViewController.h */,
+				D4A7DD791C806CF900F82033 /* DocumentReviewViewController.m */,
 			);
 			path = GreySi;
 			sourceTree = "<group>";
@@ -392,9 +402,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A7DD7A1C806CF900F82033 /* DocumentReviewViewController.m in Sources */,
 				D455C4781C7F15C300C6D1CB /* LoginViewController.m in Sources */,
 				D455C47B1C7F203900C6D1CB /* SignUpViewController.m in Sources */,
 				D4CA5C7E1C7DCDF7000E185A /* SplashViewController.m in Sources */,
+				D4A7DD771C806CE100F82033 /* WhatAreYouViewController.m in Sources */,
 				D4CA5C7B1C7DCDF7000E185A /* AppDelegate.m in Sources */,
 				D4CA5C781C7DCDF7000E185A /* main.m in Sources */,
 			);

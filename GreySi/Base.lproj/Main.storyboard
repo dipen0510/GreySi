@@ -443,7 +443,7 @@
                                 </state>
                                 <connections>
                                     <action selector="submitButtonTapped:" destination="vQG-dM-JZT" eventType="touchUpInside" id="UcU-L0-wf3"/>
-                                    <action selector="submitButtonTapped:" destination="kw5-ph-Cc4" eventType="touchUpInside" id="ty9-k1-jEM"/>
+                                    <segue destination="Wmm-MD-HuB" kind="show" id="xnQ-gd-PK3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -491,6 +491,226 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OnX-Nj-JPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2973" y="1194"/>
+        </scene>
+        <!--What Are You View Controller-->
+        <scene sceneID="yZY-rP-LWl">
+            <objects>
+                <viewController id="Wmm-MD-HuB" customClass="WhatAreYouViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mVN-mk-YXB"/>
+                        <viewControllerLayoutGuide type="bottom" id="06X-i6-p7l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7PX-FO-Os4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QsW-Hr-ku9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvx-O2-pJY">
+                                        <rect key="frame" x="8" y="31" width="15" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="8z5-H1-gIo"/>
+                                            <constraint firstAttribute="width" constant="15" id="eIZ-ES-Ok7"/>
+                                        </constraints>
+                                        <state key="normal" image="arrow.png"/>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="Wmm-MD-HuB" eventType="touchUpInside" id="QJv-LH-DMf"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What Are You?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLx-nB-S1F">
+                                        <rect key="frame" x="233" y="35" width="134" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="134" id="N7g-d2-ExJ"/>
+                                            <constraint firstAttribute="height" constant="21" id="wda-gw-KJJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GujaratiSangamMN-Bold" family="Gujarati Sangam MN" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Wvx-O2-pJY" secondAttribute="bottom" constant="8" id="0E2-bP-6Sf"/>
+                                    <constraint firstItem="HLx-nB-S1F" firstAttribute="centerX" secondItem="QsW-Hr-ku9" secondAttribute="centerX" id="6bC-So-7kS"/>
+                                    <constraint firstItem="Wvx-O2-pJY" firstAttribute="leading" secondItem="QsW-Hr-ku9" secondAttribute="leading" constant="8" id="UUf-T7-vev"/>
+                                    <constraint firstAttribute="bottom" secondItem="HLx-nB-S1F" secondAttribute="bottom" constant="8" id="gVd-WO-upb"/>
+                                    <constraint firstAttribute="height" constant="64" id="z4A-6u-WMB"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rd-mj-h9Y">
+                                <rect key="frame" x="53" y="234" width="494" height="40"/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Fob-Cc-XwD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GujaratiSangamMN-Bold" family="Gujarati Sangam MN" pointSize="16"/>
+                                <state key="normal" title="Hairdresser">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Wt9-yC-aHP" kind="show" id="Sk8-dm-sYh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhQ-uJ-JcW">
+                                <rect key="frame" x="53" y="325" width="494" height="40"/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dCF-eu-6EH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GujaratiSangamMN-Bold" family="Gujarati Sangam MN" pointSize="16"/>
+                                <state key="normal" title="Customer">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncd-NT-2sd">
+                                <rect key="frame" x="180" y="299" width="240" height="2"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="5GS-6D-Uhm"/>
+                                    <constraint firstAttribute="width" constant="240" id="qyN-dW-601"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4rd-mj-h9Y" firstAttribute="leading" secondItem="7PX-FO-Os4" secondAttribute="leadingMargin" constant="33" id="1Zh-to-A7d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qhQ-uJ-JcW" secondAttribute="trailing" constant="33" id="1eh-fb-EaA"/>
+                            <constraint firstItem="QsW-Hr-ku9" firstAttribute="top" secondItem="7PX-FO-Os4" secondAttribute="topMargin" id="7qA-An-lML"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QsW-Hr-ku9" secondAttribute="trailing" constant="-20" id="NOm-Wk-RQu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4rd-mj-h9Y" secondAttribute="trailing" constant="33" id="SiV-Dz-aSc"/>
+                            <constraint firstItem="ncd-NT-2sd" firstAttribute="centerX" secondItem="7PX-FO-Os4" secondAttribute="centerX" id="aiS-DC-hZ7"/>
+                            <constraint firstItem="ncd-NT-2sd" firstAttribute="top" secondItem="4rd-mj-h9Y" secondAttribute="bottom" constant="25" id="bcE-TV-z7N"/>
+                            <constraint firstItem="qhQ-uJ-JcW" firstAttribute="leading" secondItem="7PX-FO-Os4" secondAttribute="leadingMargin" constant="33" id="cFa-dt-Hh7"/>
+                            <constraint firstItem="ncd-NT-2sd" firstAttribute="centerY" secondItem="7PX-FO-Os4" secondAttribute="centerY" id="hwc-YL-IZn"/>
+                            <constraint firstItem="qhQ-uJ-JcW" firstAttribute="top" secondItem="ncd-NT-2sd" secondAttribute="bottom" constant="24" id="jBO-rf-4kb"/>
+                            <constraint firstItem="QsW-Hr-ku9" firstAttribute="leading" secondItem="7PX-FO-Os4" secondAttribute="leadingMargin" constant="-20" id="vbn-zM-3fH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y11-WG-jCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3727" y="1194"/>
+        </scene>
+        <!--Document Review View Controller-->
+        <scene sceneID="mLd-oJ-fC0">
+            <objects>
+                <viewController id="Wt9-yC-aHP" customClass="DocumentReviewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t19-mB-jXA"/>
+                        <viewControllerLayoutGuide type="bottom" id="EoE-ud-dkh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qHh-3Q-VoO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WEY-th-WWw">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Degree Review" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ov6-sq-Set">
+                                        <rect key="frame" x="233" y="35" width="134" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="I3P-5d-6hE"/>
+                                            <constraint firstAttribute="width" constant="134" id="oc2-cE-euE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GujaratiSangamMN-Bold" family="Gujarati Sangam MN" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEK-01-WTW">
+                                        <rect key="frame" x="8" y="31" width="15" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="8at-0v-ugi"/>
+                                            <constraint firstAttribute="height" constant="25" id="Qvv-IW-GYX"/>
+                                        </constraints>
+                                        <state key="normal" image="arrow.png"/>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="Wt9-yC-aHP" eventType="touchUpInside" id="azg-ly-ccc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="sEK-01-WTW" secondAttribute="bottom" constant="8" id="AsX-wa-IcT"/>
+                                    <constraint firstAttribute="bottom" secondItem="ov6-sq-Set" secondAttribute="bottom" constant="8" id="CpZ-lr-XpE"/>
+                                    <constraint firstAttribute="height" constant="64" id="K02-77-79m"/>
+                                    <constraint firstItem="sEK-01-WTW" firstAttribute="leading" secondItem="WEY-th-WWw" secondAttribute="leading" constant="8" id="gxk-gh-PC7"/>
+                                    <constraint firstItem="ov6-sq-Set" firstAttribute="centerX" secondItem="WEY-th-WWw" secondAttribute="centerX" id="mp1-JZ-z1h"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jd4-5g-XNN">
+                                <rect key="frame" x="53" y="109" width="494" height="40"/>
+                                <color key="backgroundColor" red="0.38823529410000002" green="0.38823529410000002" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GVr-V4-VW9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GujaratiSangamMN-Bold" family="Gujarati Sangam MN" pointSize="16"/>
+                                <state key="normal" title="Upload Diploma">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadDiplomaButtonTapped:" destination="Wt9-yC-aHP" eventType="touchUpInside" id="0bt-Ed-rHS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1HK-wc-rYp">
+                                <rect key="frame" x="481" y="157" width="66" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="gfU-CE-VZD"/>
+                                    <constraint firstAttribute="height" constant="30" id="m57-qe-jPd"/>
+                                </constraints>
+                                <state key="normal" title="Skip &gt;&gt;">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipButtonTapped:" destination="Wt9-yC-aHP" eventType="touchUpInside" id="qQh-HK-sOp"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="obD-wa-Eum">
+                                <rect key="frame" x="53" y="195" width="494" height="337"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgk-YR-p3c">
+                                <rect key="frame" x="53" y="540" width="494" height="40"/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Wht-W8-YF6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GujaratiSangamMN-Bold" family="Gujarati Sangam MN" pointSize="16"/>
+                                <state key="normal" title="Send For Review">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendForReviewButtonTapped:" destination="Wt9-yC-aHP" eventType="touchUpInside" id="AKq-P2-qbd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WEY-th-WWw" firstAttribute="leading" secondItem="qHh-3Q-VoO" secondAttribute="leadingMargin" constant="-20" id="09E-6R-6l5"/>
+                            <constraint firstItem="lgk-YR-p3c" firstAttribute="leading" secondItem="qHh-3Q-VoO" secondAttribute="leadingMargin" constant="33" id="ADt-ZO-wj0"/>
+                            <constraint firstItem="Jd4-5g-XNN" firstAttribute="top" secondItem="WEY-th-WWw" secondAttribute="bottom" constant="45" id="EUy-At-Qgm"/>
+                            <constraint firstItem="EoE-ud-dkh" firstAttribute="top" secondItem="lgk-YR-p3c" secondAttribute="bottom" constant="20" id="GiU-4S-Jpn"/>
+                            <constraint firstItem="WEY-th-WWw" firstAttribute="top" secondItem="qHh-3Q-VoO" secondAttribute="topMargin" id="Iu3-xL-8bi"/>
+                            <constraint firstItem="obD-wa-Eum" firstAttribute="top" secondItem="1HK-wc-rYp" secondAttribute="bottom" constant="8" id="ToW-hP-JwQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WEY-th-WWw" secondAttribute="trailing" constant="-20" id="WAD-IV-PG2"/>
+                            <constraint firstItem="Jd4-5g-XNN" firstAttribute="leading" secondItem="qHh-3Q-VoO" secondAttribute="leadingMargin" constant="33" id="cIU-7m-vgq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="obD-wa-Eum" secondAttribute="trailing" constant="33" id="dza-7T-Q85"/>
+                            <constraint firstItem="lgk-YR-p3c" firstAttribute="top" secondItem="obD-wa-Eum" secondAttribute="bottom" constant="8" id="h7S-Z2-HhK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1HK-wc-rYp" secondAttribute="trailing" constant="33" id="ic4-qb-OyS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jd4-5g-XNN" secondAttribute="trailing" constant="33" id="qu5-mJ-MRD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lgk-YR-p3c" secondAttribute="trailing" constant="33" id="u3X-Rj-KG8"/>
+                            <constraint firstItem="obD-wa-Eum" firstAttribute="leading" secondItem="qHh-3Q-VoO" secondAttribute="leadingMargin" constant="33" id="uY6-M3-u7i"/>
+                            <constraint firstItem="1HK-wc-rYp" firstAttribute="top" secondItem="Jd4-5g-XNN" secondAttribute="bottom" constant="8" id="zVc-nf-Cdr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="diplomaImageView" destination="obD-wa-Eum" id="G0I-jQ-2MF"/>
+                        <outlet property="sendForReviewButton" destination="lgk-YR-p3c" id="lH8-DV-JsB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YFH-1z-g82" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4528" y="1618"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GeC-Sa-snu">
