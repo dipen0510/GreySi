@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18AA9CA41CA6DB8500938952 /* profile_temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AA9CA31CA6DB8500938952 /* profile_temp.png */; };
 		4366A1903A93415D6183C322 /* libPods-GreySi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7793179DCCE4D0DE2B3ACD /* libPods-GreySi.a */; };
 		D455C4701C7EDABA00C6D1CB /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = D455C46A1C7EDABA00C6D1CB /* appicon.png */; };
 		D455C4711C7EDABA00C6D1CB /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D455C46B1C7EDABA00C6D1CB /* background.png */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18AA9CA31CA6DB8500938952 /* profile_temp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_temp.png; sourceTree = "<group>"; };
 		2A7793179DCCE4D0DE2B3ACD /* libPods-GreySi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GreySi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A3C6C8B51C1DE3923EABCA /* Pods-GreySi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreySi.release.xcconfig"; path = "Pods/Target Support Files/Pods-GreySi/Pods-GreySi.release.xcconfig"; sourceTree = "<group>"; };
 		D455C46A1C7EDABA00C6D1CB /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				D4CA5CC01C7DCF48000E185A /* tick.png */,
 				D4CA5CC11C7DCF48000E185A /* wallet.png */,
 				D4CA5CC21C7DCF48000E185A /* wallet_id.png */,
+				18AA9CA31CA6DB8500938952 /* profile_temp.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				D4CA5C831C7DCDF7000E185A /* Assets.xcassets in Resources */,
 				D455C4741C7EDABA00C6D1CB /* signup.png in Resources */,
 				D4CA5CD21C7DCF48000E185A /* profile.png in Resources */,
+				18AA9CA41CA6DB8500938952 /* profile_temp.png in Resources */,
 				D4CA5CC41C7DCF48000E185A /* arrow.png in Resources */,
 				D455C4731C7EDABA00C6D1CB /* login.png in Resources */,
 				D455C4751C7EDABA00C6D1CB /* splash.png in Resources */,

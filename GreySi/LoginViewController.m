@@ -61,6 +61,9 @@
 }
 
 - (IBAction)submitButtonTapped:(id)sender {
+    
+    [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
+    
 }
 
 - (IBAction)cancelButtonTapped:(id)sender {
