@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		188857291CAB17AD0026995E /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 188857281CAB17AD0026995E /* SwipeView.m */; };
+		1888572C1CAB17F90026995E /* HomeTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888572B1CAB17F90026995E /* HomeTableView.xib */; };
+		1888572E1CAB18010026995E /* HomeMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888572D1CAB18010026995E /* HomeMapView.xib */; };
+		188857311CAB18520026995E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188857301CAB18520026995E /* HomeViewController.m */; };
+		188857331CAB18FF0026995E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188857321CAB18FF0026995E /* MapKit.framework */; };
+		1888573D1CAB19F10026995E /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888573B1CAB19F10026995E /* HomeTableViewCell.m */; };
+		1888573E1CAB19F10026995E /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888573C1CAB19F10026995E /* HomeTableViewCell.xib */; };
+		188857401CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1888573F1CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png */; };
 		18AA9CA41CA6DB8500938952 /* profile_temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AA9CA31CA6DB8500938952 /* profile_temp.png */; };
 		4366A1903A93415D6183C322 /* libPods-GreySi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7793179DCCE4D0DE2B3ACD /* libPods-GreySi.a */; };
 		D455C4701C7EDABA00C6D1CB /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = D455C46A1C7EDABA00C6D1CB /* appicon.png */; };
@@ -67,6 +75,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		188857271CAB17AD0026995E /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeView.h; sourceTree = "<group>"; };
+		188857281CAB17AD0026995E /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
+		1888572B1CAB17F90026995E /* HomeTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeTableView.xib; path = CustomControls/HomeTableView.xib; sourceTree = "<group>"; };
+		1888572D1CAB18010026995E /* HomeMapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeMapView.xib; path = CustomControls/HomeMapView.xib; sourceTree = "<group>"; };
+		1888572F1CAB18520026995E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		188857301CAB18520026995E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		188857321CAB18FF0026995E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1888573A1CAB19F10026995E /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeTableViewCell.h; path = CustomControls/HomeTableViewCell.h; sourceTree = "<group>"; };
+		1888573B1CAB19F10026995E /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeTableViewCell.m; path = CustomControls/HomeTableViewCell.m; sourceTree = "<group>"; };
+		1888573C1CAB19F10026995E /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeTableViewCell.xib; path = CustomControls/HomeTableViewCell.xib; sourceTree = "<group>"; };
+		1888573F1CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2016-03-30 at 12.44.22 AM.png"; sourceTree = "<group>"; };
+		188857411CAB20C60026995E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		18AA9CA31CA6DB8500938952 /* profile_temp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_temp.png; sourceTree = "<group>"; };
 		2A7793179DCCE4D0DE2B3ACD /* libPods-GreySi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GreySi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A3C6C8B51C1DE3923EABCA /* Pods-GreySi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreySi.release.xcconfig"; path = "Pods/Target Support Files/Pods-GreySi/Pods-GreySi.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188857331CAB18FF0026995E /* MapKit.framework in Frameworks */,
 				4366A1903A93415D6183C322 /* libPods-GreySi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,9 +173,39 @@
 		11B6F61DD731C1EB015E3417 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				188857321CAB18FF0026995E /* MapKit.framework */,
 				2A7793179DCCE4D0DE2B3ACD /* libPods-GreySi.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		188857261CAB17AD0026995E /* SwipeView */ = {
+			isa = PBXGroup;
+			children = (
+				188857271CAB17AD0026995E /* SwipeView.h */,
+				188857281CAB17AD0026995E /* SwipeView.m */,
+			);
+			path = SwipeView;
+			sourceTree = "<group>";
+		};
+		1888572A1CAB17D80026995E /* CustomControls */ = {
+			isa = PBXGroup;
+			children = (
+				188857341CAB19C10026995E /* HomeTableViewCell */,
+				1888572B1CAB17F90026995E /* HomeTableView.xib */,
+				1888572D1CAB18010026995E /* HomeMapView.xib */,
+			);
+			name = CustomControls;
+			sourceTree = "<group>";
+		};
+		188857341CAB19C10026995E /* HomeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1888573A1CAB19F10026995E /* HomeTableViewCell.h */,
+				1888573B1CAB19F10026995E /* HomeTableViewCell.m */,
+				1888573C1CAB19F10026995E /* HomeTableViewCell.xib */,
+			);
+			name = HomeTableViewCell;
 			sourceTree = "<group>";
 		};
 		BC08323C21E1A2DBEAF93D7C /* Pods */ = {
@@ -191,6 +242,8 @@
 		D4CA5C751C7DCDF7000E185A /* GreySi */ = {
 			isa = PBXGroup;
 			children = (
+				1888572A1CAB17D80026995E /* CustomControls */,
+				188857261CAB17AD0026995E /* SwipeView */,
 				D4CA5C791C7DCDF7000E185A /* AppDelegate.h */,
 				D4CA5C7A1C7DCDF7000E185A /* AppDelegate.m */,
 				D4CA5C7C1C7DCDF7000E185A /* SplashViewController.h */,
@@ -209,6 +262,8 @@
 				D4A7DD761C806CE100F82033 /* WhatAreYouViewController.m */,
 				D4A7DD781C806CF900F82033 /* DocumentReviewViewController.h */,
 				D4A7DD791C806CF900F82033 /* DocumentReviewViewController.m */,
+				1888572F1CAB18520026995E /* HomeViewController.h */,
+				188857301CAB18520026995E /* HomeViewController.m */,
 			);
 			path = GreySi;
 			sourceTree = "<group>";
@@ -217,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				D4CA5C771C7DCDF7000E185A /* main.m */,
+				188857411CAB20C60026995E /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -242,6 +298,7 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1888573F1CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png */,
 				D455C46A1C7EDABA00C6D1CB /* appicon.png */,
 				D455C46B1C7EDABA00C6D1CB /* background.png */,
 				D455C46C1C7EDABA00C6D1CB /* login_fb.png */,
@@ -396,14 +453,18 @@
 				D4CA5CC41C7DCF48000E185A /* arrow.png in Resources */,
 				D455C4731C7EDABA00C6D1CB /* login.png in Resources */,
 				D455C4751C7EDABA00C6D1CB /* splash.png in Resources */,
+				1888572C1CAB17F90026995E /* HomeTableView.xib in Resources */,
 				D455C4721C7EDABA00C6D1CB /* login_fb.png in Resources */,
 				D4CA5CD91C7DCF48000E185A /* tick.png in Resources */,
+				1888572E1CAB18010026995E /* HomeMapView.xib in Resources */,
+				188857401CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png in Resources */,
 				D4CA5CD51C7DCF48000E185A /* rating_filled_small.png in Resources */,
 				D4CA5C811C7DCDF7000E185A /* Main.storyboard in Resources */,
 				D4CA5CDA1C7DCF48000E185A /* wallet.png in Resources */,
 				D4CA5CD31C7DCF48000E185A /* rating-small.png in Resources */,
 				D4CA5CCE1C7DCF48000E185A /* mail.png in Resources */,
 				D4CA5CD11C7DCF48000E185A /* pin.png in Resources */,
+				1888573E1CAB19F10026995E /* HomeTableViewCell.xib in Resources */,
 				D4CA5CCB1C7DCF48000E185A /* feedback_ratinghalf.png in Resources */,
 				D455C4711C7EDABA00C6D1CB /* background.png in Resources */,
 				D4CA5CDB1C7DCF48000E185A /* wallet_id.png in Resources */,
@@ -482,9 +543,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A7DD7A1C806CF900F82033 /* DocumentReviewViewController.m in Sources */,
+				188857291CAB17AD0026995E /* SwipeView.m in Sources */,
+				1888573D1CAB19F10026995E /* HomeTableViewCell.m in Sources */,
 				D455C4781C7F15C300C6D1CB /* LoginViewController.m in Sources */,
 				D455C47B1C7F203900C6D1CB /* SignUpViewController.m in Sources */,
 				D4CA5C7E1C7DCDF7000E185A /* SplashViewController.m in Sources */,
+				188857311CAB18520026995E /* HomeViewController.m in Sources */,
 				D4A7DD771C806CE100F82033 /* WhatAreYouViewController.m in Sources */,
 				D4CA5C7B1C7DCDF7000E185A /* AppDelegate.m in Sources */,
 				D4CA5C781C7DCDF7000E185A /* main.m in Sources */,
@@ -627,11 +691,14 @@
 			baseConfigurationReference = D930F527C0F72C20148401A2 /* Pods-GreySi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
+				GCC_PREFIX_HEADER = GreySi/PrefixHeader.pch;
 				INFOPLIST_FILE = GreySi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0a65f3e9-354a-42f7-b719-6c54dabfbaf9";
 			};
 			name = Debug;
 		};
@@ -640,11 +707,14 @@
 			baseConfigurationReference = C2A3C6C8B51C1DE3923EABCA /* Pods-GreySi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
+				GCC_PREFIX_HEADER = GreySi/PrefixHeader.pch;
 				INFOPLIST_FILE = GreySi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0a65f3e9-354a-42f7-b719-6c54dabfbaf9";
 			};
 			name = Release;
 		};

@@ -276,10 +276,10 @@
             </objects>
             <point key="canvasLocation" x="2973" y="418"/>
         </scene>
-        <!--View Controller-->
+        <!--Data Source-->
         <scene sceneID="GVt-9c-WVI">
             <objects>
-                <viewController id="OMS-cR-1Ix" sceneMemberID="viewController">
+                <viewController id="OMS-cR-1Ix" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n5G-l2-eoF"/>
                         <viewControllerLayoutGuide type="bottom" id="3Dd-Mt-Pza"/>
@@ -378,22 +378,29 @@
                                     <constraint firstAttribute="height" constant="120" id="wxV-u6-uCK"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="StX-Hu-xiL">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Sd-wC-vdT" customClass="SwipeView">
                                 <rect key="frame" x="0.0" y="120" width="600" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="OMS-cR-1Ix" id="XUq-bO-qGp"/>
+                                    <outlet property="delegate" destination="OMS-cR-1Ix" id="LFB-xO-1fT"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="bkT-7b-9d0" secondAttribute="trailing" constant="-19" id="0eJ-Iw-Yz6"/>
-                            <constraint firstItem="StX-Hu-xiL" firstAttribute="leading" secondItem="fwW-zE-Ebv" secondAttribute="leadingMargin" constant="-20" id="41S-2X-B5f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9Sd-wC-vdT" secondAttribute="trailing" constant="-20" id="4WD-Iu-ubt"/>
                             <constraint firstItem="bkT-7b-9d0" firstAttribute="leading" secondItem="fwW-zE-Ebv" secondAttribute="leadingMargin" constant="-21" id="567-uw-8Xg"/>
-                            <constraint firstItem="StX-Hu-xiL" firstAttribute="top" secondItem="bkT-7b-9d0" secondAttribute="bottom" id="Udw-FQ-o5f"/>
+                            <constraint firstItem="3Dd-Mt-Pza" firstAttribute="top" secondItem="9Sd-wC-vdT" secondAttribute="bottom" id="9x9-YR-lh9"/>
+                            <constraint firstItem="9Sd-wC-vdT" firstAttribute="leading" secondItem="fwW-zE-Ebv" secondAttribute="leadingMargin" constant="-20" id="OPb-XZ-oFA"/>
                             <constraint firstItem="bkT-7b-9d0" firstAttribute="top" secondItem="fwW-zE-Ebv" secondAttribute="topMargin" id="brA-E9-GBb"/>
-                            <constraint firstItem="3Dd-Mt-Pza" firstAttribute="top" secondItem="StX-Hu-xiL" secondAttribute="bottom" id="uRv-SA-IWu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="StX-Hu-xiL" secondAttribute="trailing" constant="-20" id="w9G-oC-Mh4"/>
+                            <constraint firstItem="9Sd-wC-vdT" firstAttribute="top" secondItem="bkT-7b-9d0" secondAttribute="bottom" id="vCd-qY-veF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="swipeView" destination="9Sd-wC-vdT" id="CNQ-TN-W3L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIe-er-dhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
