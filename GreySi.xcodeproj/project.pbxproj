@@ -16,6 +16,9 @@
 		1888573E1CAB19F10026995E /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888573C1CAB19F10026995E /* HomeTableViewCell.xib */; };
 		188857401CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1888573F1CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png */; };
 		18AA9CA41CA6DB8500938952 /* profile_temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AA9CA31CA6DB8500938952 /* profile_temp.png */; };
+		18DE0E9A1D46964E00043037 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DE0E991D46964D00043037 /* logo.png */; };
+		18DE0E9D1D4697B000043037 /* GatewayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DE0E9C1D4697B000043037 /* GatewayViewController.m */; };
+		18DE0EA01D46A2BB00043037 /* LoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DE0E9F1D46A2BB00043037 /* LoginTableViewCell.m */; };
 		4366A1903A93415D6183C322 /* libPods-GreySi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7793179DCCE4D0DE2B3ACD /* libPods-GreySi.a */; };
 		D455C4701C7EDABA00C6D1CB /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = D455C46A1C7EDABA00C6D1CB /* appicon.png */; };
 		D455C4711C7EDABA00C6D1CB /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D455C46B1C7EDABA00C6D1CB /* background.png */; };
@@ -88,6 +91,11 @@
 		1888573F1CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2016-03-30 at 12.44.22 AM.png"; sourceTree = "<group>"; };
 		188857411CAB20C60026995E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		18AA9CA31CA6DB8500938952 /* profile_temp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_temp.png; sourceTree = "<group>"; };
+		18DE0E991D46964D00043037 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		18DE0E9B1D4697B000043037 /* GatewayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GatewayViewController.h; sourceTree = "<group>"; };
+		18DE0E9C1D4697B000043037 /* GatewayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GatewayViewController.m; sourceTree = "<group>"; };
+		18DE0E9E1D46A2BB00043037 /* LoginTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginTableViewCell.h; path = CustomControls/LoginTableViewCell.h; sourceTree = "<group>"; };
+		18DE0E9F1D46A2BB00043037 /* LoginTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginTableViewCell.m; path = CustomControls/LoginTableViewCell.m; sourceTree = "<group>"; };
 		2A7793179DCCE4D0DE2B3ACD /* libPods-GreySi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GreySi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A3C6C8B51C1DE3923EABCA /* Pods-GreySi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreySi.release.xcconfig"; path = "Pods/Target Support Files/Pods-GreySi/Pods-GreySi.release.xcconfig"; sourceTree = "<group>"; };
 		D455C46A1C7EDABA00C6D1CB /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
@@ -194,6 +202,8 @@
 				188857341CAB19C10026995E /* HomeTableViewCell */,
 				1888572B1CAB17F90026995E /* HomeTableView.xib */,
 				1888572D1CAB18010026995E /* HomeMapView.xib */,
+				18DE0E9E1D46A2BB00043037 /* LoginTableViewCell.h */,
+				18DE0E9F1D46A2BB00043037 /* LoginTableViewCell.m */,
 			);
 			name = CustomControls;
 			sourceTree = "<group>";
@@ -264,6 +274,8 @@
 				D4A7DD791C806CF900F82033 /* DocumentReviewViewController.m */,
 				1888572F1CAB18520026995E /* HomeViewController.h */,
 				188857301CAB18520026995E /* HomeViewController.m */,
+				18DE0E9B1D4697B000043037 /* GatewayViewController.h */,
+				18DE0E9C1D4697B000043037 /* GatewayViewController.m */,
 			);
 			path = GreySi;
 			sourceTree = "<group>";
@@ -298,6 +310,7 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				18DE0E991D46964D00043037 /* logo.png */,
 				1888573F1CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png */,
 				D455C46A1C7EDABA00C6D1CB /* appicon.png */,
 				D455C46B1C7EDABA00C6D1CB /* background.png */,
@@ -447,6 +460,7 @@
 				D4CA5CC31C7DCF48000E185A /* add_button.png in Resources */,
 				D4CA5CC81C7DCF48000E185A /* email.png in Resources */,
 				D4CA5C831C7DCDF7000E185A /* Assets.xcassets in Resources */,
+				18DE0E9A1D46964E00043037 /* logo.png in Resources */,
 				D455C4741C7EDABA00C6D1CB /* signup.png in Resources */,
 				D4CA5CD21C7DCF48000E185A /* profile.png in Resources */,
 				18AA9CA41CA6DB8500938952 /* profile_temp.png in Resources */,
@@ -545,6 +559,8 @@
 				D4A7DD7A1C806CF900F82033 /* DocumentReviewViewController.m in Sources */,
 				188857291CAB17AD0026995E /* SwipeView.m in Sources */,
 				1888573D1CAB19F10026995E /* HomeTableViewCell.m in Sources */,
+				18DE0EA01D46A2BB00043037 /* LoginTableViewCell.m in Sources */,
+				18DE0E9D1D4697B000043037 /* GatewayViewController.m in Sources */,
 				D455C4781C7F15C300C6D1CB /* LoginViewController.m in Sources */,
 				D455C47B1C7F203900C6D1CB /* SignUpViewController.m in Sources */,
 				D4CA5C7E1C7DCDF7000E185A /* SplashViewController.m in Sources */,

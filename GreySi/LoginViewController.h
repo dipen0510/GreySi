@@ -10,11 +10,10 @@
 
 @interface LoginViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UITextField *emailTextField;
-@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UITableView *loginTableView;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 - (IBAction)backButtonTapped:(id)sender;
 - (IBAction)submitButtonTapped:(id)sender;
-- (IBAction)cancelButtonTapped:(id)sender;
 
 @end

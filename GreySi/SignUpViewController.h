@@ -16,10 +16,8 @@
 
 
 @property (strong, nonatomic) IBOutlet UIButton *profileButton;
-@property (strong, nonatomic) IBOutlet UITextField *nameTextField;
-@property (strong, nonatomic) IBOutlet UITextField *emailTextField;
-@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (strong, nonatomic) IBOutlet UITextField *confirmPasswordTextField;
+@property (weak, nonatomic) IBOutlet UITableView *registerTableView;
+@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 
 - (IBAction)profileButtonTapped:(id)sender;
 - (IBAction)submitButtonTapped:(id)sender;

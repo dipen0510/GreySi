@@ -7,6 +7,7 @@
 //
 
 #import "SignUpViewController.h"
+#import "LoginTableViewCell.h"
 
 @interface SignUpViewController ()
 
@@ -18,36 +19,77 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self addGradientToBGView];
     [self setupInitialUI];
     [self setupActionSheet];
 }
 
+- (void) addGradientToBGView {
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:150./255. green:24./255. blue:206./255. alpha:1.0] CGColor], (id)[[UIColor colorWithRed:183./255. green:10./255. blue:197./255. alpha:1.0] CGColor], nil];
+    [self.view.layer insertSublayer:gradient atIndex:0];
+    
+}
+
 - (void) setupInitialUI {
     
-    UIView *paddingView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
-    UIView *paddingView2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
-    UIView *paddingView3 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
-    UIView *paddingView4 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
+    self.registerTableView.layer.cornerRadius = 5.0;
+    self.signUpButton.layer.cornerRadius = 5.0;
     
-    self.emailTextField.layer.borderColor = [[UIColor colorWithRed:91./255. green:91./255. blue:91./255. alpha:1.0] CGColor];
-    self.emailTextField.layer.borderWidth = 1.0;
-    self.emailTextField.leftView = paddingView1;
-    self.emailTextField.leftViewMode = UITextFieldViewModeAlways;
+}
+
+#pragma mark - UITableView Datasource -
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    self.passwordTextField.layer.borderColor = [[UIColor colorWithRed:91./255. green:91./255. blue:91./255. alpha:1.0] CGColor];
-    self.passwordTextField.layer.borderWidth = 1.0;
-    self.passwordTextField.leftView = paddingView2;
-    self.passwordTextField.leftViewMode = UITextFieldViewModeAlways;
+    return 4;
     
-    self.nameTextField.layer.borderColor = [[UIColor colorWithRed:91./255. green:91./255. blue:91./255. alpha:1.0] CGColor];
-    self.nameTextField.layer.borderWidth = 1.0;
-    self.nameTextField.leftView = paddingView3;
-    self.nameTextField.leftViewMode = UITextFieldViewModeAlways;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    self.confirmPasswordTextField.layer.borderColor = [[UIColor colorWithRed:91./255. green:91./255. blue:91./255. alpha:1.0] CGColor];
-    self.confirmPasswordTextField.layer.borderWidth = 1.0;
-    self.confirmPasswordTextField.leftView = paddingView4;
-    self.confirmPasswordTextField.leftViewMode = UITextFieldViewModeAlways;
+    
+    NSString* identifier = @"RegisterCell";
+    LoginTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    if (cell == nil) {
+        cell = (LoginTableViewCell *)[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
+    if (indexPath.row == 0) {
+        cell.txtField.placeholder = @"Name";
+        cell.separatorView.hidden = NO;
+    }
+    else if (indexPath.row == 1) {
+        cell.txtField.placeholder = @"Email";
+        cell.separatorView.hidden = NO;
+    }
+    else if (indexPath.row == 2) {
+        cell.txtField.placeholder = @"Password";
+        cell.separatorView.hidden = NO;
+    }
+    else if (indexPath.row == 3) {
+        cell.txtField.placeholder = @"Confirm Password";
+        cell.separatorView.hidden = YES;
+    }
+    
+    return cell;
+    
+    
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
+
+#pragma mark - UITableView Delegate -
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:true];
+    
+    
     
 }
 

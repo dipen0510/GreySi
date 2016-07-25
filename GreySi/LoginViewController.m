@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "LoginTableViewCell.h"
 
 @interface LoginViewController ()
 
@@ -18,24 +19,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
+    [self addGradientToBGView];
     [self setupInitialUI];
 
 }
 
+- (void) addGradientToBGView {
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:150./255. green:24./255. blue:206./255. alpha:1.0] CGColor], (id)[[UIColor colorWithRed:183./255. green:10./255. blue:197./255. alpha:1.0] CGColor], nil];
+    [self.view.layer insertSublayer:gradient atIndex:0];
+    
+}
+
 - (void) setupInitialUI {
     
-    UIView *paddingView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
-    UIView *paddingView2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 20)];
-    
-    self.emailTextField.layer.borderColor = [[UIColor colorWithRed:91./255. green:91./255. blue:91./255. alpha:1.0] CGColor];
-    self.emailTextField.layer.borderWidth = 1.0;
-    self.emailTextField.leftView = paddingView1;
-    self.emailTextField.leftViewMode = UITextFieldViewModeAlways;
-    
-    self.passwordTextField.layer.borderColor = [[UIColor colorWithRed:91./255. green:91./255. blue:91./255. alpha:1.0] CGColor];
-    self.passwordTextField.layer.borderWidth = 1.0;
-    self.passwordTextField.leftView = paddingView2;
-    self.passwordTextField.leftViewMode = UITextFieldViewModeAlways;
+    self.loginTableView.layer.cornerRadius = 5.0;
+    self.loginButton.layer.cornerRadius = 5.0;
     
 }
 
@@ -54,6 +55,51 @@
 }
 */
 
+#pragma mark - UITableView Datasource -
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 2;
+    
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    NSString* identifier = @"LoginCell";
+    LoginTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    if (cell == nil) {
+        cell = (LoginTableViewCell *)[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    
+    if (indexPath.row) {
+        cell.txtField.placeholder = @"PassWord";
+        cell.separatorView.hidden = YES;
+    }
+    else {
+        cell.txtField.placeholder = @"Email";
+        cell.separatorView.hidden = NO;
+    }
+    
+    return cell;
+    
+    
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
+
+#pragma mark - UITableView Delegate -
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:true];
+    
+    
+    
+}
+
 - (IBAction)backButtonTapped:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
@@ -66,11 +112,6 @@
     
 }
 
-- (IBAction)cancelButtonTapped:(id)sender {
-    
-    [self.navigationController popViewControllerAnimated:YES];
-    
-}
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
