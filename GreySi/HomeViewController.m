@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet SwipeView *swipeView;
 @property (nonatomic, strong) NSMutableArray *items;
 @property (weak, nonatomic) IBOutlet MKMapView *homeMapView;
+@property (weak, nonatomic) IBOutlet UISearchBar *homeSearchBar;
 
 - (IBAction)backButtonTapped:(id)sender;
 
@@ -32,12 +33,25 @@
     _swipeView.itemsPerPage = 1;
     _swipeView.truncateFinalPage = YES;
     
+    [self setupInitialUI];
+    
 }
 
 - (void)dealloc
 {
     _swipeView.delegate = nil;
     _swipeView.dataSource = nil;
+}
+
+- (void) setupInitialUI {
+    
+    for (UIView *subview in [[self.homeSearchBar.subviews lastObject] subviews]) {
+        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
+            [subview removeFromSuperview];
+            break;
+        }
+    }
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -145,7 +159,6 @@
         cell.addButton.hidden = YES;
     }
     
-    cell.bidButton.hidden = YES;
     [cell.addButton addTarget:self action:@selector(addButtonTapped) forControlEvents:UIControlEventTouchUpInside];
 }
 

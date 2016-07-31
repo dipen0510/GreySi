@@ -12,16 +12,10 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *budgetNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *budgetValueLabel;
-@property (weak, nonatomic) IBOutlet UILabel *rateNameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *rateStarOneImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *rateStarTwoImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *rateStarThreeImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *rateStarFourImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *rateStarFiveeImageView;
-@property (weak, nonatomic) IBOutlet UIButton *chatButton;
-@property (weak, nonatomic) IBOutlet UIButton *bidButton;
+@property (weak, nonatomic) IBOutlet UILabel *serviceTypeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLeftLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *timeLeftImageView;
+@property (weak, nonatomic) IBOutlet UIButton *priceButton;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 
 @end

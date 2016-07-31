@@ -13,8 +13,9 @@
 - (void)awakeFromNib {
     // Initialization code
     
-    self.chatButton.layer.cornerRadius = 5;
-    self.bidButton.layer.cornerRadius = 5;
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height/2.;
+    self.priceButton.layer.cornerRadius = 2.0;
+    self.addButton.layer.cornerRadius = self.addButton.frame.size.height/2.;
     
 }
 
