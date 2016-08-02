@@ -106,6 +106,9 @@
 }
 
 - (IBAction)submitButtonTapped:(id)sender {
+    
+    [SVProgressHUD showSuccessWithStatus:@"Registered successfully"];
+    
 }
 
 - (IBAction)backButtonTapped:(id)sender {

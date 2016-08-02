@@ -52,6 +52,21 @@
         }
     }
     
+    [self sideMenuSetup];
+    
+}
+
+- (void)sideMenuSetup
+{
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.revealButtonItem addTarget:self.revealViewController action:@selector( revealToggle: ) forControlEvents:UIControlEventTouchUpInside];
+        //[self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
+        //[self.view addGestureRecognizer:revealViewController.panGestureRecognizer];
+        [self.view addGestureRecognizer:revealViewController.tapGestureRecognizer];
+        [revealViewController setFrontViewShadowRadius:10.0];
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -106,6 +121,12 @@
     
 }
 
+- (IBAction)locationButtonTapped:(id)sender {
+    
+    [self.swipeView scrollToPage:1 duration:1.0];
+    
+}
+
 #pragma mark - UITableView Datasource -
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -140,6 +161,8 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:true];
     
+    [self performSegueWithIdentifier:@"showProfileSegue" sender:nil];
+    
 }
 
 - (void) displayContentForCell:(HomeTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
@@ -162,7 +185,7 @@
     [cell.addButton addTarget:self action:@selector(addButtonTapped) forControlEvents:UIControlEventTouchUpInside];
 }
 
-#pragma mark - Map View {
+#pragma mark - Map View
 
 
 - (void) loadInitialSetup {
@@ -189,6 +212,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 
 @end

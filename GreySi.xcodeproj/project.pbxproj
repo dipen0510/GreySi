@@ -14,6 +14,18 @@
 		185DC1031D4E343C007998F3 /* myLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC1001D4E343C007998F3 /* myLocation.png */; };
 		185DC1041D4E343C007998F3 /* navMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC1011D4E343C007998F3 /* navMenu.png */; };
 		185DC1061D4E4543007998F3 /* timeLeftClock.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC1051D4E4543007998F3 /* timeLeftClock.png */; };
+		185DC10B1D5136D2007998F3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185DC10A1D5136D2007998F3 /* SWRevealViewController.m */; };
+		185DC10E1D513C3E007998F3 /* mike.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 185DC10D1D513C3E007998F3 /* mike.jpg */; };
+		185DC1111D513CD1007998F3 /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185DC1101D513CD1007998F3 /* SideMenuViewController.m */; };
+		185DC1161D5140C3007998F3 /* SideMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 185DC1141D5140C3007998F3 /* SideMenuTableViewCell.m */; };
+		185DC1171D5140C3007998F3 /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185DC1151D5140C3007998F3 /* SideMenuTableViewCell.xib */; };
+		185DC11D1D514348007998F3 /* available.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC1181D514348007998F3 /* available.png */; };
+		185DC11E1D514348007998F3 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC1191D514348007998F3 /* logout.png */; };
+		185DC11F1D514348007998F3 /* messages.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC11A1D514348007998F3 /* messages.png */; };
+		185DC1201D514348007998F3 /* postAd.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC11B1D514348007998F3 /* postAd.png */; };
+		185DC1231D5145C9007998F3 /* projects.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC1221D5145C9007998F3 /* projects.png */; };
+		185DC1251D514934007998F3 /* profileDetailBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC1241D514934007998F3 /* profileDetailBG.png */; };
+		185DC1281D514DEA007998F3 /* ProfileDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185DC1271D514DEA007998F3 /* ProfileDetailViewController.m */; };
 		188857291CAB17AD0026995E /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 188857281CAB17AD0026995E /* SwipeView.m */; };
 		1888572C1CAB17F90026995E /* HomeTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888572B1CAB17F90026995E /* HomeTableView.xib */; };
 		1888572E1CAB18010026995E /* HomeMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888572D1CAB18010026995E /* HomeMapView.xib */; };
@@ -88,6 +100,22 @@
 		185DC1001D4E343C007998F3 /* myLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myLocation.png; sourceTree = "<group>"; };
 		185DC1011D4E343C007998F3 /* navMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navMenu.png; sourceTree = "<group>"; };
 		185DC1051D4E4543007998F3 /* timeLeftClock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeLeftClock.png; sourceTree = "<group>"; };
+		185DC1091D5136D2007998F3 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		185DC10A1D5136D2007998F3 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		185DC10D1D513C3E007998F3 /* mike.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mike.jpg; sourceTree = "<group>"; };
+		185DC10F1D513CD1007998F3 /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
+		185DC1101D513CD1007998F3 /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
+		185DC1131D5140C3007998F3 /* SideMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SideMenuTableViewCell.h; path = CustomControls/SideMenuTableViewCell.h; sourceTree = "<group>"; };
+		185DC1141D5140C3007998F3 /* SideMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SideMenuTableViewCell.m; path = CustomControls/SideMenuTableViewCell.m; sourceTree = "<group>"; };
+		185DC1151D5140C3007998F3 /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SideMenuTableViewCell.xib; path = CustomControls/SideMenuTableViewCell.xib; sourceTree = "<group>"; };
+		185DC1181D514348007998F3 /* available.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = available.png; sourceTree = "<group>"; };
+		185DC1191D514348007998F3 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
+		185DC11A1D514348007998F3 /* messages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messages.png; sourceTree = "<group>"; };
+		185DC11B1D514348007998F3 /* postAd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postAd.png; sourceTree = "<group>"; };
+		185DC1221D5145C9007998F3 /* projects.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = projects.png; sourceTree = "<group>"; };
+		185DC1241D514934007998F3 /* profileDetailBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileDetailBG.png; sourceTree = "<group>"; };
+		185DC1261D514DEA007998F3 /* ProfileDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileDetailViewController.h; sourceTree = "<group>"; };
+		185DC1271D514DEA007998F3 /* ProfileDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileDetailViewController.m; sourceTree = "<group>"; };
 		188857271CAB17AD0026995E /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeView.h; sourceTree = "<group>"; };
 		188857281CAB17AD0026995E /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
 		1888572B1CAB17F90026995E /* HomeTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeTableView.xib; path = CustomControls/HomeTableView.xib; sourceTree = "<group>"; };
@@ -193,18 +221,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		185DC1071D5136D2007998F3 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				188857261CAB17AD0026995E /* SwipeView */,
+				185DC1081D5136D2007998F3 /* SWRevealViewController */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		185DC1081D5136D2007998F3 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				185DC1091D5136D2007998F3 /* SWRevealViewController.h */,
+				185DC10A1D5136D2007998F3 /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		185DC1121D51409A007998F3 /* SideMenuTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				185DC1131D5140C3007998F3 /* SideMenuTableViewCell.h */,
+				185DC1141D5140C3007998F3 /* SideMenuTableViewCell.m */,
+				185DC1151D5140C3007998F3 /* SideMenuTableViewCell.xib */,
+			);
+			name = SideMenuTableViewCell;
+			sourceTree = "<group>";
+		};
 		188857261CAB17AD0026995E /* SwipeView */ = {
 			isa = PBXGroup;
 			children = (
 				188857271CAB17AD0026995E /* SwipeView.h */,
 				188857281CAB17AD0026995E /* SwipeView.m */,
 			);
-			path = SwipeView;
+			name = SwipeView;
+			path = ../SwipeView;
 			sourceTree = "<group>";
 		};
 		1888572A1CAB17D80026995E /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				185DC1121D51409A007998F3 /* SideMenuTableViewCell */,
 				188857341CAB19C10026995E /* HomeTableViewCell */,
 				1888572B1CAB17F90026995E /* HomeTableView.xib */,
 				1888572D1CAB18010026995E /* HomeMapView.xib */,
@@ -258,8 +316,8 @@
 		D4CA5C751C7DCDF7000E185A /* GreySi */ = {
 			isa = PBXGroup;
 			children = (
+				185DC1071D5136D2007998F3 /* Library */,
 				1888572A1CAB17D80026995E /* CustomControls */,
-				188857261CAB17AD0026995E /* SwipeView */,
 				D4CA5C791C7DCDF7000E185A /* AppDelegate.h */,
 				D4CA5C7A1C7DCDF7000E185A /* AppDelegate.m */,
 				D4CA5C7C1C7DCDF7000E185A /* SplashViewController.h */,
@@ -282,6 +340,10 @@
 				188857301CAB18520026995E /* HomeViewController.m */,
 				18DE0E9B1D4697B000043037 /* GatewayViewController.h */,
 				18DE0E9C1D4697B000043037 /* GatewayViewController.m */,
+				185DC10F1D513CD1007998F3 /* SideMenuViewController.h */,
+				185DC1101D513CD1007998F3 /* SideMenuViewController.m */,
+				185DC1261D514DEA007998F3 /* ProfileDetailViewController.h */,
+				185DC1271D514DEA007998F3 /* ProfileDetailViewController.m */,
 			);
 			path = GreySi;
 			sourceTree = "<group>";
@@ -316,6 +378,13 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				185DC1241D514934007998F3 /* profileDetailBG.png */,
+				185DC1221D5145C9007998F3 /* projects.png */,
+				185DC1181D514348007998F3 /* available.png */,
+				185DC1191D514348007998F3 /* logout.png */,
+				185DC11A1D514348007998F3 /* messages.png */,
+				185DC11B1D514348007998F3 /* postAd.png */,
+				185DC10D1D513C3E007998F3 /* mike.jpg */,
 				185DC1051D4E4543007998F3 /* timeLeftClock.png */,
 				185DC0FF1D4E343C007998F3 /* filter.png */,
 				185DC1001D4E343C007998F3 /* myLocation.png */,
@@ -458,6 +527,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185DC1231D5145C9007998F3 /* projects.png in Resources */,
 				D455C4701C7EDABA00C6D1CB /* appicon.png in Resources */,
 				D4CA5CCF1C7DCF48000E185A /* menu.png in Resources */,
 				D4CA5CC71C7DCF48000E185A /* double_arrow.png in Resources */,
@@ -469,14 +539,18 @@
 				D4CA5CD41C7DCF48000E185A /* rating.png in Resources */,
 				D4CA5CCA1C7DCF48000E185A /* feedback_rating_full.png in Resources */,
 				D4CA5CC81C7DCF48000E185A /* email.png in Resources */,
+				185DC11E1D514348007998F3 /* logout.png in Resources */,
 				D4CA5C831C7DCDF7000E185A /* Assets.xcassets in Resources */,
 				D455C4741C7EDABA00C6D1CB /* signup.png in Resources */,
 				18AA9CA41CA6DB8500938952 /* profile_temp.png in Resources */,
 				D4CA5CC41C7DCF48000E185A /* arrow.png in Resources */,
 				D455C4731C7EDABA00C6D1CB /* login.png in Resources */,
+				185DC11D1D514348007998F3 /* available.png in Resources */,
+				185DC10E1D513C3E007998F3 /* mike.jpg in Resources */,
 				185DC1061D4E4543007998F3 /* timeLeftClock.png in Resources */,
 				1888572C1CAB17F90026995E /* HomeTableView.xib in Resources */,
 				185DC1041D4E343C007998F3 /* navMenu.png in Resources */,
+				185DC1251D514934007998F3 /* profileDetailBG.png in Resources */,
 				D455C4721C7EDABA00C6D1CB /* login_fb.png in Resources */,
 				D4CA5CD91C7DCF48000E185A /* tick.png in Resources */,
 				1888572E1CAB18010026995E /* HomeMapView.xib in Resources */,
@@ -488,12 +562,15 @@
 				185DC1031D4E343C007998F3 /* myLocation.png in Resources */,
 				D4CA5CCE1C7DCF48000E185A /* mail.png in Resources */,
 				D4CA5CD11C7DCF48000E185A /* pin.png in Resources */,
+				185DC1171D5140C3007998F3 /* SideMenuTableViewCell.xib in Resources */,
 				1888573E1CAB19F10026995E /* HomeTableViewCell.xib in Resources */,
 				185DC0FC1D4E2C4C007998F3 /* splash.png in Resources */,
 				D4CA5CCB1C7DCF48000E185A /* feedback_ratinghalf.png in Resources */,
 				185DC1021D4E343C007998F3 /* filter.png in Resources */,
 				D455C4711C7EDABA00C6D1CB /* background.png in Resources */,
 				D4CA5CDB1C7DCF48000E185A /* wallet_id.png in Resources */,
+				185DC1201D514348007998F3 /* postAd.png in Resources */,
+				185DC11F1D514348007998F3 /* messages.png in Resources */,
 				D4CA5CC91C7DCF48000E185A /* feedback_rating.png in Resources */,
 				D4CA5CD61C7DCF48000E185A /* search.png in Resources */,
 			);
@@ -568,17 +645,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185DC10B1D5136D2007998F3 /* SWRevealViewController.m in Sources */,
 				D4A7DD7A1C806CF900F82033 /* DocumentReviewViewController.m in Sources */,
 				188857291CAB17AD0026995E /* SwipeView.m in Sources */,
 				1888573D1CAB19F10026995E /* HomeTableViewCell.m in Sources */,
 				18DE0EA01D46A2BB00043037 /* LoginTableViewCell.m in Sources */,
 				18DE0E9D1D4697B000043037 /* GatewayViewController.m in Sources */,
 				D455C4781C7F15C300C6D1CB /* LoginViewController.m in Sources */,
+				185DC1161D5140C3007998F3 /* SideMenuTableViewCell.m in Sources */,
 				D455C47B1C7F203900C6D1CB /* SignUpViewController.m in Sources */,
 				D4CA5C7E1C7DCDF7000E185A /* SplashViewController.m in Sources */,
 				188857311CAB18520026995E /* HomeViewController.m in Sources */,
+				185DC1281D514DEA007998F3 /* ProfileDetailViewController.m in Sources */,
 				D4A7DD771C806CE100F82033 /* WhatAreYouViewController.m in Sources */,
 				D4CA5C7B1C7DCDF7000E185A /* AppDelegate.m in Sources */,
+				185DC1111D513CD1007998F3 /* SideMenuViewController.m in Sources */,
 				D4CA5C781C7DCDF7000E185A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,4 +11,8 @@
 
 @interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIButton *revealButtonItem;
+
+- (IBAction)locationButtonTapped:(id)sender;
+
 @end
