@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatListTableViewCell" rowHeight="80" id="KGk-i7-Jjw" customClass="ChatListTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2016-03-30 at 12.44.22 AM.png" translatesAutoresizingMaskIntoConstraints="NO" id="RNz-7g-IdX">
+                        <rect key="frame" x="16" y="8" width="63" height="63"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="63" id="q2H-aG-mbG"/>
+                            <constraint firstAttribute="width" constant="63" id="tEC-GQ-WbX"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Richard Sen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6n-vk-3L2">
+                        <rect key="frame" x="87" y="16" width="167" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="PIU-hV-vXt"/>
+                            <constraint firstAttribute="width" constant="167" id="l1i-nS-gTj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi. How Are you?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXb-Ef-Sdj">
+                        <rect key="frame" x="87" y="40" width="225" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="FlX-f8-oYa"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yesterday" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKd-fy-9dJ">
+                        <rect key="frame" x="226" y="16" width="78" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="78" id="Uhd-k6-fDI"/>
+                            <constraint firstAttribute="height" constant="15" id="ffd-6e-afi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="XKd-fy-9dJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="0in-L6-iTB"/>
+                    <constraint firstItem="RNz-7g-IdX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="2o3-bG-2Un"/>
+                    <constraint firstItem="CXb-Ef-Sdj" firstAttribute="leading" secondItem="RNz-7g-IdX" secondAttribute="trailing" constant="8" id="D23-OC-MxZ"/>
+                    <constraint firstAttribute="trailing" secondItem="XKd-fy-9dJ" secondAttribute="trailing" constant="16" id="HON-qH-rPs"/>
+                    <constraint firstItem="O6n-vk-3L2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="IvL-vT-l5f"/>
+                    <constraint firstItem="CXb-Ef-Sdj" firstAttribute="top" secondItem="O6n-vk-3L2" secondAttribute="bottom" constant="8" id="J3D-7c-FW4"/>
+                    <constraint firstItem="RNz-7g-IdX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Ruf-Fo-pHn"/>
+                    <constraint firstAttribute="trailing" secondItem="CXb-Ef-Sdj" secondAttribute="trailing" constant="8" id="V2g-5W-Bph"/>
+                    <constraint firstItem="O6n-vk-3L2" firstAttribute="leading" secondItem="RNz-7g-IdX" secondAttribute="trailing" constant="8" id="iaI-f0-d59"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="chatLabel" destination="CXb-Ef-Sdj" id="GDp-S6-nGT"/>
+                <outlet property="nameLabel" destination="O6n-vk-3L2" id="Afo-2F-ukV"/>
+                <outlet property="profileImageView" destination="RNz-7g-IdX" id="v42-lf-IeC"/>
+                <outlet property="timeLabel" destination="XKd-fy-9dJ" id="VgA-NY-Bnd"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Screen Shot 2016-03-30 at 12.44.22 AM.png" width="80" height="80"/>
+    </resources>
+</document>

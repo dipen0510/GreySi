@@ -106,38 +106,27 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     
     [tableView deselectRowAtIndexPath:indexPath animated:true];
     
-//    switch (indexPath.row) {
-//        case 0:
-//            [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
-//            break;
-//            
-//        case 1:
-//            [self performSegueWithIdentifier:@"showAttendanceSegue" sender:nil];
-//            break;
-//            
-//        case 2:
-//            [self performSegueWithIdentifier:@"showCommentsSegue" sender:nil];
-//            break;
-//            
-//        case 3:
-//            [self performSegueWithIdentifier:@"showAnnouncementSegue" sender:nil];
-//            break;
-//            
-//        case 4:
-//            [self performSegueWithIdentifier:@"showContactUsSegue" sender:nil];
-//            break;
-//            
-//        case 5:
-//            [self performSegueWithIdentifier:@"showFreebiesSegue" sender:nil];
-//            break;
-//            
-//        case 6:
-//            [self performSegueWithIdentifier:@"showAddMoreSegue" sender:nil];
-//            break;
-//            
-//        default:
-//            break;
-//    }
+    switch (indexPath.row) {
+        case 0:
+            //[self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
+            break;
+            
+        case 1:
+            [self performSegueWithIdentifier:@"showChatSegue" sender:nil];
+            break;
+            
+        case 2:
+            //[self performSegueWithIdentifier:@"showCommentsSegue" sender:nil];
+            break;
+            
+        case 3:
+            //[self performSegueWithIdentifier:@"showAnnouncementSegue" sender:nil];
+            break;
+            
+            
+        default:
+            break;
+    }
     
 }
 

@@ -8,6 +8,7 @@ target 'GreySi' do
 pod 'AFNetworking', '~> 3.0'
 pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
 pod 'PEPhotoCropEditor'
+pod 'JSQMessagesViewController'
 
 end
 

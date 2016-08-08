@@ -73,6 +73,10 @@
 		D4CA5CD91C7DCF48000E185A /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CA5CC01C7DCF48000E185A /* tick.png */; };
 		D4CA5CDA1C7DCF48000E185A /* wallet.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CA5CC11C7DCF48000E185A /* wallet.png */; };
 		D4CA5CDB1C7DCF48000E185A /* wallet_id.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CA5CC21C7DCF48000E185A /* wallet_id.png */; };
+		D4D5A1BD1D5852AC00B15CBE /* ChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5A1BC1D5852AC00B15CBE /* ChatListViewController.m */; };
+		D4D5A1C51D5852F400B15CBE /* ChatListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5A1C31D5852F400B15CBE /* ChatListTableViewCell.m */; };
+		D4D5A1C61D5852F400B15CBE /* ChatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D5A1C41D5852F400B15CBE /* ChatListTableViewCell.xib */; };
+		D4D5A1CA1D5857C400B15CBE /* ChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5A1C91D5857C400B15CBE /* ChatDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +186,13 @@
 		D4CA5CC01C7DCF48000E185A /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
 		D4CA5CC11C7DCF48000E185A /* wallet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallet.png; sourceTree = "<group>"; };
 		D4CA5CC21C7DCF48000E185A /* wallet_id.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallet_id.png; sourceTree = "<group>"; };
+		D4D5A1BB1D5852AC00B15CBE /* ChatListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatListViewController.h; sourceTree = "<group>"; };
+		D4D5A1BC1D5852AC00B15CBE /* ChatListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatListViewController.m; sourceTree = "<group>"; };
+		D4D5A1C21D5852F400B15CBE /* ChatListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatListTableViewCell.h; path = CustomControls/ChatListTableViewCell.h; sourceTree = "<group>"; };
+		D4D5A1C31D5852F400B15CBE /* ChatListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatListTableViewCell.m; path = CustomControls/ChatListTableViewCell.m; sourceTree = "<group>"; };
+		D4D5A1C41D5852F400B15CBE /* ChatListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChatListTableViewCell.xib; path = CustomControls/ChatListTableViewCell.xib; sourceTree = "<group>"; };
+		D4D5A1C81D5857C400B15CBE /* ChatDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatDetailViewController.h; sourceTree = "<group>"; };
+		D4D5A1C91D5857C400B15CBE /* ChatDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatDetailViewController.m; sourceTree = "<group>"; };
 		D930F527C0F72C20148401A2 /* Pods-GreySi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreySi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GreySi/Pods-GreySi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -262,6 +273,7 @@
 		1888572A1CAB17D80026995E /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				D4D5A1BE1D5852BF00B15CBE /* ChatListTableViewCell */,
 				185DC1121D51409A007998F3 /* SideMenuTableViewCell */,
 				188857341CAB19C10026995E /* HomeTableViewCell */,
 				1888572B1CAB17F90026995E /* HomeTableView.xib */,
@@ -344,6 +356,10 @@
 				185DC1101D513CD1007998F3 /* SideMenuViewController.m */,
 				185DC1261D514DEA007998F3 /* ProfileDetailViewController.h */,
 				185DC1271D514DEA007998F3 /* ProfileDetailViewController.m */,
+				D4D5A1BB1D5852AC00B15CBE /* ChatListViewController.h */,
+				D4D5A1BC1D5852AC00B15CBE /* ChatListViewController.m */,
+				D4D5A1C81D5857C400B15CBE /* ChatDetailViewController.h */,
+				D4D5A1C91D5857C400B15CBE /* ChatDetailViewController.m */,
 			);
 			path = GreySi;
 			sourceTree = "<group>";
@@ -419,6 +435,16 @@
 				18AA9CA31CA6DB8500938952 /* profile_temp.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D4D5A1BE1D5852BF00B15CBE /* ChatListTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D4D5A1C21D5852F400B15CBE /* ChatListTableViewCell.h */,
+				D4D5A1C31D5852F400B15CBE /* ChatListTableViewCell.m */,
+				D4D5A1C41D5852F400B15CBE /* ChatListTableViewCell.xib */,
+			);
+			name = ChatListTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -540,6 +566,7 @@
 				D4CA5CCA1C7DCF48000E185A /* feedback_rating_full.png in Resources */,
 				D4CA5CC81C7DCF48000E185A /* email.png in Resources */,
 				185DC11E1D514348007998F3 /* logout.png in Resources */,
+				D4D5A1C61D5852F400B15CBE /* ChatListTableViewCell.xib in Resources */,
 				D4CA5C831C7DCDF7000E185A /* Assets.xcassets in Resources */,
 				D455C4741C7EDABA00C6D1CB /* signup.png in Resources */,
 				18AA9CA41CA6DB8500938952 /* profile_temp.png in Resources */,
@@ -648,8 +675,11 @@
 				185DC10B1D5136D2007998F3 /* SWRevealViewController.m in Sources */,
 				D4A7DD7A1C806CF900F82033 /* DocumentReviewViewController.m in Sources */,
 				188857291CAB17AD0026995E /* SwipeView.m in Sources */,
+				D4D5A1C51D5852F400B15CBE /* ChatListTableViewCell.m in Sources */,
+				D4D5A1CA1D5857C400B15CBE /* ChatDetailViewController.m in Sources */,
 				1888573D1CAB19F10026995E /* HomeTableViewCell.m in Sources */,
 				18DE0EA01D46A2BB00043037 /* LoginTableViewCell.m in Sources */,
+				D4D5A1BD1D5852AC00B15CBE /* ChatListViewController.m in Sources */,
 				18DE0E9D1D4697B000043037 /* GatewayViewController.m in Sources */,
 				D455C4781C7F15C300C6D1CB /* LoginViewController.m in Sources */,
 				185DC1161D5140C3007998F3 /* SideMenuTableViewCell.m in Sources */,
@@ -808,6 +838,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0a65f3e9-354a-42f7-b719-6c54dabfbaf9";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -824,6 +855,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0a65f3e9-354a-42f7-b719-6c54dabfbaf9";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
