@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185B5E921D5A6A0A00205F72 /* PostNewAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B5E911D5A6A0A00205F72 /* PostNewAdViewController.m */; };
+		185B5E971D5A6D2200205F72 /* TreatmentTabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B5E951D5A6D2200205F72 /* TreatmentTabTableViewCell.m */; };
+		185B5E981D5A6D2200205F72 /* TreatmentTabTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185B5E961D5A6D2200205F72 /* TreatmentTabTableViewCell.xib */; };
+		185B5E9B1D5A6DF500205F72 /* menhair.png in Resources */ = {isa = PBXBuildFile; fileRef = 185B5E991D5A6DF500205F72 /* menhair.png */; };
+		185B5E9C1D5A6DF500205F72 /* womenhair.png in Resources */ = {isa = PBXBuildFile; fileRef = 185B5E9A1D5A6DF500205F72 /* womenhair.png */; };
 		185DC0FA1D4E29E7007998F3 /* appLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC0F91D4E29E7007998F3 /* appLogo.png */; };
 		185DC0FC1D4E2C4C007998F3 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC0FB1D4E2C4C007998F3 /* splash.png */; };
 		185DC0FE1D4E2EE4007998F3 /* registrationProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC0FD1D4E2EE4007998F3 /* registrationProfile.png */; };
@@ -98,6 +103,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		185B5E901D5A6A0A00205F72 /* PostNewAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostNewAdViewController.h; sourceTree = "<group>"; };
+		185B5E911D5A6A0A00205F72 /* PostNewAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostNewAdViewController.m; sourceTree = "<group>"; };
+		185B5E941D5A6D2200205F72 /* TreatmentTabTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreatmentTabTableViewCell.h; path = CustomControls/TreatmentTabTableViewCell.h; sourceTree = "<group>"; };
+		185B5E951D5A6D2200205F72 /* TreatmentTabTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TreatmentTabTableViewCell.m; path = CustomControls/TreatmentTabTableViewCell.m; sourceTree = "<group>"; };
+		185B5E961D5A6D2200205F72 /* TreatmentTabTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TreatmentTabTableViewCell.xib; path = CustomControls/TreatmentTabTableViewCell.xib; sourceTree = "<group>"; };
+		185B5E991D5A6DF500205F72 /* menhair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menhair.png; sourceTree = "<group>"; };
+		185B5E9A1D5A6DF500205F72 /* womenhair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = womenhair.png; sourceTree = "<group>"; };
 		185DC0F91D4E29E7007998F3 /* appLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appLogo.png; sourceTree = "<group>"; };
 		185DC0FB1D4E2C4C007998F3 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		185DC0FD1D4E2EE4007998F3 /* registrationProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registrationProfile.png; sourceTree = "<group>"; };
@@ -235,6 +247,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		185B5E931D5A6CF600205F72 /* TreatmentTabTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				185B5E941D5A6D2200205F72 /* TreatmentTabTableViewCell.h */,
+				185B5E951D5A6D2200205F72 /* TreatmentTabTableViewCell.m */,
+				185B5E961D5A6D2200205F72 /* TreatmentTabTableViewCell.xib */,
+			);
+			name = TreatmentTabTableViewCell;
+			sourceTree = "<group>";
+		};
 		185DC1071D5136D2007998F3 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +298,7 @@
 		1888572A1CAB17D80026995E /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				185B5E931D5A6CF600205F72 /* TreatmentTabTableViewCell */,
 				D4D5A1BE1D5852BF00B15CBE /* ChatListTableViewCell */,
 				185DC1121D51409A007998F3 /* SideMenuTableViewCell */,
 				188857341CAB19C10026995E /* HomeTableViewCell */,
@@ -365,6 +388,8 @@
 				D4D5A1BC1D5852AC00B15CBE /* ChatListViewController.m */,
 				D4D5A1C81D5857C400B15CBE /* ChatDetailViewController.h */,
 				D4D5A1C91D5857C400B15CBE /* ChatDetailViewController.m */,
+				185B5E901D5A6A0A00205F72 /* PostNewAdViewController.h */,
+				185B5E911D5A6A0A00205F72 /* PostNewAdViewController.m */,
 			);
 			path = GreySi;
 			sourceTree = "<group>";
@@ -399,6 +424,8 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				185B5E991D5A6DF500205F72 /* menhair.png */,
+				185B5E9A1D5A6DF500205F72 /* womenhair.png */,
 				185DC1241D514934007998F3 /* profileDetailBG.png */,
 				185DC1221D5145C9007998F3 /* projects.png */,
 				185DC1181D514348007998F3 /* available.png */,
@@ -568,8 +595,11 @@
 				185DC0FE1D4E2EE4007998F3 /* registrationProfile.png in Resources */,
 				D4CA5CC61C7DCF48000E185A /* camera.png in Resources */,
 				D4CA5CD41C7DCF48000E185A /* rating.png in Resources */,
+				185B5E9C1D5A6DF500205F72 /* womenhair.png in Resources */,
 				D4CA5CCA1C7DCF48000E185A /* feedback_rating_full.png in Resources */,
 				D4CA5CC81C7DCF48000E185A /* email.png in Resources */,
+				185B5E9B1D5A6DF500205F72 /* menhair.png in Resources */,
+				185B5E981D5A6D2200205F72 /* TreatmentTabTableViewCell.xib in Resources */,
 				185DC11E1D514348007998F3 /* logout.png in Resources */,
 				D4D5A1C61D5852F400B15CBE /* ChatListTableViewCell.xib in Resources */,
 				D4CA5C831C7DCDF7000E185A /* Assets.xcassets in Resources */,
@@ -688,8 +718,10 @@
 				D4D5A1D41D59F47A00B15CBE /* ProfileSubDetailViewController.m in Sources */,
 				18DE0E9D1D4697B000043037 /* GatewayViewController.m in Sources */,
 				D455C4781C7F15C300C6D1CB /* LoginViewController.m in Sources */,
+				185B5E921D5A6A0A00205F72 /* PostNewAdViewController.m in Sources */,
 				185DC1161D5140C3007998F3 /* SideMenuTableViewCell.m in Sources */,
 				D455C47B1C7F203900C6D1CB /* SignUpViewController.m in Sources */,
+				185B5E971D5A6D2200205F72 /* TreatmentTabTableViewCell.m in Sources */,
 				D4CA5C7E1C7DCDF7000E185A /* SplashViewController.m in Sources */,
 				188857311CAB18520026995E /* HomeViewController.m in Sources */,
 				185DC1281D514DEA007998F3 /* ProfileDetailViewController.m in Sources */,

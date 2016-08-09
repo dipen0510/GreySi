@@ -117,7 +117,9 @@
 
 - (void) addButtonTapped {
     
-    [SVProgressHUD showSuccessWithStatus:@"Ad posted successfully"];
+    //[SVProgressHUD showSuccessWithStatus:@"Ad posted successfully"];
+    
+    [self performSegueWithIdentifier:@"showNewAdSegue" sender:nil];
     
 }
 
