@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "JSQMessagesViewController.h"
+#import "JSQMessages.h"
 
-@interface ChatDetailViewController : JSQMessagesViewController
+@interface ChatDetailViewController : JSQMessagesViewController {
+    
+    NSMutableArray* messages;
+    JSQMessagesBubbleImage* outgoingBubbleImageView;
+    JSQMessagesBubbleImage* incomingBubbleImageView;
+    JSQMessagesAvatarImage* outgoingAvtarImageView;
+    JSQMessagesAvatarImage* incomingAvtarImageView;
+    
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *profileNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;

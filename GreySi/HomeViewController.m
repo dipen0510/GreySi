@@ -127,6 +127,12 @@
     
 }
 
+- (void) profileImageTapped {
+    
+    [self performSegueWithIdentifier:@"showProfileSegue" sender:nil];
+    
+}
+
 #pragma mark - UITableView Datasource -
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -160,8 +166,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:true];
-    
-    [self performSegueWithIdentifier:@"showProfileSegue" sender:nil];
+
+    [self performSegueWithIdentifier:@"showProfileSubDetailSegue" sender:nil];
     
 }
 
@@ -183,6 +189,12 @@
     }
     
     [cell.addButton addTarget:self action:@selector(addButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    
+    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(profileImageTapped)];
+    [cell.profileImageView addGestureRecognizer:gesture];
+    [cell.profileImageView setUserInteractionEnabled:YES];
+    
+    
 }
 
 #pragma mark - Map View

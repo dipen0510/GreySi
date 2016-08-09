@@ -77,6 +77,7 @@
 		D4D5A1C51D5852F400B15CBE /* ChatListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5A1C31D5852F400B15CBE /* ChatListTableViewCell.m */; };
 		D4D5A1C61D5852F400B15CBE /* ChatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D5A1C41D5852F400B15CBE /* ChatListTableViewCell.xib */; };
 		D4D5A1CA1D5857C400B15CBE /* ChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5A1C91D5857C400B15CBE /* ChatDetailViewController.m */; };
+		D4D5A1D41D59F47A00B15CBE /* ProfileSubDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5A1D31D59F47A00B15CBE /* ProfileSubDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +194,8 @@
 		D4D5A1C41D5852F400B15CBE /* ChatListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChatListTableViewCell.xib; path = CustomControls/ChatListTableViewCell.xib; sourceTree = "<group>"; };
 		D4D5A1C81D5857C400B15CBE /* ChatDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatDetailViewController.h; sourceTree = "<group>"; };
 		D4D5A1C91D5857C400B15CBE /* ChatDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatDetailViewController.m; sourceTree = "<group>"; };
+		D4D5A1D21D59F47A00B15CBE /* ProfileSubDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileSubDetailViewController.h; sourceTree = "<group>"; };
+		D4D5A1D31D59F47A00B15CBE /* ProfileSubDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileSubDetailViewController.m; sourceTree = "<group>"; };
 		D930F527C0F72C20148401A2 /* Pods-GreySi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreySi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GreySi/Pods-GreySi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -356,6 +359,8 @@
 				185DC1101D513CD1007998F3 /* SideMenuViewController.m */,
 				185DC1261D514DEA007998F3 /* ProfileDetailViewController.h */,
 				185DC1271D514DEA007998F3 /* ProfileDetailViewController.m */,
+				D4D5A1D21D59F47A00B15CBE /* ProfileSubDetailViewController.h */,
+				D4D5A1D31D59F47A00B15CBE /* ProfileSubDetailViewController.m */,
 				D4D5A1BB1D5852AC00B15CBE /* ChatListViewController.h */,
 				D4D5A1BC1D5852AC00B15CBE /* ChatListViewController.m */,
 				D4D5A1C81D5857C400B15CBE /* ChatDetailViewController.h */,
@@ -680,6 +685,7 @@
 				1888573D1CAB19F10026995E /* HomeTableViewCell.m in Sources */,
 				18DE0EA01D46A2BB00043037 /* LoginTableViewCell.m in Sources */,
 				D4D5A1BD1D5852AC00B15CBE /* ChatListViewController.m in Sources */,
+				D4D5A1D41D59F47A00B15CBE /* ProfileSubDetailViewController.m in Sources */,
 				18DE0E9D1D4697B000043037 /* GatewayViewController.m in Sources */,
 				D455C4781C7F15C300C6D1CB /* LoginViewController.m in Sources */,
 				185DC1161D5140C3007998F3 /* SideMenuTableViewCell.m in Sources */,
