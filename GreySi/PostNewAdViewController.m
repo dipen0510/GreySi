@@ -31,26 +31,41 @@
 - (void) setupUI {
     
     treatmentOptionsArr = [[NSMutableArray alloc] initWithObjects:@"Women's Hair",@"Men's Hair",@"Manicure",@"Pedicure",@"Beauty",@"Massage",@"Other", nil];
+    cityOptionsArr = [[NSMutableArray alloc] initWithObjects:@"Stockholm",@"Manchester",@"Hamburg",@"Sussex", nil];
     
     self.treatmentButton.layer.cornerRadius = 2.0;
     self.platsButton.layer.cornerRadius = 2.0;
     self.budgetButton.layer.cornerRadius = 2.0;
+    self.selectCityButton.layer.cornerRadius = 2.0;
+    self.selectDateTimeButton.layer.cornerRadius = 2.0;
     
     [self setupLayoutForTabIndex:0];
+    
     
 }
 
 - (void) setupLayoutForTabIndex:(int)index {
     
     if (index == 0) {
+        
         self.treatmentButton.backgroundColor = [UIColor colorWithRed:202./255. green:202./255. blue:202./255. alpha:1.0];
         self.platsButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
         self.budgetButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
+        
+        self.treatmentTabView.hidden = NO;
+        self.platsTabView.hidden = YES;
+        
     }
     else if (index == 1) {
+        
         self.platsButton.backgroundColor = [UIColor colorWithRed:202./255. green:202./255. blue:202./255. alpha:1.0];
         self.treatmentButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
         self.budgetButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
+        
+        self.treatmentTabView.hidden = YES;
+        self.platsTabView.hidden = NO;
+        
+        
     }
     else if (index == 2) {
         self.budgetButton.backgroundColor = [UIColor colorWithRed:202./255. green:202./255. blue:202./255. alpha:1.0];
@@ -59,6 +74,8 @@
     }
     
 }
+
+
 
 /*
 #pragma mark - Navigation
@@ -90,8 +107,61 @@
     
 }
 
+- (IBAction)selectCityButtonTapped:(id)sender {
+    
+    [ActionSheetStringPicker showPickerWithTitle:@"Select a City"
+                                            rows:cityOptionsArr
+                                initialSelection:0
+                                       doneBlock:^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+                                           
+                                           NSLog(@"Picker: %@, Index: %ld, value: %@", picker, (long)selectedIndex, selectedValue);
+                                           [self.selectCityButton setTitle:selectedValue forState:UIControlStateNormal];
+                                           
+                                       }
+                                     cancelBlock:^(ActionSheetStringPicker *picker) {
+                                         NSLog(@"Block Picker Canceled");
+                                     }
+                                          origin:sender];
+    
+}
 
-#pragma mark - UITableView Datasource -
+- (IBAction)selectDateTimeButtonTapped:(id)sender {
+    
+    
+    [ActionSheetDatePicker showPickerWithTitle:@"Select a Date"
+                                datePickerMode:UIDatePickerModeDateAndTime
+                                  selectedDate:[NSDate date]
+                                     doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
+                                         
+                                         NSString *dateString = [NSDateFormatter localizedStringFromDate:selectedDate dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle];
+                                         NSLog(@"Picker: value: %@",dateString);
+                                         [self.selectDateTimeButton setTitle:dateString forState:UIControlStateNormal];
+                                         
+                                     }
+                                   cancelBlock:^(ActionSheetDatePicker *picker) {
+                                       NSLog(@"Block Picker Canceled");
+                                   }
+                                        origin:sender];
+
+    
+}
+
+- (IBAction)backButtonTapped:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+
+
+#pragma mark - UIPickerView Delegate
+
+
+#pragma mark - UIPickerView Datasource
+
+
+
+#pragma mark - UITableView Datasource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -125,7 +195,7 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:true];
     
-    
+    [self setupLayoutForTabIndex:1];
     
 }
 

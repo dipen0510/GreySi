@@ -108,7 +108,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     
     switch (indexPath.row) {
         case 0:
-            //[self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
+            [self performSegueWithIdentifier:@"showProjectsSegue" sender:nil];
             break;
             
         case 1:
