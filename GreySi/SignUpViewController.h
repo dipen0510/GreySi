@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *registerTableView;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 
+@property int userType;
+
 - (IBAction)profileButtonTapped:(id)sender;
 - (IBAction)submitButtonTapped:(id)sender;
 - (IBAction)backButtonTapped:(id)sender;

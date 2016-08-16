@@ -15,6 +15,8 @@
 
 @implementation SignUpViewController
 
+@synthesize userType;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -37,10 +39,11 @@
     
     self.registerTableView.layer.cornerRadius = 5.0;
     self.signUpButton.layer.cornerRadius = 5.0;
+    self.profileButton.layer.cornerRadius = self.profileButton.frame.size.height/2.;
     
 }
 
-#pragma mark - UITableView Datasource -
+#pragma mark - UITableView Datasource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -84,7 +87,8 @@
     return 50;
 }
 
-#pragma mark - UITableView Delegate -
+#pragma mark - UITableView Delegate
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:true];
@@ -93,6 +97,7 @@
     
 }
 
+#pragma mark - User Action Events
 
 - (IBAction)profileButtonTapped:(id)sender {
     
@@ -288,6 +293,91 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Form Validations
+
+- (BOOL) isRegisterFormValid {
+    
+    int flag = 0;
+    
+//    if (!UK) {
+//        
+//        if (![self validateInputWithString:self.postalCodeTxtField.text]) {
+//            flag = 1;
+//            self.validationLabel.text = NSLocalizedString(@"Postal code is not valid", nil);
+//            if ([self.postalCodeTxtField.text isEqualToString:@""]) {
+//                self.validationLabel.text = NSLocalizedString(@"Postal code is mandatory", nil);
+//            }
+//            [self.postalCodeTxtField setBackground:[UIImage imageNamed:@"SignUp_ErrorRedStrokeButton"]];
+//        }
+//        else {
+//            [self.postalCodeTxtField setBackground:[UIImage imageNamed:@"SignIn_EmailTxtBG_Gray"]];
+//        }
+//        
+//    }
+//    else{
+//        if ([self.postalCodeTxtField.text isEqualToString:@""]) {
+//            flag = 1;
+//            self.validationLabel.text = NSLocalizedString(@"Postal code is mandatory", nil);
+//            [self.postalCodeTxtField setBackground:[UIImage imageNamed:@"SignUp_ErrorRedStrokeButton"]];
+//        }
+//        else{
+//            [self.postalCodeTxtField setBackground:[UIImage imageNamed:@"SignIn_EmailTxtBG_Gray"]];
+//        }
+//        
+//        
+//    }
+//    
+//    
+//    if (!self.childsBirthDateTxtField.text || [self.childsBirthDateTxtField.text isEqualToString:@""]) {
+//        flag = 1;
+//        self.validationLabel.text = NSLocalizedString(@"Child’s birthday is mandatory", nil);
+//        [self.childsBirthDateTxtField setBackground:[UIImage imageNamed:@"SignUp_ErrorRedStrokeButton"]];
+//    }
+//    else {
+//        [self.childsBirthDateTxtField setBackground:[UIImage imageNamed:@"SignIn_EmailTxtBG_Gray"]];
+//    }
+//    
+//    if (!self.birthDateTxtField.text || [self.birthDateTxtField.text isEqualToString:@""]) {
+//        flag = 1;
+//        
+//        if (UK) {
+//            self.validationLabel.text = NSLocalizedString(@"DOB is mandatory", nil);
+//        }
+//        else {
+//            self.validationLabel.text = NSLocalizedString(@"Birthday is mandatory", nil);
+//        }
+//        
+//        
+//        [self.birthDateTxtField setBackground:[UIImage imageNamed:@"SignUp_ErrorRedStrokeButton"]];
+//    }
+//    else {
+//        [self.birthDateTxtField setBackground:[UIImage imageNamed:@"SignIn_EmailTxtBG_Gray"]];
+//    }
+//    
+//    
+//    if (flag == 1) {
+//        self.validationLabel.hidden = NO;
+//        self.validationLabel.textColor = [UIColor colorWithRed:244./255. green:97./255. blue:94./255. alpha:1.0];
+//        self.legalTextTopConstraint.constant = 45.;
+//        self.legalTextHeightConstraint.constant = 168.;
+//        
+//        if ([[UIScreen mainScreen]bounds].size.width == 320) {
+//            self.legalTextTopConstraint.constant = 40.;
+//            self.legalTextHeightConstraint.constant = 168.;
+//        }
+//        if ([[UIScreen mainScreen]bounds].size.width == 320 && [[UIScreen mainScreen]bounds].size.height==480) {
+//            self.legalTextTopConstraint.constant = 40.;
+//            self.legalTextHeightConstraint.constant = 135.;
+//        }
+//        
+//        
+//        return NO;
+//    }
+    
+    return YES;
+    
 }
 
 /*

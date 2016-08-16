@@ -86,7 +86,7 @@
                                     <color key="titleColor" red="0.2274509804" green="0.2274509804" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vQG-dM-JZT" kind="show" id="SSW-D5-job"/>
+                                    <segue destination="Wmm-MD-HuB" kind="show" id="f0G-cj-5fc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -966,7 +966,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OnX-Nj-JPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3785" y="1194"/>
+            <point key="canvasLocation" x="3837" y="1194"/>
         </scene>
         <!--What Are You View Controller-->
         <scene sceneID="yZY-rP-LWl">
@@ -1005,7 +1005,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.4823529412" green="0.1058823529" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Wvx-O2-pJY" secondAttribute="bottom" constant="8" id="0E2-bP-6Sf"/>
                                     <constraint firstItem="HLx-nB-S1F" firstAttribute="centerX" secondItem="QsW-Hr-ku9" secondAttribute="centerX" id="6bC-So-7kS"/>
@@ -1014,59 +1014,67 @@
                                     <constraint firstAttribute="height" constant="64" id="z4A-6u-WMB"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rd-mj-h9Y">
-                                <rect key="frame" x="53" y="234" width="494" height="40"/>
-                                <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Fob-Cc-XwD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GujaratiSangamMN-Bold" family="Gujarati Sangam MN" pointSize="16"/>
-                                <state key="normal" title="Hairdresser">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Wt9-yC-aHP" kind="show" id="Sk8-dm-sYh"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhQ-uJ-JcW">
-                                <rect key="frame" x="53" y="325" width="494" height="40"/>
-                                <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="80" y="325" width="440" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="dCF-eu-6EH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GujaratiSangamMN-Bold" family="Gujarati Sangam MN" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                 <state key="normal" title="Customer">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.2274509804" green="0.2274509804" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="customerButtonTapped:" destination="Wmm-MD-HuB" eventType="touchUpInside" id="DVd-bc-xAo"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncd-NT-2sd">
                                 <rect key="frame" x="180" y="299" width="240" height="2"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="5GS-6D-Uhm"/>
                                     <constraint firstAttribute="width" constant="240" id="qyN-dW-601"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rd-mj-h9Y">
+                                <rect key="frame" x="80" y="234" width="440" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Fob-Cc-XwD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                <state key="normal" title="Hairdresser">
+                                    <color key="titleColor" red="0.2274509804" green="0.2274509804" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="hairDresserButtonTapped:" destination="Wmm-MD-HuB" eventType="touchUpInside" id="EgN-Qj-ueC"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.58823529409999997" green="0.094117647060000004" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="4rd-mj-h9Y" firstAttribute="leading" secondItem="7PX-FO-Os4" secondAttribute="leadingMargin" constant="33" id="1Zh-to-A7d"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qhQ-uJ-JcW" secondAttribute="trailing" constant="33" id="1eh-fb-EaA"/>
+                            <constraint firstItem="4rd-mj-h9Y" firstAttribute="leading" secondItem="7PX-FO-Os4" secondAttribute="leadingMargin" constant="60" id="1Zh-to-A7d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qhQ-uJ-JcW" secondAttribute="trailing" constant="60" id="1eh-fb-EaA"/>
                             <constraint firstItem="QsW-Hr-ku9" firstAttribute="top" secondItem="7PX-FO-Os4" secondAttribute="topMargin" id="7qA-An-lML"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QsW-Hr-ku9" secondAttribute="trailing" constant="-20" id="NOm-Wk-RQu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4rd-mj-h9Y" secondAttribute="trailing" constant="33" id="SiV-Dz-aSc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4rd-mj-h9Y" secondAttribute="trailing" constant="60" id="SiV-Dz-aSc"/>
                             <constraint firstItem="ncd-NT-2sd" firstAttribute="centerX" secondItem="7PX-FO-Os4" secondAttribute="centerX" id="aiS-DC-hZ7"/>
                             <constraint firstItem="ncd-NT-2sd" firstAttribute="top" secondItem="4rd-mj-h9Y" secondAttribute="bottom" constant="25" id="bcE-TV-z7N"/>
-                            <constraint firstItem="qhQ-uJ-JcW" firstAttribute="leading" secondItem="7PX-FO-Os4" secondAttribute="leadingMargin" constant="33" id="cFa-dt-Hh7"/>
+                            <constraint firstItem="qhQ-uJ-JcW" firstAttribute="leading" secondItem="7PX-FO-Os4" secondAttribute="leadingMargin" constant="60" id="cFa-dt-Hh7"/>
                             <constraint firstItem="ncd-NT-2sd" firstAttribute="centerY" secondItem="7PX-FO-Os4" secondAttribute="centerY" id="hwc-YL-IZn"/>
                             <constraint firstItem="qhQ-uJ-JcW" firstAttribute="top" secondItem="ncd-NT-2sd" secondAttribute="bottom" constant="24" id="jBO-rf-4kb"/>
                             <constraint firstItem="QsW-Hr-ku9" firstAttribute="leading" secondItem="7PX-FO-Os4" secondAttribute="leadingMargin" constant="-20" id="vbn-zM-3fH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="customerButton" destination="qhQ-uJ-JcW" id="DZH-kY-hmy"/>
+                        <outlet property="hairdresserButton" destination="4rd-mj-h9Y" id="v35-9n-gko"/>
+                        <segue destination="vQG-dM-JZT" kind="show" identifier="showRegisterSegue" id="dDr-wJ-Tjf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y11-WG-jCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4539" y="1194"/>
+            <point key="canvasLocation" x="2973" y="1194"/>
         </scene>
         <!--Profile Detail View Controller-->
         <scene sceneID="Fwa-vk-UtN">
