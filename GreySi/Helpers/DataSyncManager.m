@@ -21,28 +21,29 @@
     url = [NSURL URLWithString:DomainBaseURL];
     
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
+    
     manager.requestSerializer = [AFJSONRequestSerializer serializerWithWritingOptions:NSJSONWritingPrettyPrinted];
+    
     manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     
 
     [manager POST:self.serviceKey parameters:postData progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
-        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+        //if ([responseObject isKindOfClass:[NSDictionary class]]) {
             
-//            if ([[responseObject valueForKey:statusCodeKey] isEqualToString:@"S"]) {
-//                
-//                if ([delegate respondsToSelector:@selector(didFinishServiceWithSuccess:andServiceKey:)]) {
-//                    [delegate didFinishServiceWithSuccess:[self prepareResponseObjectForServiceKey:self.serviceKey withData:responseObject] andServiceKey:self.serviceKey];
-//                }
-//                
-        
-        }
-        else {
-            if ([delegate respondsToSelector:@selector(didFinishServiceWithFailure:)]) {
-                [delegate didFinishServiceWithFailure:NSLocalizedString(@"An issue occured while processing your request. Please try again later.", nil)];
+            if ([[responseObject valueForKey:@"status"] intValue] == 1) {
+                
+                if ([delegate respondsToSelector:@selector(didFinishServiceWithSuccess:andServiceKey:)]) {
+                    [delegate didFinishServiceWithSuccess:[self prepareResponseObjectForServiceKey:self.serviceKey withData:responseObject] andServiceKey:self.serviceKey];
+                }
             }
+            else {
+            //if ([delegate respondsToSelector:@selector(didFinishServiceWithFailure:)]) {
+                [delegate didFinishServiceWithFailure:[responseObject valueForKey:@"msg"]];
+            //}
             
-        }
+            }
         
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {

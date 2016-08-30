@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184AF5401D76074D001DDD4B /* SignUpRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 184AF53F1D76074D001DDD4B /* SignUpRequestModal.m */; };
 		185B5E921D5A6A0A00205F72 /* PostNewAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B5E911D5A6A0A00205F72 /* PostNewAdViewController.m */; };
 		185B5E971D5A6D2200205F72 /* TreatmentTabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B5E951D5A6D2200205F72 /* TreatmentTabTableViewCell.m */; };
 		185B5E981D5A6D2200205F72 /* TreatmentTabTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185B5E961D5A6D2200205F72 /* TreatmentTabTableViewCell.xib */; };
@@ -42,29 +43,8 @@
 		18AA9CA41CA6DB8500938952 /* profile_temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AA9CA31CA6DB8500938952 /* profile_temp.png */; };
 		18C831921D63592500AE6058 /* SharedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8318C1D63592500AE6058 /* SharedClass.m */; };
 		18C831951D63593A00AE6058 /* DataSyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831941D63593A00AE6058 /* DataSyncManager.m */; };
-		18C831CA1D635D7200AE6058 /* GetBadgeCountRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8319C1D635D7200AE6058 /* GetBadgeCountRequestModal.m */; };
-		18C831CB1D635D7200AE6058 /* GetBadgeCountResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8319E1D635D7200AE6058 /* GetBadgeCountResponseModal.m */; };
-		18C831CC1D635D7200AE6058 /* GetMessagesRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831A01D635D7200AE6058 /* GetMessagesRequestModal.m */; };
-		18C831CD1D635D7200AE6058 /* GetMessagesResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831A21D635D7200AE6058 /* GetMessagesResponseModal.m */; };
-		18C831CE1D635D7200AE6058 /* ImageUploadRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831A41D635D7200AE6058 /* ImageUploadRequestModal.m */; };
-		18C831CF1D635D7200AE6058 /* LogoutRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831A61D635D7200AE6058 /* LogoutRequestModal.m */; };
 		18C831D01D635D7200AE6058 /* LogoutResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831A81D635D7200AE6058 /* LogoutResponseModal.m */; };
-		18C831D11D635D7200AE6058 /* NewsfeedSingleNotificationModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831AA1D635D7200AE6058 /* NewsfeedSingleNotificationModal.m */; };
-		18C831D21D635D7200AE6058 /* PointBalanceRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831AC1D635D7200AE6058 /* PointBalanceRequestModal.m */; };
-		18C831D31D635D7200AE6058 /* PointBalanceResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831AE1D635D7200AE6058 /* PointBalanceResponseModal.m */; };
-		18C831D41D635D7200AE6058 /* RegisterRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831B01D635D7200AE6058 /* RegisterRequestModal.m */; };
-		18C831D51D635D7200AE6058 /* RegisterUserDetailsRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831B21D635D7200AE6058 /* RegisterUserDetailsRequestModal.m */; };
-		18C831D61D635D7200AE6058 /* RegisterUserDetailsResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831B41D635D7200AE6058 /* RegisterUserDetailsResponseModal.m */; };
-		18C831D71D635D7200AE6058 /* RelayLoginRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831B71D635D7200AE6058 /* RelayLoginRequestModal.m */; };
-		18C831D81D635D7200AE6058 /* RelayLoginResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831B91D635D7200AE6058 /* RelayLoginResponseModal.m */; };
-		18C831D91D635D7200AE6058 /* RewardsResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831BB1D635D7200AE6058 /* RewardsResponseModal.m */; };
 		18C831DA1D635D7200AE6058 /* RewardsSingleModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831BD1D635D7200AE6058 /* RewardsSingleModal.m */; };
-		18C831DB1D635D7200AE6058 /* SetUserDetailsRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831BF1D635D7200AE6058 /* SetUserDetailsRequestModal.m */; };
-		18C831DC1D635D7200AE6058 /* TokenValidationRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831C11D635D7200AE6058 /* TokenValidationRequestModal.m */; };
-		18C831DD1D635D7200AE6058 /* TokenValidationResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831C31D635D7200AE6058 /* TokenValidationResponseModal.m */; };
-		18C831DE1D635D7200AE6058 /* TransactionHistoryRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831C51D635D7200AE6058 /* TransactionHistoryRequestModal.m */; };
-		18C831DF1D635D7200AE6058 /* TransactionHistoryResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831C71D635D7200AE6058 /* TransactionHistoryResponseModal.m */; };
-		18C831E01D635D7200AE6058 /* TransactionHistorySingleReceiptModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831C91D635D7200AE6058 /* TransactionHistorySingleReceiptModal.m */; };
 		18CF35071D5BC4C800C0A5BD /* ProjectsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF35061D5BC4C800C0A5BD /* ProjectsListViewController.m */; };
 		18CF350C1D5BC94600C0A5BD /* PostedProjectsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF350A1D5BC94600C0A5BD /* PostedProjectsTableViewCell.m */; };
 		18CF350D1D5BC94600C0A5BD /* PostedProjectsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CF350B1D5BC94600C0A5BD /* PostedProjectsTableViewCell.xib */; };
@@ -138,6 +118,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		184AF53E1D76074D001DDD4B /* SignUpRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpRequestModal.h; sourceTree = "<group>"; };
+		184AF53F1D76074D001DDD4B /* SignUpRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpRequestModal.m; sourceTree = "<group>"; };
 		185B5E901D5A6A0A00205F72 /* PostNewAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostNewAdViewController.h; sourceTree = "<group>"; };
 		185B5E911D5A6A0A00205F72 /* PostNewAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostNewAdViewController.m; sourceTree = "<group>"; };
 		185B5E941D5A6D2200205F72 /* TreatmentTabTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreatmentTabTableViewCell.h; path = CustomControls/TreatmentTabTableViewCell.h; sourceTree = "<group>"; };
@@ -187,53 +169,10 @@
 		18C831941D63593A00AE6058 /* DataSyncManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSyncManager.m; sourceTree = "<group>"; };
 		18C831981D635A1000AE6058 /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		18C831991D635A3F00AE6058 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		18C8319B1D635D7200AE6058 /* GetBadgeCountRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetBadgeCountRequestModal.h; sourceTree = "<group>"; };
-		18C8319C1D635D7200AE6058 /* GetBadgeCountRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetBadgeCountRequestModal.m; sourceTree = "<group>"; };
-		18C8319D1D635D7200AE6058 /* GetBadgeCountResponseModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetBadgeCountResponseModal.h; sourceTree = "<group>"; };
-		18C8319E1D635D7200AE6058 /* GetBadgeCountResponseModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetBadgeCountResponseModal.m; sourceTree = "<group>"; };
-		18C8319F1D635D7200AE6058 /* GetMessagesRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetMessagesRequestModal.h; sourceTree = "<group>"; };
-		18C831A01D635D7200AE6058 /* GetMessagesRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetMessagesRequestModal.m; sourceTree = "<group>"; };
-		18C831A11D635D7200AE6058 /* GetMessagesResponseModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetMessagesResponseModal.h; sourceTree = "<group>"; };
-		18C831A21D635D7200AE6058 /* GetMessagesResponseModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetMessagesResponseModal.m; sourceTree = "<group>"; };
-		18C831A31D635D7200AE6058 /* ImageUploadRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUploadRequestModal.h; sourceTree = "<group>"; };
-		18C831A41D635D7200AE6058 /* ImageUploadRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageUploadRequestModal.m; sourceTree = "<group>"; };
-		18C831A51D635D7200AE6058 /* LogoutRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoutRequestModal.h; sourceTree = "<group>"; };
-		18C831A61D635D7200AE6058 /* LogoutRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoutRequestModal.m; sourceTree = "<group>"; };
 		18C831A71D635D7200AE6058 /* LogoutResponseModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoutResponseModal.h; sourceTree = "<group>"; };
 		18C831A81D635D7200AE6058 /* LogoutResponseModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoutResponseModal.m; sourceTree = "<group>"; };
-		18C831A91D635D7200AE6058 /* NewsfeedSingleNotificationModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsfeedSingleNotificationModal.h; sourceTree = "<group>"; };
-		18C831AA1D635D7200AE6058 /* NewsfeedSingleNotificationModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsfeedSingleNotificationModal.m; sourceTree = "<group>"; };
-		18C831AB1D635D7200AE6058 /* PointBalanceRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointBalanceRequestModal.h; sourceTree = "<group>"; };
-		18C831AC1D635D7200AE6058 /* PointBalanceRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointBalanceRequestModal.m; sourceTree = "<group>"; };
-		18C831AD1D635D7200AE6058 /* PointBalanceResponseModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointBalanceResponseModal.h; sourceTree = "<group>"; };
-		18C831AE1D635D7200AE6058 /* PointBalanceResponseModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointBalanceResponseModal.m; sourceTree = "<group>"; };
-		18C831AF1D635D7200AE6058 /* RegisterRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterRequestModal.h; sourceTree = "<group>"; };
-		18C831B01D635D7200AE6058 /* RegisterRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterRequestModal.m; sourceTree = "<group>"; };
-		18C831B11D635D7200AE6058 /* RegisterUserDetailsRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterUserDetailsRequestModal.h; sourceTree = "<group>"; };
-		18C831B21D635D7200AE6058 /* RegisterUserDetailsRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterUserDetailsRequestModal.m; sourceTree = "<group>"; };
-		18C831B31D635D7200AE6058 /* RegisterUserDetailsResponseModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterUserDetailsResponseModal.h; sourceTree = "<group>"; };
-		18C831B41D635D7200AE6058 /* RegisterUserDetailsResponseModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterUserDetailsResponseModal.m; sourceTree = "<group>"; };
-		18C831B51D635D7200AE6058 /* RegsiterUserDetailsResponseModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegsiterUserDetailsResponseModal.h; sourceTree = "<group>"; };
-		18C831B61D635D7200AE6058 /* RelayLoginRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelayLoginRequestModal.h; sourceTree = "<group>"; };
-		18C831B71D635D7200AE6058 /* RelayLoginRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelayLoginRequestModal.m; sourceTree = "<group>"; };
-		18C831B81D635D7200AE6058 /* RelayLoginResponseModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RelayLoginResponseModal.h; sourceTree = "<group>"; };
-		18C831B91D635D7200AE6058 /* RelayLoginResponseModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelayLoginResponseModal.m; sourceTree = "<group>"; };
-		18C831BA1D635D7200AE6058 /* RewardsResponseModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardsResponseModal.h; sourceTree = "<group>"; };
-		18C831BB1D635D7200AE6058 /* RewardsResponseModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardsResponseModal.m; sourceTree = "<group>"; };
 		18C831BC1D635D7200AE6058 /* RewardsSingleModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardsSingleModal.h; sourceTree = "<group>"; };
 		18C831BD1D635D7200AE6058 /* RewardsSingleModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardsSingleModal.m; sourceTree = "<group>"; };
-		18C831BE1D635D7200AE6058 /* SetUserDetailsRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUserDetailsRequestModal.h; sourceTree = "<group>"; };
-		18C831BF1D635D7200AE6058 /* SetUserDetailsRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUserDetailsRequestModal.m; sourceTree = "<group>"; };
-		18C831C01D635D7200AE6058 /* TokenValidationRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenValidationRequestModal.h; sourceTree = "<group>"; };
-		18C831C11D635D7200AE6058 /* TokenValidationRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenValidationRequestModal.m; sourceTree = "<group>"; };
-		18C831C21D635D7200AE6058 /* TokenValidationResponseModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenValidationResponseModal.h; sourceTree = "<group>"; };
-		18C831C31D635D7200AE6058 /* TokenValidationResponseModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenValidationResponseModal.m; sourceTree = "<group>"; };
-		18C831C41D635D7200AE6058 /* TransactionHistoryRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionHistoryRequestModal.h; sourceTree = "<group>"; };
-		18C831C51D635D7200AE6058 /* TransactionHistoryRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionHistoryRequestModal.m; sourceTree = "<group>"; };
-		18C831C61D635D7200AE6058 /* TransactionHistoryResponseModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionHistoryResponseModal.h; sourceTree = "<group>"; };
-		18C831C71D635D7200AE6058 /* TransactionHistoryResponseModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionHistoryResponseModal.m; sourceTree = "<group>"; };
-		18C831C81D635D7200AE6058 /* TransactionHistorySingleReceiptModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionHistorySingleReceiptModal.h; sourceTree = "<group>"; };
-		18C831C91D635D7200AE6058 /* TransactionHistorySingleReceiptModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionHistorySingleReceiptModal.m; sourceTree = "<group>"; };
 		18CF35051D5BC4C800C0A5BD /* ProjectsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectsListViewController.h; sourceTree = "<group>"; };
 		18CF35061D5BC4C800C0A5BD /* ProjectsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsListViewController.m; sourceTree = "<group>"; };
 		18CF35091D5BC94600C0A5BD /* PostedProjectsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostedProjectsTableViewCell.h; path = CustomControls/PostedProjectsTableViewCell.h; sourceTree = "<group>"; };
@@ -444,53 +383,12 @@
 		18C8319A1D635D7200AE6058 /* Modals */ = {
 			isa = PBXGroup;
 			children = (
-				18C8319B1D635D7200AE6058 /* GetBadgeCountRequestModal.h */,
-				18C8319C1D635D7200AE6058 /* GetBadgeCountRequestModal.m */,
-				18C8319D1D635D7200AE6058 /* GetBadgeCountResponseModal.h */,
-				18C8319E1D635D7200AE6058 /* GetBadgeCountResponseModal.m */,
-				18C8319F1D635D7200AE6058 /* GetMessagesRequestModal.h */,
-				18C831A01D635D7200AE6058 /* GetMessagesRequestModal.m */,
-				18C831A11D635D7200AE6058 /* GetMessagesResponseModal.h */,
-				18C831A21D635D7200AE6058 /* GetMessagesResponseModal.m */,
-				18C831A31D635D7200AE6058 /* ImageUploadRequestModal.h */,
-				18C831A41D635D7200AE6058 /* ImageUploadRequestModal.m */,
-				18C831A51D635D7200AE6058 /* LogoutRequestModal.h */,
-				18C831A61D635D7200AE6058 /* LogoutRequestModal.m */,
 				18C831A71D635D7200AE6058 /* LogoutResponseModal.h */,
 				18C831A81D635D7200AE6058 /* LogoutResponseModal.m */,
-				18C831A91D635D7200AE6058 /* NewsfeedSingleNotificationModal.h */,
-				18C831AA1D635D7200AE6058 /* NewsfeedSingleNotificationModal.m */,
-				18C831AB1D635D7200AE6058 /* PointBalanceRequestModal.h */,
-				18C831AC1D635D7200AE6058 /* PointBalanceRequestModal.m */,
-				18C831AD1D635D7200AE6058 /* PointBalanceResponseModal.h */,
-				18C831AE1D635D7200AE6058 /* PointBalanceResponseModal.m */,
-				18C831AF1D635D7200AE6058 /* RegisterRequestModal.h */,
-				18C831B01D635D7200AE6058 /* RegisterRequestModal.m */,
-				18C831B11D635D7200AE6058 /* RegisterUserDetailsRequestModal.h */,
-				18C831B21D635D7200AE6058 /* RegisterUserDetailsRequestModal.m */,
-				18C831B31D635D7200AE6058 /* RegisterUserDetailsResponseModal.h */,
-				18C831B41D635D7200AE6058 /* RegisterUserDetailsResponseModal.m */,
-				18C831B51D635D7200AE6058 /* RegsiterUserDetailsResponseModal.h */,
-				18C831B61D635D7200AE6058 /* RelayLoginRequestModal.h */,
-				18C831B71D635D7200AE6058 /* RelayLoginRequestModal.m */,
-				18C831B81D635D7200AE6058 /* RelayLoginResponseModal.h */,
-				18C831B91D635D7200AE6058 /* RelayLoginResponseModal.m */,
-				18C831BA1D635D7200AE6058 /* RewardsResponseModal.h */,
-				18C831BB1D635D7200AE6058 /* RewardsResponseModal.m */,
 				18C831BC1D635D7200AE6058 /* RewardsSingleModal.h */,
 				18C831BD1D635D7200AE6058 /* RewardsSingleModal.m */,
-				18C831BE1D635D7200AE6058 /* SetUserDetailsRequestModal.h */,
-				18C831BF1D635D7200AE6058 /* SetUserDetailsRequestModal.m */,
-				18C831C01D635D7200AE6058 /* TokenValidationRequestModal.h */,
-				18C831C11D635D7200AE6058 /* TokenValidationRequestModal.m */,
-				18C831C21D635D7200AE6058 /* TokenValidationResponseModal.h */,
-				18C831C31D635D7200AE6058 /* TokenValidationResponseModal.m */,
-				18C831C41D635D7200AE6058 /* TransactionHistoryRequestModal.h */,
-				18C831C51D635D7200AE6058 /* TransactionHistoryRequestModal.m */,
-				18C831C61D635D7200AE6058 /* TransactionHistoryResponseModal.h */,
-				18C831C71D635D7200AE6058 /* TransactionHistoryResponseModal.m */,
-				18C831C81D635D7200AE6058 /* TransactionHistorySingleReceiptModal.h */,
-				18C831C91D635D7200AE6058 /* TransactionHistorySingleReceiptModal.m */,
+				184AF53E1D76074D001DDD4B /* SignUpRequestModal.h */,
+				184AF53F1D76074D001DDD4B /* SignUpRequestModal.m */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -933,57 +831,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				18CF35151D5BCE6100C0A5BD /* BidsReceivedTableViewCell.m in Sources */,
+				184AF5401D76074D001DDD4B /* SignUpRequestModal.m in Sources */,
 				185DC10B1D5136D2007998F3 /* SWRevealViewController.m in Sources */,
-				18C831D31D635D7200AE6058 /* PointBalanceResponseModal.m in Sources */,
 				18CF35241D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.m in Sources */,
 				D4A7DD7A1C806CF900F82033 /* DocumentReviewViewController.m in Sources */,
 				18C831951D63593A00AE6058 /* DataSyncManager.m in Sources */,
 				18CF35071D5BC4C800C0A5BD /* ProjectsListViewController.m in Sources */,
-				18C831D91D635D7200AE6058 /* RewardsResponseModal.m in Sources */,
 				188857291CAB17AD0026995E /* SwipeView.m in Sources */,
 				D4D5A1C51D5852F400B15CBE /* ChatListTableViewCell.m in Sources */,
-				18C831D41D635D7200AE6058 /* RegisterRequestModal.m in Sources */,
 				D4D5A1CA1D5857C400B15CBE /* ChatDetailViewController.m in Sources */,
 				1888573D1CAB19F10026995E /* HomeTableViewCell.m in Sources */,
 				18DE0EA01D46A2BB00043037 /* LoginTableViewCell.m in Sources */,
 				D4D5A1BD1D5852AC00B15CBE /* ChatListViewController.m in Sources */,
-				18C831DD1D635D7200AE6058 /* TokenValidationResponseModal.m in Sources */,
-				18C831DF1D635D7200AE6058 /* TransactionHistoryResponseModal.m in Sources */,
 				D4D5A1D41D59F47A00B15CBE /* ProfileSubDetailViewController.m in Sources */,
 				18DE0E9D1D4697B000043037 /* GatewayViewController.m in Sources */,
-				18C831CA1D635D7200AE6058 /* GetBadgeCountRequestModal.m in Sources */,
-				18C831CB1D635D7200AE6058 /* GetBadgeCountResponseModal.m in Sources */,
 				D455C4781C7F15C300C6D1CB /* LoginViewController.m in Sources */,
-				18C831D11D635D7200AE6058 /* NewsfeedSingleNotificationModal.m in Sources */,
 				185B5E921D5A6A0A00205F72 /* PostNewAdViewController.m in Sources */,
 				185DC1161D5140C3007998F3 /* SideMenuTableViewCell.m in Sources */,
 				D455C47B1C7F203900C6D1CB /* SignUpViewController.m in Sources */,
 				185B5E971D5A6D2200205F72 /* TreatmentTabTableViewCell.m in Sources */,
 				D4CA5C7E1C7DCDF7000E185A /* SplashViewController.m in Sources */,
 				188857311CAB18520026995E /* HomeViewController.m in Sources */,
-				18C831DE1D635D7200AE6058 /* TransactionHistoryRequestModal.m in Sources */,
-				18C831D51D635D7200AE6058 /* RegisterUserDetailsRequestModal.m in Sources */,
-				18C831D71D635D7200AE6058 /* RelayLoginRequestModal.m in Sources */,
 				18C831DA1D635D7200AE6058 /* RewardsSingleModal.m in Sources */,
-				18C831E01D635D7200AE6058 /* TransactionHistorySingleReceiptModal.m in Sources */,
-				18C831CE1D635D7200AE6058 /* ImageUploadRequestModal.m in Sources */,
-				18C831D61D635D7200AE6058 /* RegisterUserDetailsResponseModal.m in Sources */,
 				185DC1281D514DEA007998F3 /* ProfileDetailViewController.m in Sources */,
 				D4A7DD771C806CE100F82033 /* WhatAreYouViewController.m in Sources */,
-				18C831D81D635D7200AE6058 /* RelayLoginResponseModal.m in Sources */,
 				18C831921D63592500AE6058 /* SharedClass.m in Sources */,
-				18C831CF1D635D7200AE6058 /* LogoutRequestModal.m in Sources */,
 				18CF350C1D5BC94600C0A5BD /* PostedProjectsTableViewCell.m in Sources */,
 				18C831D01D635D7200AE6058 /* LogoutResponseModal.m in Sources */,
-				18C831CC1D635D7200AE6058 /* GetMessagesRequestModal.m in Sources */,
-				18C831D21D635D7200AE6058 /* PointBalanceRequestModal.m in Sources */,
-				18C831DC1D635D7200AE6058 /* TokenValidationRequestModal.m in Sources */,
 				18CF351E1D5BD23000C0A5BD /* ActiveProjectsTableViewCell.m in Sources */,
-				18C831CD1D635D7200AE6058 /* GetMessagesResponseModal.m in Sources */,
 				D4CA5C7B1C7DCDF7000E185A /* AppDelegate.m in Sources */,
 				18CF35101D5BCDA900C0A5BD /* BidsReceivedListViewController.m in Sources */,
 				185DC1111D513CD1007998F3 /* SideMenuViewController.m in Sources */,
-				18C831DB1D635D7200AE6058 /* SetUserDetailsRequestModal.m in Sources */,
 				D4CA5C781C7DCDF7000E185A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

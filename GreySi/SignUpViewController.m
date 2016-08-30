@@ -8,6 +8,7 @@
 
 #import "SignUpViewController.h"
 #import "LoginTableViewCell.h"
+#import "SignUpRequestModal.h"
 
 @interface SignUpViewController ()
 
@@ -39,7 +40,75 @@
     
     self.registerTableView.layer.cornerRadius = 5.0;
     self.signUpButton.layer.cornerRadius = 5.0;
+    self.profileButton.clipsToBounds = YES;
     self.profileButton.layer.cornerRadius = self.profileButton.frame.size.height/2.;
+    
+}
+
+- (void) startSignUpService {
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kSignUpService;
+    manager.delegate = self;
+    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForSignUp]];
+    
+}
+
+#pragma mark - DATASYNCMANAGER Delegates
+
+-(void) didFinishServiceWithSuccess:(id)responseData andServiceKey:(NSString *)requestServiceKey {
+    
+    [SVProgressHUD dismiss];
+    
+    if ([requestServiceKey isEqualToString:kSignUpService]) {
+        
+        
+        
+    }
+    
+    
+    
+}
+
+
+- (void) didFinishServiceWithFailure:(NSString *)errorMsg {
+    
+    
+    [SVProgressHUD dismiss];
+    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil
+                                                  message:NSLocalizedString(@"An issue occured while processing your request. Please try again later.", nil)
+                                                 delegate:self
+                                        cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                        otherButtonTitles: nil];
+    
+    if (![errorMsg isEqualToString:@""]) {
+        [alert setMessage:errorMsg];
+    }
+    
+    if ([errorMsg isEqualToString:NSLocalizedString(@"Verify your internet connection and try again", nil)]) {
+        [alert setTitle:NSLocalizedString(@"Connection unsuccessful", nil)];
+    }
+    
+    
+    [alert show];
+    
+    return;
+    
+}
+
+#pragma mark - Modalobject
+
+- (NSMutableDictionary *) prepareDictionaryForSignUp {
+    
+    SignUpRequestModal* signUpObj = [[SignUpRequestModal alloc] init];
+    
+    signUpObj.name = nameText;
+    signUpObj.email = emailText;
+    signUpObj.password = passwordText;
+    signUpObj.flag = [NSString stringWithFormat:@"%d",userType];
+    signUpObj.profilePic = [self encodeToBase64String:profileImage];
+    
+    return [signUpObj createRequestDictionary];
     
 }
 
@@ -71,10 +140,12 @@
     }
     else if (indexPath.row == 2) {
         cell.txtField.placeholder = @"Password";
+        cell.txtField.secureTextEntry = YES;
         cell.separatorView.hidden = NO;
     }
     else if (indexPath.row == 3) {
         cell.txtField.placeholder = @"Confirm Password";
+        cell.txtField.secureTextEntry = YES;
         cell.separatorView.hidden = YES;
     }
     
@@ -112,9 +183,52 @@
 
 - (IBAction)submitButtonTapped:(id)sender {
     
-    [SVProgressHUD showSuccessWithStatus:@"Registered successfully"];
+    //[SVProgressHUD showSuccessWithStatus:@"Registered successfully"];
+    
+    LoginTableViewCell* tmpCell = (LoginTableViewCell *)[_registerTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    nameText = tmpCell.txtField.text;
+    
+    tmpCell = (LoginTableViewCell *)[_registerTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    emailText = tmpCell.txtField.text;
+    
+    tmpCell = (LoginTableViewCell *)[_registerTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+    passwordText = tmpCell.txtField.text;
+    
+    tmpCell = (LoginTableViewCell *)[_registerTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+    
+    
+    BOOL emailIsValid = [self validateEmailWithString:emailText];
+    
+    
+    if ([emailText isEqualToString:@""]) {
+        
+        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your email address", nil)];
+    }
+    
+    else if (!emailIsValid) {
+        
+        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter a valid email address", nil)];
+    }
+    else if ([passwordText isEqualToString:@""]) {
+        
+        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your password", nil)];
+    }
+    else if ([nameText isEqualToString:@""]) {
+        
+        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your name", nil)];
+    }
+    else if (!profileImage) {
+        
+        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your profile image", nil)];
+    }
+    else {
+        [SVProgressHUD showWithStatus:@"Registering..."];
+        [self startSignUpService];
+    }
     
 }
+
+
 
 - (IBAction)backButtonTapped:(id)sender {
     
@@ -297,86 +411,57 @@
 
 #pragma mark - Form Validations
 
-- (BOOL) isRegisterFormValid {
+- (BOOL)validateEmailWithString:(NSString*)email {
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:email];
+}
+
+- (NSString *)encodeToBase64String:(UIImage *)image {    
+    return [UIImagePNGRepresentation([self resizeImage:image]) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+}
+
+-(UIImage *)resizeImage:(UIImage *)image
+{
+    float actualHeight = image.size.height;
+    float actualWidth = image.size.width;
+    float maxHeight = 300.0;
+    float maxWidth = 400.0;
+    float imgRatio = actualWidth/actualHeight;
+    float maxRatio = maxWidth/maxHeight;
+    float compressionQuality = 0.5;//50 percent compression
     
-    int flag = 0;
+    if (actualHeight > maxHeight || actualWidth > maxWidth)
+    {
+        if(imgRatio < maxRatio)
+        {
+            //adjust width according to maxHeight
+            imgRatio = maxHeight / actualHeight;
+            actualWidth = imgRatio * actualWidth;
+            actualHeight = maxHeight;
+        }
+        else if(imgRatio > maxRatio)
+        {
+            //adjust height according to maxWidth
+            imgRatio = maxWidth / actualWidth;
+            actualHeight = imgRatio * actualHeight;
+            actualWidth = maxWidth;
+        }
+        else
+        {
+            actualHeight = maxHeight;
+            actualWidth = maxWidth;
+        }
+    }
     
-//    if (!UK) {
-//        
-//        if (![self validateInputWithString:self.postalCodeTxtField.text]) {
-//            flag = 1;
-//            self.validationLabel.text = NSLocalizedString(@"Postal code is not valid", nil);
-//            if ([self.postalCodeTxtField.text isEqualToString:@""]) {
-//                self.validationLabel.text = NSLocalizedString(@"Postal code is mandatory", nil);
-//            }
-//            [self.postalCodeTxtField setBackground:[UIImage imageNamed:@"SignUp_ErrorRedStrokeButton"]];
-//        }
-//        else {
-//            [self.postalCodeTxtField setBackground:[UIImage imageNamed:@"SignIn_EmailTxtBG_Gray"]];
-//        }
-//        
-//    }
-//    else{
-//        if ([self.postalCodeTxtField.text isEqualToString:@""]) {
-//            flag = 1;
-//            self.validationLabel.text = NSLocalizedString(@"Postal code is mandatory", nil);
-//            [self.postalCodeTxtField setBackground:[UIImage imageNamed:@"SignUp_ErrorRedStrokeButton"]];
-//        }
-//        else{
-//            [self.postalCodeTxtField setBackground:[UIImage imageNamed:@"SignIn_EmailTxtBG_Gray"]];
-//        }
-//        
-//        
-//    }
-//    
-//    
-//    if (!self.childsBirthDateTxtField.text || [self.childsBirthDateTxtField.text isEqualToString:@""]) {
-//        flag = 1;
-//        self.validationLabel.text = NSLocalizedString(@"Child’s birthday is mandatory", nil);
-//        [self.childsBirthDateTxtField setBackground:[UIImage imageNamed:@"SignUp_ErrorRedStrokeButton"]];
-//    }
-//    else {
-//        [self.childsBirthDateTxtField setBackground:[UIImage imageNamed:@"SignIn_EmailTxtBG_Gray"]];
-//    }
-//    
-//    if (!self.birthDateTxtField.text || [self.birthDateTxtField.text isEqualToString:@""]) {
-//        flag = 1;
-//        
-//        if (UK) {
-//            self.validationLabel.text = NSLocalizedString(@"DOB is mandatory", nil);
-//        }
-//        else {
-//            self.validationLabel.text = NSLocalizedString(@"Birthday is mandatory", nil);
-//        }
-//        
-//        
-//        [self.birthDateTxtField setBackground:[UIImage imageNamed:@"SignUp_ErrorRedStrokeButton"]];
-//    }
-//    else {
-//        [self.birthDateTxtField setBackground:[UIImage imageNamed:@"SignIn_EmailTxtBG_Gray"]];
-//    }
-//    
-//    
-//    if (flag == 1) {
-//        self.validationLabel.hidden = NO;
-//        self.validationLabel.textColor = [UIColor colorWithRed:244./255. green:97./255. blue:94./255. alpha:1.0];
-//        self.legalTextTopConstraint.constant = 45.;
-//        self.legalTextHeightConstraint.constant = 168.;
-//        
-//        if ([[UIScreen mainScreen]bounds].size.width == 320) {
-//            self.legalTextTopConstraint.constant = 40.;
-//            self.legalTextHeightConstraint.constant = 168.;
-//        }
-//        if ([[UIScreen mainScreen]bounds].size.width == 320 && [[UIScreen mainScreen]bounds].size.height==480) {
-//            self.legalTextTopConstraint.constant = 40.;
-//            self.legalTextHeightConstraint.constant = 135.;
-//        }
-//        
-//        
-//        return NO;
-//    }
+    CGRect rect = CGRectMake(0.0, 0.0, actualWidth, actualHeight);
+    UIGraphicsBeginImageContext(rect.size);
+    [image drawInRect:rect];
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    NSData *imageData = UIImageJPEGRepresentation(img, compressionQuality);
+    UIGraphicsEndImageContext();
     
-    return YES;
+    return [UIImage imageWithData:imageData];
     
 }
 
