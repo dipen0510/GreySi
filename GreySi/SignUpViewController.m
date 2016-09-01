@@ -9,6 +9,7 @@
 #import "SignUpViewController.h"
 #import "LoginTableViewCell.h"
 #import "SignUpRequestModal.h"
+#import "SignUpResponseModal.h"
 
 @interface SignUpViewController ()
 
@@ -56,13 +57,16 @@
 
 #pragma mark - DATASYNCMANAGER Delegates
 
--(void) didFinishServiceWithSuccess:(id)responseData andServiceKey:(NSString *)requestServiceKey {
+-(void) didFinishServiceWithSuccess:(SignUpResponseModal *)responseData andServiceKey:(NSString *)requestServiceKey {
     
     [SVProgressHUD dismiss];
+    [SVProgressHUD showSuccessWithStatus:@"Registration Successful"];
     
     if ([requestServiceKey isEqualToString:kSignUpService]) {
         
+        [[SharedClass sharedInstance] setUserObj:responseData];
         
+        [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
         
     }
     

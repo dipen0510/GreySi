@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController<DataSyncManagerDelegate> {
+    
+    NSString* emailText;
+    NSString* passwordText;
+    
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *loginTableView;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;

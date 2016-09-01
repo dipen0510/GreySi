@@ -43,7 +43,6 @@
 		18AA9CA41CA6DB8500938952 /* profile_temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AA9CA31CA6DB8500938952 /* profile_temp.png */; };
 		18C831921D63592500AE6058 /* SharedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8318C1D63592500AE6058 /* SharedClass.m */; };
 		18C831951D63593A00AE6058 /* DataSyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831941D63593A00AE6058 /* DataSyncManager.m */; };
-		18C831D01D635D7200AE6058 /* LogoutResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831A81D635D7200AE6058 /* LogoutResponseModal.m */; };
 		18C831DA1D635D7200AE6058 /* RewardsSingleModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831BD1D635D7200AE6058 /* RewardsSingleModal.m */; };
 		18CF35071D5BC4C800C0A5BD /* ProjectsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF35061D5BC4C800C0A5BD /* ProjectsListViewController.m */; };
 		18CF350C1D5BC94600C0A5BD /* PostedProjectsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF350A1D5BC94600C0A5BD /* PostedProjectsTableViewCell.m */; };
@@ -65,6 +64,8 @@
 		D455C4741C7EDABA00C6D1CB /* signup.png in Resources */ = {isa = PBXBuildFile; fileRef = D455C46E1C7EDABA00C6D1CB /* signup.png */; };
 		D455C4781C7F15C300C6D1CB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D455C4771C7F15C300C6D1CB /* LoginViewController.m */; };
 		D455C47B1C7F203900C6D1CB /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D455C47A1C7F203900C6D1CB /* SignUpViewController.m */; };
+		D482E7ED1D7811FD00BC30DA /* SignUpResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = D482E7EC1D7811FD00BC30DA /* SignUpResponseModal.m */; };
+		D482E7F01D78291B00BC30DA /* LoginRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = D482E7EF1D78291B00BC30DA /* LoginRequestModal.m */; };
 		D4A7DD771C806CE100F82033 /* WhatAreYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A7DD761C806CE100F82033 /* WhatAreYouViewController.m */; };
 		D4A7DD7A1C806CF900F82033 /* DocumentReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A7DD791C806CF900F82033 /* DocumentReviewViewController.m */; };
 		D4CA5C781C7DCDF7000E185A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CA5C771C7DCDF7000E185A /* main.m */; };
@@ -169,8 +170,6 @@
 		18C831941D63593A00AE6058 /* DataSyncManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSyncManager.m; sourceTree = "<group>"; };
 		18C831981D635A1000AE6058 /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		18C831991D635A3F00AE6058 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		18C831A71D635D7200AE6058 /* LogoutResponseModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoutResponseModal.h; sourceTree = "<group>"; };
-		18C831A81D635D7200AE6058 /* LogoutResponseModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoutResponseModal.m; sourceTree = "<group>"; };
 		18C831BC1D635D7200AE6058 /* RewardsSingleModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardsSingleModal.h; sourceTree = "<group>"; };
 		18C831BD1D635D7200AE6058 /* RewardsSingleModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardsSingleModal.m; sourceTree = "<group>"; };
 		18CF35051D5BC4C800C0A5BD /* ProjectsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectsListViewController.h; sourceTree = "<group>"; };
@@ -204,6 +203,10 @@
 		D455C4771C7F15C300C6D1CB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D455C4791C7F203900C6D1CB /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		D455C47A1C7F203900C6D1CB /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		D482E7EB1D7811FD00BC30DA /* SignUpResponseModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpResponseModal.h; sourceTree = "<group>"; };
+		D482E7EC1D7811FD00BC30DA /* SignUpResponseModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpResponseModal.m; sourceTree = "<group>"; };
+		D482E7EE1D78291B00BC30DA /* LoginRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestModal.h; sourceTree = "<group>"; };
+		D482E7EF1D78291B00BC30DA /* LoginRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestModal.m; sourceTree = "<group>"; };
 		D4A7DD751C806CE100F82033 /* WhatAreYouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhatAreYouViewController.h; sourceTree = "<group>"; };
 		D4A7DD761C806CE100F82033 /* WhatAreYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhatAreYouViewController.m; sourceTree = "<group>"; };
 		D4A7DD781C806CF900F82033 /* DocumentReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentReviewViewController.h; sourceTree = "<group>"; };
@@ -383,12 +386,14 @@
 		18C8319A1D635D7200AE6058 /* Modals */ = {
 			isa = PBXGroup;
 			children = (
-				18C831A71D635D7200AE6058 /* LogoutResponseModal.h */,
-				18C831A81D635D7200AE6058 /* LogoutResponseModal.m */,
 				18C831BC1D635D7200AE6058 /* RewardsSingleModal.h */,
 				18C831BD1D635D7200AE6058 /* RewardsSingleModal.m */,
 				184AF53E1D76074D001DDD4B /* SignUpRequestModal.h */,
 				184AF53F1D76074D001DDD4B /* SignUpRequestModal.m */,
+				D482E7EB1D7811FD00BC30DA /* SignUpResponseModal.h */,
+				D482E7EC1D7811FD00BC30DA /* SignUpResponseModal.m */,
+				D482E7EE1D78291B00BC30DA /* LoginRequestModal.h */,
+				D482E7EF1D78291B00BC30DA /* LoginRequestModal.m */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -848,6 +853,7 @@
 				D455C4781C7F15C300C6D1CB /* LoginViewController.m in Sources */,
 				185B5E921D5A6A0A00205F72 /* PostNewAdViewController.m in Sources */,
 				185DC1161D5140C3007998F3 /* SideMenuTableViewCell.m in Sources */,
+				D482E7ED1D7811FD00BC30DA /* SignUpResponseModal.m in Sources */,
 				D455C47B1C7F203900C6D1CB /* SignUpViewController.m in Sources */,
 				185B5E971D5A6D2200205F72 /* TreatmentTabTableViewCell.m in Sources */,
 				D4CA5C7E1C7DCDF7000E185A /* SplashViewController.m in Sources */,
@@ -857,8 +863,8 @@
 				D4A7DD771C806CE100F82033 /* WhatAreYouViewController.m in Sources */,
 				18C831921D63592500AE6058 /* SharedClass.m in Sources */,
 				18CF350C1D5BC94600C0A5BD /* PostedProjectsTableViewCell.m in Sources */,
-				18C831D01D635D7200AE6058 /* LogoutResponseModal.m in Sources */,
 				18CF351E1D5BD23000C0A5BD /* ActiveProjectsTableViewCell.m in Sources */,
+				D482E7F01D78291B00BC30DA /* LoginRequestModal.m in Sources */,
 				D4CA5C7B1C7DCDF7000E185A /* AppDelegate.m in Sources */,
 				18CF35101D5BCDA900C0A5BD /* BidsReceivedListViewController.m in Sources */,
 				185DC1111D513CD1007998F3 /* SideMenuViewController.m in Sources */,

@@ -12,5 +12,6 @@
 #define DomainBaseURL @"http://greyscissors.com/GreySi"
 
 #define kSignUpService @"signUp.php"
+#define kLoginService @"login.php"
 
 #endif /* Settings_h */

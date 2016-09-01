@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "LoginTableViewCell.h"
+#import "LoginRequestModal.h"
+#import "SignUpResponseModal.h"
 
 @interface LoginViewController ()
 
@@ -45,6 +47,73 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) startLoginService {
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kLoginService;
+    manager.delegate = self;
+    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForLogin]];
+    
+}
+
+#pragma mark - DATASYNCMANAGER Delegates
+
+-(void) didFinishServiceWithSuccess:(SignUpResponseModal *)responseData andServiceKey:(NSString *)requestServiceKey {
+    
+    [SVProgressHUD dismiss];
+    [SVProgressHUD showSuccessWithStatus:@"Login Successful"];
+    
+    if ([requestServiceKey isEqualToString:kLoginService]) {
+        
+        [[SharedClass sharedInstance] setUserObj:responseData];
+        
+        [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
+        
+    }
+    
+    
+    
+}
+
+
+- (void) didFinishServiceWithFailure:(NSString *)errorMsg {
+    
+    
+    [SVProgressHUD dismiss];
+    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil
+                                                  message:NSLocalizedString(@"An issue occured while processing your request. Please try again later.", nil)
+                                                 delegate:self
+                                        cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                        otherButtonTitles: nil];
+    
+    if (![errorMsg isEqualToString:@""]) {
+        [alert setMessage:errorMsg];
+    }
+    
+    if ([errorMsg isEqualToString:NSLocalizedString(@"Verify your internet connection and try again", nil)]) {
+        [alert setTitle:NSLocalizedString(@"Connection unsuccessful", nil)];
+    }
+    
+    
+    [alert show];
+    
+    return;
+    
+}
+
+#pragma mark - Modalobject
+
+- (NSMutableDictionary *) prepareDictionaryForLogin {
+    
+    LoginRequestModal* signUpObj = [[LoginRequestModal alloc] init];
+    
+    signUpObj.email = emailText;
+    signUpObj.password = passwordText;
+    
+    return [signUpObj createRequestDictionary];
+    
+}
+
 /*
 #pragma mark - Navigation
 
@@ -76,6 +145,7 @@
     if (indexPath.row) {
         cell.txtField.placeholder = @"PassWord";
         cell.separatorView.hidden = YES;
+        cell.txtField.secureTextEntry = YES;
     }
     else {
         cell.txtField.placeholder = @"Email";
@@ -108,7 +178,37 @@
 
 - (IBAction)submitButtonTapped:(id)sender {
     
-    [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
+    
+    LoginTableViewCell* tmpCell = (LoginTableViewCell *)[_loginTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    emailText = tmpCell.txtField.text;
+    
+    tmpCell = (LoginTableViewCell *)[_loginTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    passwordText = tmpCell.txtField.text;
+    
+    
+    
+    BOOL emailIsValid = [self validateEmailWithString:emailText];
+    
+    
+    if ([emailText isEqualToString:@""]) {
+        
+        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your email address", nil)];
+    }
+    
+    else if (!emailIsValid) {
+        
+        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter a valid email address", nil)];
+    }
+    else if ([passwordText isEqualToString:@""]) {
+        
+        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your password", nil)];
+    }
+    else {
+        [SVProgressHUD showWithStatus:@"Logging In..."];
+        [self startLoginService];
+    }
+    
+    
     
 }
 
@@ -117,6 +217,15 @@
     
     [self.view endEditing:YES];
     
+}
+
+
+#pragma mark - Form Validations
+
+- (BOOL)validateEmailWithString:(NSString*)email {
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:email];
 }
 
 @end

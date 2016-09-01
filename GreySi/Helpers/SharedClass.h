@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "SignUpResponseModal.h"
 
 @interface SharedClass : NSObject {
 
@@ -15,6 +16,8 @@
 
 + sharedInstance;
 
+
+@property (nonatomic, strong) SignUpResponseModal* userObj;
 
 -(NSDate *)getCurrentUTCFormatDate;
 -(NSString* )getCurrentUTCFormatDateString;

@@ -7,6 +7,7 @@
 //
 
 #import "DataSyncManager.h"
+#import "SignUpResponseModal.h"
 
 
 @implementation DataSyncManager
@@ -28,7 +29,11 @@
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     
 
-    [manager POST:self.serviceKey parameters:postData progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+    [manager POST:self.serviceKey parameters:postData constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        
+        
+        
+    } progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         
         //if ([responseObject isKindOfClass:[NSDictionary class]]) {
             
@@ -113,74 +118,12 @@
 
 - (id) prepareResponseObjectForServiceKey:(NSString *) responseServiceKey withData:(id)responseObj {
     
-//    if ([responseServiceKey isEqualToString:kLoginService]) {
-//        
-//        RelayLoginResponseModal* response = [[RelayLoginResponseModal alloc] initWithDictionary:responseObj];
-//        return response;
-//        
-//    }
-//    if ([responseServiceKey isEqualToString:kTokenValidService]) {
-//        
-//        TokenValidationResponseModal* response = [[TokenValidationResponseModal alloc] initWithDictionary:responseObj];
-//        return response;
-//        
-//    }
-//    
-//    if ([responseServiceKey isEqualToString:kLogoutService]) {
-//        
-//        LogoutResponseModal* response = [[LogoutResponseModal alloc] initWithDictionary:responseObj];
-//        return response;
-//        
-//    }
-//    
-//    if ([responseServiceKey isEqualToString:kPointsBalance]) {
-//        
-//        PointBalanceResponseModal* response = [[PointBalanceResponseModal alloc] initWithDictionary:responseObj];
-//        return response;
-//        
-//    }
-//    
-//    if ([responseServiceKey isEqualToString:kTransactionHistory]) {
-//        
-//        TransactionHistoryResponseModal* response = [[TransactionHistoryResponseModal alloc] initWithDictionary:responseObj];
-//        return response;
-//        
-//    }
-//    
-//    if ([responseServiceKey isEqualToString:kGetMessagesService]) {
-//        
-//        GetMessagesResponseModal* response = [[GetMessagesResponseModal alloc] initWithDictionary:responseObj];
-//        return response;
-//        
-//    }
-//    
-//    if ([responseServiceKey isEqualToString:kRegisterUserDetailsService]) {
-//        
-//        RegisterUserDetailsResponseModal* response = [[RegisterUserDetailsResponseModal alloc] initWithDictionary:responseObj];
-//        return response;
-//        
-//    }
-//    
-//    if ([responseServiceKey isEqualToString:kGetBadgeCount]) {
-//        
-//        GetBadgeCountResponseModal* response = [[GetBadgeCountResponseModal alloc] initWithDictionary:responseObj];
-//        return response;
-//        
-//    }
-//    
-//    if ([responseServiceKey isEqualToString:kRewardsInAppService]) {
-//        
-//        NSError* error = nil;
-//        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:responseObj options:NSJSONWritingPrettyPrinted error:&error];
-//        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-//        
-//        [[RewardsHelper sharedInstance] saveData:jsonString ForService:responseServiceKey];
-//        [[NSUserDefaults standardUserDefaults] setObject:[[SharedClass sharedInstance] getCurrentUTCFormatDateString] forKey:kRewardsTimeStamp];
-//        
-//        RewardsResponseModal* response = [[RewardsResponseModal alloc] initWithArray:responseObj];
-//        return response;
-//        
-//    }
+    if ([responseServiceKey isEqualToString:kSignUpService] || [responseServiceKey isEqualToString:kLoginService]) {
+        
+        SignUpResponseModal* response = [[SignUpResponseModal alloc] initWithDictionary:[[responseObj valueForKey:@"info"] objectAtIndex:0]];
+        return response;
+        
+    }
     
     return nil;
     

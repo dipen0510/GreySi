@@ -9,7 +9,7 @@
 #ifndef Constants_h
 #define Constants_h
 
-//Register API keys
+//Register + Login API keys
 
 #define registerNameKey @"Name"
 #define registerEmailKey @"Email"
@@ -20,6 +20,13 @@
 #define registerGCMIdKey @"Gcm_id"
 #define registerDeviceTypeKey @"Device_Type"
 #define registerVersionCodeKey @"Version_Code"
+#define registerAvailableKey @"Available"
+#define registerFBKey @"FB"
+#define registerLongDescriptionKey @"Long_description"
+#define registerShortDescriptionKey @"Short_description"
+#define registerTwitterKey @"Twitter"
+#define registerUserIdKey @"User_id"
+#define registerWebsiteKey @"Website"
 
 
 
