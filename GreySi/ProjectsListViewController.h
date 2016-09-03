@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomerGetProjectsResponseModal.h"
 
-@interface ProjectsListViewController : UIViewController {
+@interface ProjectsListViewController : UIViewController <DataSyncManagerDelegate> {
     
     int selectedIndex;
+    NSMutableArray* projectsArr;
     
 }
 

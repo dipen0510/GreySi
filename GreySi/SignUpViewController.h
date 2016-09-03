@@ -9,13 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "PECropViewController.h"
 
-@interface SignUpViewController : UIViewController<UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PECropViewControllerDelegate, DataSyncManagerDelegate>  {
+@interface SignUpViewController : UIViewController<UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PECropViewControllerDelegate, DataSyncManagerDelegate, UITextFieldDelegate>  {
     UIActionSheet* actSheet;
     UIImage* profileImage;
     
     NSString* emailText;
     NSString* nameText;
     NSString* passwordText;
+    
+    BOOL showKeyboardAnimation;
+    CGPoint viewCenter;
     
 }
 

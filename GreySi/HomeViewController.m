@@ -35,6 +35,8 @@
     
     [self setupInitialUI];
     
+    [self startCustomerGetAdService];
+    
 }
 
 - (void)dealloc
@@ -73,6 +75,66 @@
 {
     return YES;
 }
+
+- (void) startCustomerGetAdService {
+    
+    [SVProgressHUD showWithStatus:@"Fetching Ads..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kCustomerGetAdService;
+    manager.delegate = self;
+    [manager startGETWebServices];
+    
+}
+
+#pragma mark - DATASYNCMANAGER Delegates
+
+-(void) didFinishServiceWithSuccess:(SignUpResponseModal *)responseData andServiceKey:(NSString *)requestServiceKey {
+    
+    [SVProgressHUD dismiss];
+    [SVProgressHUD showSuccessWithStatus:@""];
+    
+    if ([requestServiceKey isEqualToString:kLoginService]) {
+        
+        [[SharedClass sharedInstance] setUserObj:responseData];
+        
+        [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
+        
+    }
+    
+    
+    
+}
+
+
+- (void) didFinishServiceWithFailure:(NSString *)errorMsg {
+    
+    
+    [SVProgressHUD dismiss];
+    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil
+                                                  message:NSLocalizedString(@"An issue occured while processing your request. Please try again later.", nil)
+                                                 delegate:self
+                                        cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                        otherButtonTitles: nil];
+    
+    if (![errorMsg isEqualToString:@""]) {
+        [alert setMessage:errorMsg];
+    }
+    
+    if ([errorMsg isEqualToString:NSLocalizedString(@"Verify your internet connection and try again", nil)]) {
+        [alert setTitle:NSLocalizedString(@"Connection unsuccessful", nil)];
+    }
+    
+    
+    [alert show];
+    
+    return;
+    
+}
+
+
+
+#pragma mark - SwipeView Delegate
 
 - (NSInteger)numberOfItemsInSwipeView:(SwipeView *)swipeView
 {

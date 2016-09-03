@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController<DataSyncManagerDelegate> {
+@interface LoginViewController : UIViewController<DataSyncManagerDelegate, UITextFieldDelegate> {
     
     NSString* emailText;
     NSString* passwordText;
+    
+    BOOL showKeyboardAnimation;
+    CGPoint viewCenter;
     
 }
 

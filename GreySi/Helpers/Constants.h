@@ -28,6 +28,9 @@
 #define registerUserIdKey @"User_id"
 #define registerWebsiteKey @"Website"
 
+//Customer Projects API
+
+#define customerProjectsInfoKey @"info"
 
 
 #endif /* Constants_h */

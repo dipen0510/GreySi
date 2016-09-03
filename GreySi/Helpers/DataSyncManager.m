@@ -8,6 +8,7 @@
 
 #import "DataSyncManager.h"
 #import "SignUpResponseModal.h"
+#import "CustomerGetProjectsResponseModal.h"
 
 
 @implementation DataSyncManager
@@ -74,32 +75,20 @@
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
     manager.requestSerializer = [AFJSONRequestSerializer serializerWithWritingOptions:NSJSONWritingPrettyPrinted];
     manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
-    
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     
     [manager GET:self.serviceKey parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
-        if ([responseObject isKindOfClass:[NSArray class]]) {
+        if ([[responseObject valueForKey:@"status"] intValue] == 1) {
             
-            if (responseObject) {
-                
-                if ([delegate respondsToSelector:@selector(didFinishServiceWithSuccess:andServiceKey:)]) {
-                    [delegate didFinishServiceWithSuccess:[self prepareResponseObjectForServiceKey:self.serviceKey withData:responseObject] andServiceKey:self.serviceKey];
-                }
-                
+            if ([delegate respondsToSelector:@selector(didFinishServiceWithSuccess:andServiceKey:)]) {
+                [delegate didFinishServiceWithSuccess:[self prepareResponseObjectForServiceKey:self.serviceKey withData:responseObject] andServiceKey:self.serviceKey];
             }
-            else {
-                
-                if ([delegate respondsToSelector:@selector(didFinishServiceWithFailure:)]) {
-                    [delegate didFinishServiceWithFailure:NSLocalizedString(@"An issue occured while processing your request. Please try again later.", nil)];
-                }
-                
-            }
-            
         }
         else {
-            if ([delegate respondsToSelector:@selector(didFinishServiceWithFailure:)]) {
-                [delegate didFinishServiceWithFailure:NSLocalizedString(@"An issue occured while processing your request. Please try again later.", nil)];
-            }
+            //if ([delegate respondsToSelector:@selector(didFinishServiceWithFailure:)]) {
+            [delegate didFinishServiceWithFailure:[responseObject valueForKey:@"msg"]];
+            //}
             
         }
         
@@ -121,6 +110,12 @@
     if ([responseServiceKey isEqualToString:kSignUpService] || [responseServiceKey isEqualToString:kLoginService]) {
         
         SignUpResponseModal* response = [[SignUpResponseModal alloc] initWithDictionary:[[responseObj valueForKey:@"info"] objectAtIndex:0]];
+        return response;
+        
+    }
+    else if ([responseServiceKey isEqualToString:kCustomerGetPostedProjectsService] || [responseServiceKey isEqualToString:kCustomerGetActiveProjectsService] || [responseServiceKey isEqualToString:kCustomerGetCompletedProjectsService]) {
+        
+        CustomerGetProjectsResponseModal* response = [[CustomerGetProjectsResponseModal alloc] initWithDictionary:responseObj];
         return response;
         
     }

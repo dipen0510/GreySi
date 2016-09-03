@@ -40,6 +40,9 @@
     self.loginTableView.layer.cornerRadius = 5.0;
     self.loginButton.layer.cornerRadius = 5.0;
     
+    viewCenter = self.view.center;
+    showKeyboardAnimation = true;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -152,6 +155,8 @@
         cell.separatorView.hidden = NO;
     }
     
+    cell.txtField.delegate = self;
+    
     return cell;
     
     
@@ -169,6 +174,8 @@
     
     
 }
+
+#pragma mark - User Action Events
 
 - (IBAction)backButtonTapped:(id)sender {
     
@@ -215,8 +222,49 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
+    showKeyboardAnimation = true;
     [self.view endEditing:YES];
     
+}
+
+#pragma mark - TextField Delegates
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    showKeyboardAnimation = true;
+    [textField endEditing:YES];
+    return true;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    
+    
+    if (showKeyboardAnimation) {
+        CGPoint MyPoint = self.view.center;
+        
+        [UIView animateWithDuration:0.3
+                         animations:^{
+                             
+                             self.view.center = CGPointMake(MyPoint.x, MyPoint.y - 200);
+                         }];
+        
+        showKeyboardAnimation=false;
+    }
+    
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if (showKeyboardAnimation) {
+        //CGPoint MyPoint = self.view.center;
+        
+        [UIView animateWithDuration:0.3
+                         animations:^{
+                             
+                             self.view.center = CGPointMake(viewCenter.x, viewCenter.y);
+                         }];
+        
+    }
 }
 
 

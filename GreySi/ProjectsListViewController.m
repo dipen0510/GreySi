@@ -11,6 +11,7 @@
 #import "PostedProjectsTableViewCell.h"
 #import "ActiveProjectsTableViewCell.h"
 #import "CompletedProjectsTableViewCell.h"
+#import "ProjectsSingleModal.h"
 
 @interface ProjectsListViewController ()
 
@@ -33,6 +34,8 @@
 
 - (void) setupUI {
     
+    projectsArr = [[NSMutableArray alloc] init];
+    
     self.postedProjectsButton.layer.cornerRadius = 2.0;
     self.activeProjectsButton.layer.cornerRadius = 2.0;
     self.completedProjectsButton.layer.cornerRadius = 2.0;
@@ -53,6 +56,8 @@
     
     if (index == 0) {
         
+        [self startCustomerGetPostedProjectsService];
+        
         self.postedProjectsButton.backgroundColor = [UIColor whiteColor] ;
         [self.postedProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
         self.activeProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
@@ -65,6 +70,8 @@
     }
     else if (index == 1) {
         
+        [self startCustomerGetActiveProjectsService];
+        
         self.activeProjectsButton.backgroundColor = [UIColor whiteColor] ;
         [self.activeProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
         self.postedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
@@ -76,6 +83,8 @@
     }
     else if (index == 2) {
         
+        [self startCustomerGetCompletedProjectsService];
+        
         self.completedProjectsButton.backgroundColor = [UIColor whiteColor] ;
         [self.completedProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
         self.activeProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
@@ -86,6 +95,84 @@
     }
     
     [self.projectsTableView reloadData];
+    
+}
+
+
+- (void) startCustomerGetPostedProjectsService {
+    
+    [SVProgressHUD showWithStatus:@"Fetching Posted Projects..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kCustomerGetPostedProjectsService;
+    manager.delegate = self;
+    [manager startGETWebServices];
+    
+}
+
+- (void) startCustomerGetActiveProjectsService {
+    
+    [SVProgressHUD showWithStatus:@"Fetching Active Projects..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kCustomerGetActiveProjectsService;
+    manager.delegate = self;
+    [manager startGETWebServices];
+    
+}
+
+- (void) startCustomerGetCompletedProjectsService {
+    
+    [SVProgressHUD showWithStatus:@"Fetching Completed Projects..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kCustomerGetCompletedProjectsService;
+    manager.delegate = self;
+    [manager startGETWebServices];
+    
+}
+
+#pragma mark - DATASYNCMANAGER Delegates
+
+-(void) didFinishServiceWithSuccess:(CustomerGetProjectsResponseModal *)responseData andServiceKey:(NSString *)requestServiceKey {
+    
+    [SVProgressHUD dismiss];
+    [SVProgressHUD showSuccessWithStatus:@""];
+    
+    if ([requestServiceKey isEqualToString:kCustomerGetPostedProjectsService] || [requestServiceKey isEqualToString:kCustomerGetActiveProjectsService] || [requestServiceKey isEqualToString:kCustomerGetCompletedProjectsService]) {
+        
+        projectsArr = [[NSMutableArray alloc] initWithArray:responseData.info];
+        [self.projectsTableView reloadData];
+        
+    }
+    
+    
+    
+}
+
+
+- (void) didFinishServiceWithFailure:(NSString *)errorMsg {
+    
+    
+    [SVProgressHUD dismiss];
+    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil
+                                                  message:NSLocalizedString(@"An issue occured while processing your request. Please try again later.", nil)
+                                                 delegate:self
+                                        cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                        otherButtonTitles: nil];
+    
+    if (![errorMsg isEqualToString:@""]) {
+        [alert setMessage:errorMsg];
+    }
+    
+    if ([errorMsg isEqualToString:NSLocalizedString(@"Verify your internet connection and try again", nil)]) {
+        [alert setTitle:NSLocalizedString(@"Connection unsuccessful", nil)];
+    }
+    
+    
+    [alert show];
+    
+    return;
     
 }
 
@@ -134,6 +221,10 @@
 #pragma mark - UITableView Datasource
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    if (projectsArr.count > 0) {
+        return projectsArr.count;
+    }
     
     return 7;
 }
@@ -212,6 +303,8 @@
     else {
         cell.backgroundColor = [UIColor whiteColor];
     }
+    
+    //ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:indexPath.row]];
     
 }
 
