@@ -10,19 +10,20 @@
 
 @interface AdSIngleModal : NSObject
 
+@property (nonatomic, strong) NSString* aD_ID;
+@property (nonatomic, strong) NSString* address;
+@property (nonatomic, strong) NSString* average_Rating;
 @property (nonatomic, strong) NSString* budget;
-@property (nonatomic, strong) NSString* city;
-@property (nonatomic, strong) NSString* date;
-@property (nonatomic, strong) NSString* desc;
-@property (nonatomic, strong) NSString* hairdresser_id;
-@property (nonatomic, strong) NSString* place;
-@property (nonatomic, strong) NSString* post_Date;
-@property (nonatomic, strong) NSString* project_id;
+@property (nonatomic, strong) NSString* lat;
+@property (nonatomic, strong) NSString* longi;
+@property (nonatomic, strong) NSString* name;
+@property (nonatomic, strong) NSString* post_date;
+@property (nonatomic, strong) NSString* profile_pi;
+@property (nonatomic, strong) NSString* short_description;
 @property (nonatomic, strong) NSString* status;
-@property (nonatomic, strong) NSString* time;
 @property (nonatomic, strong) NSString* treatment;
 @property (nonatomic, strong) NSString* user_id;
-@property (nonatomic, strong) NSString* no_of_bids;
+@property (nonatomic, strong) NSString* hours;
 
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;

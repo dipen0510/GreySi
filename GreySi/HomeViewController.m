@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 #import "SwipeView.h"
 #import "HomeTableViewCell.h"
+#import "AdSIngleModal.h"
+#import <UIImageView+AFNetworking.h>
 
 @interface HomeViewController ()
 
@@ -48,6 +50,7 @@
 - (void) setupInitialUI {
     
     addContentArr = [[NSMutableArray alloc] init];
+    self.adsTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     for (UIView *subview in [[self.homeSearchBar.subviews lastObject] subviews]) {
         if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
@@ -100,6 +103,7 @@
         
         addContentArr = [[NSMutableArray alloc] initWithArray:[responseData valueForKey:@"info"]];
         
+        [self.adsTblView reloadData];
         
     }
     
@@ -202,7 +206,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return addContentArr.count;
+    return addContentArr.count+1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -238,7 +242,7 @@
 
 - (void) displayContentForCell:(HomeTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == addContentArr.count-1) {
+    if (indexPath.row == addContentArr.count) {
         NSArray* arr = [NSArray arrayWithArray:[cell.contentView subviews]];
         for (UIView* view in arr) {
             view.hidden = YES;
@@ -251,6 +255,34 @@
             view.hidden = NO;
         }
         cell.addButton.hidden = YES;
+        
+        
+        //POPULATE CONTENT
+        
+        AdSIngleModal* modal = [[AdSIngleModal alloc] initWithDictionary:[addContentArr objectAtIndex:indexPath.row]];
+        
+        id budgetDict = [NSJSONSerialization JSONObjectWithData:[modal.budget dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+        id treatmentDict = [NSJSONSerialization JSONObjectWithData:[modal.treatment dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+        
+        cell.nameLabel.text = modal.name;
+        cell.serviceTypeLabel.text = [[[treatmentDict valueForKey:@"treatmentsArray"] objectAtIndex:0] valueForKey:@"name"];
+        [cell.priceButton setTitle:[NSString stringWithFormat:@"$%@",[[[budgetDict valueForKey:@"pricesArray"] objectAtIndex:0] valueForKey:@"name"]] forState:UIControlStateNormal];
+        cell.timeLeftLabel.text = [NSString stringWithFormat:@"%@ hours left",modal.hours];
+        
+        __weak UIImageView* weakImageView = cell.profileImageView;
+        [cell.profileImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[modal.profile_pi stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
+                                                                            cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                                        timeoutInterval:60.0] placeholderImage:[UIImage imageNamed:@"blankProfile"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+            
+            
+            weakImageView.alpha = 0.0;
+            weakImageView.image = image;
+            [UIView animateWithDuration:0.25
+                             animations:^{
+                                 weakImageView.alpha = 1.0;
+                             }];
+        } failure:NULL];
+        
     }
     
     [cell.addButton addTarget:self action:@selector(addButtonTapped) forControlEvents:UIControlEventTouchUpInside];
@@ -260,10 +292,6 @@
     [cell.profileImageView setUserInteractionEnabled:YES];
     
     
-    
-    //POPULATE CONTENT
-    
-    cell.nameLabel.text = 
     
     
     
@@ -275,16 +303,26 @@
 
 - (void) loadInitialSetup {
     
-    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(28.619570, 77.088104);
-    
-    MKCoordinateSpan span = MKCoordinateSpanMake(10.0, 10.0);
-    MKCoordinateRegion region = {coord, span};
-    
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-    [annotation setCoordinate:coord];
-    
-    [self.homeMapView setRegion:region];
-    [self.homeMapView addAnnotation:annotation];
+    for (int i = 0; i<addContentArr.count; i++) {
+        
+        AdSIngleModal* modal = [[AdSIngleModal alloc] initWithDictionary:[addContentArr objectAtIndex:i]];
+        
+        if (modal.lat && modal.longi) {
+            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake([modal.lat floatValue], [modal.longi floatValue]);
+            
+            MKCoordinateSpan span = MKCoordinateSpanMake(10.0, 10.0);
+            MKCoordinateRegion region = {coord, span};
+            
+            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+            [annotation setCoordinate:coord];
+            
+            [self.homeMapView setRegion:region];
+            [self.homeMapView addAnnotation:annotation];
+        }
+        
+        
+        
+    }
     
 }
 

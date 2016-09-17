@@ -195,25 +195,26 @@
     
     
     BOOL emailIsValid = [self validateEmailWithString:emailText];
+  
+    [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
     
-    
-    if ([emailText isEqualToString:@""]) {
-        
-        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your email address", nil)];
-    }
-    
-    else if (!emailIsValid) {
-        
-        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter a valid email address", nil)];
-    }
-    else if ([passwordText isEqualToString:@""]) {
-        
-        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your password", nil)];
-    }
-    else {
-        [SVProgressHUD showWithStatus:@"Logging In..."];
-        [self startLoginService];
-    }
+//    if ([emailText isEqualToString:@""]) {
+//        
+//        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your email address", nil)];
+//    }
+//    
+//    else if (!emailIsValid) {
+//        
+//        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter a valid email address", nil)];
+//    }
+//    else if ([passwordText isEqualToString:@""]) {
+//        
+//        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your password", nil)];
+//    }
+//    else {
+//        [SVProgressHUD showWithStatus:@"Logging In..."];
+//        [self startLoginService];
+//    }
     
     
     

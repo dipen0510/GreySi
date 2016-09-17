@@ -14,20 +14,20 @@
     self = [self init];
     if (self == nil) return nil;
     
-    //    _creationDate = dictionary[creationDateKey];
-    //    _endDate = dictionary[endDateKey];
-    //    _imageUrl = dictionary[imageUrlKey];
-    //    _isActive = dictionary[isActiveKey];
-    //    _itemId = dictionary[itemIdKey];
-    //    _pointsValue = dictionary[pointsValueKey];
-    //    _rewardCategory = dictionary[rewardCategoryKey];
-    //    _rewardId = dictionary[rewardIdKey];
-    //    _rewardName = dictionary[rewardNameKey];
-    //    _rewardType = dictionary[rewardTypeKey];
-    //    _rewardUrl = dictionary[rewardUrlKey];
-    //    _shortDescription = dictionary[shortDescriptionKey];
-    //    _startDate = dictionary[startDateKey];
-    //
+    _aD_ID = dictionary[@"AD_ID"];
+    _address = dictionary[@"Address"];
+    _average_Rating = dictionary[@"Average_Rating"];
+    _budget = dictionary[@"Budget"];
+    _lat = dictionary[@"Lat"];
+    _longi = dictionary[@"Longi"];
+    _name = dictionary[@"Name"];
+    _post_date = dictionary[@"Post_date"];
+    _profile_pi = dictionary[@"Profile_pi"];
+    _short_description = dictionary[@"Short_description"];
+    _status = dictionary[@"Status"];
+    _treatment = dictionary[@"Treatment"];
+    _user_id = dictionary[@"User_id"];
+    _hours = dictionary[@"hours"];
     
     return self;
 }
