@@ -42,6 +42,7 @@
 		188857401CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1888573F1CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png */; };
 		18A6D2F81D7AB70E004907EB /* ProjectsSingleModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6D2F71D7AB70E004907EB /* ProjectsSingleModal.m */; };
 		18A6D2FB1D7AB80E004907EB /* CustomerGetProjectsResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6D2FA1D7AB80E004907EB /* CustomerGetProjectsResponseModal.m */; };
+		18AA90831D8D096E00DA3828 /* AdSIngleModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AA90821D8D096E00DA3828 /* AdSIngleModal.m */; };
 		18AA9CA41CA6DB8500938952 /* profile_temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AA9CA31CA6DB8500938952 /* profile_temp.png */; };
 		18C831921D63592500AE6058 /* SharedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8318C1D63592500AE6058 /* SharedClass.m */; };
 		18C831951D63593A00AE6058 /* DataSyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831941D63593A00AE6058 /* DataSyncManager.m */; };
@@ -168,6 +169,8 @@
 		18A6D2F71D7AB70E004907EB /* ProjectsSingleModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsSingleModal.m; sourceTree = "<group>"; };
 		18A6D2F91D7AB80E004907EB /* CustomerGetProjectsResponseModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerGetProjectsResponseModal.h; sourceTree = "<group>"; };
 		18A6D2FA1D7AB80E004907EB /* CustomerGetProjectsResponseModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerGetProjectsResponseModal.m; sourceTree = "<group>"; };
+		18AA90811D8D096E00DA3828 /* AdSIngleModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSIngleModal.h; sourceTree = "<group>"; };
+		18AA90821D8D096E00DA3828 /* AdSIngleModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSIngleModal.m; sourceTree = "<group>"; };
 		18AA9CA31CA6DB8500938952 /* profile_temp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_temp.png; sourceTree = "<group>"; };
 		18C8318B1D63592500AE6058 /* SharedClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedClass.h; sourceTree = "<group>"; };
 		18C8318C1D63592500AE6058 /* SharedClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedClass.m; sourceTree = "<group>"; };
@@ -399,6 +402,8 @@
 				18A6D2F71D7AB70E004907EB /* ProjectsSingleModal.m */,
 				18A6D2F91D7AB80E004907EB /* CustomerGetProjectsResponseModal.h */,
 				18A6D2FA1D7AB80E004907EB /* CustomerGetProjectsResponseModal.m */,
+				18AA90811D8D096E00DA3828 /* AdSIngleModal.h */,
+				18AA90821D8D096E00DA3828 /* AdSIngleModal.m */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -842,6 +847,7 @@
 			files = (
 				18CF35151D5BCE6100C0A5BD /* BidsReceivedTableViewCell.m in Sources */,
 				184AF5401D76074D001DDD4B /* SignUpRequestModal.m in Sources */,
+				18AA90831D8D096E00DA3828 /* AdSIngleModal.m in Sources */,
 				185DC10B1D5136D2007998F3 /* SWRevealViewController.m in Sources */,
 				18CF35241D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.m in Sources */,
 				D4A7DD7A1C806CF900F82033 /* DocumentReviewViewController.m in Sources */,

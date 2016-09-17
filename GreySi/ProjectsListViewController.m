@@ -104,7 +104,7 @@
     [SVProgressHUD showWithStatus:@"Fetching Posted Projects..."];
     
     DataSyncManager* manager = [[DataSyncManager alloc] init];
-    manager.serviceKey = kCustomerGetPostedProjectsService;
+    manager.serviceKey = [NSString stringWithFormat:@"%@%@",kCustomerGetPostedProjectsService,[[SharedClass sharedInstance] userObj].user_id];
     manager.delegate = self;
     [manager startGETWebServices];
     
@@ -115,7 +115,7 @@
     [SVProgressHUD showWithStatus:@"Fetching Active Projects..."];
     
     DataSyncManager* manager = [[DataSyncManager alloc] init];
-    manager.serviceKey = kCustomerGetActiveProjectsService;
+    manager.serviceKey = [NSString stringWithFormat:@"%@%@",kCustomerGetActiveProjectsService,[[SharedClass sharedInstance] userObj].user_id];
     manager.delegate = self;
     [manager startGETWebServices];
     
@@ -126,7 +126,7 @@
     [SVProgressHUD showWithStatus:@"Fetching Completed Projects..."];
     
     DataSyncManager* manager = [[DataSyncManager alloc] init];
-    manager.serviceKey = kCustomerGetCompletedProjectsService;
+    manager.serviceKey = [NSString stringWithFormat:@"%@%@",kCustomerGetCompletedProjectsService,[[SharedClass sharedInstance] userObj].user_id];
     manager.delegate = self;
     [manager startGETWebServices];
     

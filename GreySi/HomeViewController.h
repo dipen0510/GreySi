@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, DataSyncManagerDelegate>
+@interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, DataSyncManagerDelegate> {
+    
+    NSMutableArray* addContentArr;
+    
+}
 
 @property (weak, nonatomic) IBOutlet UIButton *revealButtonItem;
 

@@ -47,6 +47,8 @@
 
 - (void) setupInitialUI {
     
+    addContentArr = [[NSMutableArray alloc] init];
+    
     for (UIView *subview in [[self.homeSearchBar.subviews lastObject] subviews]) {
         if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
             [subview removeFromSuperview];
@@ -89,16 +91,15 @@
 
 #pragma mark - DATASYNCMANAGER Delegates
 
--(void) didFinishServiceWithSuccess:(SignUpResponseModal *)responseData andServiceKey:(NSString *)requestServiceKey {
+-(void) didFinishServiceWithSuccess:(id)responseData andServiceKey:(NSString *)requestServiceKey {
     
     [SVProgressHUD dismiss];
     [SVProgressHUD showSuccessWithStatus:@""];
     
-    if ([requestServiceKey isEqualToString:kLoginService]) {
+    if ([requestServiceKey isEqualToString:kCustomerGetAdService]) {
         
-        [[SharedClass sharedInstance] setUserObj:responseData];
+        addContentArr = [[NSMutableArray alloc] initWithArray:[responseData valueForKey:@"info"]];
         
-        [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
         
     }
     
@@ -201,7 +202,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 7;
+    return addContentArr.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -237,7 +238,7 @@
 
 - (void) displayContentForCell:(HomeTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 6) {
+    if (indexPath.row == addContentArr.count-1) {
         NSArray* arr = [NSArray arrayWithArray:[cell.contentView subviews]];
         for (UIView* view in arr) {
             view.hidden = YES;
@@ -257,6 +258,14 @@
     UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(profileImageTapped)];
     [cell.profileImageView addGestureRecognizer:gesture];
     [cell.profileImageView setUserInteractionEnabled:YES];
+    
+    
+    
+    //POPULATE CONTENT
+    
+    cell.nameLabel.text = 
+    
+    
     
     
 }

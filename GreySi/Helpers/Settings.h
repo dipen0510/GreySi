@@ -16,9 +16,9 @@
 
 // CUSTOMER
 #define kCustomerGetAdService @"Hair_dressor_post/GetAd.php"
-#define kCustomerGetPostedProjectsService @"Customer_Projects/PostedProjects.php?User_id=6"
-#define kCustomerGetActiveProjectsService @"Customer_Projects/ActiveProjects.php?User_id=6"
-#define kCustomerGetCompletedProjectsService @"Customer_Projects/CompletedProjects.php?User_id=7"
+#define kCustomerGetPostedProjectsService @"Customer_Projects/PostedProjects.php?User_id="
+#define kCustomerGetActiveProjectsService @"Customer_Projects/ActiveProjects.php?User_id="
+#define kCustomerGetCompletedProjectsService @"Customer_Projects/CompletedProjects.php?User_id="
 
 
 #endif /* Settings_h */
