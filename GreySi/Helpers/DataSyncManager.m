@@ -113,7 +113,7 @@
         return response;
         
     }
-    else if ([responseServiceKey isEqualToString:kCustomerGetPostedProjectsService] || [responseServiceKey isEqualToString:kCustomerGetActiveProjectsService] || [responseServiceKey isEqualToString:kCustomerGetCompletedProjectsService]) {
+    else if ([responseServiceKey containsString:kCustomerGetPostedProjectsService] || [responseServiceKey containsString:kCustomerGetActiveProjectsService] || [responseServiceKey containsString:kCustomerGetCompletedProjectsService]) {
         
         CustomerGetProjectsResponseModal* response = [[CustomerGetProjectsResponseModal alloc] initWithDictionary:responseObj];
         return response;

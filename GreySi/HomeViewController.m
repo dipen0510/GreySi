@@ -10,7 +10,7 @@
 #import "SwipeView.h"
 #import "HomeTableViewCell.h"
 #import "AdSIngleModal.h"
-#import <UIImageView+AFNetworking.h>
+
 
 @interface HomeViewController ()
 

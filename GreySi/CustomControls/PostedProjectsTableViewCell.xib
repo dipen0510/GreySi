@@ -163,6 +163,14 @@
                     <constraint firstItem="Bfl-zW-IrT" firstAttribute="leading" secondItem="d1H-8X-YOX" secondAttribute="trailing" constant="8" id="zJF-Mb-sPw"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="amountLabel" destination="Pee-XE-duS" id="GIG-ce-oLF"/>
+                <outlet property="bidsLabel" destination="Bfl-zW-IrT" id="jfe-Xl-gF7"/>
+                <outlet property="dateLabel" destination="WZF-5N-1FA" id="STm-Aw-ZhQ"/>
+                <outlet property="hairdresserNameLabel" destination="nhc-99-r3h" id="E5X-Kx-yyD"/>
+                <outlet property="statusLabel" destination="4ay-51-Bna" id="2L2-eK-rOs"/>
+                <outlet property="typeLabel" destination="xWI-a4-IfP" id="rlX-jQ-cPn"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

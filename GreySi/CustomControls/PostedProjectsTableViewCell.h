@@ -10,4 +10,11 @@
 
 @interface PostedProjectsTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hairdresserNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *amountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bidsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
 @end

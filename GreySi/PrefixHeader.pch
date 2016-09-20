@@ -18,5 +18,6 @@
 #import "DataSyncManager.h"
 #import "SharedClass.h"
 #import "Constants.h"
+#import <UIImageView+AFNetworking.h>
 
 #endif /* PrefixHeader_pch */

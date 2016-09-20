@@ -36,6 +36,8 @@
     
     projectsArr = [[NSMutableArray alloc] init];
     
+    self.projectsTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
     self.postedProjectsButton.layer.cornerRadius = 2.0;
     self.activeProjectsButton.layer.cornerRadius = 2.0;
     self.completedProjectsButton.layer.cornerRadius = 2.0;
@@ -139,7 +141,7 @@
     [SVProgressHUD dismiss];
     [SVProgressHUD showSuccessWithStatus:@""];
     
-    if ([requestServiceKey isEqualToString:kCustomerGetPostedProjectsService] || [requestServiceKey isEqualToString:kCustomerGetActiveProjectsService] || [requestServiceKey isEqualToString:kCustomerGetCompletedProjectsService]) {
+    if ([requestServiceKey isEqualToString:[NSString stringWithFormat:@"%@%@",kCustomerGetPostedProjectsService,[[SharedClass sharedInstance] userObj].user_id]] || [requestServiceKey isEqualToString:[NSString stringWithFormat:@"%@%@",kCustomerGetActiveProjectsService,[[SharedClass sharedInstance] userObj].user_id]] || [requestServiceKey isEqualToString:[NSString stringWithFormat:@"%@%@",kCustomerGetCompletedProjectsService,[[SharedClass sharedInstance] userObj].user_id]]) {
         
         projectsArr = [[NSMutableArray alloc] initWithArray:responseData.info];
         [self.projectsTableView reloadData];
@@ -222,7 +224,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    if (projectsArr.count > 0) {
+    if (selectedIndex == 0) {
         return projectsArr.count;
     }
     
@@ -304,7 +306,15 @@
         cell.backgroundColor = [UIColor whiteColor];
     }
     
-    //ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:indexPath.row]];
+    ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:indexPath.row]];
+    
+    cell.typeLabel.text = singleProject.treatment;
+    cell.statusLabel.text = singleProject.status;
+    cell.hairdresserNameLabel.text = singleProject.hairdresser_id;
+    cell.amountLabel.text = singleProject.budget;
+    cell.bidsLabel.text = singleProject.no_of_bids;
+    cell.dateLabel.text = singleProject.post_Date;
+    
     
 }
 

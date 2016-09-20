@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookingsTableViewCell" rowHeight="80" id="KGk-i7-Jjw" customClass="BookingsTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2016-03-30 at 12.44.22 AM.png" translatesAutoresizingMaskIntoConstraints="NO" id="lgc-Px-iYU">
+                        <rect key="frame" x="14" y="8" width="63" height="63"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="63" id="KyH-si-Z6H"/>
+                            <constraint firstAttribute="width" constant="63" id="gaG-HG-C2v"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Richard Sen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdL-0P-XLH">
+                        <rect key="frame" x="85" y="16" width="117" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="W93-30-yKl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Richard Sen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xn-PU-PBg">
+                        <rect key="frame" x="85" y="40" width="117" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="Ppj-6D-cf5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Richard Sen" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rey-gp-8CQ">
+                        <rect key="frame" x="210" y="32" width="94" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="EnM-Et-3P0"/>
+                            <constraint firstAttribute="width" constant="94" id="eXz-mO-24c"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="rey-gp-8CQ" secondAttribute="trailing" constant="16" id="39y-FP-kPx"/>
+                    <constraint firstItem="rey-gp-8CQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="EUT-NF-m8k"/>
+                    <constraint firstItem="lgc-Px-iYU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="Kvg-OC-sK7"/>
+                    <constraint firstItem="GdL-0P-XLH" firstAttribute="leading" secondItem="lgc-Px-iYU" secondAttribute="trailing" constant="8" id="M5c-nm-JP3"/>
+                    <constraint firstItem="rey-gp-8CQ" firstAttribute="leading" secondItem="4xn-PU-PBg" secondAttribute="trailing" constant="8" id="Tka-lU-KvN"/>
+                    <constraint firstItem="4xn-PU-PBg" firstAttribute="width" secondItem="GdL-0P-XLH" secondAttribute="width" id="YF8-BF-DKu"/>
+                    <constraint firstItem="4xn-PU-PBg" firstAttribute="leading" secondItem="lgc-Px-iYU" secondAttribute="trailing" constant="8" id="dKe-gl-iPq"/>
+                    <constraint firstItem="GdL-0P-XLH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="fmV-wU-Lsa"/>
+                    <constraint firstItem="4xn-PU-PBg" firstAttribute="top" secondItem="GdL-0P-XLH" secondAttribute="bottom" constant="8" id="rwq-JJ-Q7M"/>
+                    <constraint firstItem="lgc-Px-iYU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="sCd-Ee-xtW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="rey-gp-8CQ" id="SWn-mv-5Dl"/>
+                <outlet property="headingLabel" destination="GdL-0P-XLH" id="ijp-MP-f8r"/>
+                <outlet property="profileImgView" destination="lgc-Px-iYU" id="wwu-Uq-d1f"/>
+                <outlet property="subHeadingLabel" destination="4xn-PU-PBg" id="VM1-vB-z3f"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Screen Shot 2016-03-30 at 12.44.22 AM.png" width="80" height="80"/>
+    </resources>
+</document>

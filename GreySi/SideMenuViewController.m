@@ -8,6 +8,7 @@
 
 #import "SideMenuViewController.h"
 #import "SideMenuTableViewCell.h"
+#import "PostNewAdViewController.h"
 
 @interface SideMenuViewController ()
 
@@ -28,6 +29,22 @@
     
     self.profileImgView.layer.masksToBounds = YES;
     self.profileImgView.layer.cornerRadius = self.profileImgView.frame.size.height/2.;
+    
+    self.profileName.text = [[SharedClass sharedInstance] userObj].name;
+    
+    __weak UIImageView* weakImageView = self.profileImgView;
+    [self.profileImgView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[[[SharedClass sharedInstance] userObj].profile_pi stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
+                                                                   cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                               timeoutInterval:60.0] placeholderImage:[UIImage imageNamed:@"blankProfile"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        
+        
+        weakImageView.alpha = 0.0;
+        weakImageView.image = image;
+        [UIView animateWithDuration:0.25
+                         animations:^{
+                             weakImageView.alpha = 1.0;
+                         }];
+    } failure:NULL];
     
 }
 
@@ -54,6 +71,18 @@
     [dict3 setObject:@"postAd.png" forKey:@"image"];
     [tableArr addObject:dict3];
     
+    NSMutableDictionary* dict4 = [[NSMutableDictionary alloc] init];
+    [dict4 setObject:@"BOOKINGS" forKey:@"title"];
+    [dict4 setObject:@"booking_navigation_drawer_image.png" forKey:@"image"];
+    [tableArr addObject:dict4];
+    
+    NSMutableDictionary* dict5 = [[NSMutableDictionary alloc] init];
+    [dict5 setObject:@"LOCATION" forKey:@"title"];
+    [dict5 setObject:@"myLocation.png" forKey:@"image"];
+    [tableArr addObject:dict5];
+    
+    
+    
 }
 
 
@@ -67,7 +96,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 4;
+    return tableArr.count;
     
 }
 
@@ -116,13 +145,20 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             break;
             
         case 2:
-            //[self performSegueWithIdentifier:@"showCommentsSegue" sender:nil];
+            [self.navigationController popViewControllerAnimated:YES];
             break;
             
         case 3:
-            //[self performSegueWithIdentifier:@"showAnnouncementSegue" sender:nil];
+            [self performSegueWithIdentifier:@"showPostAdSegue" sender:nil];
+            break;
+        
+        case 4:
+            [self performSegueWithIdentifier:@"showBookingsSegue" sender:nil];
             break;
             
+        case 5:
+            [self performSegueWithIdentifier:@"showLocationSegue" sender:nil];
+            break;
             
         default:
             break;
@@ -130,14 +166,22 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"showPostAdSegue"]) {
+        
+        PostNewAdViewController* controller = (PostNewAdViewController *)[segue destinationViewController];
+        controller.isOpenedFromSideMenu = YES;
+        
+    }
+    
 }
-*/
+
 
 @end

@@ -32,6 +32,14 @@
 		185DC1231D5145C9007998F3 /* projects.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC1221D5145C9007998F3 /* projects.png */; };
 		185DC1251D514934007998F3 /* profileDetailBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC1241D514934007998F3 /* profileDetailBG.png */; };
 		185DC1281D514DEA007998F3 /* ProfileDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185DC1271D514DEA007998F3 /* ProfileDetailViewController.m */; };
+		188853C81D917CBB001EF67C /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 188853C61D917CBB001EF67C /* checked.png */; };
+		188853C91D917CBB001EF67C /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 188853C71D917CBB001EF67C /* unchecked.png */; };
+		188853CC1D9184B7001EF67C /* AddTreatmentRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 188853CB1D9184B7001EF67C /* AddTreatmentRequestModal.m */; };
+		188853CF1D919755001EF67C /* BookingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188853CE1D919755001EF67C /* BookingsViewController.m */; };
+		188853D11D91A2B0001EF67C /* booking_navigation_drawer_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 188853D01D91A2B0001EF67C /* booking_navigation_drawer_image.png */; };
+		188853D61D91A409001EF67C /* BookingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 188853D41D91A409001EF67C /* BookingsTableViewCell.m */; };
+		188853D71D91A409001EF67C /* BookingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188853D51D91A409001EF67C /* BookingsTableViewCell.xib */; };
+		188853DA1D91AE77001EF67C /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188853D91D91AE77001EF67C /* LocationViewController.m */; };
 		188857291CAB17AD0026995E /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 188857281CAB17AD0026995E /* SwipeView.m */; };
 		1888572C1CAB17F90026995E /* HomeTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888572B1CAB17F90026995E /* HomeTableView.xib */; };
 		1888572E1CAB18010026995E /* HomeMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888572D1CAB18010026995E /* HomeMapView.xib */; };
@@ -154,6 +162,18 @@
 		185DC1241D514934007998F3 /* profileDetailBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileDetailBG.png; sourceTree = "<group>"; };
 		185DC1261D514DEA007998F3 /* ProfileDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileDetailViewController.h; sourceTree = "<group>"; };
 		185DC1271D514DEA007998F3 /* ProfileDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileDetailViewController.m; sourceTree = "<group>"; };
+		188853C61D917CBB001EF67C /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		188853C71D917CBB001EF67C /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
+		188853CA1D9184B7001EF67C /* AddTreatmentRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTreatmentRequestModal.h; sourceTree = "<group>"; };
+		188853CB1D9184B7001EF67C /* AddTreatmentRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTreatmentRequestModal.m; sourceTree = "<group>"; };
+		188853CD1D919755001EF67C /* BookingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingsViewController.h; sourceTree = "<group>"; };
+		188853CE1D919755001EF67C /* BookingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingsViewController.m; sourceTree = "<group>"; };
+		188853D01D91A2B0001EF67C /* booking_navigation_drawer_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = booking_navigation_drawer_image.png; sourceTree = "<group>"; };
+		188853D31D91A409001EF67C /* BookingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookingsTableViewCell.h; path = CustomControls/BookingsTableViewCell.h; sourceTree = "<group>"; };
+		188853D41D91A409001EF67C /* BookingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookingsTableViewCell.m; path = CustomControls/BookingsTableViewCell.m; sourceTree = "<group>"; };
+		188853D51D91A409001EF67C /* BookingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookingsTableViewCell.xib; path = CustomControls/BookingsTableViewCell.xib; sourceTree = "<group>"; };
+		188853D81D91AE77001EF67C /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		188853D91D91AE77001EF67C /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		188857271CAB17AD0026995E /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeView.h; sourceTree = "<group>"; };
 		188857281CAB17AD0026995E /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
 		1888572B1CAB17F90026995E /* HomeTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeTableView.xib; path = CustomControls/HomeTableView.xib; sourceTree = "<group>"; };
@@ -339,6 +359,16 @@
 			name = SideMenuTableViewCell;
 			sourceTree = "<group>";
 		};
+		188853D21D91A344001EF67C /* BookingsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				188853D31D91A409001EF67C /* BookingsTableViewCell.h */,
+				188853D41D91A409001EF67C /* BookingsTableViewCell.m */,
+				188853D51D91A409001EF67C /* BookingsTableViewCell.xib */,
+			);
+			name = BookingsTableViewCell;
+			sourceTree = "<group>";
+		};
 		188857261CAB17AD0026995E /* SwipeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +382,7 @@
 		1888572A1CAB17D80026995E /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				188853D21D91A344001EF67C /* BookingsTableViewCell */,
 				18CF35201D5BD49A00C0A5BD /* CompletedProjectsTableViewCell */,
 				18CF35171D5BD1F800C0A5BD /* ActiveProjectsTableViewCell */,
 				18CF35111D5BCE3D00C0A5BD /* BidsReceivedTableViewCell */,
@@ -406,6 +437,8 @@
 				18A6D2FA1D7AB80E004907EB /* CustomerGetProjectsResponseModal.m */,
 				18AA90811D8D096E00DA3828 /* AdSIngleModal.h */,
 				18AA90821D8D096E00DA3828 /* AdSIngleModal.m */,
+				188853CA1D9184B7001EF67C /* AddTreatmentRequestModal.h */,
+				188853CB1D9184B7001EF67C /* AddTreatmentRequestModal.m */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -525,6 +558,10 @@
 				18CF35061D5BC4C800C0A5BD /* ProjectsListViewController.m */,
 				18CF350E1D5BCDA900C0A5BD /* BidsReceivedListViewController.h */,
 				18CF350F1D5BCDA900C0A5BD /* BidsReceivedListViewController.m */,
+				188853CD1D919755001EF67C /* BookingsViewController.h */,
+				188853CE1D919755001EF67C /* BookingsViewController.m */,
+				188853D81D91AE77001EF67C /* LocationViewController.h */,
+				188853D91D91AE77001EF67C /* LocationViewController.m */,
 			);
 			path = GreySi;
 			sourceTree = "<group>";
@@ -560,6 +597,9 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				188853D01D91A2B0001EF67C /* booking_navigation_drawer_image.png */,
+				188853C61D917CBB001EF67C /* checked.png */,
+				188853C71D917CBB001EF67C /* unchecked.png */,
 				18AA90841D8D13BA00DA3828 /* blankProfile.png */,
 				185B5E991D5A6DF500205F72 /* menhair.png */,
 				185B5E9A1D5A6DF500205F72 /* womenhair.png */,
@@ -739,6 +779,7 @@
 				185B5E9B1D5A6DF500205F72 /* menhair.png in Resources */,
 				185B5E981D5A6D2200205F72 /* TreatmentTabTableViewCell.xib in Resources */,
 				185DC11E1D514348007998F3 /* logout.png in Resources */,
+				188853D71D91A409001EF67C /* BookingsTableViewCell.xib in Resources */,
 				D4D5A1C61D5852F400B15CBE /* ChatListTableViewCell.xib in Resources */,
 				D4CA5C831C7DCDF7000E185A /* Assets.xcassets in Resources */,
 				D455C4741C7EDABA00C6D1CB /* signup.png in Resources */,
@@ -748,6 +789,7 @@
 				185DC11D1D514348007998F3 /* available.png in Resources */,
 				185DC10E1D513C3E007998F3 /* mike.jpg in Resources */,
 				185DC1061D4E4543007998F3 /* timeLeftClock.png in Resources */,
+				188853D11D91A2B0001EF67C /* booking_navigation_drawer_image.png in Resources */,
 				1888572C1CAB17F90026995E /* HomeTableView.xib in Resources */,
 				185DC1041D4E343C007998F3 /* navMenu.png in Resources */,
 				185DC1251D514934007998F3 /* profileDetailBG.png in Resources */,
@@ -765,6 +807,7 @@
 				D4CA5CCE1C7DCF48000E185A /* mail.png in Resources */,
 				D4CA5CD11C7DCF48000E185A /* pin.png in Resources */,
 				185DC1171D5140C3007998F3 /* SideMenuTableViewCell.xib in Resources */,
+				188853C91D917CBB001EF67C /* unchecked.png in Resources */,
 				1888573E1CAB19F10026995E /* HomeTableViewCell.xib in Resources */,
 				185DC0FC1D4E2C4C007998F3 /* splash.png in Resources */,
 				D4CA5CCB1C7DCF48000E185A /* feedback_ratinghalf.png in Resources */,
@@ -775,6 +818,7 @@
 				D4CA5CDB1C7DCF48000E185A /* wallet_id.png in Resources */,
 				185DC1201D514348007998F3 /* postAd.png in Resources */,
 				185DC11F1D514348007998F3 /* messages.png in Resources */,
+				188853C81D917CBB001EF67C /* checked.png in Resources */,
 				D4CA5CC91C7DCF48000E185A /* feedback_rating.png in Resources */,
 				D4CA5CD61C7DCF48000E185A /* search.png in Resources */,
 			);
@@ -851,9 +895,11 @@
 			files = (
 				18CF35151D5BCE6100C0A5BD /* BidsReceivedTableViewCell.m in Sources */,
 				184AF5401D76074D001DDD4B /* SignUpRequestModal.m in Sources */,
+				188853CC1D9184B7001EF67C /* AddTreatmentRequestModal.m in Sources */,
 				18AA90831D8D096E00DA3828 /* AdSIngleModal.m in Sources */,
 				185DC10B1D5136D2007998F3 /* SWRevealViewController.m in Sources */,
 				18CF35241D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.m in Sources */,
+				188853CF1D919755001EF67C /* BookingsViewController.m in Sources */,
 				D4A7DD7A1C806CF900F82033 /* DocumentReviewViewController.m in Sources */,
 				18A6D2FB1D7AB80E004907EB /* CustomerGetProjectsResponseModal.m in Sources */,
 				18C831951D63593A00AE6058 /* DataSyncManager.m in Sources */,
@@ -865,6 +911,8 @@
 				1888573D1CAB19F10026995E /* HomeTableViewCell.m in Sources */,
 				18DE0EA01D46A2BB00043037 /* LoginTableViewCell.m in Sources */,
 				D4D5A1BD1D5852AC00B15CBE /* ChatListViewController.m in Sources */,
+				188853D61D91A409001EF67C /* BookingsTableViewCell.m in Sources */,
+				188853DA1D91AE77001EF67C /* LocationViewController.m in Sources */,
 				D4D5A1D41D59F47A00B15CBE /* ProfileSubDetailViewController.m in Sources */,
 				18DE0E9D1D4697B000043037 /* GatewayViewController.m in Sources */,
 				D455C4781C7F15C300C6D1CB /* LoginViewController.m in Sources */,

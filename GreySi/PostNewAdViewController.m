@@ -8,12 +8,16 @@
 
 #import "PostNewAdViewController.h"
 #import "TreatmentTabTableViewCell.h"
+#import "AddTreatmentRequestModal.h"
+#import "HomeViewController.h"
 
 @interface PostNewAdViewController ()
 
 @end
 
 @implementation PostNewAdViewController
+
+@synthesize isOpenedFromSideMenu;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,12 +36,15 @@
     
     treatmentOptionsArr = [[NSMutableArray alloc] initWithObjects:@"Women's Hair",@"Men's Hair",@"Manicure",@"Pedicure",@"Beauty",@"Massage",@"Other", nil];
     cityOptionsArr = [[NSMutableArray alloc] initWithObjects:@"Stockholm",@"Manchester",@"Hamburg",@"Sussex", nil];
+    selectedTreamentsArr = [[NSMutableArray alloc] init];
     
     self.treatmentButton.layer.cornerRadius = 2.0;
     self.platsButton.layer.cornerRadius = 2.0;
     self.budgetButton.layer.cornerRadius = 2.0;
     self.selectCityButton.layer.cornerRadius = 2.0;
     self.selectDateTimeButton.layer.cornerRadius = 2.0;
+    
+    self.budgetTxtField.keyboardType = UIKeyboardTypeNumberPad;
     
     [self setupLayoutForTabIndex:0];
     
@@ -54,6 +61,7 @@
         
         self.treatmentTabView.hidden = NO;
         self.platsTabView.hidden = YES;
+        self.budgetTabView.hidden = YES;
         
     }
     else if (index == 1) {
@@ -64,6 +72,7 @@
         
         self.treatmentTabView.hidden = YES;
         self.platsTabView.hidden = NO;
+        self.budgetTabView.hidden = YES;
         
         
     }
@@ -71,6 +80,11 @@
         self.budgetButton.backgroundColor = [UIColor colorWithRed:202./255. green:202./255. blue:202./255. alpha:1.0];
         self.platsButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
         self.treatmentButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
+        
+        self.treatmentTabView.hidden = YES;
+        self.platsTabView.hidden = YES;
+        self.budgetTabView.hidden = NO;
+        
     }
     
 }
@@ -91,19 +105,19 @@
 
 - (IBAction)treatmentButtonTapped:(id)sender {
     
-    [self setupLayoutForTabIndex:0];
+    //[self setupLayoutForTabIndex:0];
     
 }
 
 - (IBAction)platsButtonTapped:(id)sender {
     
-    [self setupLayoutForTabIndex:1];
+    //[self setupLayoutForTabIndex:1];
     
 }
 
 - (IBAction)budgetButtonTapped:(id)sender {
     
-    [self setupLayoutForTabIndex:2];
+    //[self setupLayoutForTabIndex:2];
     
 }
 
@@ -133,6 +147,15 @@
                                   selectedDate:[NSDate date]
                                      doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
                                          
+                                         NSDateFormatter* format1 = [[NSDateFormatter alloc] init];
+                                         format1.dateFormat = @"dd/MM/yyyy";
+                                         
+                                         NSDateFormatter* format2 = [[NSDateFormatter alloc] init];
+                                         format2.dateFormat = @"HH:mm:ss";
+                                         
+                                         finalSelectedDate = [format1 stringFromDate:selectedDate];
+                                         finalSelectedTime = [format2 stringFromDate:selectedDate];
+                                         
                                          NSString *dateString = [NSDateFormatter localizedStringFromDate:selectedDate dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle];
                                          NSLog(@"Picker: value: %@",dateString);
                                          [self.selectDateTimeButton setTitle:dateString forState:UIControlStateNormal];
@@ -148,7 +171,59 @@
 
 - (IBAction)backButtonTapped:(id)sender {
     
-    [self.navigationController popViewControllerAnimated:YES];
+    if (isOpenedFromSideMenu) {
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        HomeViewController* controller = (HomeViewController*)[mainStoryboard instantiateViewControllerWithIdentifier:@"homeViewController"];
+        [self.revealViewController setFrontViewController:controller animated:YES];
+    }
+    else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+    
+}
+
+- (IBAction)treatmentTabNextButtonTapped:(id)sender {
+    
+    if (selectedTreamentsArr.count > 0) {
+        [self setupLayoutForTabIndex:1];
+    }
+    else {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Select Treatment" message:@"Please select at least one treatment to proceed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    
+}
+
+- (IBAction)myPlaceButtonTapped:(id)sender {
+    
+    [self.myPlaceButton setSelected:YES];
+    [self.yourPlaceButton setSelected:NO];
+    
+}
+
+- (IBAction)yourPlaceButtonTapped:(id)sender {
+    
+    [self.myPlaceButton setSelected:NO];
+    [self.yourPlaceButton setSelected:YES];
+    
+}
+
+- (IBAction)placeTabNextButtonTapped:(id)sender {
+    
+    if ([self.selectCityButton.titleLabel.text isEqualToString:@"Select a City"] || [self.selectDateTimeButton.titleLabel.text isEqualToString:@"Select a Date"] || (!self.myPlaceButton.isSelected && !self.yourPlaceButton.isSelected)) {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Select Options" message:@"Please select all options to proceed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else {
+        [self setupLayoutForTabIndex:2];
+    }
+    
+}
+
+- (IBAction)addButtonTapped:(id)sender {
+    
+    [self startAddTreatmentService];
     
 }
 
@@ -195,7 +270,13 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:true];
     
-    [self setupLayoutForTabIndex:1];
+    if([selectedTreamentsArr containsObject:[treatmentOptionsArr objectAtIndex:indexPath.row]]){
+        [selectedTreamentsArr removeObject:[treatmentOptionsArr objectAtIndex:indexPath.row]];
+    } else {
+        [selectedTreamentsArr addObject:[treatmentOptionsArr objectAtIndex:indexPath.row]];
+    }
+    
+    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
 }
 
@@ -209,6 +290,93 @@
     }
     
     cell.treatmentLabel.text = treatmentOptionsArr[indexPath.row];
+    
+    if([selectedTreamentsArr containsObject:[treatmentOptionsArr objectAtIndex:indexPath.row]]){
+        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    } else {
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
+    }
+    
+}
+
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    [self.view endEditing:YES];
+    
+}
+
+#pragma mark - API handlers
+
+- (void) startAddTreatmentService {
+    
+    [SVProgressHUD showWithStatus:@"Posting treatment..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kCustomerAddTreatmentService;
+    manager.delegate = self;
+    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForAddTreatment]];
+    
+}
+
+#pragma mark - DATASYNCMANAGER Delegates
+
+-(void) didFinishServiceWithSuccess:(SignUpResponseModal *)responseData andServiceKey:(NSString *)requestServiceKey {
+    
+    [SVProgressHUD dismiss];
+    [SVProgressHUD showSuccessWithStatus:@"Posted Successful"];
+    
+    if ([requestServiceKey isEqualToString:kCustomerAddTreatmentService]) {
+        
+        
+    }
+    
+    
+    
+}
+
+
+- (void) didFinishServiceWithFailure:(NSString *)errorMsg {
+    
+    
+    [SVProgressHUD dismiss];
+    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil
+                                                  message:NSLocalizedString(@"An issue occured while processing your request. Please try again later.", nil)
+                                                 delegate:self
+                                        cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                        otherButtonTitles: nil];
+    
+    if (![errorMsg isEqualToString:@""]) {
+        [alert setMessage:errorMsg];
+    }
+    
+    if ([errorMsg isEqualToString:NSLocalizedString(@"Verify your internet connection and try again", nil)]) {
+        [alert setTitle:NSLocalizedString(@"Connection unsuccessful", nil)];
+    }
+    
+    
+    [alert show];
+    
+    return;
+    
+}
+
+#pragma mark - Modalobject
+
+- (NSMutableDictionary *) prepareDictionaryForAddTreatment {
+    
+    AddTreatmentRequestModal* obj = [[AddTreatmentRequestModal alloc] init];
+    
+    obj.user_id = [[SharedClass sharedInstance] userObj].user_id;
+    obj.treatment = [selectedTreamentsArr componentsJoinedByString:@","];
+    obj.city = self.selectCityButton.titleLabel.text;
+    obj.place = (self.myPlaceButton.selected) ? @"My Place" : @"Your Place";
+    obj.date = finalSelectedDate;
+    obj.time = finalSelectedTime;
+    obj.budget = self.budgetTxtField.text;
+    obj.desc = self.descriptionTxtField.text;
+    
+    return [obj createRequestDictionary];
     
 }
 

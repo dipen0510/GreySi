@@ -196,25 +196,25 @@
     
     BOOL emailIsValid = [self validateEmailWithString:emailText];
   
-    [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
+//    [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
     
-//    if ([emailText isEqualToString:@""]) {
-//        
-//        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your email address", nil)];
-//    }
-//    
-//    else if (!emailIsValid) {
-//        
-//        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter a valid email address", nil)];
-//    }
-//    else if ([passwordText isEqualToString:@""]) {
-//        
-//        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your password", nil)];
-//    }
-//    else {
-//        [SVProgressHUD showWithStatus:@"Logging In..."];
-//        [self startLoginService];
-//    }
+    if ([emailText isEqualToString:@""]) {
+        
+        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your email address", nil)];
+    }
+    
+    else if (!emailIsValid) {
+        
+        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter a valid email address", nil)];
+    }
+    else if ([passwordText isEqualToString:@""]) {
+        
+        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your password", nil)];
+    }
+    else {
+        [SVProgressHUD showWithStatus:@"Logging In..."];
+        [self startLoginService];
+    }
     
     
     
@@ -272,6 +272,10 @@
 #pragma mark - Form Validations
 
 - (BOOL)validateEmailWithString:(NSString*)email {
+    
+    
+    return true;
+    
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:email];
