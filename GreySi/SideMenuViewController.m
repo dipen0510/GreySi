@@ -9,6 +9,7 @@
 #import "SideMenuViewController.h"
 #import "SideMenuTableViewCell.h"
 #import "PostNewAdViewController.h"
+#import "HairPostAdViewController.h"
 
 @interface SideMenuViewController ()
 
@@ -149,7 +150,12 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             break;
             
         case 3:
-            [self performSegueWithIdentifier:@"showPostAdSegue" sender:nil];
+            if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
+                [self performSegueWithIdentifier:@"showHairPostAdSegue" sender:nil];
+            }
+            else {
+                [self performSegueWithIdentifier:@"showPostAdSegue" sender:nil];
+            }
             break;
         
         case 4:
@@ -177,6 +183,12 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     if ([[segue identifier] isEqualToString:@"showPostAdSegue"]) {
         
         PostNewAdViewController* controller = (PostNewAdViewController *)[segue destinationViewController];
+        controller.isOpenedFromSideMenu = YES;
+        
+    }
+    if ([[segue identifier] isEqualToString:@"showHairPostAdSegue"]) {
+        
+        HairPostAdViewController* controller = (HairPostAdViewController *)[segue destinationViewController];
         controller.isOpenedFromSideMenu = YES;
         
     }

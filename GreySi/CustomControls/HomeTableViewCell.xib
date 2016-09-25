@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -32,10 +32,9 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Padicure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2L-jH-szE">
-                        <rect key="frame" x="87" y="40" width="50" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Padicure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="g2L-jH-szE">
+                        <rect key="frame" x="87" y="40" width="76" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="Uvw-eD-7Sc"/>
                             <constraint firstAttribute="height" constant="15" id="hcb-Uu-9BH"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
@@ -43,7 +42,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timeLeftClock.png" translatesAutoresizingMaskIntoConstraints="NO" id="h1k-fF-2qX">
-                        <rect key="frame" x="140" y="43" width="10" height="10"/>
+                        <rect key="frame" x="160" y="43" width="10" height="10"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="10" id="TIF-Ag-FKn"/>
                             <constraint firstAttribute="height" constant="10" id="hOY-3a-lJn"/>
@@ -61,7 +60,7 @@
                         <state key="normal" title="+"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 hr left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfR-bp-ZT8">
-                        <rect key="frame" x="151" y="40" width="47" height="15"/>
+                        <rect key="frame" x="171" y="40" width="47" height="15"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="47" id="b4Q-ew-zfw"/>
                             <constraint firstAttribute="height" constant="15" id="q6d-J9-DyS"/>
@@ -89,12 +88,13 @@
                     <constraint firstItem="KPu-1O-Rxr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="16" id="JaW-ud-1Od"/>
                     <constraint firstItem="g2L-jH-szE" firstAttribute="leading" secondItem="2Tb-XC-uuB" secondAttribute="trailing" constant="8" id="Juy-9S-wOc"/>
                     <constraint firstItem="2Tb-XC-uuB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Jzh-g5-WRz"/>
+                    <constraint firstItem="KPu-1O-Rxr" firstAttribute="leading" secondItem="NfR-bp-ZT8" secondAttribute="trailing" constant="16" id="L5O-Lu-nbp"/>
                     <constraint firstItem="BWA-oR-22B" firstAttribute="leading" secondItem="2Tb-XC-uuB" secondAttribute="trailing" constant="8" id="RoA-Fo-xML"/>
                     <constraint firstItem="BWA-oR-22B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="S4v-t9-Yhx"/>
                     <constraint firstItem="NfR-bp-ZT8" firstAttribute="top" secondItem="BWA-oR-22B" secondAttribute="bottom" constant="8" id="Ud2-aR-wV7"/>
                     <constraint firstItem="h1k-fF-2qX" firstAttribute="top" secondItem="BWA-oR-22B" secondAttribute="bottom" constant="11" id="dpu-2W-HK9"/>
+                    <constraint firstItem="NfR-bp-ZT8" firstAttribute="leading" secondItem="g2L-jH-szE" secondAttribute="trailing" constant="8" id="hKf-c2-reB"/>
                     <constraint firstAttribute="trailingMargin" secondItem="e1h-1p-x0M" secondAttribute="trailing" constant="24" id="l4R-v6-teS"/>
-                    <constraint firstItem="h1k-fF-2qX" firstAttribute="leading" secondItem="g2L-jH-szE" secondAttribute="trailing" constant="3" id="owM-KS-z1G"/>
                     <constraint firstAttribute="bottomMargin" secondItem="e1h-1p-x0M" secondAttribute="bottom" constant="11" id="pBP-bu-gUL"/>
                     <constraint firstItem="KPu-1O-Rxr" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="-8" id="qsJ-m8-8VN"/>
                     <constraint firstItem="NfR-bp-ZT8" firstAttribute="leading" secondItem="h1k-fF-2qX" secondAttribute="trailing" constant="1" id="t26-po-jAT"/>

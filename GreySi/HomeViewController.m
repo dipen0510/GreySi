@@ -37,7 +37,13 @@
     
     [self setupInitialUI];
     
-    [self startCustomerGetAdService];
+    if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
+        [self startHairFetchProjectsService];
+    }
+    else {
+        [self startCustomerGetAdService];
+    }
+    
     
 }
 
@@ -92,6 +98,17 @@
     
 }
 
+- (void) startHairFetchProjectsService {
+    
+    [SVProgressHUD showWithStatus:@"Fetching Ads..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kHairFetchProjectsService;
+    manager.delegate = self;
+    [manager startGETWebServices];
+    
+}
+
 #pragma mark - DATASYNCMANAGER Delegates
 
 -(void) didFinishServiceWithSuccess:(id)responseData andServiceKey:(NSString *)requestServiceKey {
@@ -100,6 +117,13 @@
     [SVProgressHUD showSuccessWithStatus:@""];
     
     if ([requestServiceKey isEqualToString:kCustomerGetAdService]) {
+        
+        addContentArr = [[NSMutableArray alloc] initWithArray:[responseData valueForKey:@"info"]];
+        
+        [self.adsTblView reloadData];
+        
+    }
+    if ([requestServiceKey isEqualToString:kHairFetchProjectsService]) {
         
         addContentArr = [[NSMutableArray alloc] initWithArray:[responseData valueForKey:@"info"]];
         
@@ -184,9 +208,14 @@
 
 - (void) addButtonTapped {
     
-    //[SVProgressHUD showSuccessWithStatus:@"Ad posted successfully"];
+    if ([[[SharedClass sharedInstance] userObj].flag intValue]==1) {
+        [self performSegueWithIdentifier:@"showHairPostAdSegue" sender:nil];
+    }
+    else {
+        [self performSegueWithIdentifier:@"showNewAdSegue" sender:nil];
+    }
     
-    [self performSegueWithIdentifier:@"showNewAdSegue" sender:nil];
+    
     
 }
 
@@ -259,29 +288,60 @@
         
         //POPULATE CONTENT
         
-        AdSIngleModal* modal = [[AdSIngleModal alloc] initWithDictionary:[addContentArr objectAtIndex:indexPath.row]];
-        
-        id budgetDict = [NSJSONSerialization JSONObjectWithData:[modal.budget dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
-        id treatmentDict = [NSJSONSerialization JSONObjectWithData:[modal.treatment dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
-        
-        cell.nameLabel.text = modal.name;
-        cell.serviceTypeLabel.text = [[[treatmentDict valueForKey:@"treatmentsArray"] objectAtIndex:0] valueForKey:@"name"];
-        [cell.priceButton setTitle:[NSString stringWithFormat:@"$%@",[[[budgetDict valueForKey:@"pricesArray"] objectAtIndex:0] valueForKey:@"name"]] forState:UIControlStateNormal];
-        cell.timeLeftLabel.text = [NSString stringWithFormat:@"%@ hours left",modal.hours];
-        
-        __weak UIImageView* weakImageView = cell.profileImageView;
-        [cell.profileImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[modal.profile_pi stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
-                                                                            cachePolicy:NSURLRequestReturnCacheDataElseLoad
-                                                                        timeoutInterval:60.0] placeholderImage:[UIImage imageNamed:@"blankProfile"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        if ([[[SharedClass sharedInstance] userObj].flag intValue]== 1) {
             
+            NSMutableDictionary* objDict = [[NSMutableDictionary alloc] initWithDictionary:[addContentArr objectAtIndex:indexPath.row]];
             
-            weakImageView.alpha = 0.0;
-            weakImageView.image = image;
-            [UIView animateWithDuration:0.25
-                             animations:^{
-                                 weakImageView.alpha = 1.0;
-                             }];
-        } failure:NULL];
+            cell.timeLeftImageView.image = [UIImage imageNamed:@"pin.png"];
+            
+            cell.nameLabel.text = [objDict valueForKey:@"Name"];
+            cell.serviceTypeLabel.text = [objDict valueForKey:@"Treatment"];
+            [cell.priceButton setTitle:[NSString stringWithFormat:@"$%@",[objDict valueForKey:@"Budget"]] forState:UIControlStateNormal];
+            cell.timeLeftLabel.text = [objDict valueForKey:@"Place"];
+            
+            __weak UIImageView* weakImageView = cell.profileImageView;
+            [cell.profileImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[[objDict valueForKey:@"Profile_pi"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
+                                                                           cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                                       timeoutInterval:60.0] placeholderImage:[UIImage imageNamed:@"blankProfile"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                
+                
+                weakImageView.alpha = 0.0;
+                weakImageView.image = image;
+                [UIView animateWithDuration:0.25
+                                 animations:^{
+                                     weakImageView.alpha = 1.0;
+                                 }];
+            } failure:NULL];
+
+            
+        }
+        else {
+            AdSIngleModal* modal = [[AdSIngleModal alloc] initWithDictionary:[addContentArr objectAtIndex:indexPath.row]];
+            
+            id budgetDict = [NSJSONSerialization JSONObjectWithData:[modal.budget dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+            id treatmentDict = [NSJSONSerialization JSONObjectWithData:[modal.treatment dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+            
+            cell.nameLabel.text = modal.name;
+            cell.serviceTypeLabel.text = [[[treatmentDict valueForKey:@"treatmentsArray"] objectAtIndex:0] valueForKey:@"name"];
+            [cell.priceButton setTitle:[NSString stringWithFormat:@"$%@",[[[budgetDict valueForKey:@"pricesArray"] objectAtIndex:0] valueForKey:@"name"]] forState:UIControlStateNormal];
+            cell.timeLeftLabel.text = [NSString stringWithFormat:@"%@ hours left",modal.hours];
+            
+            __weak UIImageView* weakImageView = cell.profileImageView;
+            [cell.profileImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[modal.profile_pi stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
+                                                                           cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                                       timeoutInterval:60.0] placeholderImage:[UIImage imageNamed:@"blankProfile"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                
+                
+                weakImageView.alpha = 0.0;
+                weakImageView.image = image;
+                [UIView animateWithDuration:0.25
+                                 animations:^{
+                                     weakImageView.alpha = 1.0;
+                                 }];
+            } failure:NULL];
+        }
+        
+        
         
     }
     

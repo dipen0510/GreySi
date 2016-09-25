@@ -13,6 +13,7 @@
     
     int selectedIndex;
     NSMutableArray* projectsArr;
+    int userType;
     
 }
 

@@ -38,6 +38,8 @@
     
     self.projectsTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
+    userType = [[[SharedClass sharedInstance] userObj].flag intValue];
+    
     self.postedProjectsButton.layer.cornerRadius = 2.0;
     self.activeProjectsButton.layer.cornerRadius = 2.0;
     self.completedProjectsButton.layer.cornerRadius = 2.0;
@@ -56,45 +58,96 @@
 
 - (void) setupLayoutForTabIndex:(int)index {
     
-    if (index == 0) {
+    if (userType == 1) {
         
-        [self startCustomerGetPostedProjectsService];
+        [self.postedProjectsButton setTitle:@"Awarded Projects" forState:UIControlStateNormal];
         
-        self.postedProjectsButton.backgroundColor = [UIColor whiteColor] ;
-        [self.postedProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
-        self.activeProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
-        [self.activeProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        self.completedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
-        [self.completedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-
+        if (index == 0) {
+            
+            [self startHDGetBiddedProjectsService];
+            
+            self.postedProjectsButton.backgroundColor = [UIColor whiteColor] ;
+            [self.postedProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
+            self.activeProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.activeProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            self.completedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.completedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            
+            
+            
+        }
+        else if (index == 1) {
+            
+            [self startHDGetActiveProjectsService];
+            
+            self.activeProjectsButton.backgroundColor = [UIColor whiteColor] ;
+            [self.activeProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
+            self.postedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.postedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            self.completedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.completedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            
+            
+        }
+        else if (index == 2) {
+            
+            [self startHDrGetCompletedProjectsService];
+            
+            self.completedProjectsButton.backgroundColor = [UIColor whiteColor] ;
+            [self.completedProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
+            self.activeProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.activeProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            self.postedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.postedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            
+        }
+        
+    }
+    else {
+        
+        if (index == 0) {
+            
+            [self startCustomerGetPostedProjectsService];
+            
+            self.postedProjectsButton.backgroundColor = [UIColor whiteColor] ;
+            [self.postedProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
+            self.activeProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.activeProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            self.completedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.completedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            
+            
+            
+        }
+        else if (index == 1) {
+            
+            [self startCustomerGetActiveProjectsService];
+            
+            self.activeProjectsButton.backgroundColor = [UIColor whiteColor] ;
+            [self.activeProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
+            self.postedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.postedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            self.completedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.completedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            
+            
+        }
+        else if (index == 2) {
+            
+            [self startCustomerGetCompletedProjectsService];
+            
+            self.completedProjectsButton.backgroundColor = [UIColor whiteColor] ;
+            [self.completedProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
+            self.activeProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.activeProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            self.postedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.postedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            
+        }
         
         
     }
-    else if (index == 1) {
-        
-        [self startCustomerGetActiveProjectsService];
-        
-        self.activeProjectsButton.backgroundColor = [UIColor whiteColor] ;
-        [self.activeProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
-        self.postedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
-        [self.postedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        self.completedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
-        [self.completedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
-        
-    }
-    else if (index == 2) {
-        
-        [self startCustomerGetCompletedProjectsService];
-        
-        self.completedProjectsButton.backgroundColor = [UIColor whiteColor] ;
-        [self.completedProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
-        self.activeProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
-        [self.activeProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        self.postedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
-        [self.postedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
-    }
+    
     
     [self.projectsTableView reloadData];
     
@@ -134,6 +187,39 @@
     
 }
 
+- (void) startHDGetBiddedProjectsService {
+    
+    [SVProgressHUD showWithStatus:@"Fetching Awarded Projects..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = [NSString stringWithFormat:@"%@%@",kHairGetBiddedProjectsService,[[SharedClass sharedInstance] userObj].user_id];
+    manager.delegate = self;
+    [manager startGETWebServices];
+    
+}
+
+- (void) startHDGetActiveProjectsService {
+    
+    [SVProgressHUD showWithStatus:@"Fetching Active Projects..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = [NSString stringWithFormat:@"%@%@",kHairGetActiveProjectsService,[[SharedClass sharedInstance] userObj].user_id];
+    manager.delegate = self;
+    [manager startGETWebServices];
+    
+}
+
+- (void) startHDrGetCompletedProjectsService {
+    
+    [SVProgressHUD showWithStatus:@"Fetching Completed Projects..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = [NSString stringWithFormat:@"%@%@",kHairGetCompletedProjectsService,[[SharedClass sharedInstance] userObj].user_id];
+    manager.delegate = self;
+    [manager startGETWebServices];
+    
+}
+
 #pragma mark - DATASYNCMANAGER Delegates
 
 -(void) didFinishServiceWithSuccess:(CustomerGetProjectsResponseModal *)responseData andServiceKey:(NSString *)requestServiceKey {
@@ -147,7 +233,12 @@
         [self.projectsTableView reloadData];
         
     }
-    
+    else if ([requestServiceKey isEqualToString:[NSString stringWithFormat:@"%@%@",kHairGetBiddedProjectsService,[[SharedClass sharedInstance] userObj].user_id]] || [requestServiceKey isEqualToString:[NSString stringWithFormat:@"%@%@",kHairGetActiveProjectsService,[[SharedClass sharedInstance] userObj].user_id]] || [requestServiceKey isEqualToString:[NSString stringWithFormat:@"%@%@",kHairGetCompletedProjectsService,[[SharedClass sharedInstance] userObj].user_id]]){
+        
+        projectsArr = [[NSMutableArray alloc] initWithArray:responseData.info];
+        [self.projectsTableView reloadData];
+        
+    }
     
     
 }

@@ -323,12 +323,11 @@
 
 -(void) didFinishServiceWithSuccess:(SignUpResponseModal *)responseData andServiceKey:(NSString *)requestServiceKey {
     
-    [SVProgressHUD dismiss];
+    //[SVProgressHUD dismiss];
     [SVProgressHUD showSuccessWithStatus:@"Posted Successful"];
     
     if ([requestServiceKey isEqualToString:kCustomerAddTreatmentService]) {
-        
-        
+        //[self backButtonTapped:nil];
     }
     
     

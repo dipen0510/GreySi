@@ -32,6 +32,10 @@
 		185DC1231D5145C9007998F3 /* projects.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC1221D5145C9007998F3 /* projects.png */; };
 		185DC1251D514934007998F3 /* profileDetailBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC1241D514934007998F3 /* profileDetailBG.png */; };
 		185DC1281D514DEA007998F3 /* ProfileDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185DC1271D514DEA007998F3 /* ProfileDetailViewController.m */; };
+		1881F3C81D97E377005198A2 /* HairPostAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1881F3C71D97E376005198A2 /* HairPostAdViewController.m */; };
+		1881F3CD1D97E478005198A2 /* HairPostAdTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1881F3CB1D97E478005198A2 /* HairPostAdTableViewCell.m */; };
+		1881F3CE1D97E478005198A2 /* HairPostAdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1881F3CC1D97E478005198A2 /* HairPostAdTableViewCell.xib */; };
+		1881F3CF1D97EEEB005198A2 /* HairPostAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1881F3C71D97E376005198A2 /* HairPostAdViewController.m */; };
 		188853C81D917CBB001EF67C /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 188853C61D917CBB001EF67C /* checked.png */; };
 		188853C91D917CBB001EF67C /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 188853C71D917CBB001EF67C /* unchecked.png */; };
 		188853CC1D9184B7001EF67C /* AddTreatmentRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 188853CB1D9184B7001EF67C /* AddTreatmentRequestModal.m */; };
@@ -162,6 +166,11 @@
 		185DC1241D514934007998F3 /* profileDetailBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileDetailBG.png; sourceTree = "<group>"; };
 		185DC1261D514DEA007998F3 /* ProfileDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileDetailViewController.h; sourceTree = "<group>"; };
 		185DC1271D514DEA007998F3 /* ProfileDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileDetailViewController.m; sourceTree = "<group>"; };
+		1881F3C61D97E376005198A2 /* HairPostAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HairPostAdViewController.h; sourceTree = "<group>"; };
+		1881F3C71D97E376005198A2 /* HairPostAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HairPostAdViewController.m; sourceTree = "<group>"; };
+		1881F3CA1D97E478005198A2 /* HairPostAdTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HairPostAdTableViewCell.h; path = CustomControls/HairPostAdTableViewCell.h; sourceTree = "<group>"; };
+		1881F3CB1D97E478005198A2 /* HairPostAdTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HairPostAdTableViewCell.m; path = CustomControls/HairPostAdTableViewCell.m; sourceTree = "<group>"; };
+		1881F3CC1D97E478005198A2 /* HairPostAdTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HairPostAdTableViewCell.xib; path = CustomControls/HairPostAdTableViewCell.xib; sourceTree = "<group>"; };
 		188853C61D917CBB001EF67C /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
 		188853C71D917CBB001EF67C /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
 		188853CA1D9184B7001EF67C /* AddTreatmentRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTreatmentRequestModal.h; sourceTree = "<group>"; };
@@ -359,6 +368,16 @@
 			name = SideMenuTableViewCell;
 			sourceTree = "<group>";
 		};
+		1881F3C91D97E442005198A2 /* HairPostAdTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1881F3CA1D97E478005198A2 /* HairPostAdTableViewCell.h */,
+				1881F3CB1D97E478005198A2 /* HairPostAdTableViewCell.m */,
+				1881F3CC1D97E478005198A2 /* HairPostAdTableViewCell.xib */,
+			);
+			name = HairPostAdTableViewCell;
+			sourceTree = "<group>";
+		};
 		188853D21D91A344001EF67C /* BookingsTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +401,7 @@
 		1888572A1CAB17D80026995E /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				1881F3C91D97E442005198A2 /* HairPostAdTableViewCell */,
 				188853D21D91A344001EF67C /* BookingsTableViewCell */,
 				18CF35201D5BD49A00C0A5BD /* CompletedProjectsTableViewCell */,
 				18CF35171D5BD1F800C0A5BD /* ActiveProjectsTableViewCell */,
@@ -562,6 +582,8 @@
 				188853CE1D919755001EF67C /* BookingsViewController.m */,
 				188853D81D91AE77001EF67C /* LocationViewController.h */,
 				188853D91D91AE77001EF67C /* LocationViewController.m */,
+				1881F3C61D97E376005198A2 /* HairPostAdViewController.h */,
+				1881F3C71D97E376005198A2 /* HairPostAdViewController.m */,
 			);
 			path = GreySi;
 			sourceTree = "<group>";
@@ -784,6 +806,7 @@
 				D4CA5C831C7DCDF7000E185A /* Assets.xcassets in Resources */,
 				D455C4741C7EDABA00C6D1CB /* signup.png in Resources */,
 				18AA9CA41CA6DB8500938952 /* profile_temp.png in Resources */,
+				1881F3CE1D97E478005198A2 /* HairPostAdTableViewCell.xib in Resources */,
 				D4CA5CC41C7DCF48000E185A /* arrow.png in Resources */,
 				D455C4731C7EDABA00C6D1CB /* login.png in Resources */,
 				185DC11D1D514348007998F3 /* available.png in Resources */,
@@ -915,6 +938,8 @@
 				188853DA1D91AE77001EF67C /* LocationViewController.m in Sources */,
 				D4D5A1D41D59F47A00B15CBE /* ProfileSubDetailViewController.m in Sources */,
 				18DE0E9D1D4697B000043037 /* GatewayViewController.m in Sources */,
+				1881F3CD1D97E478005198A2 /* HairPostAdTableViewCell.m in Sources */,
+				1881F3C81D97E377005198A2 /* HairPostAdViewController.m in Sources */,
 				D455C4781C7F15C300C6D1CB /* LoginViewController.m in Sources */,
 				185B5E921D5A6A0A00205F72 /* PostNewAdViewController.m in Sources */,
 				185DC1161D5140C3007998F3 /* SideMenuTableViewCell.m in Sources */,
@@ -949,6 +974,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4CA5C9C1C7DCDF8000E185A /* GreySiUITests.m in Sources */,
+				1881F3CF1D97EEEB005198A2 /* HairPostAdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

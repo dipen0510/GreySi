@@ -26,6 +26,8 @@
     [dict setObject:@"2" forKey:registerDeviceTypeKey];
     [dict setObject:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] forKey:registerVersionCodeKey];
     
+    [dict setObject:@"1234" forKey:@"QB_ID"];
+    
     return dict;
 }
 

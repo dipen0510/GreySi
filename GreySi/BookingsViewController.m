@@ -34,7 +34,13 @@
     bookingsArr = [[NSMutableArray alloc] init];
     self.bookingsTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    [self startCustomerBookingsService];
+    if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
+        [self startHairBookingsService];
+    }
+    else {
+        [self startCustomerBookingsService];
+    }
+    
     
 }
 
@@ -62,6 +68,17 @@
     
 }
 
+- (void) startHairBookingsService {
+    
+    [SVProgressHUD showWithStatus:@"Fetching Bookings..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = [NSString stringWithFormat:@"%@%@",kHairBookingsService,[[SharedClass sharedInstance] userObj].user_id];;
+    manager.delegate = self;
+    [manager startGETWebServices];
+    
+}
+
 #pragma mark - DATASYNCMANAGER Delegates
 
 -(void) didFinishServiceWithSuccess:(id)responseData andServiceKey:(NSString *)requestServiceKey {
@@ -70,6 +87,13 @@
     [SVProgressHUD showSuccessWithStatus:@""];
     
     if ([requestServiceKey isEqualToString:[NSString stringWithFormat:@"%@%@",kCustomerBookingsService,[[SharedClass sharedInstance] userObj].user_id]]) {
+        
+        bookingsArr = [[NSMutableArray alloc] initWithArray:[responseData valueForKey:@"info"]];
+        
+        [self.bookingsTblView reloadData];
+        
+    }
+    if ([requestServiceKey isEqualToString:[NSString stringWithFormat:@"%@%@",kHairBookingsService,[[SharedClass sharedInstance] userObj].user_id]]) {
         
         bookingsArr = [[NSMutableArray alloc] initWithArray:[responseData valueForKey:@"info"]];
         
