@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SideMenuViewController : UIViewController {
+@interface SideMenuViewController : UIViewController <UIAlertViewDelegate> {
     
     NSMutableArray* tableArr;
     

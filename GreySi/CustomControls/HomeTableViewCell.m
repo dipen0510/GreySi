@@ -16,7 +16,6 @@
     self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height/2.;
     self.priceButton.layer.cornerRadius = 2.0;
-    self.addButton.layer.cornerRadius = self.addButton.frame.size.height/2.;
     
 }
 

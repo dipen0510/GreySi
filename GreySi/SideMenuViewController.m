@@ -62,11 +62,6 @@
     [dict1 setObject:@"messages.png" forKey:@"image"];
     [tableArr addObject:dict1];
     
-    NSMutableDictionary* dict2 = [[NSMutableDictionary alloc] init];
-    [dict2 setObject:@"LOG OUT" forKey:@"title"];
-    [dict2 setObject:@"logout.png" forKey:@"image"];
-    [tableArr addObject:dict2];
-    
     NSMutableDictionary* dict3 = [[NSMutableDictionary alloc] init];
     [dict3 setObject:@"POST AN AD" forKey:@"title"];
     [dict3 setObject:@"postAd.png" forKey:@"image"];
@@ -81,6 +76,11 @@
     [dict5 setObject:@"LOCATION" forKey:@"title"];
     [dict5 setObject:@"myLocation.png" forKey:@"image"];
     [tableArr addObject:dict5];
+    
+    NSMutableDictionary* dict2 = [[NSMutableDictionary alloc] init];
+    [dict2 setObject:@"LOG OUT" forKey:@"title"];
+    [dict2 setObject:@"logout.png" forKey:@"image"];
+    [tableArr addObject:dict2];
     
     
     
@@ -145,11 +145,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             [self performSegueWithIdentifier:@"showChatSegue" sender:nil];
             break;
             
-        case 2:
-            [self.navigationController popViewControllerAnimated:YES];
-            break;
             
-        case 3:
+        case 2:
             if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
                 [self performSegueWithIdentifier:@"showHairPostAdSegue" sender:nil];
             }
@@ -158,12 +155,16 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             }
             break;
         
-        case 4:
+        case 3:
             [self performSegueWithIdentifier:@"showBookingsSegue" sender:nil];
             break;
             
-        case 5:
+        case 4:
             [self performSegueWithIdentifier:@"showLocationSegue" sender:nil];
+            break;
+            
+        case 5:
+            [self showLogoutAlert];
             break;
             
         default:
@@ -172,6 +173,26 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     
 }
 
+- (void) showLogoutAlert {
+    
+    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil
+                                                  message:NSLocalizedString(@"Are you sure wou want to logout?", nil)
+                                                 delegate:self
+                                        cancelButtonTitle:NSLocalizedString(@"NO", nil)
+                                        otherButtonTitles:@"YES", nil];
+    [alert show];
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 1) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    }
+    
+}
 
 #pragma mark - Navigation
 

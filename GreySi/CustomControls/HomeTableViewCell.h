@@ -16,6 +16,4 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLeftLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *timeLeftImageView;
 @property (weak, nonatomic) IBOutlet UIButton *priceButton;
-@property (weak, nonatomic) IBOutlet UIButton *addButton;
-
 @end

@@ -35,6 +35,7 @@
 - (void) setupUI {
     
     treatmentOptionsArr = [[NSMutableArray alloc] initWithObjects:@"Women's Hair",@"Men's Hair",@"Manicure",@"Pedicure",@"Beauty",@"Massage",@"Other", nil];
+    treatmentOptionsImgArr = [[NSMutableArray alloc] initWithObjects:@"new_womens_hair_logo.png",@"new_mens_hair_logo.png",@"new_manicure_logo.png",@"new_padicure_logo.png",@"new_beauty_logo.png",@"new_massage_logo.png",@"new_others_logo.png", nil];
     cityOptionsArr = [[NSMutableArray alloc] initWithObjects:@"Stockholm",@"Manchester",@"Hamburg",@"Sussex", nil];
     selectedTreamentsArr = [[NSMutableArray alloc] init];
     
@@ -45,6 +46,12 @@
     self.selectDateTimeButton.layer.cornerRadius = 2.0;
     
     self.budgetTxtField.keyboardType = UIKeyboardTypeNumberPad;
+    
+    self.adTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    self.descriptionTxtView.layer.cornerRadius = 10.0;
+    self.descriptionTxtView.layer.borderColor = [UIColor colorWithRed:211./255. green:211./255. blue:211./255. alpha:1.0].CGColor;
+    self.descriptionTxtView.layer.borderWidth = 1.0;
     
     [self setupLayoutForTabIndex:0];
     
@@ -144,7 +151,7 @@
     
     [ActionSheetDatePicker showPickerWithTitle:@"Select a Date"
                                 datePickerMode:UIDatePickerModeDateAndTime
-                                  selectedDate:[NSDate date]
+                                  selectedDate:[NSDate date] minimumDate:[NSDate date] maximumDate:nil
                                      doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
                                          
                                          NSDateFormatter* format1 = [[NSDateFormatter alloc] init];
@@ -282,13 +289,7 @@
 
 - (void) displayContentForCell:(TreatmentTabTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row %2 == 0) {
-        cell.treatmentImgView.image = [UIImage imageNamed:@"womenhair.png"];
-    }
-    else {
-        cell.treatmentImgView.image = [UIImage imageNamed:@"menhair.png"];
-    }
-    
+    cell.treatmentImgView.image = [UIImage imageNamed:treatmentOptionsImgArr[indexPath.row]];
     cell.treatmentLabel.text = treatmentOptionsArr[indexPath.row];
     
     if([selectedTreamentsArr containsObject:[treatmentOptionsArr objectAtIndex:indexPath.row]]){
@@ -373,7 +374,7 @@
     obj.date = finalSelectedDate;
     obj.time = finalSelectedTime;
     obj.budget = self.budgetTxtField.text;
-    obj.desc = self.descriptionTxtField.text;
+    obj.desc = self.descriptionTxtView.text;
     
     return [obj createRequestDictionary];
     

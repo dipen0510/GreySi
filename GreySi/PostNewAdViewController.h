@@ -12,6 +12,7 @@
 @interface PostNewAdViewController : UIViewController<DataSyncManagerDelegate> {
     
     NSMutableArray* treatmentOptionsArr;
+    NSMutableArray* treatmentOptionsImgArr;
     NSMutableArray* cityOptionsArr;
     NSMutableArray* selectedTreamentsArr;
     NSString* finalSelectedDate;
@@ -23,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIView *platsTabView;
 @property (weak, nonatomic) IBOutlet UIView *budgetTabView;
 
+@property (weak, nonatomic) IBOutlet UITableView *adTblView;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *treatmentButton;
@@ -34,7 +36,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *myPlaceButton;
 @property (weak, nonatomic) IBOutlet UIButton *yourPlaceButton;
 @property (weak, nonatomic) IBOutlet UITextField *budgetTxtField;
-@property (weak, nonatomic) IBOutlet UITextField *descriptionTxtField;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTxtView;
 
 @property BOOL isOpenedFromSideMenu;
 

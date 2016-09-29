@@ -17,7 +17,9 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *revealButtonItem;
 @property (weak, nonatomic) IBOutlet UITableView *adsTblView;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
 
 - (IBAction)locationButtonTapped:(id)sender;
+- (IBAction)addButtonTapped:(id)sender;
 
 @end

@@ -37,7 +37,7 @@
 - (void) setupInitialUI {
     
     messages = [[NSMutableArray alloc] init];
-    
+    self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height/2.;
     self.senderId = @"1234";
     self.senderDisplayName = @"Emily Rose";

@@ -14,6 +14,7 @@
     [super awakeFromNib];
     // Initialization code
     
+    self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height/2.;
 
 }

@@ -57,6 +57,7 @@
     
     addContentArr = [[NSMutableArray alloc] init];
     self.adsTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.addButton.layer.cornerRadius = self.addButton.frame.size.height/2.;
     
     for (UIView *subview in [[self.homeSearchBar.subviews lastObject] subviews]) {
         if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
@@ -206,7 +207,13 @@
     
 }
 
-- (void) addButtonTapped {
+- (IBAction)locationButtonTapped:(id)sender {
+    
+    [self.swipeView scrollToPage:1 duration:1.0];
+    
+}
+
+- (IBAction)addButtonTapped:(id)sender {
     
     if ([[[SharedClass sharedInstance] userObj].flag intValue]==1) {
         [self performSegueWithIdentifier:@"showHairPostAdSegue" sender:nil];
@@ -214,14 +221,6 @@
     else {
         [self performSegueWithIdentifier:@"showNewAdSegue" sender:nil];
     }
-    
-    
-    
-}
-
-- (IBAction)locationButtonTapped:(id)sender {
-    
-    [self.swipeView scrollToPage:1 duration:1.0];
     
 }
 
@@ -235,7 +234,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return addContentArr.count+1;
+    return addContentArr.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -271,22 +270,7 @@
 
 - (void) displayContentForCell:(HomeTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == addContentArr.count) {
-        NSArray* arr = [NSArray arrayWithArray:[cell.contentView subviews]];
-        for (UIView* view in arr) {
-            view.hidden = YES;
-        }
-        cell.addButton.hidden = NO;
-    }
-    else {
-        NSArray* arr = [NSArray arrayWithArray:[cell.contentView subviews]];
-        for (UIView* view in arr) {
-            view.hidden = NO;
-        }
-        cell.addButton.hidden = YES;
-        
-        
-        //POPULATE CONTENT
+       //POPULATE CONTENT
         
         if ([[[SharedClass sharedInstance] userObj].flag intValue]== 1) {
             
@@ -340,12 +324,7 @@
                                  }];
             } failure:NULL];
         }
-        
-        
-        
-    }
     
-    [cell.addButton addTarget:self action:@selector(addButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     
     UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(profileImageTapped)];
     [cell.profileImageView addGestureRecognizer:gesture];
@@ -367,7 +346,7 @@
         
         AdSIngleModal* modal = [[AdSIngleModal alloc] initWithDictionary:[addContentArr objectAtIndex:i]];
         
-        if (modal.lat && modal.longi) {
+        if (modal.lat && modal.longi && ([modal.lat floatValue]<=90 && [modal.lat floatValue]>=-90) && ([modal.longi floatValue]<=180 && [modal.longi floatValue]>=-180)) {
             CLLocationCoordinate2D coord = CLLocationCoordinate2DMake([modal.lat floatValue], [modal.longi floatValue]);
             
             MKCoordinateSpan span = MKCoordinateSpanMake(10.0, 10.0);
