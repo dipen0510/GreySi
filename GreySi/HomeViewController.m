@@ -10,6 +10,8 @@
 #import "SwipeView.h"
 #import "HomeTableViewCell.h"
 #import "AdSIngleModal.h"
+#import "ProfileSubDetailViewController.h"
+#import "ProfileDetailViewController.h"
 
 
 @interface HomeViewController ()
@@ -224,8 +226,9 @@
     
 }
 
-- (void) profileImageTapped {
+- (void) profileImageTapped:(UITapGestureRecognizer *) sender {
     
+    selectedIndex = sender.view.tag;
     [self performSegueWithIdentifier:@"showProfileSegue" sender:nil];
     
 }
@@ -263,7 +266,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:true];
-
+    selectedIndex = indexPath.row;
     [self performSegueWithIdentifier:@"showProfileSubDetailSegue" sender:nil];
     
 }
@@ -326,10 +329,10 @@
         }
     
     
-    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(profileImageTapped)];
+    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(profileImageTapped:)];
     [cell.profileImageView addGestureRecognizer:gesture];
     [cell.profileImageView setUserInteractionEnabled:YES];
-    
+    cell.profileImageView.tag = indexPath.row;
     
     
     
@@ -365,14 +368,28 @@
     
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"showProfileSubDetailSegue"]) {
+        
+        ProfileSubDetailViewController* controller = (ProfileSubDetailViewController *)[segue destinationViewController];
+        controller.adDict = [addContentArr objectAtIndex:selectedIndex];
+        
+    }
+    if ([segue.identifier isEqualToString:@"showProfileSegue"]) {
+        
+        ProfileDetailViewController* controller = (ProfileDetailViewController *)[segue destinationViewController];
+        controller.userId = [[addContentArr objectAtIndex:selectedIndex] valueForKey:@"User_id"];
+        
+    }
+    
 }
-*/
+
 
 @end

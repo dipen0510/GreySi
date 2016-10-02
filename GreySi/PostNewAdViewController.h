@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIView *budgetTabView;
 
 @property (weak, nonatomic) IBOutlet UITableView *adTblView;
+@property (weak, nonatomic) IBOutlet UIView *tabBarView;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *treatmentButton;

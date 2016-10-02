@@ -38,7 +38,7 @@
         
         //if ([responseObject isKindOfClass:[NSDictionary class]]) {
             
-            if ([[responseObject valueForKey:@"status"] intValue] == 1) {
+            if ([[responseObject valueForKey:@"status"] intValue] == 1 || [[responseObject valueForKey:@"result"] intValue] == 1) {
                 
                 if ([delegate respondsToSelector:@selector(didFinishServiceWithSuccess:andServiceKey:)]) {
                     [delegate didFinishServiceWithSuccess:[self prepareResponseObjectForServiceKey:self.serviceKey withData:responseObject] andServiceKey:self.serviceKey];

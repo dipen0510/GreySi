@@ -16,6 +16,7 @@
 
 #define kPostLocation @"Location/PostLocation.php"
 #define kGetLocation @"Location/GetLocation.php?User_id="
+#define kGetProfileInfo @"Get.php?User_id="
 
 // CUSTOMER
 #define kCustomerGetAdService @"Hair_dressor_post/GetAd.php"

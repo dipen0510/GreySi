@@ -39,9 +39,9 @@
     cityOptionsArr = [[NSMutableArray alloc] initWithObjects:@"Stockholm",@"Manchester",@"Hamburg",@"Sussex", nil];
     selectedTreamentsArr = [[NSMutableArray alloc] init];
     
-    self.treatmentButton.layer.cornerRadius = 2.0;
-    self.platsButton.layer.cornerRadius = 2.0;
-    self.budgetButton.layer.cornerRadius = 2.0;
+    //self.treatmentButton.layer.cornerRadius = 2.0;
+    //self.platsButton.layer.cornerRadius = 2.0;
+    //self.budgetButton.layer.cornerRadius = 2.0;
     self.selectCityButton.layer.cornerRadius = 2.0;
     self.selectDateTimeButton.layer.cornerRadius = 2.0;
     
@@ -53,6 +53,18 @@
     self.descriptionTxtView.layer.borderColor = [UIColor colorWithRed:211./255. green:211./255. blue:211./255. alpha:1.0].CGColor;
     self.descriptionTxtView.layer.borderWidth = 1.0;
     
+    [self.tabBarView layoutIfNeeded];
+    [self.tabBarView setNeedsLayout];
+    
+    UIImageView* firstArrImgView = [[UIImageView alloc] initWithFrame:CGRectMake(self.treatmentButton.frame.origin.x + self.treatmentButton.frame.size.width, self.treatmentButton.frame.origin.y, 0.362*self.treatmentButton.frame.size.height, self.treatmentButton.frame.size.height)];
+    firstArrImgView.image = [UIImage imageNamed:@"addTreatMentTopMenuArrow.png"];
+    
+    UIImageView* secondArrImgView = [[UIImageView alloc] initWithFrame:CGRectMake(self.platsButton.frame.origin.x + self.platsButton.frame.size.width, self.platsButton.frame.origin.y, 0.362*self.platsButton.frame.size.height, self.platsButton.frame.size.height)];
+    secondArrImgView.image = [UIImage imageNamed:@"addTreatMentTopMenuArrow.png"];
+    
+    [self.tabBarView addSubview:firstArrImgView];
+    [self.tabBarView addSubview:secondArrImgView];
+    
     [self setupLayoutForTabIndex:0];
     
     
@@ -62,9 +74,9 @@
     
     if (index == 0) {
         
-        self.treatmentButton.backgroundColor = [UIColor colorWithRed:202./255. green:202./255. blue:202./255. alpha:1.0];
-        self.platsButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
-        self.budgetButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
+//        self.treatmentButton.backgroundColor = [UIColor colorWithRed:202./255. green:202./255. blue:202./255. alpha:1.0];
+//        self.platsButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
+//        self.budgetButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
         
         self.treatmentTabView.hidden = NO;
         self.platsTabView.hidden = YES;
@@ -73,9 +85,9 @@
     }
     else if (index == 1) {
         
-        self.platsButton.backgroundColor = [UIColor colorWithRed:202./255. green:202./255. blue:202./255. alpha:1.0];
-        self.treatmentButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
-        self.budgetButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
+//        self.platsButton.backgroundColor = [UIColor colorWithRed:202./255. green:202./255. blue:202./255. alpha:1.0];
+//        self.treatmentButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
+//        self.budgetButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
         
         self.treatmentTabView.hidden = YES;
         self.platsTabView.hidden = NO;
@@ -84,9 +96,9 @@
         
     }
     else if (index == 2) {
-        self.budgetButton.backgroundColor = [UIColor colorWithRed:202./255. green:202./255. blue:202./255. alpha:1.0];
-        self.platsButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
-        self.treatmentButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
+//        self.budgetButton.backgroundColor = [UIColor colorWithRed:202./255. green:202./255. blue:202./255. alpha:1.0];
+//        self.platsButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
+//        self.treatmentButton.backgroundColor = [UIColor colorWithRed:225./255. green:225./255. blue:225./255. alpha:1.0];
         
         self.treatmentTabView.hidden = YES;
         self.platsTabView.hidden = YES;
@@ -325,7 +337,7 @@
 -(void) didFinishServiceWithSuccess:(SignUpResponseModal *)responseData andServiceKey:(NSString *)requestServiceKey {
     
     //[SVProgressHUD dismiss];
-    [SVProgressHUD showSuccessWithStatus:@"Posted Successful"];
+    [SVProgressHUD showSuccessWithStatus:@"Ad Posted Successfully"];
     
     if ([requestServiceKey isEqualToString:kCustomerAddTreatmentService]) {
         //[self backButtonTapped:nil];

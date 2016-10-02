@@ -175,6 +175,14 @@
     [dict setObject:treatmentList forKey:@"Treatment"];
     [dict setObject:budgetList forKey:@"Budget"];
     
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+    [dateFormatter setTimeZone:timeZone];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+    
+    [dict setObject:[dateFormatter stringFromDate:[NSDate date]] forKey:@"Today"];
+    
     return dict;
     
 }

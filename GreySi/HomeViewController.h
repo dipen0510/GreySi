@@ -12,6 +12,7 @@
 @interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, DataSyncManagerDelegate> {
     
     NSMutableArray* addContentArr;
+    long selectedIndex;
     
 }
 

@@ -34,6 +34,15 @@
 		1881F3CD1D97E478005198A2 /* HairPostAdTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1881F3CB1D97E478005198A2 /* HairPostAdTableViewCell.m */; };
 		1881F3CE1D97E478005198A2 /* HairPostAdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1881F3CC1D97E478005198A2 /* HairPostAdTableViewCell.xib */; };
 		1881F3CF1D97EEEB005198A2 /* HairPostAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1881F3C71D97E376005198A2 /* HairPostAdViewController.m */; };
+		1881F3E01DA19859005198A2 /* addTreatMentTopMenuArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1881F3DF1DA19859005198A2 /* addTreatMentTopMenuArrow.png */; };
+		1881F3E31DA1A728005198A2 /* PriceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1881F3E21DA1A728005198A2 /* PriceListViewController.m */; };
+		1881F3E81DA1AFBE005198A2 /* ProfileReviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1881F3E61DA1AFBE005198A2 /* ProfileReviewTableViewCell.m */; };
+		1881F3E91DA1AFBE005198A2 /* ProfileReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1881F3E71DA1AFBE005198A2 /* ProfileReviewTableViewCell.xib */; };
+		1881F3EE1DA1AFDF005198A2 /* ProfileSocialTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1881F3EC1DA1AFDF005198A2 /* ProfileSocialTableViewCell.m */; };
+		1881F3EF1DA1AFDF005198A2 /* ProfileSocialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1881F3ED1DA1AFDF005198A2 /* ProfileSocialTableViewCell.xib */; };
+		1881F3F31DA1B47A005198A2 /* web_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1881F3F01DA1B479005198A2 /* web_logo.png */; };
+		1881F3F41DA1B47A005198A2 /* insta_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1881F3F11DA1B47A005198A2 /* insta_logo.png */; };
+		1881F3F51DA1B47A005198A2 /* fb_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1881F3F21DA1B47A005198A2 /* fb_logo.png */; };
 		188853C81D917CBB001EF67C /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 188853C61D917CBB001EF67C /* checked.png */; };
 		188853C91D917CBB001EF67C /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 188853C71D917CBB001EF67C /* unchecked.png */; };
 		188853CC1D9184B7001EF67C /* AddTreatmentRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 188853CB1D9184B7001EF67C /* AddTreatmentRequestModal.m */; };
@@ -174,6 +183,18 @@
 		1881F3CA1D97E478005198A2 /* HairPostAdTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HairPostAdTableViewCell.h; path = CustomControls/HairPostAdTableViewCell.h; sourceTree = "<group>"; };
 		1881F3CB1D97E478005198A2 /* HairPostAdTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HairPostAdTableViewCell.m; path = CustomControls/HairPostAdTableViewCell.m; sourceTree = "<group>"; };
 		1881F3CC1D97E478005198A2 /* HairPostAdTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HairPostAdTableViewCell.xib; path = CustomControls/HairPostAdTableViewCell.xib; sourceTree = "<group>"; };
+		1881F3DF1DA19859005198A2 /* addTreatMentTopMenuArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addTreatMentTopMenuArrow.png; sourceTree = "<group>"; };
+		1881F3E11DA1A728005198A2 /* PriceListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PriceListViewController.h; sourceTree = "<group>"; };
+		1881F3E21DA1A728005198A2 /* PriceListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PriceListViewController.m; sourceTree = "<group>"; };
+		1881F3E51DA1AFBE005198A2 /* ProfileReviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileReviewTableViewCell.h; path = CustomControls/ProfileReviewTableViewCell.h; sourceTree = "<group>"; };
+		1881F3E61DA1AFBE005198A2 /* ProfileReviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileReviewTableViewCell.m; path = CustomControls/ProfileReviewTableViewCell.m; sourceTree = "<group>"; };
+		1881F3E71DA1AFBE005198A2 /* ProfileReviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileReviewTableViewCell.xib; path = CustomControls/ProfileReviewTableViewCell.xib; sourceTree = "<group>"; };
+		1881F3EB1DA1AFDF005198A2 /* ProfileSocialTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfileSocialTableViewCell.h; path = CustomControls/ProfileSocialTableViewCell.h; sourceTree = "<group>"; };
+		1881F3EC1DA1AFDF005198A2 /* ProfileSocialTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfileSocialTableViewCell.m; path = CustomControls/ProfileSocialTableViewCell.m; sourceTree = "<group>"; };
+		1881F3ED1DA1AFDF005198A2 /* ProfileSocialTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileSocialTableViewCell.xib; path = CustomControls/ProfileSocialTableViewCell.xib; sourceTree = "<group>"; };
+		1881F3F01DA1B479005198A2 /* web_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = web_logo.png; sourceTree = "<group>"; };
+		1881F3F11DA1B47A005198A2 /* insta_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = insta_logo.png; sourceTree = "<group>"; };
+		1881F3F21DA1B47A005198A2 /* fb_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_logo.png; sourceTree = "<group>"; };
 		188853C61D917CBB001EF67C /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
 		188853C71D917CBB001EF67C /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
 		188853CA1D9184B7001EF67C /* AddTreatmentRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTreatmentRequestModal.h; sourceTree = "<group>"; };
@@ -388,6 +409,26 @@
 			name = HairPostAdTableViewCell;
 			sourceTree = "<group>";
 		};
+		1881F3E41DA1AF9B005198A2 /* ProfileReviewTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1881F3E51DA1AFBE005198A2 /* ProfileReviewTableViewCell.h */,
+				1881F3E61DA1AFBE005198A2 /* ProfileReviewTableViewCell.m */,
+				1881F3E71DA1AFBE005198A2 /* ProfileReviewTableViewCell.xib */,
+			);
+			name = ProfileReviewTableViewCell;
+			sourceTree = "<group>";
+		};
+		1881F3EA1DA1AFC7005198A2 /* ProfileSocialTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1881F3EB1DA1AFDF005198A2 /* ProfileSocialTableViewCell.h */,
+				1881F3EC1DA1AFDF005198A2 /* ProfileSocialTableViewCell.m */,
+				1881F3ED1DA1AFDF005198A2 /* ProfileSocialTableViewCell.xib */,
+			);
+			name = ProfileSocialTableViewCell;
+			sourceTree = "<group>";
+		};
 		188853D21D91A344001EF67C /* BookingsTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +452,8 @@
 		1888572A1CAB17D80026995E /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				1881F3EA1DA1AFC7005198A2 /* ProfileSocialTableViewCell */,
+				1881F3E41DA1AF9B005198A2 /* ProfileReviewTableViewCell */,
 				1881F3C91D97E442005198A2 /* HairPostAdTableViewCell */,
 				188853D21D91A344001EF67C /* BookingsTableViewCell */,
 				18CF35201D5BD49A00C0A5BD /* CompletedProjectsTableViewCell */,
@@ -594,6 +637,8 @@
 				188853D91D91AE77001EF67C /* LocationViewController.m */,
 				1881F3C61D97E376005198A2 /* HairPostAdViewController.h */,
 				1881F3C71D97E376005198A2 /* HairPostAdViewController.m */,
+				1881F3E11DA1A728005198A2 /* PriceListViewController.h */,
+				1881F3E21DA1A728005198A2 /* PriceListViewController.m */,
 			);
 			path = GreySi;
 			sourceTree = "<group>";
@@ -629,6 +674,7 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1881F3DF1DA19859005198A2 /* addTreatMentTopMenuArrow.png */,
 				D4104E921D9D3E3E006348D3 /* new_beauty_logo.png */,
 				D4104E861D9D3E0B006348D3 /* new_manicure_logo.png */,
 				D4104E871D9D3E0B006348D3 /* new_massage_logo.png */,
@@ -679,6 +725,9 @@
 				D4CA5CC11C7DCF48000E185A /* wallet.png */,
 				D4CA5CC21C7DCF48000E185A /* wallet_id.png */,
 				18AA9CA31CA6DB8500938952 /* profile_temp.png */,
+				1881F3F01DA1B479005198A2 /* web_logo.png */,
+				1881F3F11DA1B47A005198A2 /* insta_logo.png */,
+				1881F3F21DA1B47A005198A2 /* fb_logo.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -805,6 +854,7 @@
 				D4CA5CC71C7DCF48000E185A /* double_arrow.png in Resources */,
 				18CF351F1D5BD23000C0A5BD /* ActiveProjectsTableViewCell.xib in Resources */,
 				D4CA5C861C7DCDF7000E185A /* LaunchScreen.storyboard in Resources */,
+				1881F3E91DA1AFBE005198A2 /* ProfileReviewTableViewCell.xib in Resources */,
 				D4104E911D9D3E0B006348D3 /* new_womens_hair_logo.png in Resources */,
 				185DC0FA1D4E29E7007998F3 /* appLogo.png in Resources */,
 				D4CA5CD01C7DCF48000E185A /* password.png in Resources */,
@@ -818,6 +868,7 @@
 				185DC11E1D514348007998F3 /* logout.png in Resources */,
 				188853D71D91A409001EF67C /* BookingsTableViewCell.xib in Resources */,
 				D4D5A1C61D5852F400B15CBE /* ChatListTableViewCell.xib in Resources */,
+				1881F3F31DA1B47A005198A2 /* web_logo.png in Resources */,
 				D4CA5C831C7DCDF7000E185A /* Assets.xcassets in Resources */,
 				D4104E8F1D9D3E0B006348D3 /* new_others_logo.png in Resources */,
 				D455C4741C7EDABA00C6D1CB /* signup.png in Resources */,
@@ -838,12 +889,15 @@
 				18CF35161D5BCE6100C0A5BD /* BidsReceivedTableViewCell.xib in Resources */,
 				1888572E1CAB18010026995E /* HomeMapView.xib in Resources */,
 				18CF35251D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.xib in Resources */,
+				1881F3F51DA1B47A005198A2 /* fb_logo.png in Resources */,
 				188857401CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png in Resources */,
 				D4CA5CD51C7DCF48000E185A /* rating_filled_small.png in Resources */,
 				D4CA5C811C7DCDF7000E185A /* Main.storyboard in Resources */,
 				D4CA5CDA1C7DCF48000E185A /* wallet.png in Resources */,
 				D4CA5CD31C7DCF48000E185A /* rating-small.png in Resources */,
 				185DC1031D4E343C007998F3 /* myLocation.png in Resources */,
+				1881F3EF1DA1AFDF005198A2 /* ProfileSocialTableViewCell.xib in Resources */,
+				1881F3E01DA19859005198A2 /* addTreatMentTopMenuArrow.png in Resources */,
 				D4CA5CCE1C7DCF48000E185A /* mail.png in Resources */,
 				D4CA5CD11C7DCF48000E185A /* pin.png in Resources */,
 				D4104E8C1D9D3E0B006348D3 /* new_manicure_logo.png in Resources */,
@@ -860,6 +914,7 @@
 				D4CA5CDB1C7DCF48000E185A /* wallet_id.png in Resources */,
 				185DC1201D514348007998F3 /* postAd.png in Resources */,
 				185DC11F1D514348007998F3 /* messages.png in Resources */,
+				1881F3F41DA1B47A005198A2 /* insta_logo.png in Resources */,
 				188853C81D917CBB001EF67C /* checked.png in Resources */,
 				D4CA5CC91C7DCF48000E185A /* feedback_rating.png in Resources */,
 				D4104E8E1D9D3E0B006348D3 /* new_mens_hair_logo.png in Resources */,
@@ -949,12 +1004,14 @@
 				18CF35071D5BC4C800C0A5BD /* ProjectsListViewController.m in Sources */,
 				188857291CAB17AD0026995E /* SwipeView.m in Sources */,
 				D4D5A1C51D5852F400B15CBE /* ChatListTableViewCell.m in Sources */,
+				1881F3E81DA1AFBE005198A2 /* ProfileReviewTableViewCell.m in Sources */,
 				18A6D2F81D7AB70E004907EB /* ProjectsSingleModal.m in Sources */,
 				D4D5A1CA1D5857C400B15CBE /* ChatDetailViewController.m in Sources */,
 				1888573D1CAB19F10026995E /* HomeTableViewCell.m in Sources */,
 				18DE0EA01D46A2BB00043037 /* LoginTableViewCell.m in Sources */,
 				D4D5A1BD1D5852AC00B15CBE /* ChatListViewController.m in Sources */,
 				188853D61D91A409001EF67C /* BookingsTableViewCell.m in Sources */,
+				1881F3E31DA1A728005198A2 /* PriceListViewController.m in Sources */,
 				188853DA1D91AE77001EF67C /* LocationViewController.m in Sources */,
 				D4D5A1D41D59F47A00B15CBE /* ProfileSubDetailViewController.m in Sources */,
 				18DE0E9D1D4697B000043037 /* GatewayViewController.m in Sources */,
@@ -972,6 +1029,7 @@
 				D4A7DD771C806CE100F82033 /* WhatAreYouViewController.m in Sources */,
 				18C831921D63592500AE6058 /* SharedClass.m in Sources */,
 				18CF350C1D5BC94600C0A5BD /* PostedProjectsTableViewCell.m in Sources */,
+				1881F3EE1DA1AFDF005198A2 /* ProfileSocialTableViewCell.m in Sources */,
 				18CF351E1D5BD23000C0A5BD /* ActiveProjectsTableViewCell.m in Sources */,
 				D482E7F01D78291B00BC30DA /* LoginRequestModal.m in Sources */,
 				D4CA5C7B1C7DCDF7000E185A /* AppDelegate.m in Sources */,
