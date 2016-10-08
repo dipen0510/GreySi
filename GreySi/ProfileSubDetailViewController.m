@@ -8,6 +8,7 @@
 
 #import "ProfileSubDetailViewController.h"
 #import "PriceListViewController.h"
+#import "PlaceBidViewController.h"
 
 @interface ProfileSubDetailViewController ()
 
@@ -106,6 +107,13 @@
          controller.treatmentArr = treatmentArr;
          
      }
+     else if ([segue.identifier isEqualToString:@"showPlaceBidSegue"]) {
+         
+         PlaceBidViewController* controller = (PlaceBidViewController *)[segue destinationViewController];
+         controller.projectId = [adDict valueForKey:@"Project_id"];
+         
+     }
+     
      
  }
 
@@ -117,6 +125,14 @@
 }
 
 - (IBAction)bookButtonTapped:(id)sender {
+    
+    if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
+        [self performSegueWithIdentifier:@"showPlaceBidSegue" sender:nil];
+    }
+    else {
+        [self startBookProjectService];
+    }
+    
 }
 
 - (IBAction)chatButtonTapped:(id)sender {
@@ -129,5 +145,78 @@
 }
 
 - (IBAction)showOnMapButtonTapped:(id)sender {
+}
+
+
+- (void) startBookProjectService {
+    
+    [SVProgressHUD showWithStatus:@"Booking project..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kCustomerBookProjectService;
+    manager.delegate = self;
+    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForBookProject]];
+    
+}
+
+#pragma mark - DATASYNCMANAGER Delegates
+
+-(void) didFinishServiceWithSuccess:(id)responseData andServiceKey:(NSString *)requestServiceKey {
+    
+    
+    if ([requestServiceKey isEqualToString:kCustomerBookProjectService]) {
+        
+        [SVProgressHUD showSuccessWithStatus:@"Project Booked successfully"];
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    }
+    
+}
+
+
+- (void) didFinishServiceWithFailure:(NSString *)errorMsg {
+    
+    
+    [SVProgressHUD dismiss];
+    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil
+                                                  message:NSLocalizedString(@"An issue occured while processing your request. Please try again later.", nil)
+                                                 delegate:self
+                                        cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                        otherButtonTitles: nil];
+    
+    if (![errorMsg isEqualToString:@""]) {
+        [alert setMessage:errorMsg];
+    }
+    
+    if ([errorMsg isEqualToString:NSLocalizedString(@"Verify your internet connection and try again", nil)]) {
+        [alert setTitle:NSLocalizedString(@"Connection unsuccessful", nil)];
+    }
+    
+    
+    [alert show];
+    
+    return;
+    
+}
+
+#pragma mark - Modalobject
+
+- (NSMutableDictionary *) prepareDictionaryForBookProject {
+    
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+    
+    [dict setObject:treatmentStr forKey:@"Treatment"];
+    [dict setObject:[[SharedClass sharedInstance] userObj].user_id forKey:@"Booker_id"];
+    [dict setObject:adDict[@"User_id"] forKey:@"Hairdresser_id"];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
+    [dateFormatter setTimeZone:timeZone];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+    
+   [dict setObject:[dateFormatter stringFromDate:[NSDate date]] forKey:@"Date"];
+    
+    return dict;
+    
 }
 @end

@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *completedButton;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 
 @end

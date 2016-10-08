@@ -179,10 +179,11 @@
     cell.subHeadingLabel.text = [dict valueForKey:@"Treatment"];
     cell.dateLabel.text = [dict valueForKey:@"Date"];
     
+    if ([dict valueForKey:@"Profile_pi"] && ![[dict valueForKey:@"Profile_pi"] isEqual:[NSNull null]]) {
         __weak UIImageView* weakImageView = cell.profileImgView;
         [cell.profileImgView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[[dict valueForKey:@"Profile_pi"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
-                                                                       cachePolicy:NSURLRequestReturnCacheDataElseLoad
-                                                                   timeoutInterval:60.0] placeholderImage:[UIImage imageNamed:@"blankProfile"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                                                     cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                                 timeoutInterval:60.0] placeholderImage:[UIImage imageNamed:@"blankProfile"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
             
             
             weakImageView.alpha = 0.0;
@@ -192,6 +193,9 @@
                                  weakImageView.alpha = 1.0;
                              }];
         } failure:NULL];
+    }
+    
+    
     
     
     

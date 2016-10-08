@@ -15,6 +15,7 @@
     // Initialization code
     
     self.awardButton.layer.cornerRadius = 2.0;
+    self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height/2.;
     
 }

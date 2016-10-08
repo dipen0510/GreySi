@@ -188,6 +188,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     
     if (buttonIndex == 1) {
         
+        [[SharedClass sharedInstance] removeServiceData:kLoginService];
         [self.navigationController popViewControllerAnimated:YES];
         
     }

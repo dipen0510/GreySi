@@ -25,6 +25,9 @@
 #define kCustomerGetCompletedProjectsService @"Customer_Projects/CompletedProjects.php?User_id="
 #define kCustomerAddTreatmentService @"Project%20Posting%20Module/AddTreatment.php"
 #define kCustomerBookingsService @"GetByBookerid.php?Booker_id="
+#define kCustomerFetchBidService @"FetchBid.php?Project_id="
+#define kCustomerAssignProjectService @"Complete_Project_Section/AssignProject.php"
+#define kCustomerBookProjectService @"PostBooking.php"
 
 //HAIRDRESSER
 #define kHairFetchProjectsService @"FetchProject.php"
@@ -33,5 +36,6 @@
 #define kHairGetCompletedProjectsService @"Completed_Project_Hairdresser.php?User_id="
 #define kHairBookingsService @"GetByHairdresser.php?Hairdresser_id="
 #define kHairPostAdService @"Hair_dressor_post/PostAd.php"
+#define kHairPlaceBidService @"PostBid.php"
 
 #endif /* Settings_h */

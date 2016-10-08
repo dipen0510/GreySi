@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BidsReceivedListViewController : UIViewController
+@interface BidsReceivedListViewController : UIViewController <DataSyncManagerDelegate> {
+    NSMutableArray* bidsArr;
+    long selectedIndexPath;
+}
 
 @property (weak, nonatomic) IBOutlet UITableView *projectsTableView;
+@property (strong, nonatomic) NSString* projectId;
 
 - (IBAction)backButtonTapped:(id)sender;
 

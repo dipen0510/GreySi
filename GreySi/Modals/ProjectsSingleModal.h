@@ -15,8 +15,10 @@
 @property (nonatomic, strong) NSString* date;
 @property (nonatomic, strong) NSString* desc;
 @property (nonatomic, strong) NSString* hairdresser_id;
+@property (nonatomic, strong) NSString* name;
 @property (nonatomic, strong) NSString* place;
 @property (nonatomic, strong) NSString* post_Date;
+@property (nonatomic, strong) NSString* profile_pic;
 @property (nonatomic, strong) NSString* project_id;
 @property (nonatomic, strong) NSString* status;
 @property (nonatomic, strong) NSString* time;

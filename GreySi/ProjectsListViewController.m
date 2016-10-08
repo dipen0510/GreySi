@@ -12,6 +12,7 @@
 #import "ActiveProjectsTableViewCell.h"
 #import "CompletedProjectsTableViewCell.h"
 #import "ProjectsSingleModal.h"
+#import "BidsReceivedListViewController.h"
 
 @interface ProjectsListViewController ()
 
@@ -148,7 +149,7 @@
         
     }
     
-    
+    projectsArr = [[NSMutableArray alloc] init];
     [self.projectsTableView reloadData];
     
 }
@@ -235,7 +236,7 @@
     }
     else if ([requestServiceKey isEqualToString:[NSString stringWithFormat:@"%@%@",kHairGetBiddedProjectsService,[[SharedClass sharedInstance] userObj].user_id]] || [requestServiceKey isEqualToString:[NSString stringWithFormat:@"%@%@",kHairGetActiveProjectsService,[[SharedClass sharedInstance] userObj].user_id]] || [requestServiceKey isEqualToString:[NSString stringWithFormat:@"%@%@",kHairGetCompletedProjectsService,[[SharedClass sharedInstance] userObj].user_id]]){
         
-        projectsArr = [[NSMutableArray alloc] initWithArray:responseData.info];
+        projectsArr = [[NSMutableArray alloc] initWithArray:[responseData valueForKey:@"info"]];
         [self.projectsTableView reloadData];
         
     }
@@ -269,15 +270,23 @@
     
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"showBidsReceivedSegue"]) {
+        
+        BidsReceivedListViewController* controller = (BidsReceivedListViewController *)[segue destinationViewController];
+        controller.projectId = selectedProjectId;
+        
+    }
+    
 }
-*/
+
 
 #pragma mark - User Action Events
 
@@ -315,11 +324,8 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    if (selectedIndex == 0) {
-        return projectsArr.count;
-    }
+    return projectsArr.count;
     
-    return 7;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -380,7 +386,9 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:true];
     
-    if (selectedIndex == 0) {
+    if (selectedIndex == 0 && [[[SharedClass sharedInstance] userObj].flag intValue] != 1) {
+        ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:indexPath.row]];
+        selectedProjectId = singleProject.project_id;
         [self performSegueWithIdentifier:@"showBidsReceivedSegue" sender:nil];
     }
     
@@ -389,13 +397,6 @@
 }
 
 - (void) displayContentForPostedProjectCell:(PostedProjectsTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.row == 2 || indexPath.row == 4) {
-        cell.backgroundColor = [UIColor colorWithRed:205./255. green:205./255. blue:205./255. alpha:1.0];
-    }
-    else {
-        cell.backgroundColor = [UIColor whiteColor];
-    }
     
     ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:indexPath.row]];
     
@@ -406,16 +407,70 @@
     cell.bidsLabel.text = singleProject.no_of_bids;
     cell.dateLabel.text = singleProject.post_Date;
     
+    if ([singleProject.no_of_bids intValue] > 0) {
+        cell.backgroundColor = [UIColor colorWithRed:205./255. green:205./255. blue:205./255. alpha:1.0];
+    }
+    else {
+        cell.backgroundColor = [UIColor whiteColor];
+    }
+    
     
 }
 
 - (void) displayContentForActiveProjectCell:(ActiveProjectsTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    
+    ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:indexPath.row]];
+    
+    cell.nameLabel.text = singleProject.name;
+    cell.amountLabel.text = [NSString stringWithFormat:@"Amount : $%@",singleProject.budget];
+    
+    if (singleProject.profile_pic && ![singleProject.profile_pic isEqual:[NSNull null]]) {
+        __weak UIImageView* weakImageView = cell.profileImageView;
+        [cell.profileImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[singleProject.profile_pic stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
+                                                                       cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                                   timeoutInterval:60.0] placeholderImage:[UIImage imageNamed:@"blankProfile"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+            
+            
+            weakImageView.alpha = 0.0;
+            weakImageView.image = image;
+            [UIView animateWithDuration:0.25
+                             animations:^{
+                                 weakImageView.alpha = 1.0;
+                             }];
+        } failure:NULL];
+    }
+    
     
     
 }
 
 - (void) displayContentForCompletedProjectCell:(CompletedProjectsTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
+    ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:indexPath.row]];
+    
+    cell.nameLabel.text = singleProject.name;
+    cell.amountValueLabel.text = [NSString stringWithFormat:@"$%@",singleProject.budget];
+    cell.projectLabel.text = [NSString stringWithFormat:@"Project : %@",singleProject.treatment];
+    
+    
+    if (singleProject.profile_pic && ![singleProject.profile_pic isEqual:[NSNull null]]) {
+        __weak UIImageView* weakImageView = cell.profileImageView;
+        [cell.profileImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[singleProject.profile_pic stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
+                                                                       cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                                   timeoutInterval:60.0] placeholderImage:[UIImage imageNamed:@"blankProfile"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+            
+            
+            weakImageView.alpha = 0.0;
+            weakImageView.image = image;
+            [UIView animateWithDuration:0.25
+                             animations:^{
+                                 weakImageView.alpha = 1.0;
+                             }];
+        } failure:NULL];
+    }
+    
+    
+
     
 }
 

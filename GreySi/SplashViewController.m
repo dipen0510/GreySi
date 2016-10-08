@@ -7,6 +7,7 @@
 //
 
 #import "SplashViewController.h"
+#import "SignUpResponseModal.h"
 
 @interface SplashViewController ()
 
@@ -18,7 +19,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self performSegueWithIdentifier:@"showLoginSegue" sender:nil];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kLoginService];
+    
+    if (attendStr) {
+        NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:attendStr];
+        SignUpResponseModal* userObj = [[SignUpResponseModal alloc] initWithDictionary:[[dict valueForKey:@"info"] objectAtIndex:0]];
+        [[SharedClass sharedInstance] setUserObj:userObj];
+        [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
+    }
+    else {
+        [self performSegueWithIdentifier:@"showLoginSegue" sender:nil];
+    }
     
 }
 

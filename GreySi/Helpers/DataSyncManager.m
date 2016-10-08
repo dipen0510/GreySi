@@ -79,7 +79,7 @@
     
     [manager GET:self.serviceKey parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
-        if ([[responseObject valueForKey:@"status"] intValue] == 1) {
+        if ([[responseObject valueForKey:@"status"] intValue] == 1 || [[responseObject valueForKey:@"result"] intValue] == 1) {
             
             if ([delegate respondsToSelector:@selector(didFinishServiceWithSuccess:andServiceKey:)]) {
                 [delegate didFinishServiceWithSuccess:[self prepareResponseObjectForServiceKey:self.serviceKey withData:responseObject] andServiceKey:self.serviceKey];
@@ -108,6 +108,12 @@
 - (id) prepareResponseObjectForServiceKey:(NSString *) responseServiceKey withData:(id)responseObj {
     
     if ([responseServiceKey isEqualToString:kSignUpService] || [responseServiceKey isEqualToString:kLoginService]) {
+        
+        NSError* error = nil;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:responseObj options:NSJSONWritingPrettyPrinted error:&error];
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        
+        [[SharedClass sharedInstance] saveData:jsonString ForService:kLoginService];
         
         SignUpResponseModal* response = [[SignUpResponseModal alloc] initWithDictionary:[[responseObj valueForKey:@"info"] objectAtIndex:0]];
         return response;

@@ -130,7 +130,7 @@
     [SVProgressHUD showSuccessWithStatus:@"Ad Posted Successfully..."];
     
     if ([requestServiceKey isEqualToString:kHairPostAdService]) {
-        //[self backButtonTapped:nil];
+        [self performSelector:@selector(backButtonTapped:) withObject:nil afterDelay:0.3];
     }
     
     

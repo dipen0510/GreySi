@@ -66,6 +66,7 @@
 		18AA9CA41CA6DB8500938952 /* profile_temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AA9CA31CA6DB8500938952 /* profile_temp.png */; };
 		18C831921D63592500AE6058 /* SharedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8318C1D63592500AE6058 /* SharedClass.m */; };
 		18C831951D63593A00AE6058 /* DataSyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831941D63593A00AE6058 /* DataSyncManager.m */; };
+		18C928DA1DA9993800DAC0F9 /* PlaceBidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C928D91DA9993800DAC0F9 /* PlaceBidViewController.m */; };
 		18CF35071D5BC4C800C0A5BD /* ProjectsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF35061D5BC4C800C0A5BD /* ProjectsListViewController.m */; };
 		18CF350C1D5BC94600C0A5BD /* PostedProjectsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF350A1D5BC94600C0A5BD /* PostedProjectsTableViewCell.m */; };
 		18CF350D1D5BC94600C0A5BD /* PostedProjectsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CF350B1D5BC94600C0A5BD /* PostedProjectsTableViewCell.xib */; };
@@ -233,6 +234,8 @@
 		18C831941D63593A00AE6058 /* DataSyncManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSyncManager.m; sourceTree = "<group>"; };
 		18C831981D635A1000AE6058 /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		18C831991D635A3F00AE6058 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		18C928D81DA9993700DAC0F9 /* PlaceBidViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceBidViewController.h; sourceTree = "<group>"; };
+		18C928D91DA9993800DAC0F9 /* PlaceBidViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceBidViewController.m; sourceTree = "<group>"; };
 		18CF35051D5BC4C800C0A5BD /* ProjectsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectsListViewController.h; sourceTree = "<group>"; };
 		18CF35061D5BC4C800C0A5BD /* ProjectsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsListViewController.m; sourceTree = "<group>"; };
 		18CF35091D5BC94600C0A5BD /* PostedProjectsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostedProjectsTableViewCell.h; path = CustomControls/PostedProjectsTableViewCell.h; sourceTree = "<group>"; };
@@ -639,6 +642,8 @@
 				1881F3C71D97E376005198A2 /* HairPostAdViewController.m */,
 				1881F3E11DA1A728005198A2 /* PriceListViewController.h */,
 				1881F3E21DA1A728005198A2 /* PriceListViewController.m */,
+				18C928D81DA9993700DAC0F9 /* PlaceBidViewController.h */,
+				18C928D91DA9993800DAC0F9 /* PlaceBidViewController.m */,
 			);
 			path = GreySi;
 			sourceTree = "<group>";
@@ -995,6 +1000,7 @@
 				184AF5401D76074D001DDD4B /* SignUpRequestModal.m in Sources */,
 				188853CC1D9184B7001EF67C /* AddTreatmentRequestModal.m in Sources */,
 				18AA90831D8D096E00DA3828 /* AdSIngleModal.m in Sources */,
+				18C928DA1DA9993800DAC0F9 /* PlaceBidViewController.m in Sources */,
 				185DC10B1D5136D2007998F3 /* SWRevealViewController.m in Sources */,
 				18CF35241D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.m in Sources */,
 				188853CF1D919755001EF67C /* BookingsViewController.m in Sources */,

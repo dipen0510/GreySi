@@ -22,4 +22,9 @@
 -(NSDate *)getCurrentUTCFormatDate;
 -(NSString* )getCurrentUTCFormatDateString;
 
+- (void)saveData: (NSString*)data ForService:(NSString *)service;
+- (NSString*)loadDataForService:(NSString *)service;
+- (void)removeServiceData:(NSString *)service;
+- (NSMutableDictionary *) getDictionaryFromJSONString:(NSString *)jsonString;
+
 @end

@@ -68,4 +68,71 @@ static SharedClass *singletonObject = nil;
     return dateString;
 }
 
+
+#pragma mark - Local Storage Handling
+
+- (void)saveData: (NSString*)data ForService:(NSString *)service
+{
+    if (data != nil)
+    {
+        
+        [self removeServiceData:service];
+        
+        NSString *documentsDirectory = [self getDocumentDirectoryPath];
+        NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                          [NSString stringWithFormat:@"%@.txt",service] ];
+        
+        [data writeToFile:path atomically:YES
+                 encoding:NSUTF8StringEncoding error:nil];
+    }
+}
+
+- (NSString*)loadDataForService:(NSString *)service
+{
+    NSString *documentsDirectory = [self getDocumentDirectoryPath];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                      [NSString stringWithFormat:@"%@.txt",service] ];
+    NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
+    return content;
+}
+
+- (void)removeServiceData:(NSString *)service
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *documentsDirectory = [self getDocumentDirectoryPath];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                      [NSString stringWithFormat:@"%@.txt",service] ];
+    
+    NSError *error;
+    BOOL success = [fileManager removeItemAtPath:path error:&error];
+    if (success) {
+        NSLog(@"Successfully Removed %@",[error localizedDescription]);
+    }
+    else
+    {
+        NSLog(@"Could not delete file -:%@ ",[error localizedDescription]);
+    }
+}
+
+
+- (NSString *) getDocumentDirectoryPath {
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                         NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    return documentsDirectory;
+    
+}
+
+- (NSMutableDictionary *) getDictionaryFromJSONString:(NSString *)jsonString {
+    
+    NSError* e;
+    NSData* data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSMutableDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&e];
+    
+    return dict;
+    
+}
+
 @end
