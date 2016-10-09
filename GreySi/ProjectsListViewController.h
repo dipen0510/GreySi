@@ -15,6 +15,7 @@
     NSMutableArray* projectsArr;
     int userType;
     NSString* selectedProjectId;
+    NSString* selectedActiveProjectId;
     
 }
 

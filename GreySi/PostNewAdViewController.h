@@ -38,6 +38,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *yourPlaceButton;
 @property (weak, nonatomic) IBOutlet UITextField *budgetTxtField;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTxtView;
+@property (weak, nonatomic) IBOutlet UIButton *specificTimeButton;
+@property (weak, nonatomic) IBOutlet UIButton *timeSlotButton;
 
 @property BOOL isOpenedFromSideMenu;
 
@@ -52,6 +54,8 @@
 - (IBAction)yourPlaceButtonTapped:(id)sender;
 - (IBAction)placeTabNextButtonTapped:(id)sender;
 - (IBAction)addButtonTapped:(id)sender;
+- (IBAction)specificTimeButtonTapped:(id)sender;
+- (IBAction)timeSlotButtonTapped:(id)sender;
 
 
 @end

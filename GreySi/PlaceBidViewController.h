@@ -16,4 +16,6 @@
 @property (strong, nonatomic) NSString* projectId;
 
 - (IBAction)placeBidButtonTapped:(id)sender;
+- (IBAction)backButtonTapped:(id)sender;
+
 @end

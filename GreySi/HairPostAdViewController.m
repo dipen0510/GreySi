@@ -197,13 +197,22 @@
         HairPostAdTableViewCell* cell = [self.adsTblView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         
         if (![cell.treatmentNameTextField.text isEqualToString:@""] && cell.treatmentNameTextField.text) {
-            treatmentList = [treatmentList stringByAppendingString:[NSString stringWithFormat:@"{\"name\":\"%@\"}",cell.treatmentNameTextField.text]];
-            budgetList = [budgetList stringByAppendingString:[NSString stringWithFormat:@"{\"name\":\"%@\"}",cell.priceTextField.text]];
+            
+            if (i>0) {
+                treatmentList = [treatmentList stringByAppendingString:[NSString stringWithFormat:@",{\"name\":\"%@\"}",cell.treatmentNameTextField.text]];
+                budgetList = [budgetList stringByAppendingString:[NSString stringWithFormat:@",{\"name\":\"%@\"}",cell.priceTextField.text]];
+            }
+            else {
+                treatmentList = [treatmentList stringByAppendingString:[NSString stringWithFormat:@"{\"name\":\"%@\"}",cell.treatmentNameTextField.text]];
+                budgetList = [budgetList stringByAppendingString:[NSString stringWithFormat:@"{\"name\":\"%@\"}",cell.priceTextField.text]];
+            }
+            
         }
         
     }
     
     treatmentList = [treatmentList stringByAppendingString:@"]}"];
+    budgetList = [budgetList stringByAppendingString:@"]}"];
     
 }
 

@@ -79,6 +79,8 @@
 		18CF35251D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CF35231D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.xib */; };
 		18DE0E9D1D4697B000043037 /* GatewayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DE0E9C1D4697B000043037 /* GatewayViewController.m */; };
 		18DE0EA01D46A2BB00043037 /* LoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DE0E9F1D46A2BB00043037 /* LoginTableViewCell.m */; };
+		18F3164D1DAAC5F000DD5716 /* BookingDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F3164C1DAAC5F000DD5716 /* BookingDetailsViewController.m */; };
+		18F316501DAAE05700DD5716 /* ShowOnMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F3164F1DAAE05700DD5716 /* ShowOnMapViewController.m */; };
 		4366A1903A93415D6183C322 /* libPods-GreySi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7793179DCCE4D0DE2B3ACD /* libPods-GreySi.a */; };
 		D4104E8C1D9D3E0B006348D3 /* new_manicure_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D4104E861D9D3E0B006348D3 /* new_manicure_logo.png */; };
 		D4104E8D1D9D3E0B006348D3 /* new_massage_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D4104E871D9D3E0B006348D3 /* new_massage_logo.png */; };
@@ -256,6 +258,10 @@
 		18DE0E9C1D4697B000043037 /* GatewayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GatewayViewController.m; sourceTree = "<group>"; };
 		18DE0E9E1D46A2BB00043037 /* LoginTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginTableViewCell.h; path = CustomControls/LoginTableViewCell.h; sourceTree = "<group>"; };
 		18DE0E9F1D46A2BB00043037 /* LoginTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginTableViewCell.m; path = CustomControls/LoginTableViewCell.m; sourceTree = "<group>"; };
+		18F3164B1DAAC5EF00DD5716 /* BookingDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingDetailsViewController.h; sourceTree = "<group>"; };
+		18F3164C1DAAC5F000DD5716 /* BookingDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingDetailsViewController.m; sourceTree = "<group>"; };
+		18F3164E1DAAE05700DD5716 /* ShowOnMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowOnMapViewController.h; sourceTree = "<group>"; };
+		18F3164F1DAAE05700DD5716 /* ShowOnMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowOnMapViewController.m; sourceTree = "<group>"; };
 		2A7793179DCCE4D0DE2B3ACD /* libPods-GreySi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GreySi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A3C6C8B51C1DE3923EABCA /* Pods-GreySi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreySi.release.xcconfig"; path = "Pods/Target Support Files/Pods-GreySi/Pods-GreySi.release.xcconfig"; sourceTree = "<group>"; };
 		D4104E861D9D3E0B006348D3 /* new_manicure_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_manicure_logo.png; sourceTree = "<group>"; };
@@ -644,6 +650,10 @@
 				1881F3E21DA1A728005198A2 /* PriceListViewController.m */,
 				18C928D81DA9993700DAC0F9 /* PlaceBidViewController.h */,
 				18C928D91DA9993800DAC0F9 /* PlaceBidViewController.m */,
+				18F3164B1DAAC5EF00DD5716 /* BookingDetailsViewController.h */,
+				18F3164C1DAAC5F000DD5716 /* BookingDetailsViewController.m */,
+				18F3164E1DAAE05700DD5716 /* ShowOnMapViewController.h */,
+				18F3164F1DAAE05700DD5716 /* ShowOnMapViewController.m */,
 			);
 			path = GreySi;
 			sourceTree = "<group>";
@@ -1013,6 +1023,7 @@
 				1881F3E81DA1AFBE005198A2 /* ProfileReviewTableViewCell.m in Sources */,
 				18A6D2F81D7AB70E004907EB /* ProjectsSingleModal.m in Sources */,
 				D4D5A1CA1D5857C400B15CBE /* ChatDetailViewController.m in Sources */,
+				18F3164D1DAAC5F000DD5716 /* BookingDetailsViewController.m in Sources */,
 				1888573D1CAB19F10026995E /* HomeTableViewCell.m in Sources */,
 				18DE0EA01D46A2BB00043037 /* LoginTableViewCell.m in Sources */,
 				D4D5A1BD1D5852AC00B15CBE /* ChatListViewController.m in Sources */,
@@ -1026,6 +1037,7 @@
 				D455C4781C7F15C300C6D1CB /* LoginViewController.m in Sources */,
 				185B5E921D5A6A0A00205F72 /* PostNewAdViewController.m in Sources */,
 				185DC1161D5140C3007998F3 /* SideMenuTableViewCell.m in Sources */,
+				18F316501DAAE05700DD5716 /* ShowOnMapViewController.m in Sources */,
 				D482E7ED1D7811FD00BC30DA /* SignUpResponseModal.m in Sources */,
 				D455C47B1C7F203900C6D1CB /* SignUpViewController.m in Sources */,
 				185B5E971D5A6D2200205F72 /* TreatmentTabTableViewCell.m in Sources */,

@@ -34,7 +34,7 @@
 
 - (void) setupUI {
     
-    treatmentOptionsArr = [[NSMutableArray alloc] initWithObjects:@"Women's Hair",@"Men's Hair",@"Manicure",@"Pedicure",@"Beauty",@"Massage",@"Other", nil];
+    treatmentOptionsArr = [[NSMutableArray alloc] initWithObjects:@"Womens Hair",@"Mens Hair",@"Manicure",@"Pedicure",@"Beauty",@"Massage",@"Other", nil];
     treatmentOptionsImgArr = [[NSMutableArray alloc] initWithObjects:@"new_womens_hair_logo.png",@"new_mens_hair_logo.png",@"new_manicure_logo.png",@"new_padicure_logo.png",@"new_beauty_logo.png",@"new_massage_logo.png",@"new_others_logo.png", nil];
     cityOptionsArr = [[NSMutableArray alloc] initWithObjects:@"Stockholm",@"Manchester",@"Hamburg",@"Sussex", nil];
     selectedTreamentsArr = [[NSMutableArray alloc] init];
@@ -160,30 +160,79 @@
 
 - (IBAction)selectDateTimeButtonTapped:(id)sender {
     
+    if (self.specificTimeButton.selected) {
+        [ActionSheetDatePicker showPickerWithTitle:@"Select a Date"
+                                    datePickerMode:UIDatePickerModeDateAndTime
+                                      selectedDate:[NSDate date] minimumDate:[NSDate date] maximumDate:nil
+                                         doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
+                                             
+                                             NSDateFormatter* format1 = [[NSDateFormatter alloc] init];
+                                             format1.dateFormat = @"dd/MM/yyyy";
+                                             
+                                             NSDateFormatter* format2 = [[NSDateFormatter alloc] init];
+                                             format2.dateFormat = @"HH:mm:ss";
+                                             
+                                             finalSelectedDate = [format1 stringFromDate:selectedDate];
+                                             finalSelectedTime = [format2 stringFromDate:selectedDate];
+                                             
+                                             NSString *dateString = [NSDateFormatter localizedStringFromDate:selectedDate dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle];
+                                             NSLog(@"Picker: value: %@",dateString);
+                                             [self.selectDateTimeButton setTitle:dateString forState:UIControlStateNormal];
+                                             
+                                         }
+                                       cancelBlock:^(ActionSheetDatePicker *picker) {
+                                           NSLog(@"Block Picker Canceled");
+                                       }
+                                            origin:sender];
+    }
+    else if (self.timeSlotButton.selected) {
+        [ActionSheetDatePicker showPickerWithTitle:@"Select initial Date"
+                                    datePickerMode:UIDatePickerModeDateAndTime
+                                      selectedDate:[NSDate date] minimumDate:[NSDate date] maximumDate:nil
+                                         doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
+                                             
+                                             NSDateFormatter* format1 = [[NSDateFormatter alloc] init];
+                                             format1.dateFormat = @"dd/MM/yyyy";
+                                             
+                                             NSDateFormatter* format2 = [[NSDateFormatter alloc] init];
+                                             format2.dateFormat = @"HH:mm:ss";
+                                             
+                                             finalSelectedDate = [format1 stringFromDate:selectedDate];
+                                             finalSelectedTime = [format2 stringFromDate:selectedDate];
+                                             
+                                             [ActionSheetDatePicker showPickerWithTitle:@"Select final Date"
+                                                                         datePickerMode:UIDatePickerModeTime
+                                                                           selectedDate:selectedDate minimumDate:selectedDate maximumDate:nil
+                                                                              doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
+                                                                                  
+                                                                                  NSDateFormatter* format1 = [[NSDateFormatter alloc] init];
+                                                                                  format1.dateFormat = @"dd/MM/yyyy";
+                                                                                  
+                                                                                  NSDateFormatter* format2 = [[NSDateFormatter alloc] init];
+                                                                                  format2.dateFormat = @"HH:mm:ss";
+                                                                                  
+                                                                                  finalSelectedTime = [NSString stringWithFormat:@"%@-%@",finalSelectedTime,[format2 stringFromDate:selectedDate]];
+                                                                                  
+                                                                                  NSString *dateString = [NSDateFormatter localizedStringFromDate:selectedDate dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle];
+                                                                                  NSLog(@"Picker: value: %@",dateString);
+                                                                                  [self.selectDateTimeButton setTitle:finalSelectedTime forState:UIControlStateNormal];
+                                                                                  
+                                                                              }
+                                                                            cancelBlock:^(ActionSheetDatePicker *picker) {
+                                                                                NSLog(@"Block Picker Canceled");
+                                                                            }
+                                                                                 origin:sender];
+                                             
+                                         }
+                                       cancelBlock:^(ActionSheetDatePicker *picker) {
+                                           NSLog(@"Block Picker Canceled");
+                                       }
+                                            origin:sender];
+    }
+    else {
+        [self didFinishServiceWithFailure:@"Please select all options to proceed"];
+    }
     
-    [ActionSheetDatePicker showPickerWithTitle:@"Select a Date"
-                                datePickerMode:UIDatePickerModeDateAndTime
-                                  selectedDate:[NSDate date] minimumDate:[NSDate date] maximumDate:nil
-                                     doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
-                                         
-                                         NSDateFormatter* format1 = [[NSDateFormatter alloc] init];
-                                         format1.dateFormat = @"dd/MM/yyyy";
-                                         
-                                         NSDateFormatter* format2 = [[NSDateFormatter alloc] init];
-                                         format2.dateFormat = @"HH:mm:ss";
-                                         
-                                         finalSelectedDate = [format1 stringFromDate:selectedDate];
-                                         finalSelectedTime = [format2 stringFromDate:selectedDate];
-                                         
-                                         NSString *dateString = [NSDateFormatter localizedStringFromDate:selectedDate dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle];
-                                         NSLog(@"Picker: value: %@",dateString);
-                                         [self.selectDateTimeButton setTitle:dateString forState:UIControlStateNormal];
-                                         
-                                     }
-                                   cancelBlock:^(ActionSheetDatePicker *picker) {
-                                       NSLog(@"Block Picker Canceled");
-                                   }
-                                        origin:sender];
 
     
 }
@@ -230,7 +279,7 @@
 
 - (IBAction)placeTabNextButtonTapped:(id)sender {
     
-    if ([self.selectCityButton.titleLabel.text isEqualToString:@"Select a City"] || [self.selectDateTimeButton.titleLabel.text isEqualToString:@"Select a Date"] || (!self.myPlaceButton.isSelected && !self.yourPlaceButton.isSelected)) {
+    if ([self.selectCityButton.titleLabel.text isEqualToString:@"Select a City"] || [self.selectDateTimeButton.titleLabel.text isEqualToString:@"Select Date & Time"] || (!self.myPlaceButton.isSelected && !self.yourPlaceButton.isSelected)) {
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Select Options" message:@"Please select all options to proceed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
@@ -243,6 +292,22 @@
 - (IBAction)addButtonTapped:(id)sender {
     
     [self startAddTreatmentService];
+    
+}
+
+- (IBAction)specificTimeButtonTapped:(id)sender {
+    
+    [self.timeSlotButton setSelected:NO];
+    [self.specificTimeButton setSelected:YES];
+    [self.selectDateTimeButton setTitle:@"Select Date & Time" forState:UIControlStateNormal];
+    
+}
+
+- (IBAction)timeSlotButtonTapped:(id)sender {
+    
+    [self.specificTimeButton setSelected:NO];
+    [self.timeSlotButton setSelected:YES];
+    [self.selectDateTimeButton setTitle:@"Select Date & Time" forState:UIControlStateNormal];
     
 }
 

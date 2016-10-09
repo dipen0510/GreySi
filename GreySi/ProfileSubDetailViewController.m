@@ -9,6 +9,8 @@
 #import "ProfileSubDetailViewController.h"
 #import "PriceListViewController.h"
 #import "PlaceBidViewController.h"
+#import "BookingDetailsViewController.h"
+#import "ShowOnMapViewController.h"
 
 @interface ProfileSubDetailViewController ()
 
@@ -41,17 +43,19 @@
         [self.bookButton setTitle:@"Bid" forState:UIControlStateNormal];
         self.treatmentLabel.text = adDict[@"Treatment"];
         self.priceLabel.text = [NSString stringWithFormat:@"$%@",adDict[@"Budget"]];
+        self.priceListButton.hidden = YES;
     }
     else {
         [self.bookButton setTitle:@"Book" forState:UIControlStateNormal];
         self.treatmentLabel.text = treatmentStr;
         self.priceLabel.text = budgetStr;
+        self.priceListButton.hidden = NO;
     }
     
     
     self.noOfBidsLabel.text = @"";
     self.profileNameLabel.text = adDict[@"Name"];
-    self.descriptionLabel.text = adDict[@"Short_description"];
+    self.descriptionLabel.text = adDict[@"Description"];
     self.locationLabel.text = [NSString stringWithFormat:@"Location : %@",adDict[@"Address"]];
     
     __weak UIImageView* weakImageView = self.profileImageView;
@@ -83,7 +87,7 @@
     budgetArr = [[NSMutableArray alloc] initWithArray:[budgetDict valueForKey:@"pricesArray"]];
     treatmentArr = [[NSMutableArray alloc] initWithArray:[treatmentDict valueForKey:@"treatmentsArray"]];
     
-    budgetStr = [NSString stringWithFormat:@"$%@ - $%@",max,min];
+    budgetStr = [NSString stringWithFormat:@"$%@ - $%@",min,max];
     
 }
 
@@ -113,6 +117,20 @@
          controller.projectId = [adDict valueForKey:@"Project_id"];
          
      }
+     else if ([segue.identifier isEqualToString:@"showBookingDetailsSegue"]) {
+         
+         BookingDetailsViewController* controller = (BookingDetailsViewController *)[segue destinationViewController];
+         controller.treatmentArr = treatmentArr;
+         controller.hairDresserId = adDict[@"User_id"];
+         
+     }
+     else if ([segue.identifier isEqualToString:@"showMapSegue"]) {
+         
+         ShowOnMapViewController* controller = (ShowOnMapViewController *)[segue destinationViewController];
+         controller.annotLat = adDict[@"Lat"];
+         controller.annotLong = adDict[@"Longi"];
+         
+     }
      
      
  }
@@ -130,7 +148,7 @@
         [self performSegueWithIdentifier:@"showPlaceBidSegue" sender:nil];
     }
     else {
-        [self startBookProjectService];
+        [self performSegueWithIdentifier:@"showBookingDetailsSegue" sender:nil];
     }
     
 }
@@ -148,75 +166,4 @@
 }
 
 
-- (void) startBookProjectService {
-    
-    [SVProgressHUD showWithStatus:@"Booking project..."];
-    
-    DataSyncManager* manager = [[DataSyncManager alloc] init];
-    manager.serviceKey = kCustomerBookProjectService;
-    manager.delegate = self;
-    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForBookProject]];
-    
-}
-
-#pragma mark - DATASYNCMANAGER Delegates
-
--(void) didFinishServiceWithSuccess:(id)responseData andServiceKey:(NSString *)requestServiceKey {
-    
-    
-    if ([requestServiceKey isEqualToString:kCustomerBookProjectService]) {
-        
-        [SVProgressHUD showSuccessWithStatus:@"Project Booked successfully"];
-        [self.navigationController popViewControllerAnimated:YES];
-        
-    }
-    
-}
-
-
-- (void) didFinishServiceWithFailure:(NSString *)errorMsg {
-    
-    
-    [SVProgressHUD dismiss];
-    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil
-                                                  message:NSLocalizedString(@"An issue occured while processing your request. Please try again later.", nil)
-                                                 delegate:self
-                                        cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                        otherButtonTitles: nil];
-    
-    if (![errorMsg isEqualToString:@""]) {
-        [alert setMessage:errorMsg];
-    }
-    
-    if ([errorMsg isEqualToString:NSLocalizedString(@"Verify your internet connection and try again", nil)]) {
-        [alert setTitle:NSLocalizedString(@"Connection unsuccessful", nil)];
-    }
-    
-    
-    [alert show];
-    
-    return;
-    
-}
-
-#pragma mark - Modalobject
-
-- (NSMutableDictionary *) prepareDictionaryForBookProject {
-    
-    NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
-    
-    [dict setObject:treatmentStr forKey:@"Treatment"];
-    [dict setObject:[[SharedClass sharedInstance] userObj].user_id forKey:@"Booker_id"];
-    [dict setObject:adDict[@"User_id"] forKey:@"Hairdresser_id"];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
-    [dateFormatter setTimeZone:timeZone];
-    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
-    
-   [dict setObject:[dateFormatter stringFromDate:[NSDate date]] forKey:@"Date"];
-    
-    return dict;
-    
-}
 @end

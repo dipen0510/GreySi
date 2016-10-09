@@ -24,6 +24,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
     [self setupUI];
     
 }
@@ -57,11 +63,21 @@
     
 }
 
+- (void) refreshActiveProjectTabList {
+    [self setupLayoutForTabIndex:1];
+}
+
 - (void) setupLayoutForTabIndex:(int)index {
     
     if (userType == 1) {
         
-        [self.postedProjectsButton setTitle:@"Awarded Projects" forState:UIControlStateNormal];
+        if (userType == 1) {
+            [self.postedProjectsButton setTitle:@"Bidded Projects" forState:UIControlStateNormal];
+        }
+        else  {
+            [self.postedProjectsButton setTitle:@"Awarded Projects" forState:UIControlStateNormal];
+        }
+        
         
         if (index == 0) {
             
@@ -221,6 +237,18 @@
     
 }
 
+
+- (void) startCustomerProjectCompletedService {
+    
+    [SVProgressHUD showWithStatus:@"Completing project..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kCustomerProjectComplete;
+    manager.delegate = self;
+    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForCustomerCompleteProject]];
+    
+}
+
 #pragma mark - DATASYNCMANAGER Delegates
 
 -(void) didFinishServiceWithSuccess:(CustomerGetProjectsResponseModal *)responseData andServiceKey:(NSString *)requestServiceKey {
@@ -239,6 +267,10 @@
         projectsArr = [[NSMutableArray alloc] initWithArray:[responseData valueForKey:@"info"]];
         [self.projectsTableView reloadData];
         
+    }
+    else if ([requestServiceKey isEqualToString:kCustomerProjectComplete]) {
+        [SVProgressHUD showSuccessWithStatus:@"Project Completed successfully"];
+        [self performSelector:@selector(refreshActiveProjectTabList) withObject:nil afterDelay:0.3];
     }
     
     
@@ -267,6 +299,18 @@
     [alert show];
     
     return;
+    
+}
+
+#pragma mark - Modalobject
+
+- (NSMutableDictionary *) prepareDictionaryForCustomerCompleteProject {
+    
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+    
+    [dict setObject:selectedActiveProjectId forKey:@"Project_id"];
+    
+    return dict;
     
 }
 
@@ -316,6 +360,14 @@
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     HomeViewController* controller = (HomeViewController*)[mainStoryboard instantiateViewControllerWithIdentifier:@"homeViewController"];
     [self.revealViewController setFrontViewController:controller animated:YES];
+    
+}
+
+- (void) activeProjectsCompletedProjectButtonTapped:(UIButton *)sender {
+    
+    ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:sender.tag]];
+    selectedActiveProjectId = singleProject.project_id;
+    [self startCustomerProjectCompletedService];
     
 }
 
@@ -423,6 +475,17 @@
     
     cell.nameLabel.text = singleProject.name;
     cell.amountLabel.text = [NSString stringWithFormat:@"Amount : $%@",singleProject.budget];
+    
+    
+    if ([[[SharedClass sharedInstance] userObj].flag intValue]==1) {
+        cell.completedButton.hidden = YES;
+    }
+    else {
+        cell.completedButton.hidden = NO;
+        cell.completedButton.tag = indexPath.row;
+        [cell.completedButton addTarget:self action:@selector(activeProjectsCompletedProjectButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
     
     if (singleProject.profile_pic && ![singleProject.profile_pic isEqual:[NSNull null]]) {
         __weak UIImageView* weakImageView = cell.profileImageView;

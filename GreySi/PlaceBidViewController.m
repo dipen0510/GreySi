@@ -50,6 +50,12 @@
     }
 }
 
+- (IBAction)backButtonTapped:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
 
 - (void) startPlaceBidService {
     

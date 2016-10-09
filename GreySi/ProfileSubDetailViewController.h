@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProfileSubDetailViewController : UIViewController<DataSyncManagerDelegate> {
+@interface ProfileSubDetailViewController : UIViewController {
     
     NSString* treatmentStr;
     NSString* budgetStr;

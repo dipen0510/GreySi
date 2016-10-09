@@ -10,6 +10,7 @@
 
 @interface BookingsViewController : UIViewController <DataSyncManagerDelegate> {
     NSMutableArray* bookingsArr;
+    NSString* selectedProjectBookingId;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *bookingsTblView;

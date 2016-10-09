@@ -79,6 +79,18 @@
     
 }
 
+- (void) startHairProjectCompletedService {
+    
+    [SVProgressHUD showWithStatus:@"Completing project..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kHairProjectComplete;
+    manager.delegate = self;
+    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForHairCompleteProject]];
+    
+}
+
+
 #pragma mark - DATASYNCMANAGER Delegates
 
 -(void) didFinishServiceWithSuccess:(id)responseData andServiceKey:(NSString *)requestServiceKey {
@@ -99,6 +111,10 @@
         
         [self.bookingsTblView reloadData];
         
+    }
+    if ([requestServiceKey isEqualToString:kHairProjectComplete]) {
+        [SVProgressHUD showSuccessWithStatus:@"Booking completed successfully"];
+        [self performSelector:@selector(setupInitialUI) withObject:nil afterDelay:0.3];
     }
     
     
@@ -128,6 +144,18 @@
     [alert show];
     
     return;
+    
+}
+
+#pragma mark - Modalobject
+
+- (NSMutableDictionary *) prepareDictionaryForHairCompleteProject {
+    
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+    
+    [dict setObject:selectedProjectBookingId forKey:@"Booking_id"];
+    
+    return dict;
     
 }
 
@@ -179,6 +207,23 @@
     cell.subHeadingLabel.text = [dict valueForKey:@"Treatment"];
     cell.dateLabel.text = [dict valueForKey:@"Date"];
     
+    if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
+        
+        if ([[dict valueForKey:@"Status"] intValue] == 1) {
+            cell.completedButton.hidden = NO;
+            cell.completedButton.tag = indexPath.row;
+            [cell.completedButton addTarget:self action:@selector(projectsCompletedtButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        }
+        else {
+            cell.completedButton.hidden = YES;
+        }
+        
+    }
+    else {
+        cell.completedButton.hidden = YES;
+    }
+    
+    
     if ([dict valueForKey:@"Profile_pi"] && ![[dict valueForKey:@"Profile_pi"] isEqual:[NSNull null]]) {
         __weak UIImageView* weakImageView = cell.profileImgView;
         [cell.profileImgView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[[dict valueForKey:@"Profile_pi"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
@@ -208,6 +253,14 @@
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     HomeViewController* controller = (HomeViewController*)[mainStoryboard instantiateViewControllerWithIdentifier:@"homeViewController"];
     [self.revealViewController setFrontViewController:controller animated:YES];
+    
+}
+
+- (void) projectsCompletedtButtonTapped:(UIButton *)sender {
+    
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc] initWithDictionary:[bookingsArr objectAtIndex:sender.tag]];
+    selectedProjectBookingId = [dict valueForKey:@"Booking_id"];
+    [self startHairProjectCompletedService];
     
 }
 @end

@@ -39,11 +39,23 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Richard Sen" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rey-gp-8CQ">
-                        <rect key="frame" x="210" y="32" width="94" height="16"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quV-Vk-OHd">
+                        <rect key="frame" x="242" y="36" width="70" height="25"/>
+                        <color key="backgroundColor" red="0.4823529412" green="0.1058823529" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="16" id="EnM-Et-3P0"/>
-                            <constraint firstAttribute="width" constant="94" id="eXz-mO-24c"/>
+                            <constraint firstAttribute="height" constant="25" id="SmT-Ti-oIk"/>
+                            <constraint firstAttribute="width" constant="70" id="h2F-vh-72C"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                        <state key="normal" title="Completed">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Richard Sen" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rey-gp-8CQ">
+                        <rect key="frame" x="218" y="16" width="94" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="94" id="FFC-a2-rOq"/>
+                            <constraint firstAttribute="height" constant="16" id="HUg-1f-lsy"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,19 +63,22 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="rey-gp-8CQ" secondAttribute="trailing" constant="16" id="39y-FP-kPx"/>
-                    <constraint firstItem="rey-gp-8CQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="EUT-NF-m8k"/>
+                    <constraint firstItem="rey-gp-8CQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Fyi-dz-3Vd"/>
                     <constraint firstItem="lgc-Px-iYU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="Kvg-OC-sK7"/>
                     <constraint firstItem="GdL-0P-XLH" firstAttribute="leading" secondItem="lgc-Px-iYU" secondAttribute="trailing" constant="8" id="M5c-nm-JP3"/>
-                    <constraint firstItem="rey-gp-8CQ" firstAttribute="leading" secondItem="4xn-PU-PBg" secondAttribute="trailing" constant="8" id="Tka-lU-KvN"/>
+                    <constraint firstItem="quV-Vk-OHd" firstAttribute="top" secondItem="rey-gp-8CQ" secondAttribute="bottom" constant="4" id="Wya-7U-GXi"/>
                     <constraint firstItem="4xn-PU-PBg" firstAttribute="width" secondItem="GdL-0P-XLH" secondAttribute="width" id="YF8-BF-DKu"/>
                     <constraint firstItem="4xn-PU-PBg" firstAttribute="leading" secondItem="lgc-Px-iYU" secondAttribute="trailing" constant="8" id="dKe-gl-iPq"/>
                     <constraint firstItem="GdL-0P-XLH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="fmV-wU-Lsa"/>
                     <constraint firstItem="4xn-PU-PBg" firstAttribute="top" secondItem="GdL-0P-XLH" secondAttribute="bottom" constant="8" id="rwq-JJ-Q7M"/>
                     <constraint firstItem="lgc-Px-iYU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="sCd-Ee-xtW"/>
+                    <constraint firstAttribute="trailing" secondItem="quV-Vk-OHd" secondAttribute="trailing" constant="8" id="sFa-Vz-3dM"/>
+                    <constraint firstAttribute="trailing" secondItem="rey-gp-8CQ" secondAttribute="trailing" constant="8" id="tOH-Ug-yBv"/>
+                    <constraint firstItem="rey-gp-8CQ" firstAttribute="leading" secondItem="GdL-0P-XLH" secondAttribute="trailing" constant="16" id="vw5-K4-ZuA"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="completedButton" destination="quV-Vk-OHd" id="2qR-QD-LpV"/>
                 <outlet property="dateLabel" destination="rey-gp-8CQ" id="SWn-mv-5Dl"/>
                 <outlet property="headingLabel" destination="GdL-0P-XLH" id="ijp-MP-f8r"/>
                 <outlet property="profileImgView" destination="lgc-Px-iYU" id="wwu-Uq-d1f"/>
