@@ -129,7 +129,7 @@
          ShowOnMapViewController* controller = (ShowOnMapViewController *)[segue destinationViewController];
          controller.annotLat = adDict[@"Lat"];
          controller.annotLong = adDict[@"Longi"];
-         
+         controller.adDict = adDict;
      }
      
      

@@ -266,13 +266,11 @@
 - (IBAction)myPlaceButtonTapped:(id)sender {
     
     [self.myPlaceButton setSelected:YES];
-    [self.yourPlaceButton setSelected:NO];
     
 }
 
 - (IBAction)yourPlaceButtonTapped:(id)sender {
     
-    [self.myPlaceButton setSelected:NO];
     [self.yourPlaceButton setSelected:YES];
     
 }

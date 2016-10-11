@@ -9,6 +9,7 @@
 #import "ProfileDetailViewController.h"
 #import "ProfileSocialTableViewCell.h"
 #import "ProfileReviewTableViewCell.h"
+#import "RateViewController.h"
 
 @interface ProfileDetailViewController ()
 
@@ -16,7 +17,7 @@
 
 @implementation ProfileDetailViewController
 
-@synthesize userId;
+@synthesize userId,adDict;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -136,15 +137,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"ratePushSegue"]) {
+        
+        RateViewController* controller = (RateViewController *)[segue destinationViewController];
+        controller.adDict = adDict;
+        
+    }
+    
 }
-*/
+
 
 - (IBAction)backButtonTapped:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];

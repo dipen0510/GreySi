@@ -59,6 +59,14 @@
 		1888573D1CAB19F10026995E /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888573B1CAB19F10026995E /* HomeTableViewCell.m */; };
 		1888573E1CAB19F10026995E /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1888573C1CAB19F10026995E /* HomeTableViewCell.xib */; };
 		188857401CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 1888573F1CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png */; };
+		188BDA051DAD091400387467 /* FiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BDA041DAD091400387467 /* FiltersViewController.m */; };
+		188BDA311DAD4B8A00387467 /* GenericPinAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BDA281DAD4B8A00387467 /* GenericPinAnnotationView.m */; };
+		188BDA321DAD4B8A00387467 /* MultiRowAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BDA2A1DAD4B8A00387467 /* MultiRowAnnotation.m */; };
+		188BDA331DAD4B8A00387467 /* MultiRowCalloutAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BDA2D1DAD4B8A00387467 /* MultiRowCalloutAnnotationView.m */; };
+		188BDA341DAD4B8A00387467 /* MultiRowCalloutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BDA2F1DAD4B8A00387467 /* MultiRowCalloutCell.m */; };
+		188BDA3A1DAD4B9B00387467 /* District.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BDA371DAD4B9B00387467 /* District.m */; };
+		188BDA3B1DAD4B9B00387467 /* Representative.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BDA391DAD4B9B00387467 /* Representative.m */; };
+		188BDA3E1DAD589700387467 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BDA3D1DAD589700387467 /* RateViewController.m */; };
 		18A6D2F81D7AB70E004907EB /* ProjectsSingleModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6D2F71D7AB70E004907EB /* ProjectsSingleModal.m */; };
 		18A6D2FB1D7AB80E004907EB /* CustomerGetProjectsResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6D2FA1D7AB80E004907EB /* CustomerGetProjectsResponseModal.m */; };
 		18AA90831D8D096E00DA3828 /* AdSIngleModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AA90821D8D096E00DA3828 /* AdSIngleModal.m */; };
@@ -222,6 +230,23 @@
 		1888573C1CAB19F10026995E /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeTableViewCell.xib; path = CustomControls/HomeTableViewCell.xib; sourceTree = "<group>"; };
 		1888573F1CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2016-03-30 at 12.44.22 AM.png"; sourceTree = "<group>"; };
 		188857411CAB20C60026995E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		188BDA031DAD091300387467 /* FiltersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiltersViewController.h; sourceTree = "<group>"; };
+		188BDA041DAD091400387467 /* FiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersViewController.m; sourceTree = "<group>"; };
+		188BDA271DAD4B8A00387467 /* GenericPinAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericPinAnnotationView.h; sourceTree = "<group>"; };
+		188BDA281DAD4B8A00387467 /* GenericPinAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericPinAnnotationView.m; sourceTree = "<group>"; };
+		188BDA291DAD4B8A00387467 /* MultiRowAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiRowAnnotation.h; sourceTree = "<group>"; };
+		188BDA2A1DAD4B8A00387467 /* MultiRowAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiRowAnnotation.m; sourceTree = "<group>"; };
+		188BDA2B1DAD4B8A00387467 /* MultiRowAnnotationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiRowAnnotationProtocol.h; sourceTree = "<group>"; };
+		188BDA2C1DAD4B8A00387467 /* MultiRowCalloutAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiRowCalloutAnnotationView.h; sourceTree = "<group>"; };
+		188BDA2D1DAD4B8A00387467 /* MultiRowCalloutAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiRowCalloutAnnotationView.m; sourceTree = "<group>"; };
+		188BDA2E1DAD4B8A00387467 /* MultiRowCalloutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiRowCalloutCell.h; sourceTree = "<group>"; };
+		188BDA2F1DAD4B8A00387467 /* MultiRowCalloutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiRowCalloutCell.m; sourceTree = "<group>"; };
+		188BDA361DAD4B9B00387467 /* District.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = District.h; sourceTree = "<group>"; };
+		188BDA371DAD4B9B00387467 /* District.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = District.m; sourceTree = "<group>"; };
+		188BDA381DAD4B9B00387467 /* Representative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Representative.h; sourceTree = "<group>"; };
+		188BDA391DAD4B9B00387467 /* Representative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Representative.m; sourceTree = "<group>"; };
+		188BDA3C1DAD589700387467 /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
+		188BDA3D1DAD589700387467 /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
 		18A6D2F61D7AB70E004907EB /* ProjectsSingleModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectsSingleModal.h; sourceTree = "<group>"; };
 		18A6D2F71D7AB70E004907EB /* ProjectsSingleModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsSingleModal.m; sourceTree = "<group>"; };
 		18A6D2F91D7AB80E004907EB /* CustomerGetProjectsResponseModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerGetProjectsResponseModal.h; sourceTree = "<group>"; };
@@ -383,6 +408,7 @@
 		185DC1071D5136D2007998F3 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				188BDA261DAD4B8A00387467 /* MultiRowCalloutAnnotationView */,
 				188857261CAB17AD0026995E /* SwipeView */,
 				185DC1081D5136D2007998F3 /* SWRevealViewController */,
 			);
@@ -489,6 +515,26 @@
 				1888573C1CAB19F10026995E /* HomeTableViewCell.xib */,
 			);
 			name = HomeTableViewCell;
+			sourceTree = "<group>";
+		};
+		188BDA261DAD4B8A00387467 /* MultiRowCalloutAnnotationView */ = {
+			isa = PBXGroup;
+			children = (
+				188BDA361DAD4B9B00387467 /* District.h */,
+				188BDA371DAD4B9B00387467 /* District.m */,
+				188BDA381DAD4B9B00387467 /* Representative.h */,
+				188BDA391DAD4B9B00387467 /* Representative.m */,
+				188BDA271DAD4B8A00387467 /* GenericPinAnnotationView.h */,
+				188BDA281DAD4B8A00387467 /* GenericPinAnnotationView.m */,
+				188BDA291DAD4B8A00387467 /* MultiRowAnnotation.h */,
+				188BDA2A1DAD4B8A00387467 /* MultiRowAnnotation.m */,
+				188BDA2B1DAD4B8A00387467 /* MultiRowAnnotationProtocol.h */,
+				188BDA2C1DAD4B8A00387467 /* MultiRowCalloutAnnotationView.h */,
+				188BDA2D1DAD4B8A00387467 /* MultiRowCalloutAnnotationView.m */,
+				188BDA2E1DAD4B8A00387467 /* MultiRowCalloutCell.h */,
+				188BDA2F1DAD4B8A00387467 /* MultiRowCalloutCell.m */,
+			);
+			path = MultiRowCalloutAnnotationView;
 			sourceTree = "<group>";
 		};
 		18C831801D63592500AE6058 /* Helpers */ = {
@@ -654,6 +700,10 @@
 				18F3164C1DAAC5F000DD5716 /* BookingDetailsViewController.m */,
 				18F3164E1DAAE05700DD5716 /* ShowOnMapViewController.h */,
 				18F3164F1DAAE05700DD5716 /* ShowOnMapViewController.m */,
+				188BDA031DAD091300387467 /* FiltersViewController.h */,
+				188BDA041DAD091400387467 /* FiltersViewController.m */,
+				188BDA3C1DAD589700387467 /* RateViewController.h */,
+				188BDA3D1DAD589700387467 /* RateViewController.m */,
 			);
 			path = GreySi;
 			sourceTree = "<group>";
@@ -1009,6 +1059,7 @@
 				18CF35151D5BCE6100C0A5BD /* BidsReceivedTableViewCell.m in Sources */,
 				184AF5401D76074D001DDD4B /* SignUpRequestModal.m in Sources */,
 				188853CC1D9184B7001EF67C /* AddTreatmentRequestModal.m in Sources */,
+				188BDA3A1DAD4B9B00387467 /* District.m in Sources */,
 				18AA90831D8D096E00DA3828 /* AdSIngleModal.m in Sources */,
 				18C928DA1DA9993800DAC0F9 /* PlaceBidViewController.m in Sources */,
 				185DC10B1D5136D2007998F3 /* SWRevealViewController.m in Sources */,
@@ -1017,10 +1068,13 @@
 				D4A7DD7A1C806CF900F82033 /* DocumentReviewViewController.m in Sources */,
 				18A6D2FB1D7AB80E004907EB /* CustomerGetProjectsResponseModal.m in Sources */,
 				18C831951D63593A00AE6058 /* DataSyncManager.m in Sources */,
+				188BDA311DAD4B8A00387467 /* GenericPinAnnotationView.m in Sources */,
 				18CF35071D5BC4C800C0A5BD /* ProjectsListViewController.m in Sources */,
 				188857291CAB17AD0026995E /* SwipeView.m in Sources */,
 				D4D5A1C51D5852F400B15CBE /* ChatListTableViewCell.m in Sources */,
+				188BDA051DAD091400387467 /* FiltersViewController.m in Sources */,
 				1881F3E81DA1AFBE005198A2 /* ProfileReviewTableViewCell.m in Sources */,
+				188BDA3E1DAD589700387467 /* RateViewController.m in Sources */,
 				18A6D2F81D7AB70E004907EB /* ProjectsSingleModal.m in Sources */,
 				D4D5A1CA1D5857C400B15CBE /* ChatDetailViewController.m in Sources */,
 				18F3164D1DAAC5F000DD5716 /* BookingDetailsViewController.m in Sources */,
@@ -1042,6 +1096,7 @@
 				D455C47B1C7F203900C6D1CB /* SignUpViewController.m in Sources */,
 				185B5E971D5A6D2200205F72 /* TreatmentTabTableViewCell.m in Sources */,
 				D4CA5C7E1C7DCDF7000E185A /* SplashViewController.m in Sources */,
+				188BDA3B1DAD4B9B00387467 /* Representative.m in Sources */,
 				188857311CAB18520026995E /* HomeViewController.m in Sources */,
 				185DC1281D514DEA007998F3 /* ProfileDetailViewController.m in Sources */,
 				D4A7DD771C806CE100F82033 /* WhatAreYouViewController.m in Sources */,
@@ -1050,7 +1105,10 @@
 				1881F3EE1DA1AFDF005198A2 /* ProfileSocialTableViewCell.m in Sources */,
 				18CF351E1D5BD23000C0A5BD /* ActiveProjectsTableViewCell.m in Sources */,
 				D482E7F01D78291B00BC30DA /* LoginRequestModal.m in Sources */,
+				188BDA321DAD4B8A00387467 /* MultiRowAnnotation.m in Sources */,
+				188BDA331DAD4B8A00387467 /* MultiRowCalloutAnnotationView.m in Sources */,
 				D4CA5C7B1C7DCDF7000E185A /* AppDelegate.m in Sources */,
+				188BDA341DAD4B8A00387467 /* MultiRowCalloutCell.m in Sources */,
 				18CF35101D5BCDA900C0A5BD /* BidsReceivedListViewController.m in Sources */,
 				185DC1111D513CD1007998F3 /* SideMenuViewController.m in Sources */,
 				D4CA5C781C7DCDF7000E185A /* main.m in Sources */,

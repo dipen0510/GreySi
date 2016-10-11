@@ -30,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *socialTblView;
 
 @property (strong, nonatomic) NSString* userId;
+@property (strong, nonatomic) NSMutableDictionary* adDict;
 
 - (IBAction)backButtonTapped:(id)sender;
 
