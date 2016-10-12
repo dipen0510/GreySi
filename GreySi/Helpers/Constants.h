@@ -28,6 +28,9 @@
 #define registerUserIdKey @"User_id"
 #define registerWebsiteKey @"Website"
 
+#define token1Key @"token1Key"
+#define token2Key @"token2Key"
+
 //Customer Projects API
 
 #define customerProjectsInfoKey @"info"

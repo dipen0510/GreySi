@@ -18,6 +18,8 @@
 #define kGetLocation @"Location/GetLocation.php?User_id="
 #define kGetProfileInfo @"Get.php?User_id="
 
+#define kUploadProfileService @"upload.php"
+
 // CUSTOMER
 #define kCustomerGetAdService @"Hair_dressor_post/GetAd.php"
 #define kCustomerGetPostedProjectsService @"Customer_Projects/PostedProjects.php?User_id="
@@ -29,6 +31,7 @@
 #define kCustomerAssignProjectService @"Complete_Project_Section/AssignProject.php"
 #define kCustomerBookProjectService @"PostBooking.php"
 #define kCustomerProjectComplete @"Complete_Project_Section/TreatmentComplete.php"
+#define kCustomerPostReviewService @"Reviews/PostReview.php"
 
 //HAIRDRESSER
 #define kHairFetchProjectsService @"FetchProject.php"

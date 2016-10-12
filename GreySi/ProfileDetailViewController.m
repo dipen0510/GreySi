@@ -10,6 +10,8 @@
 #import "ProfileSocialTableViewCell.h"
 #import "ProfileReviewTableViewCell.h"
 #import "RateViewController.h"
+#import "HomeViewController.h"
+#import "LoginRequestModal.h"
 
 @interface ProfileDetailViewController ()
 
@@ -17,7 +19,7 @@
 
 @implementation ProfileDetailViewController
 
-@synthesize userId,adDict;
+@synthesize userId,isEditable,isOpenedFromSideMenu;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,6 +27,7 @@
     
     [self setupUI];
     [self startGetProfileInfoService];
+    [self setupActionSheet];
     
 }
 
@@ -37,8 +40,33 @@
     self.chatButton.layer.cornerRadius = 2.0;
     self.rateReviewButton.layer.cornerRadius = 2.0;
     
+    profileImage = self.profileImgView.image;
+    
+    self.editProfileImageButton.layer.cornerRadius = self.editProfileImageButton.frame.size.height/2.;
+    
     self.socialTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.reviewTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    if (isEditable) {
+        _editProfileImageButton.hidden = NO;
+        _editProfileNameButton.hidden = NO;
+        _editProfileTreatmentButton.hidden = NO;
+        _editProfileDescriptionButton.hidden = NO;
+        _editProfileSocialButton.hidden = NO;
+    }
+    else {
+        _editProfileImageButton.hidden = YES;
+        _editProfileNameButton.hidden = YES;
+        _editProfileTreatmentButton.hidden = YES;
+        _editProfileDescriptionButton.hidden = YES;
+        _editProfileSocialButton.hidden = YES;
+    }
+    if (isOpenedFromSideMenu) {
+        self.chatButton.hidden = YES;
+    }
+    else {
+        self.chatButton.hidden = NO;
+    }
     
 }
 
@@ -49,11 +77,11 @@
     NSMutableDictionary* infoDict = [[NSMutableDictionary alloc] initWithDictionary:[[responseDict valueForKey:@"info"] objectAtIndex:0]];
     reviewArr = [[NSMutableArray alloc] initWithArray:[responseDict valueForKey:@"Reviews"]];
     
-    self.profileNameLabel.text = [infoDict valueForKey:@"Name"];
-    self.treatmentLabel.text = [infoDict valueForKey:@"Short_description"];
+    self.profileNameTxtField.text = [infoDict valueForKey:@"Name"];
+    self.treatmentTxtField.text = [infoDict valueForKey:@"Short_description"];
     self.completedProjectsLabel.text = [NSString stringWithFormat:@"Completed Projects : %@",[responseDict valueForKey:@"completed_projects"]];
     self.starOutOfProjectsLabel.text = [NSString stringWithFormat:@"%0.2f star from %@ projects",[[responseDict valueForKey:@"average_rating"] floatValue],[responseDict valueForKey:@"completed_projects"]];
-    self.descriptionLabel.text = [infoDict valueForKey:@"Long_description"];
+    self.descriptioNTxtField.text = [infoDict valueForKey:@"Long_description"];
     
     __weak UIImageView* weakImageView = self.profileImgView;
     [self.profileImgView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[infoDict[@"Profile_pi"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
@@ -63,6 +91,7 @@
         
         weakImageView.alpha = 0.0;
         weakImageView.image = image;
+        profileImage = image;
         [UIView animateWithDuration:0.25
                          animations:^{
                              weakImageView.alpha = 1.0;
@@ -147,16 +176,128 @@
     
     if ([segue.identifier isEqualToString:@"ratePushSegue"]) {
         
-        RateViewController* controller = (RateViewController *)[segue destinationViewController];
-        controller.adDict = adDict;
-        
+//        RateViewController* controller = (RateViewController *)[segue destinationViewController];
+//        controller.adDict = adDict;
+//        
     }
     
 }
 
 
 - (IBAction)backButtonTapped:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    if (isOpenedFromSideMenu) {
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        HomeViewController* controller = (HomeViewController*)[mainStoryboard instantiateViewControllerWithIdentifier:@"homeViewController"];
+        [self.revealViewController setFrontViewController:controller animated:YES];
+    }
+    else
+        [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)editProfileImageButtonTapped:(id)sender {
+    
+    if ([actSheet isVisible]) {
+        [actSheet dismissWithClickedButtonIndex:0 animated:YES];
+    }
+    else {
+        [actSheet showInView:self.view];
+    }
+    
+}
+
+- (IBAction)editProfileNameButtonTapped:(id)sender {
+    
+    self.doneButton.hidden = NO;
+    _editProfileImageButton.hidden = YES;
+    _editProfileNameButton.hidden = YES;
+    _editProfileTreatmentButton.hidden = YES;
+    _editProfileDescriptionButton.hidden = YES;
+    _editProfileSocialButton.hidden = YES;
+    self.profileNameTxtField.userInteractionEnabled = YES;
+    [self.profileNameTxtField becomeFirstResponder];
+    
+    [self.contenScrollView setContentInset:UIEdgeInsetsMake(0, 0, 224, 0)];
+}
+
+- (IBAction)editProfileTreatmentButtonTapped:(id)sender {
+    
+    self.doneButton.hidden = NO;
+    _editProfileImageButton.hidden = YES;
+    _editProfileNameButton.hidden = YES;
+    _editProfileTreatmentButton.hidden = YES;
+    _editProfileDescriptionButton.hidden = YES;
+    _editProfileSocialButton.hidden = YES;
+    self.treatmentTxtField.userInteractionEnabled = YES;
+    [self.treatmentTxtField becomeFirstResponder];
+    
+    [self.contenScrollView setContentInset:UIEdgeInsetsMake(0, 0, 224, 0)];
+}
+
+- (IBAction)editProfileDescriptionButtonTapped:(id)sender {
+    
+    self.doneButton.hidden = NO;
+    _editProfileImageButton.hidden = YES;
+    _editProfileNameButton.hidden = YES;
+    _editProfileTreatmentButton.hidden = YES;
+    _editProfileDescriptionButton.hidden = YES;
+    _editProfileSocialButton.hidden = YES;
+    self.descriptioNTxtField.userInteractionEnabled = YES;
+    [self.descriptioNTxtField becomeFirstResponder];
+    
+    [self.contenScrollView setContentInset:UIEdgeInsetsMake(0, 0, 224, 0)];
+}
+
+- (IBAction)editProfileSocialButtonTapped:(id)sender {
+    
+    self.doneButton.hidden = NO;
+    _editProfileImageButton.hidden = YES;
+    _editProfileNameButton.hidden = YES;
+    _editProfileTreatmentButton.hidden = YES;
+    _editProfileDescriptionButton.hidden = YES;
+    _editProfileSocialButton.hidden = YES;
+    
+    ProfileSocialTableViewCell* fbCell = [[_socialTblView visibleCells] objectAtIndex:0];
+    ProfileSocialTableViewCell* twitterCell = [[_socialTblView visibleCells] objectAtIndex:1];
+    ProfileSocialTableViewCell* WebCell = [[_socialTblView visibleCells] objectAtIndex:2];
+    
+    fbCell.headingTxtField.userInteractionEnabled = YES;
+    twitterCell.headingTxtField.userInteractionEnabled = YES;
+    WebCell.headingTxtField.userInteractionEnabled = YES;
+    
+    [fbCell.headingTxtField becomeFirstResponder];
+    
+    [self.contenScrollView setContentInset:UIEdgeInsetsMake(0, 0, 224, 0)];
+    
+    [self.contenScrollView scrollRectToVisible:CGRectMake(self.contenScrollView.contentSize.width - 1,self.contenScrollView.contentSize.height - 1, 1, 1) animated:YES];
+    
+}
+
+- (IBAction)doneButtonTapped:(id)sender {
+    
+    self.doneButton.hidden = YES;
+    _editProfileImageButton.hidden = NO;
+    _editProfileNameButton.hidden = NO;
+    _editProfileTreatmentButton.hidden = NO;
+    _editProfileDescriptionButton.hidden = NO;
+    _editProfileSocialButton.hidden = NO;
+    
+    [self.view endEditing:YES];
+    self.profileNameTxtField.userInteractionEnabled = NO;
+    self.treatmentTxtField.userInteractionEnabled = NO;
+    self.descriptioNTxtField.userInteractionEnabled = NO;
+    
+    ProfileSocialTableViewCell* fbCell = [[_socialTblView visibleCells] objectAtIndex:0];
+    ProfileSocialTableViewCell* twitterCell = [[_socialTblView visibleCells] objectAtIndex:1];
+    ProfileSocialTableViewCell* WebCell = [[_socialTblView visibleCells] objectAtIndex:2];
+    
+    fbCell.headingTxtField.userInteractionEnabled = NO;
+    twitterCell.headingTxtField.userInteractionEnabled = NO;
+    WebCell.headingTxtField.userInteractionEnabled = NO;
+    
+    [self.contenScrollView setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    
+    [self startUpdatetProfileInfoService];
+    
 }
 
 
@@ -223,15 +364,15 @@
     if (responseDict.count>0) {
         if (indexPath.row == 0) {
             cell.imgView.image = [UIImage imageNamed:@"fb_logo.png"];
-            cell.headingLabel.text = [[[responseDict valueForKey:@"info"] objectAtIndex:0] valueForKey:@"FB"];
+            cell.headingTxtField.text = [[[responseDict valueForKey:@"info"] objectAtIndex:0] valueForKey:@"FB"];
         }
         else if (indexPath.row == 1) {
             cell.imgView.image = [UIImage imageNamed:@"insta_logo.png"];
-            cell.headingLabel.text = [[[responseDict valueForKey:@"info"] objectAtIndex:0] valueForKey:@"Twitter"];
+            cell.headingTxtField.text = [[[responseDict valueForKey:@"info"] objectAtIndex:0] valueForKey:@"Twitter"];
         }
         else if (indexPath.row == 2) {
             cell.imgView.image = [UIImage imageNamed:@"web_logo.png"];
-            cell.headingLabel.text = [[[responseDict valueForKey:@"info"] objectAtIndex:0] valueForKey:@"Website"];
+            cell.headingTxtField.text = [[[responseDict valueForKey:@"info"] objectAtIndex:0] valueForKey:@"Website"];
         }
     }
     
@@ -333,6 +474,28 @@
     
 }
 
+- (void) startUpdatetProfileInfoService {
+    
+    [SVProgressHUD showWithStatus:@"Updating Profile Info..."];
+    
+    isProfileUpdated = YES;
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kUploadProfileService;
+    manager.delegate = self;
+    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForUploadProfile]];
+    
+}
+
+- (void) startLoginService {
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kLoginService;
+    manager.delegate = self;
+    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForLogin]];
+    
+}
+
 #pragma mark - DATASYNCMANAGER Delegates
 
 -(void) didFinishServiceWithSuccess:(id)responseData andServiceKey:(NSString *)requestServiceKey {
@@ -343,6 +506,23 @@
         [SVProgressHUD showSuccessWithStatus:@"Profile Details fetched succesfully"];
         responseDict = [[NSMutableDictionary alloc] initWithDictionary:responseData];
         [self updateUIAfterAPISuccess];
+        
+        if (isProfileUpdated) {
+            isProfileUpdated = NO;
+            [self startLoginService];
+        }
+        
+        
+    }
+    if ([requestServiceKey containsString:kUploadProfileService]) {
+       
+        [self startGetProfileInfoService];
+        
+    }
+    if ([requestServiceKey containsString:kLoginService]) {
+        
+        [SVProgressHUD showSuccessWithStatus:@"Profile Details updated succesfully"];
+        [[SharedClass sharedInstance] setUserObj:responseData];
         
     }
     
@@ -376,4 +556,260 @@
     
 }
 
+#pragma mark - Modalobject
+
+- (NSMutableDictionary *) prepareDictionaryForUploadProfile {
+    
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+    
+    ProfileSocialTableViewCell* fbCell = [[_socialTblView visibleCells] objectAtIndex:0];
+    ProfileSocialTableViewCell* twitterCell = [[_socialTblView visibleCells] objectAtIndex:1];
+    ProfileSocialTableViewCell* WebCell = [[_socialTblView visibleCells] objectAtIndex:2];
+    
+    [dict setObject:userId forKey:@"User_id"];
+    [dict setObject:self.treatmentTxtField.text forKey:@"Short_description"];
+    [dict setObject:self.descriptioNTxtField.text forKey:@"Long_description"];
+    
+    [dict setObject:fbCell.headingTxtField.text forKey:@"FB"];
+    [dict setObject:twitterCell.headingTxtField.text forKey:@"Twitter"];
+    [dict setObject:WebCell.headingTxtField.text forKey:@"Website"];
+    [dict setObject:[self encodeToBase64String:profileImage] forKey:@"Profile_pi"];
+    [dict setObject:self.profileNameTxtField.text forKey:@"Pic_Name"];
+    [dict setObject:@"1" forKey:@"Available"];
+    
+    return dict;
+    
+}
+
+- (NSMutableDictionary *) prepareDictionaryForLogin {
+    
+    LoginRequestModal* signUpObj = [[LoginRequestModal alloc] init];
+    
+    signUpObj.email = [[NSUserDefaults standardUserDefaults] objectForKey:token1Key];
+    signUpObj.password = [[NSUserDefaults standardUserDefaults] objectForKey:token2Key];;
+    
+    return [signUpObj createRequestDictionary];
+    
+}
+#pragma mark - Profile Image Change
+
+- (void) setupActionSheet {
+    
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        actSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                               delegate:self
+                                      cancelButtonTitle:@"Cancel"
+                                 destructiveButtonTitle:nil
+                                      otherButtonTitles:@"Photo Library", nil];
+    }
+    else {
+        actSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                               delegate:self
+                                      cancelButtonTitle:@"Cancel"
+                                 destructiveButtonTitle:nil
+                                      otherButtonTitles:@"Photo Library", @"Camera", nil];
+    }
+    
+}
+
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (actionSheet == actSheet) {
+        //FLOG(@"Button %d", buttonIndex);
+        
+        if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+        {
+            
+            switch (buttonIndex) {
+                    
+                case 0:
+                {
+                    UIImagePickerController *imgPicker = [[UIImagePickerController alloc] init];
+                    imgPicker.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
+                    imgPicker.delegate = self;
+                    [self presentViewController:imgPicker animated:YES completion:nil];
+                    break;
+                }
+                    
+                default:
+                    
+                    break;
+            }
+            
+        }
+        else {
+            
+            switch (buttonIndex) {
+                    
+                case 0:
+                {
+                    UIImagePickerController *imgPicker = [[UIImagePickerController alloc] init];
+                    imgPicker.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
+                    imgPicker.delegate = self;
+                    [self presentViewController:imgPicker animated:YES completion:nil];
+                    break;
+                }
+                    
+                case 1:
+                {
+                    UIImagePickerController *imgPicker = [[UIImagePickerController alloc] init];
+                    imgPicker.sourceType =  UIImagePickerControllerSourceTypeCamera;
+                    imgPicker.delegate = self;
+                    [self presentViewController:imgPicker animated:YES completion:nil];
+                    break;
+                }
+                    
+                default:
+                    
+                    break;
+            }
+            
+        }
+        
+        
+        
+        
+    }
+}
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *image1 = info[UIImagePickerControllerOriginalImage];
+    self.profileImgView.image = image1;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        
+        [self openEditor:nil];
+        
+    } else {
+        [picker dismissViewControllerAnimated:YES completion:^{
+            [self openEditor:nil];
+        }];
+    }
+    
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
+#pragma mark - PECropViewControllerDelegate methods
+
+-(void)cropViewController:(PECropViewController *)controller didFinishCroppingImage:(UIImage *)croppedImage {
+    
+    self.profileImgView.image = croppedImage;
+    profileImage = croppedImage;
+    
+    //[[SharedClass sharedInstance] saveProfileImage:profileImage forStudentId:[[studentObj.getStudentsInfoDetails objectAtIndex:0] valueForKey:StudentsIdKey]];
+    
+    [controller dismissViewControllerAnimated:YES completion:NULL];
+    
+    [self startUpdatetProfileInfoService];
+    
+}
+
+- (void)cropViewControllerDidCancel:(PECropViewController *)controller
+{
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        // [self updateEditButtonEnabled];
+    }
+    
+    [controller dismissViewControllerAnimated:YES completion:NULL];
+}
+
+
+#pragma mark - Action methods
+//#GD: 2015_0318 added method to crop the profile pic
+- (IBAction)openEditor:(id)sender
+{
+    PECropViewController *controller = [[PECropViewController alloc] init];
+    controller.delegate = self;
+    controller.image = self.profileImgView.image;
+    
+    UIImage *image = self.profileImgView.image;
+    CGFloat width = image.size.width;
+    CGFloat height = image.size.height;
+    CGFloat length = MIN(width, height);
+    controller.imageCropRect = CGRectMake((width - length) / 2,
+                                          (height - length) / 2,
+                                          length,
+                                          length);
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+    }
+    
+    [self presentViewController:navigationController animated:YES completion:NULL];
+    
+    
+}
+
+#pragma mark - Image to String Encoding
+
+- (NSString *)encodeToBase64String:(UIImage *)image {
+    
+    if (image) {
+        return [UIImagePNGRepresentation([self resizeImage:image]) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    }
+    
+    return @"";
+}
+
+-(UIImage *)resizeImage:(UIImage *)image
+{
+    float actualHeight = image.size.height;
+    float actualWidth = image.size.width;
+    float maxHeight = 300.0;
+    float maxWidth = 400.0;
+    float imgRatio = actualWidth/actualHeight;
+    float maxRatio = maxWidth/maxHeight;
+    float compressionQuality = 0.5;//50 percent compression
+    
+    if (actualHeight > maxHeight || actualWidth > maxWidth)
+    {
+        if(imgRatio < maxRatio)
+        {
+            //adjust width according to maxHeight
+            imgRatio = maxHeight / actualHeight;
+            actualWidth = imgRatio * actualWidth;
+            actualHeight = maxHeight;
+        }
+        else if(imgRatio > maxRatio)
+        {
+            //adjust height according to maxWidth
+            imgRatio = maxWidth / actualWidth;
+            actualHeight = imgRatio * actualHeight;
+            actualWidth = maxWidth;
+        }
+        else
+        {
+            actualHeight = maxHeight;
+            actualWidth = maxWidth;
+        }
+    }
+    
+    CGRect rect = CGRectMake(0.0, 0.0, actualWidth, actualHeight);
+    UIGraphicsBeginImageContext(rect.size);
+    [image drawInRect:rect];
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    NSData *imageData = UIImageJPEGRepresentation(img, compressionQuality);
+    UIGraphicsEndImageContext();
+    
+    return [UIImage imageWithData:imageData];
+    
+}
+
+- (void) hideKeyboard {
+    
+    [self.view endEditing:YES];
+    
+}
 @end

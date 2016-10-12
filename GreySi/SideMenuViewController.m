@@ -10,6 +10,7 @@
 #import "SideMenuTableViewCell.h"
 #import "PostNewAdViewController.h"
 #import "HairPostAdViewController.h"
+#import "ProfileDetailViewController.h"
 
 @interface SideMenuViewController ()
 
@@ -32,6 +33,14 @@
     self.profileImgView.layer.cornerRadius = self.profileImgView.frame.size.height/2.;
     
     self.profileName.text = [[SharedClass sharedInstance] userObj].name;
+    
+    UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showEditProfileScreen)];
+    self.profileImgView.userInteractionEnabled = YES;
+    [self.profileImgView addGestureRecognizer:tapGesture];
+    
+    UITapGestureRecognizer* tapGesture1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showEditProfileScreen)];
+    self.profileName.userInteractionEnabled = YES;
+    [self.profileName addGestureRecognizer:tapGesture1];
     
     __weak UIImageView* weakImageView = self.profileImgView;
     [self.profileImgView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[[[SharedClass sharedInstance] userObj].profile_pi stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
@@ -215,7 +224,22 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         
     }
     
+    if ([[segue identifier] isEqualToString:@"showEditProfileSegue"]) {
+        
+        ProfileDetailViewController* controller = (ProfileDetailViewController *)[segue destinationViewController];
+        controller.userId = [[SharedClass sharedInstance] userObj].user_id;
+        if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
+            controller.isEditable = YES;
+        }
+        controller.isOpenedFromSideMenu = YES;
+    }
+
 }
 
+- (void) showEditProfileScreen {
+    
+    [self performSegueWithIdentifier:@"showEditProfileSegue" sender:nil];
+    
+}
 
 @end

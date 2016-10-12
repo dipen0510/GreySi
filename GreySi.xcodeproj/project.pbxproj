@@ -85,6 +85,8 @@
 		18CF351F1D5BD23000C0A5BD /* ActiveProjectsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CF351D1D5BD23000C0A5BD /* ActiveProjectsTableViewCell.xib */; };
 		18CF35241D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF35221D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.m */; };
 		18CF35251D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CF35231D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.xib */; };
+		18DB7D6F1DAEC5BA002594C8 /* edt_profile_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DB7D6D1DAEC5BA002594C8 /* edt_profile_white.png */; };
+		18DB7D701DAEC5BA002594C8 /* new_edit_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DB7D6E1DAEC5BA002594C8 /* new_edit_profile.png */; };
 		18DE0E9D1D4697B000043037 /* GatewayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DE0E9C1D4697B000043037 /* GatewayViewController.m */; };
 		18DE0EA01D46A2BB00043037 /* LoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DE0E9F1D46A2BB00043037 /* LoginTableViewCell.m */; };
 		18F3164D1DAAC5F000DD5716 /* BookingDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F3164C1DAAC5F000DD5716 /* BookingDetailsViewController.m */; };
@@ -279,6 +281,8 @@
 		18CF35211D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompletedProjectsTableViewCell.h; path = CustomControls/CompletedProjectsTableViewCell.h; sourceTree = "<group>"; };
 		18CF35221D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompletedProjectsTableViewCell.m; path = CustomControls/CompletedProjectsTableViewCell.m; sourceTree = "<group>"; };
 		18CF35231D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CompletedProjectsTableViewCell.xib; path = CustomControls/CompletedProjectsTableViewCell.xib; sourceTree = "<group>"; };
+		18DB7D6D1DAEC5BA002594C8 /* edt_profile_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edt_profile_white.png; sourceTree = "<group>"; };
+		18DB7D6E1DAEC5BA002594C8 /* new_edit_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_edit_profile.png; sourceTree = "<group>"; };
 		18DE0E9B1D4697B000043037 /* GatewayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GatewayViewController.h; sourceTree = "<group>"; };
 		18DE0E9C1D4697B000043037 /* GatewayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GatewayViewController.m; sourceTree = "<group>"; };
 		18DE0E9E1D46A2BB00043037 /* LoginTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginTableViewCell.h; path = CustomControls/LoginTableViewCell.h; sourceTree = "<group>"; };
@@ -739,6 +743,8 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				18DB7D6D1DAEC5BA002594C8 /* edt_profile_white.png */,
+				18DB7D6E1DAEC5BA002594C8 /* new_edit_profile.png */,
 				1881F3DF1DA19859005198A2 /* addTreatMentTopMenuArrow.png */,
 				D4104E921D9D3E3E006348D3 /* new_beauty_logo.png */,
 				D4104E861D9D3E0B006348D3 /* new_manicure_logo.png */,
@@ -934,6 +940,7 @@
 				188853D71D91A409001EF67C /* BookingsTableViewCell.xib in Resources */,
 				D4D5A1C61D5852F400B15CBE /* ChatListTableViewCell.xib in Resources */,
 				1881F3F31DA1B47A005198A2 /* web_logo.png in Resources */,
+				18DB7D6F1DAEC5BA002594C8 /* edt_profile_white.png in Resources */,
 				D4CA5C831C7DCDF7000E185A /* Assets.xcassets in Resources */,
 				D4104E8F1D9D3E0B006348D3 /* new_others_logo.png in Resources */,
 				D455C4741C7EDABA00C6D1CB /* signup.png in Resources */,
@@ -953,6 +960,7 @@
 				D4CA5CD91C7DCF48000E185A /* tick.png in Resources */,
 				18CF35161D5BCE6100C0A5BD /* BidsReceivedTableViewCell.xib in Resources */,
 				1888572E1CAB18010026995E /* HomeMapView.xib in Resources */,
+				18DB7D701DAEC5BA002594C8 /* new_edit_profile.png in Resources */,
 				18CF35251D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.xib in Resources */,
 				1881F3F51DA1B47A005198A2 /* fb_logo.png in Resources */,
 				188857401CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png in Resources */,

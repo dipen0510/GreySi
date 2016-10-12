@@ -13,6 +13,7 @@
 #import "CompletedProjectsTableViewCell.h"
 #import "ProjectsSingleModal.h"
 #import "BidsReceivedListViewController.h"
+#import "RateViewController.h";
 
 @interface ProjectsListViewController ()
 
@@ -328,6 +329,13 @@
         controller.projectId = selectedProjectId;
         
     }
+    if ([segue.identifier isEqualToString:@"showRateSegue"]) {
+        
+        RateViewController* controller = (RateViewController *)[segue destinationViewController];
+        controller.projectId = selectedProjectId;
+        controller.hairDresserId = selectedHDId;
+        
+    }
     
 }
 
@@ -443,6 +451,17 @@
         selectedProjectId = singleProject.project_id;
         [self performSegueWithIdentifier:@"showBidsReceivedSegue" sender:nil];
     }
+    if (selectedIndex == 2 && [[[SharedClass sharedInstance] userObj].flag intValue] != 1) {
+        
+        if ([[[projectsArr objectAtIndex:indexPath.row] valueForKey:@"review"] intValue] == 0) {
+            ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:indexPath.row]];
+            selectedProjectId = singleProject.project_id;
+            selectedHDId = singleProject.hairdresser_id;
+            [self performSegueWithIdentifier:@"showRateSegue" sender:nil];
+        }
+        
+        
+    }
     
     
     
@@ -514,6 +533,17 @@
     cell.nameLabel.text = singleProject.name;
     cell.amountValueLabel.text = [NSString stringWithFormat:@"$%@",singleProject.budget];
     cell.projectLabel.text = [NSString stringWithFormat:@"Project : %@",singleProject.treatment];
+    
+    if ([[[projectsArr objectAtIndex:indexPath.row] valueForKey:@"review"] intValue] == 0) {
+        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+    }
+    else {
+        
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        
+    }
     
     
     if (singleProject.profile_pic && ![singleProject.profile_pic isEqual:[NSNull null]]) {

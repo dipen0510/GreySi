@@ -16,6 +16,7 @@
     int userType;
     NSString* selectedProjectId;
     NSString* selectedActiveProjectId;
+    NSString* selectedHDId;
     
 }
 

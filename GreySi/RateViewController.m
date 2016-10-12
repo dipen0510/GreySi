@@ -14,7 +14,7 @@
 
 @implementation RateViewController
 
-@synthesize adDict;
+@synthesize projectId,hairDresserId;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,6 +44,9 @@
     _fifthStarImgView.userInteractionEnabled = YES;
     [_fifthStarImgView addGestureRecognizer:fifthTap];
     
+    rating = @"";
+    self.reviewTvtView.text = @"";
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,6 +70,8 @@
     
     _firstStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
     
+    rating = @"1";
+    
 }
 
 - (void) secondStarTapped {
@@ -75,6 +80,8 @@
     
     _firstStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
     _secondStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+    
+    rating = @"2";
     
 }
 
@@ -86,6 +93,8 @@
     _secondStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
     _thirdStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
     
+    rating = @"3";
+    
 }
 
 - (void) forthStarTapped {
@@ -96,6 +105,8 @@
     _secondStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
     _thirdStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
     _forthStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+    
+    rating = @"4";
     
 }
 
@@ -109,6 +120,8 @@
     _forthStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
     _fifthStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
     
+    rating = @"5";
+    
 }
 
 - (void) clearAllStars {
@@ -119,6 +132,8 @@
     _forthStarImgView.image = [UIImage imageNamed:@"feedback_rating.png"];
     _fifthStarImgView.image = [UIImage imageNamed:@"feedback_rating.png"];
     
+    rating = @"";
+    
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -127,11 +142,89 @@
 
 - (IBAction)submitButtonTapped:(id)sender {
     
-    [SVProgressHUD showSuccessWithStatus:@"Reveiw added successfully.."];
+    if (![rating isEqualToString:@""]) {
+        
+        [self startRateService];
+        
+    }
+    else {
+        
+        [self didFinishServiceWithFailure:@"Please rate at least 1 star."];
+        
+    }
     
 }
 
 - (IBAction)backButtonTapped:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (void) startRateService {
+    
+    [SVProgressHUD showWithStatus:@"Posting Review..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kCustomerPostReviewService;
+    manager.delegate = self;
+    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForPostReview]];
+    
+}
+
+#pragma mark - DATASYNCMANAGER Delegates
+
+-(void) didFinishServiceWithSuccess:(id)responseData andServiceKey:(NSString *)requestServiceKey {
+    
+    
+    if ([requestServiceKey isEqualToString:kCustomerPostReviewService]) {
+        
+        [SVProgressHUD showSuccessWithStatus:@"Reveiw added successfully.."];
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    }
+    
+}
+
+
+- (void) didFinishServiceWithFailure:(NSString *)errorMsg {
+    
+    
+    [SVProgressHUD dismiss];
+    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil
+                                                  message:NSLocalizedString(@"An issue occured while processing your request. Please try again later.", nil)
+                                                 delegate:self
+                                        cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                        otherButtonTitles: nil];
+    
+    if (![errorMsg isEqualToString:@""]) {
+        [alert setMessage:errorMsg];
+    }
+    
+    if ([errorMsg isEqualToString:NSLocalizedString(@"Verify your internet connection and try again", nil)]) {
+        [alert setTitle:NSLocalizedString(@"Connection unsuccessful", nil)];
+    }
+    
+    
+    [alert show];
+    
+    return;
+    
+}
+
+#pragma mark - Modalobject
+
+- (NSMutableDictionary *) prepareDictionaryForPostReview {
+    
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+    
+    [dict setObject:projectId forKey:@"Project_id"];
+    [dict setObject:[[SharedClass sharedInstance] userObj].user_id forKey:@"Reviewer_id"];
+    [dict setObject:hairDresserId forKey:@"Hairdresser_id"];
+    [dict setObject:rating forKey:@"Rating"];
+    [dict setObject:self.reviewTvtView.text forKey:@"Review"];
+    
+    
+    return dict;
+    
+}
+
 @end

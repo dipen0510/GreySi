@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RateViewController : UIViewController
+@interface RateViewController : UIViewController <DataSyncManagerDelegate> {
+    
+    NSString* rating;
+    
+}
 
 @property (weak, nonatomic) IBOutlet UIImageView *firstStarImgView;
 @property (weak, nonatomic) IBOutlet UIImageView *secondStarImgView;
@@ -17,7 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *fifthStarImgView;
 @property (weak, nonatomic) IBOutlet UITextView *reviewTvtView;
 
-@property (strong, nonatomic) NSMutableDictionary* adDict;
+@property (strong, nonatomic) NSString* projectId;
+@property (strong, nonatomic) NSString* hairDresserId;
 
 - (IBAction)submitButtonTapped:(id)sender;
 - (IBAction)backButtonTapped:(id)sender;

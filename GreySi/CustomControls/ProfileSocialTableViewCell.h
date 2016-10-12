@@ -11,6 +11,6 @@
 @interface ProfileSocialTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
-@property (weak, nonatomic) IBOutlet UILabel *headingLabel;
+@property (weak, nonatomic) IBOutlet UITextField *headingTxtField;
 
 @end

@@ -109,6 +109,9 @@
     
     SignUpRequestModal* signUpObj = [[SignUpRequestModal alloc] init];
     
+    [[NSUserDefaults standardUserDefaults] setObject:emailText forKey:token1Key];
+    [[NSUserDefaults standardUserDefaults] setObject:passwordText forKey:token2Key];
+    
     signUpObj.name = nameText;
     signUpObj.email = emailText;
     signUpObj.password = passwordText;

@@ -379,7 +379,6 @@
         
         ProfileDetailViewController* controller = (ProfileDetailViewController *)[segue destinationViewController];
         controller.userId = [[filteredAddContentArr objectAtIndex:selectedIndex] valueForKey:@"User_id"];
-        controller.adDict = [filteredAddContentArr objectAtIndex:selectedIndex];
         
     }
     
