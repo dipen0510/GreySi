@@ -13,7 +13,7 @@
 #import "CompletedProjectsTableViewCell.h"
 #import "ProjectsSingleModal.h"
 #import "BidsReceivedListViewController.h"
-#import "RateViewController.h";
+#import "RateViewController.h"
 
 @interface ProjectsListViewController ()
 

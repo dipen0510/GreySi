@@ -431,7 +431,7 @@
 }
 
 - (NSString *)encodeToBase64String:(UIImage *)image {    
-    return [UIImagePNGRepresentation([self resizeImage:image]) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    return [UIImagePNGRepresentation([self resizeImage:image]) base64EncodedStringWithOptions:0];
 }
 
 -(UIImage *)resizeImage:(UIImage *)image

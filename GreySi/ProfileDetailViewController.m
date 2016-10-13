@@ -566,6 +566,7 @@
     ProfileSocialTableViewCell* twitterCell = [[_socialTblView visibleCells] objectAtIndex:1];
     ProfileSocialTableViewCell* WebCell = [[_socialTblView visibleCells] objectAtIndex:2];
     
+    [dict setObject:self.profileNameTxtField.text forKey:@"Name"];
     [dict setObject:userId forKey:@"User_id"];
     [dict setObject:self.treatmentTxtField.text forKey:@"Short_description"];
     [dict setObject:self.descriptioNTxtField.text forKey:@"Long_description"];
@@ -574,7 +575,7 @@
     [dict setObject:twitterCell.headingTxtField.text forKey:@"Twitter"];
     [dict setObject:WebCell.headingTxtField.text forKey:@"Website"];
     [dict setObject:[self encodeToBase64String:profileImage] forKey:@"Profile_pi"];
-    [dict setObject:self.profileNameTxtField.text forKey:@"Pic_Name"];
+    [dict setObject:[[SharedClass sharedInstance] getCurrentUTCFormatDate] forKey:@"Pic_Name"];
     [dict setObject:@"1" forKey:@"Available"];
     
     return dict;
@@ -757,7 +758,7 @@
 - (NSString *)encodeToBase64String:(UIImage *)image {
     
     if (image) {
-        return [UIImagePNGRepresentation([self resizeImage:image]) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        return [UIImagePNGRepresentation([self resizeImage:image]) base64EncodedStringWithOptions:0];
     }
     
     return @"";

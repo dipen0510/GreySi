@@ -20,9 +20,7 @@
 /* Naturally, you should set up your annotation objects as usual, but this demo factory helps distance the cell data from the view controller. */
 + (instancetype)demoAnnotationFactory
 {
-    Representative *dudeOne = [Representative representativeWithName:@"Rep. Dude" party:@"Republican" image:[UIImage imageNamed:@"redstar"] representativeID:@"TXL1"];
-    Representative *dudeTwo = [Representative representativeWithName:@"Rep. Guy" party:@"Democrat" image:[UIImage imageNamed:@"bluestar"] representativeID:@"TXL2"];
-    return [District districtWithCoordinate:CLLocationCoordinate2DMake(30.274722, -97.740556) title:@"ddd" representatives:nil subtitle:@"Tempsub" budget:@"tempBudget" userImg:@"bluestar"];
+   return [District districtWithCoordinate:CLLocationCoordinate2DMake(30.274722, -97.740556) title:@"ddd" representatives:nil subtitle:@"Tempsub" budget:@"tempBudget" userImg:@"bluestar"];
 }
 
 #pragma mark - The Good Stuff

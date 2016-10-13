@@ -27,6 +27,13 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    [self setupUI];
+    
+}
+
 - (void) setupUI {
     
     self.profileImgView.layer.masksToBounds = YES;
@@ -238,7 +245,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (void) showEditProfileScreen {
     
-    [self performSegueWithIdentifier:@"showEditProfileSegue" sender:nil];
+    if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
+        [self performSegueWithIdentifier:@"showEditProfileSegue" sender:nil];
+    }
+    
     
 }
 
