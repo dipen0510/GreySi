@@ -265,13 +265,13 @@
 
 - (IBAction)myPlaceButtonTapped:(id)sender {
     
-    [self.myPlaceButton setSelected:YES];
+    [self.myPlaceButton setSelected:!self.myPlaceButton.selected];
     
 }
 
 - (IBAction)yourPlaceButtonTapped:(id)sender {
     
-    [self.yourPlaceButton setSelected:YES];
+    [self.yourPlaceButton setSelected:!self.yourPlaceButton.selected];
     
 }
 

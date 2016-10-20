@@ -10,7 +10,7 @@
 
 @protocol FiltersViewDelegate <NSObject>
 
-- (void) didTapOnApplyFilterWithBudget:(NSString *)budget withCities:(NSMutableArray *)citiesArr withTreatments:(NSMutableArray *)treatmentsArr;
+- (void) didTapOnApplyFilterWithBudget:(NSMutableArray *)budgetArr withCities:(NSMutableArray *)citiesArr withTreatments:(NSMutableArray *)treatmentsArr;
 
 @end
 

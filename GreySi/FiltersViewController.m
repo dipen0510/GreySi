@@ -110,13 +110,7 @@
 
 - (IBAction)applyButtonTapped:(id)sender {
     
-    if (selectedBudgetArr.count>0) {
-        [_delegate didTapOnApplyFilterWithBudget:[selectedBudgetArr objectAtIndex:0] withCities:selectedCitiesArr withTreatments:selectedTreatmentArr];
-    }
-    else {
-        [_delegate didTapOnApplyFilterWithBudget:@"" withCities:selectedCitiesArr withTreatments:selectedTreatmentArr];
-    }
-    
+    [_delegate didTapOnApplyFilterWithBudget:selectedBudgetArr withCities:selectedCitiesArr withTreatments:selectedTreatmentArr];
     
     [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^
      {
@@ -227,7 +221,6 @@
         if([selectedBudgetArr containsObject:[budgetArr objectAtIndex:indexPath.row]]){
             [selectedBudgetArr removeObject:[budgetArr objectAtIndex:indexPath.row]];
         } else {
-            [selectedBudgetArr removeAllObjects];
             [selectedBudgetArr addObject:[budgetArr objectAtIndex:indexPath.row]];
             [tableView reloadData];
         }

@@ -347,7 +347,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == _socialTblView) {
-        return 25;
+        return 30;
     }
     return 80.0;
 }

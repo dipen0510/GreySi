@@ -436,7 +436,7 @@
 
 #pragma  mark - Filter View Action
 
--(void)didTapOnApplyFilterWithBudget:(NSString *)budget withCities:(NSMutableArray *)citiesArr withTreatments:(NSMutableArray *)treatmentsArr {
+-(void)didTapOnApplyFilterWithBudget:(NSMutableArray *)actBudgetArr withCities:(NSMutableArray *)citiesArr withTreatments:(NSMutableArray *)treatmentsArr {
     
     int flag = 0;
     
@@ -483,14 +483,15 @@
         }
                 
     }
-            
-    if (![budget isEqualToString:@""]) {
+    
+    
+    for (int i = 0; i<actBudgetArr.count; i++) {
         flag = 1;
-        NSMutableArray* budgetArr = [[NSMutableArray alloc] initWithArray:[budget componentsSeparatedByString:@" - "]];
-        if (budgetArr.count > 1) {
+        NSMutableArray* tmpbudgetArr = [[NSMutableArray alloc] initWithArray:[[actBudgetArr objectAtIndex:i] componentsSeparatedByString:@" - "]];
+        if (tmpbudgetArr.count > 1) {
             
-            int min = [[[budgetArr objectAtIndex:0] stringByReplacingOccurrencesOfString:@"$" withString:@""] intValue];
-            int max = [[[budgetArr objectAtIndex:1] stringByReplacingOccurrencesOfString:@"$" withString:@""] intValue];
+            int min = [[[tmpbudgetArr objectAtIndex:0] stringByReplacingOccurrencesOfString:@"$" withString:@""] intValue];
+            int max = [[[tmpbudgetArr objectAtIndex:1] stringByReplacingOccurrencesOfString:@"$" withString:@""] intValue];
             
             for (int j = 0; j<tmpFilterArr.count; j++) {
                 
@@ -535,7 +536,7 @@
             
         }
         else {
-            int min = [[[budgetArr objectAtIndex:0] stringByReplacingOccurrencesOfString:@"$" withString:@""] intValue];
+            int min = [[[tmpbudgetArr objectAtIndex:0] stringByReplacingOccurrencesOfString:@"$" withString:@""] intValue];
             
             for (int j = 0; j<tmpFilterArr.count; j++) {
                 
@@ -571,7 +572,7 @@
                     
                     
                 }
-
+                
                 
             }
         }

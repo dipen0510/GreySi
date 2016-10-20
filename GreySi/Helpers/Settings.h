@@ -9,7 +9,7 @@
 #ifndef Settings_h
 #define Settings_h
 
-#define DomainBaseURL @"http://greyscissors.com/GreySi"
+#define DomainBaseURL @"http://greysi.se/GreySi"
 
 #define kSignUpService @"signUp.php"
 #define kLoginService @"login.php"
