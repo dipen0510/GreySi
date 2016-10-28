@@ -90,6 +90,28 @@
     
 }
 
+- (void) startCancelBookingsService {
+    
+    [SVProgressHUD showWithStatus:@"Cancelling project..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kCancelBookingService;
+    manager.delegate = self;
+    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForCancelBooking]];
+    
+}
+
+- (void) startAcceptProjectService {
+    
+    [SVProgressHUD showWithStatus:@"Accepting project..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kAcceptBookingService;
+    manager.delegate = self;
+    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForAcceptBooking]];
+    
+}
+
 
 #pragma mark - DATASYNCMANAGER Delegates
 
@@ -114,6 +136,10 @@
     }
     if ([requestServiceKey isEqualToString:kHairProjectComplete]) {
         [SVProgressHUD showSuccessWithStatus:@"Booking completed successfully"];
+        [self performSelector:@selector(setupInitialUI) withObject:nil afterDelay:0.3];
+    }
+    if ([requestServiceKey isEqualToString:kAcceptBookingService] || [requestServiceKey isEqualToString:kCancelBookingService]) {
+        [SVProgressHUD showSuccessWithStatus:@"Booking updated successfully"];
         [self performSelector:@selector(setupInitialUI) withObject:nil afterDelay:0.3];
     }
     
@@ -150,6 +176,27 @@
 #pragma mark - Modalobject
 
 - (NSMutableDictionary *) prepareDictionaryForHairCompleteProject {
+    
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+    
+    [dict setObject:selectedProjectBookingId forKey:@"Booking_id"];
+    
+    return dict;
+    
+}
+
+- (NSMutableDictionary *) prepareDictionaryForCancelBooking {
+    
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+    
+    [dict setObject:selectedProjectBookingId forKey:@"Booking_id"];
+    [dict setObject:selectedProjectBookingId forKey:@"Hairdresser_id"];
+    
+    return dict;
+    
+}
+
+- (NSMutableDictionary *) prepareDictionaryForAcceptBooking {
     
     NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
     
@@ -205,9 +252,17 @@
         
     cell.headingLabel.text = [dict valueForKey:@"Name"];
     cell.subHeadingLabel.text = [dict valueForKey:@"Treatment"];
-    cell.dateLabel.text = [dict valueForKey:@"Date"];
+    cell.dateLabel.text = [NSString stringWithFormat:@"%@ %@",[dict valueForKey:@"Date"],[dict valueForKey:@"Booking_Time"]];
+    
+    cell.acceptButotn.tag = indexPath.row;
+    [cell.acceptButotn addTarget:self action:@selector(acceptProjectsCompletedtButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    cell.cancelButton.tag = indexPath.row;
+    [cell.cancelButton addTarget:self action:@selector(cancelProjectsCompletedtButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     
     if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
+        
+        cell.acceptButotn.hidden = YES;
+        cell.cancelButton.hidden = YES;
         
         if ([[dict valueForKey:@"Status"] intValue] == 1) {
             cell.completedButton.hidden = NO;
@@ -216,11 +271,30 @@
         }
         else {
             cell.completedButton.hidden = YES;
+            
+            if ([[dict valueForKey:@"Status"] intValue] == 0) {
+                cell.acceptButotn.hidden = NO;
+                cell.cancelButton.hidden = NO;
+            }
+            
         }
         
     }
     else {
         cell.completedButton.hidden = YES;
+        cell.acceptButotn.hidden = YES;
+        
+        if ([[dict valueForKey:@"Status"] intValue] == 2) {
+            cell.cancelButton.hidden = YES;
+        }
+        else if ([[dict valueForKey:@"Status"] intValue] == 1) {
+            cell.cancelButton.hidden = NO;
+        }
+        else
+        {
+            cell.cancelButton.hidden = NO;
+        }
+        
     }
     
     
@@ -261,6 +335,29 @@
     NSMutableDictionary* dict = [[NSMutableDictionary alloc] initWithDictionary:[bookingsArr objectAtIndex:sender.tag]];
     selectedProjectBookingId = [dict valueForKey:@"Booking_id"];
     [self startHairProjectCompletedService];
+    
+}
+
+- (void) cancelProjectsCompletedtButtonTapped:(UIButton *)sender {
+    
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc] initWithDictionary:[bookingsArr objectAtIndex:sender.tag]];
+    selectedProjectBookingId = [dict valueForKey:@"Booking_id"];
+    if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
+        selectedUserId = [dict valueForKey:@"Booker_id"];
+    }
+    else {
+        selectedUserId = [dict valueForKey:@"Hairdresser_id"];
+    }
+    
+    [self startCancelBookingsService];
+    
+}
+
+- (void) acceptProjectsCompletedtButtonTapped:(UIButton *)sender {
+    
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc] initWithDictionary:[bookingsArr objectAtIndex:sender.tag]];
+    selectedProjectBookingId = [dict valueForKey:@"Booking_id"];
+    [self startAcceptProjectService];
     
 }
 @end

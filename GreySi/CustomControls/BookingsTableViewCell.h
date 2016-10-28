@@ -15,5 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *subHeadingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *completedButton;
+@property (weak, nonatomic) IBOutlet UIButton *acceptButotn;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @end

@@ -21,6 +21,7 @@
     
     selectedTreatmentArr = [[NSMutableArray alloc] init];
     finalSelectedDate = @"";
+    finalSelectedTime = @"";
     self.listTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
 }
@@ -98,14 +99,17 @@
 - (IBAction)selectDateButtonTapped:(id)sender {
     
     [ActionSheetDatePicker showPickerWithTitle:@"Select a Date"
-                                datePickerMode:UIDatePickerModeDate
+                                datePickerMode:UIDatePickerModeDateAndTime
                                   selectedDate:[NSDate date] minimumDate:[NSDate date] maximumDate:nil
                                      doneBlock:^(ActionSheetDatePicker *picker, id selectedDate, id origin) {
                                          
                                          NSDateFormatter* format1 = [[NSDateFormatter alloc] init];
-                                         format1.dateFormat = @"dd/MM/yyyy";
                                          
+                                         format1.dateFormat = @"dd/MM/yyyy";
                                          finalSelectedDate = [format1 stringFromDate:selectedDate];
+                                         
+                                         format1.dateFormat = @"HH:mm";
+                                         finalSelectedTime = [format1 stringFromDate:selectedDate];
                                          
                                         NSString *dateString = [NSDateFormatter localizedStringFromDate:selectedDate dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle];
                                          NSLog(@"Picker: value: %@",dateString);
@@ -195,6 +199,7 @@
 
     
     [dict setObject:finalSelectedDate forKey:@"Date"];
+    [dict setObject:finalSelectedTime forKey:@"Booking_Time"];
     
     return dict;
     

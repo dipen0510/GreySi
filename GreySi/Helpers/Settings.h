@@ -20,6 +20,9 @@
 
 #define kUploadProfileService @"upload.php"
 
+#define kCancelBookingService @"BookingCanceledBy.php"
+#define kAcceptBookingService @"AcceptBooking.php"
+
 // CUSTOMER
 #define kCustomerGetAdService @"Hair_dressor_post/GetAd.php"
 #define kCustomerGetPostedProjectsService @"Customer_Projects/PostedProjects.php?User_id="

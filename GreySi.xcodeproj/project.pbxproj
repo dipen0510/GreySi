@@ -108,6 +108,8 @@
 		D455C47B1C7F203900C6D1CB /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D455C47A1C7F203900C6D1CB /* SignUpViewController.m */; };
 		D482E7ED1D7811FD00BC30DA /* SignUpResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = D482E7EC1D7811FD00BC30DA /* SignUpResponseModal.m */; };
 		D482E7F01D78291B00BC30DA /* LoginRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = D482E7EF1D78291B00BC30DA /* LoginRequestModal.m */; };
+		D49BFB051DC35EF50058433A /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BFB031DC35EF50058433A /* check.png */; };
+		D49BFB061DC35EF50058433A /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BFB041DC35EF50058433A /* close.png */; };
 		D4A7DD771C806CE100F82033 /* WhatAreYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A7DD761C806CE100F82033 /* WhatAreYouViewController.m */; };
 		D4A7DD7A1C806CF900F82033 /* DocumentReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A7DD791C806CF900F82033 /* DocumentReviewViewController.m */; };
 		D4CA5C781C7DCDF7000E185A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CA5C771C7DCDF7000E185A /* main.m */; };
@@ -313,6 +315,8 @@
 		D482E7EC1D7811FD00BC30DA /* SignUpResponseModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpResponseModal.m; sourceTree = "<group>"; };
 		D482E7EE1D78291B00BC30DA /* LoginRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestModal.h; sourceTree = "<group>"; };
 		D482E7EF1D78291B00BC30DA /* LoginRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestModal.m; sourceTree = "<group>"; };
+		D49BFB031DC35EF50058433A /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		D49BFB041DC35EF50058433A /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		D4A7DD751C806CE100F82033 /* WhatAreYouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhatAreYouViewController.h; sourceTree = "<group>"; };
 		D4A7DD761C806CE100F82033 /* WhatAreYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhatAreYouViewController.m; sourceTree = "<group>"; };
 		D4A7DD781C806CF900F82033 /* DocumentReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentReviewViewController.h; sourceTree = "<group>"; };
@@ -743,6 +747,8 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D49BFB031DC35EF50058433A /* check.png */,
+				D49BFB041DC35EF50058433A /* close.png */,
 				18DB7D6D1DAEC5BA002594C8 /* edt_profile_white.png */,
 				18DB7D6E1DAEC5BA002594C8 /* new_edit_profile.png */,
 				1881F3DF1DA19859005198A2 /* addTreatMentTopMenuArrow.png */,
@@ -946,6 +952,7 @@
 				D455C4741C7EDABA00C6D1CB /* signup.png in Resources */,
 				18AA9CA41CA6DB8500938952 /* profile_temp.png in Resources */,
 				1881F3CE1D97E478005198A2 /* HairPostAdTableViewCell.xib in Resources */,
+				D49BFB061DC35EF50058433A /* close.png in Resources */,
 				D4CA5CC41C7DCF48000E185A /* arrow.png in Resources */,
 				D455C4731C7EDABA00C6D1CB /* login.png in Resources */,
 				185DC11D1D514348007998F3 /* available.png in Resources */,
@@ -975,6 +982,7 @@
 				D4CA5CD11C7DCF48000E185A /* pin.png in Resources */,
 				D4104E8C1D9D3E0B006348D3 /* new_manicure_logo.png in Resources */,
 				185DC1171D5140C3007998F3 /* SideMenuTableViewCell.xib in Resources */,
+				D49BFB051DC35EF50058433A /* check.png in Resources */,
 				D4104E8D1D9D3E0B006348D3 /* new_massage_logo.png in Resources */,
 				188853C91D917CBB001EF67C /* unchecked.png in Resources */,
 				1888573E1CAB19F10026995E /* HomeTableViewCell.xib in Resources */,
@@ -1267,7 +1275,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0a65f3e9-354a-42f7-b719-6c54dabfbaf9";
+				PROVISIONING_PROFILE = "de329c54-dd5e-47c1-8c58-f4f0032384c9";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
@@ -1284,7 +1292,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0a65f3e9-354a-42f7-b719-6c54dabfbaf9";
+				PROVISIONING_PROFILE = "de329c54-dd5e-47c1-8c58-f4f0032384c9";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
