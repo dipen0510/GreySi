@@ -154,6 +154,13 @@
 }
 
 - (IBAction)chatButtonTapped:(id)sender {
+    
+    NSString * userIdOfReceiver =  adDict[@"Email"];
+    [[[SharedClass sharedInstance] chatManager] launchChatForUserWithDisplayName:userIdOfReceiver
+                                      withGroupId:nil  //If launched for group, pass groupId(pass userId as nil)
+                               andwithDisplayName:nil //Not mendatory, if receiver is not already registered you should pass Displayname.
+                            andFromViewController:self];
+    
 }
 
 - (IBAction)priceListButtonTapped:(id)sender {

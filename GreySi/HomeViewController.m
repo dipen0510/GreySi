@@ -12,6 +12,7 @@
 #import "AdSIngleModal.h"
 #import "ProfileSubDetailViewController.h"
 #import "ProfileDetailViewController.h"
+#import <Applozic/ALUser.h>
 
 
 @interface HomeViewController ()<UISearchBarDelegate>
@@ -41,6 +42,7 @@
     _swipeView.truncateFinalPage = YES;
     
     [self setupInitialUI];
+    [self setupChatUser];
     
     if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
         [self startHairFetchProjectsService];
@@ -56,6 +58,23 @@
 {
     _swipeView.delegate = nil;
     _swipeView.dataSource = nil;
+}
+
+- (void) setupChatUser {
+    
+    ALUser *alUser = [[ALUser alloc] init];
+    [alUser setUserId:[[SharedClass sharedInstance] userObj].email]; //NOTE : +,*,? are not allowed chars in userId.
+    [alUser setDisplayName:[[SharedClass sharedInstance] userObj].name]; // Display name of user
+    [alUser setContactNumber:@""];// formatted contact no
+    [alUser setImageLink:[[[SharedClass sharedInstance] userObj].profile_pi stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];// User's profile image link.
+    
+    ALChatManager * chatManager = [[ALChatManager alloc] init];
+    [chatManager registerUser:alUser];
+    
+    [[SharedClass sharedInstance] setAlUser:alUser];
+    [[SharedClass sharedInstance] setChatManager:chatManager];
+    
+    
 }
 
 - (void) setupInitialUI {

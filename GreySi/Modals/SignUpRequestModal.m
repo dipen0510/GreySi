@@ -22,7 +22,14 @@
     [dict setObject:flag forKey:registerFlagKey];
     [dict setObject:profilePic forKey:registerProfilePiKey];
     [dict setObject:@"Dummy123" forKey:registerPicNameKey];
-    [dict setObject:@"1234567890" forKey:registerGCMIdKey];
+    
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"kDeviceToken"]) {
+        [dict setObject:[[NSUserDefaults standardUserDefaults] valueForKey:@"kDeviceToken"] forKey:registerGCMIdKey];
+    }
+    else {
+        [dict setObject:@"1234567890" forKey:registerGCMIdKey];
+    }
+    
     [dict setObject:@"2" forKey:registerDeviceTypeKey];
     [dict setObject:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] forKey:registerVersionCodeKey];
     

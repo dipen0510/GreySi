@@ -163,7 +163,8 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             break;
             
         case 1:
-            [self performSegueWithIdentifier:@"showChatSegue" sender:nil];
+            //[self performSegueWithIdentifier:@"showChatSegue" sender:nil];
+            [[[SharedClass sharedInstance] chatManager] launchChat:self];
             break;
             
             
@@ -212,6 +213,14 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     if (buttonIndex == 1) {
+        
+        ALRegisterUserClientService * alUserClientService = [[ALRegisterUserClientService alloc]init];
+        if([ALUserDefaultsHandler getDeviceKeyString]) {
+            
+            [alUserClientService logoutWithCompletionHandler:^{
+            }]; 
+        }
+        
         
         [[SharedClass sharedInstance] removeServiceData:kLoginService];
         [self.navigationController popViewControllerAnimated:YES];

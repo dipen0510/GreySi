@@ -10,7 +10,7 @@
 
 @implementation SharedClass
 
-@synthesize userObj;
+@synthesize userObj,alUser,chatManager;
 
 static SharedClass *singletonObject = nil;
 

@@ -18,7 +18,14 @@
     
     [dict setObject:email forKey:registerEmailKey];
     [dict setObject:password forKey:registerPasswordKey];
-    [dict setObject:@"1234567890" forKey:registerGCMIdKey];
+    
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"kDeviceToken"]) {
+        [dict setObject:[[NSUserDefaults standardUserDefaults] valueForKey:@"kDeviceToken"] forKey:registerGCMIdKey];
+    }
+    else {
+        [dict setObject:@"1234567890" forKey:registerGCMIdKey];
+    }
+    
     [dict setObject:@"2" forKey:registerDeviceTypeKey];
     [dict setObject:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] forKey:registerVersionCodeKey];
     

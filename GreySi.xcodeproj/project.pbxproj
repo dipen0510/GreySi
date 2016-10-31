@@ -83,6 +83,7 @@
 		189B73E11DC7718A006B8949 /* Montserrat-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189B73C11DC76809006B8949 /* Montserrat-Hairline.ttf */; };
 		189B73E21DC7718A006B8949 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189B73C21DC76809006B8949 /* Montserrat-Light.ttf */; };
 		189B73E31DC7718A006B8949 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189B73C31DC76809006B8949 /* Montserrat-Regular.ttf */; };
+		189B73E71DC77500006B8949 /* ALChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B73E61DC77500006B8949 /* ALChatManager.m */; };
 		18A6D2F81D7AB70E004907EB /* ProjectsSingleModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6D2F71D7AB70E004907EB /* ProjectsSingleModal.m */; };
 		18A6D2FB1D7AB80E004907EB /* CustomerGetProjectsResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6D2FA1D7AB80E004907EB /* CustomerGetProjectsResponseModal.m */; };
 		18AA90831D8D096E00DA3828 /* AdSIngleModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AA90821D8D096E00DA3828 /* AdSIngleModal.m */; };
@@ -287,6 +288,8 @@
 		189B73D51DC768FF006B8949 /* th2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th2.png; sourceTree = "<group>"; };
 		189B73D61DC768FF006B8949 /* th3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th3.png; sourceTree = "<group>"; };
 		189B73DD1DC76CC8006B8949 /* book-open-page-variant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book-open-page-variant.png"; sourceTree = "<group>"; };
+		189B73E51DC77500006B8949 /* ALChatManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALChatManager.h; sourceTree = "<group>"; };
+		189B73E61DC77500006B8949 /* ALChatManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALChatManager.m; sourceTree = "<group>"; };
 		18A6D2F61D7AB70E004907EB /* ProjectsSingleModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectsSingleModal.h; sourceTree = "<group>"; };
 		18A6D2F71D7AB70E004907EB /* ProjectsSingleModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsSingleModal.m; sourceTree = "<group>"; };
 		18A6D2F91D7AB80E004907EB /* CustomerGetProjectsResponseModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerGetProjectsResponseModal.h; sourceTree = "<group>"; };
@@ -596,6 +599,15 @@
 			path = ScanTutorialViewControllers;
 			sourceTree = "<group>";
 		};
+		189B73E41DC774C8006B8949 /* ChatControllers */ = {
+			isa = PBXGroup;
+			children = (
+				189B73E51DC77500006B8949 /* ALChatManager.h */,
+				189B73E61DC77500006B8949 /* ALChatManager.m */,
+			);
+			name = ChatControllers;
+			sourceTree = "<group>";
+		};
 		18C831801D63592500AE6058 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -704,6 +716,7 @@
 		D4CA5C751C7DCDF7000E185A /* GreySi */ = {
 			isa = PBXGroup;
 			children = (
+				189B73E41DC774C8006B8949 /* ChatControllers */,
 				189B73C41DC768D5006B8949 /* ScanTutorialViewControllers */,
 				18C8319A1D635D7200AE6058 /* Modals */,
 				18C831801D63592500AE6058 /* Helpers */,
@@ -953,6 +966,7 @@
 				TargetAttributes = {
 					D4CA5C721C7DCDF7000E185A = {
 						CreatedOnToolsVersion = 7.2;
+						ProvisioningStyle = Manual;
 					};
 					D4CA5C8B1C7DCDF8000E185A = {
 						CreatedOnToolsVersion = 7.2;
@@ -1149,6 +1163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18CF35151D5BCE6100C0A5BD /* BidsReceivedTableViewCell.m in Sources */,
+				189B73E71DC77500006B8949 /* ALChatManager.m in Sources */,
 				184AF5401D76074D001DDD4B /* SignUpRequestModal.m in Sources */,
 				188853CC1D9184B7001EF67C /* AddTreatmentRequestModal.m in Sources */,
 				189B73D01DC768D5006B8949 /* AppTutorialThirdPageViewController.m in Sources */,
@@ -1349,13 +1364,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = GreySi/PrefixHeader.pch;
 				INFOPLIST_FILE = GreySi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "de329c54-dd5e-47c1-8c58-f4f0032384c9";
+				PROVISIONING_PROFILE = "03aa24da-0ceb-49bc-bb4d-55b66580a467";
+				PROVISIONING_PROFILE_SPECIFIER = "GreySi Ad-Hoc";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
@@ -1366,13 +1384,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = GreySi/PrefixHeader.pch;
 				INFOPLIST_FILE = GreySi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "de329c54-dd5e-47c1-8c58-f4f0032384c9";
+				PROVISIONING_PROFILE = "03aa24da-0ceb-49bc-bb4d-55b66580a467";
+				PROVISIONING_PROFILE_SPECIFIER = "GreySi Ad-Hoc";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;

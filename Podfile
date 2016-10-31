@@ -10,6 +10,7 @@ pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git
 pod 'PEPhotoCropEditor'
 pod 'JSQMessagesViewController'
 pod 'ActionSheetPicker-3.0'
+pod 'Applozic', '3.4.4'
 
 end
 

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "SignUpResponseModal.h"
+#import <Applozic/ALUser.h>
+#import "AlChatManager.h"
 
 @interface SharedClass : NSObject {
 
@@ -21,6 +23,9 @@
 
 -(NSDate *)getCurrentUTCFormatDate;
 -(NSString* )getCurrentUTCFormatDateString;
+
+@property (strong, nonatomic) ALUser *alUser;
+@property (strong, nonatomic) ALChatManager * chatManager;
 
 - (void)saveData: (NSString*)data ForService:(NSString *)service;
 - (NSString*)loadDataForService:(NSString *)service;
