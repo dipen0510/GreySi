@@ -93,6 +93,11 @@
     [dict5 setObject:@"myLocation.png" forKey:@"image"];
     [tableArr addObject:dict5];
     
+    NSMutableDictionary* dict6 = [[NSMutableDictionary alloc] init];
+    [dict6 setObject:@"TUTORIAL" forKey:@"title"];
+    [dict6 setObject:@"book-open-page-variant.png" forKey:@"image"];
+    [tableArr addObject:dict6];
+    
     NSMutableDictionary* dict2 = [[NSMutableDictionary alloc] init];
     [dict2 setObject:@"LOG OUT" forKey:@"title"];
     [dict2 setObject:@"logout.png" forKey:@"image"];
@@ -180,6 +185,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             break;
             
         case 5:
+            [self performSegueWithIdentifier:@"showTutorialSegue" sender:nil];
+            break;
+            
+        case 6:
             [self showLogoutAlert];
             break;
             

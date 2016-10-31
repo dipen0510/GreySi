@@ -83,6 +83,11 @@
     
     [self sideMenuSetup];
     
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:appRunSecondTime]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:appRunSecondTime];
+        [self performSegueWithIdentifier:@"showTutorialSegue" sender:nil];
+    }
+    
 }
 
 - (void)sideMenuSetup

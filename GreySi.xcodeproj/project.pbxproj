@@ -67,6 +67,22 @@
 		188BDA3A1DAD4B9B00387467 /* District.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BDA371DAD4B9B00387467 /* District.m */; };
 		188BDA3B1DAD4B9B00387467 /* Representative.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BDA391DAD4B9B00387467 /* Representative.m */; };
 		188BDA3E1DAD589700387467 /* RateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188BDA3D1DAD589700387467 /* RateViewController.m */; };
+		189B73CD1DC768D5006B8949 /* AppTutorialFirstPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B73C61DC768D5006B8949 /* AppTutorialFirstPageViewController.m */; };
+		189B73CE1DC768D5006B8949 /* AppTutorialPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B73C81DC768D5006B8949 /* AppTutorialPageViewController.m */; };
+		189B73CF1DC768D5006B8949 /* AppTutorialSecondPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B73CA1DC768D5006B8949 /* AppTutorialSecondPageViewController.m */; };
+		189B73D01DC768D5006B8949 /* AppTutorialThirdPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B73CC1DC768D5006B8949 /* AppTutorialThirdPageViewController.m */; };
+		189B73D71DC768FF006B8949 /* tc1.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B73D11DC768FF006B8949 /* tc1.png */; };
+		189B73D81DC768FF006B8949 /* tc2.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B73D21DC768FF006B8949 /* tc2.png */; };
+		189B73D91DC768FF006B8949 /* tc3.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B73D31DC768FF006B8949 /* tc3.png */; };
+		189B73DA1DC768FF006B8949 /* th1.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B73D41DC768FF006B8949 /* th1.png */; };
+		189B73DB1DC768FF006B8949 /* th2.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B73D51DC768FF006B8949 /* th2.png */; };
+		189B73DC1DC768FF006B8949 /* th3.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B73D61DC768FF006B8949 /* th3.png */; };
+		189B73DE1DC76CC8006B8949 /* book-open-page-variant.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B73DD1DC76CC8006B8949 /* book-open-page-variant.png */; };
+		189B73DF1DC7718A006B8949 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189B73BF1DC76809006B8949 /* Montserrat-Black.ttf */; };
+		189B73E01DC7718A006B8949 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189B73C01DC76809006B8949 /* Montserrat-Bold.ttf */; };
+		189B73E11DC7718A006B8949 /* Montserrat-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189B73C11DC76809006B8949 /* Montserrat-Hairline.ttf */; };
+		189B73E21DC7718A006B8949 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189B73C21DC76809006B8949 /* Montserrat-Light.ttf */; };
+		189B73E31DC7718A006B8949 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189B73C31DC76809006B8949 /* Montserrat-Regular.ttf */; };
 		18A6D2F81D7AB70E004907EB /* ProjectsSingleModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6D2F71D7AB70E004907EB /* ProjectsSingleModal.m */; };
 		18A6D2FB1D7AB80E004907EB /* CustomerGetProjectsResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6D2FA1D7AB80E004907EB /* CustomerGetProjectsResponseModal.m */; };
 		18AA90831D8D096E00DA3828 /* AdSIngleModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AA90821D8D096E00DA3828 /* AdSIngleModal.m */; };
@@ -251,6 +267,26 @@
 		188BDA391DAD4B9B00387467 /* Representative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Representative.m; sourceTree = "<group>"; };
 		188BDA3C1DAD589700387467 /* RateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateViewController.h; sourceTree = "<group>"; };
 		188BDA3D1DAD589700387467 /* RateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateViewController.m; sourceTree = "<group>"; };
+		189B73BF1DC76809006B8949 /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		189B73C01DC76809006B8949 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		189B73C11DC76809006B8949 /* Montserrat-Hairline.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Hairline.ttf"; sourceTree = "<group>"; };
+		189B73C21DC76809006B8949 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		189B73C31DC76809006B8949 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		189B73C51DC768D5006B8949 /* AppTutorialFirstPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTutorialFirstPageViewController.h; sourceTree = "<group>"; };
+		189B73C61DC768D5006B8949 /* AppTutorialFirstPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTutorialFirstPageViewController.m; sourceTree = "<group>"; };
+		189B73C71DC768D5006B8949 /* AppTutorialPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTutorialPageViewController.h; sourceTree = "<group>"; };
+		189B73C81DC768D5006B8949 /* AppTutorialPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTutorialPageViewController.m; sourceTree = "<group>"; };
+		189B73C91DC768D5006B8949 /* AppTutorialSecondPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTutorialSecondPageViewController.h; sourceTree = "<group>"; };
+		189B73CA1DC768D5006B8949 /* AppTutorialSecondPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTutorialSecondPageViewController.m; sourceTree = "<group>"; };
+		189B73CB1DC768D5006B8949 /* AppTutorialThirdPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppTutorialThirdPageViewController.h; sourceTree = "<group>"; };
+		189B73CC1DC768D5006B8949 /* AppTutorialThirdPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppTutorialThirdPageViewController.m; sourceTree = "<group>"; };
+		189B73D11DC768FF006B8949 /* tc1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tc1.png; sourceTree = "<group>"; };
+		189B73D21DC768FF006B8949 /* tc2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tc2.png; sourceTree = "<group>"; };
+		189B73D31DC768FF006B8949 /* tc3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tc3.png; sourceTree = "<group>"; };
+		189B73D41DC768FF006B8949 /* th1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th1.png; sourceTree = "<group>"; };
+		189B73D51DC768FF006B8949 /* th2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th2.png; sourceTree = "<group>"; };
+		189B73D61DC768FF006B8949 /* th3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th3.png; sourceTree = "<group>"; };
+		189B73DD1DC76CC8006B8949 /* book-open-page-variant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "book-open-page-variant.png"; sourceTree = "<group>"; };
 		18A6D2F61D7AB70E004907EB /* ProjectsSingleModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectsSingleModal.h; sourceTree = "<group>"; };
 		18A6D2F71D7AB70E004907EB /* ProjectsSingleModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectsSingleModal.m; sourceTree = "<group>"; };
 		18A6D2F91D7AB80E004907EB /* CustomerGetProjectsResponseModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerGetProjectsResponseModal.h; sourceTree = "<group>"; };
@@ -545,6 +581,21 @@
 			path = MultiRowCalloutAnnotationView;
 			sourceTree = "<group>";
 		};
+		189B73C41DC768D5006B8949 /* ScanTutorialViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				189B73C71DC768D5006B8949 /* AppTutorialPageViewController.h */,
+				189B73C81DC768D5006B8949 /* AppTutorialPageViewController.m */,
+				189B73C51DC768D5006B8949 /* AppTutorialFirstPageViewController.h */,
+				189B73C61DC768D5006B8949 /* AppTutorialFirstPageViewController.m */,
+				189B73C91DC768D5006B8949 /* AppTutorialSecondPageViewController.h */,
+				189B73CA1DC768D5006B8949 /* AppTutorialSecondPageViewController.m */,
+				189B73CB1DC768D5006B8949 /* AppTutorialThirdPageViewController.h */,
+				189B73CC1DC768D5006B8949 /* AppTutorialThirdPageViewController.m */,
+			);
+			path = ScanTutorialViewControllers;
+			sourceTree = "<group>";
+		};
 		18C831801D63592500AE6058 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -653,6 +704,7 @@
 		D4CA5C751C7DCDF7000E185A /* GreySi */ = {
 			isa = PBXGroup;
 			children = (
+				189B73C41DC768D5006B8949 /* ScanTutorialViewControllers */,
 				18C8319A1D635D7200AE6058 /* Modals */,
 				18C831801D63592500AE6058 /* Helpers */,
 				185DC1071D5136D2007998F3 /* Library */,
@@ -747,6 +799,18 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				189B73DD1DC76CC8006B8949 /* book-open-page-variant.png */,
+				189B73D11DC768FF006B8949 /* tc1.png */,
+				189B73D21DC768FF006B8949 /* tc2.png */,
+				189B73D31DC768FF006B8949 /* tc3.png */,
+				189B73D41DC768FF006B8949 /* th1.png */,
+				189B73D51DC768FF006B8949 /* th2.png */,
+				189B73D61DC768FF006B8949 /* th3.png */,
+				189B73BF1DC76809006B8949 /* Montserrat-Black.ttf */,
+				189B73C01DC76809006B8949 /* Montserrat-Bold.ttf */,
+				189B73C11DC76809006B8949 /* Montserrat-Hairline.ttf */,
+				189B73C21DC76809006B8949 /* Montserrat-Light.ttf */,
+				189B73C31DC76809006B8949 /* Montserrat-Regular.ttf */,
 				D49BFB031DC35EF50058433A /* check.png */,
 				D49BFB041DC35EF50058433A /* close.png */,
 				18DB7D6D1DAEC5BA002594C8 /* edt_profile_white.png */,
@@ -925,6 +989,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				189B73DF1DC7718A006B8949 /* Montserrat-Black.ttf in Resources */,
+				189B73E01DC7718A006B8949 /* Montserrat-Bold.ttf in Resources */,
+				189B73E11DC7718A006B8949 /* Montserrat-Hairline.ttf in Resources */,
+				189B73E21DC7718A006B8949 /* Montserrat-Light.ttf in Resources */,
+				189B73E31DC7718A006B8949 /* Montserrat-Regular.ttf in Resources */,
+				189B73D81DC768FF006B8949 /* tc2.png in Resources */,
 				185DC1231D5145C9007998F3 /* projects.png in Resources */,
 				D455C4701C7EDABA00C6D1CB /* appicon.png in Resources */,
 				D4CA5CCF1C7DCF48000E185A /* menu.png in Resources */,
@@ -948,6 +1018,7 @@
 				1881F3F31DA1B47A005198A2 /* web_logo.png in Resources */,
 				18DB7D6F1DAEC5BA002594C8 /* edt_profile_white.png in Resources */,
 				D4CA5C831C7DCDF7000E185A /* Assets.xcassets in Resources */,
+				189B73DB1DC768FF006B8949 /* th2.png in Resources */,
 				D4104E8F1D9D3E0B006348D3 /* new_others_logo.png in Resources */,
 				D455C4741C7EDABA00C6D1CB /* signup.png in Resources */,
 				18AA9CA41CA6DB8500938952 /* profile_temp.png in Resources */,
@@ -955,7 +1026,10 @@
 				D49BFB061DC35EF50058433A /* close.png in Resources */,
 				D4CA5CC41C7DCF48000E185A /* arrow.png in Resources */,
 				D455C4731C7EDABA00C6D1CB /* login.png in Resources */,
+				189B73DA1DC768FF006B8949 /* th1.png in Resources */,
+				189B73D71DC768FF006B8949 /* tc1.png in Resources */,
 				185DC11D1D514348007998F3 /* available.png in Resources */,
+				189B73DE1DC76CC8006B8949 /* book-open-page-variant.png in Resources */,
 				185DC10E1D513C3E007998F3 /* mike.jpg in Resources */,
 				185DC1061D4E4543007998F3 /* timeLeftClock.png in Resources */,
 				188853D11D91A2B0001EF67C /* booking_navigation_drawer_image.png in Resources */,
@@ -963,6 +1037,7 @@
 				1888572C1CAB17F90026995E /* HomeTableView.xib in Resources */,
 				185DC1041D4E343C007998F3 /* navMenu.png in Resources */,
 				185DC1251D514934007998F3 /* profileDetailBG.png in Resources */,
+				189B73DC1DC768FF006B8949 /* th3.png in Resources */,
 				D455C4721C7EDABA00C6D1CB /* login_fb.png in Resources */,
 				D4CA5CD91C7DCF48000E185A /* tick.png in Resources */,
 				18CF35161D5BCE6100C0A5BD /* BidsReceivedTableViewCell.xib in Resources */,
@@ -989,6 +1064,7 @@
 				185DC0FC1D4E2C4C007998F3 /* splash.png in Resources */,
 				D4CA5CCB1C7DCF48000E185A /* feedback_ratinghalf.png in Resources */,
 				185DC1021D4E343C007998F3 /* filter.png in Resources */,
+				189B73D91DC768FF006B8949 /* tc3.png in Resources */,
 				D455C4711C7EDABA00C6D1CB /* background.png in Resources */,
 				18CF350D1D5BC94600C0A5BD /* PostedProjectsTableViewCell.xib in Resources */,
 				18AA90851D8D13BA00DA3828 /* blankProfile.png in Resources */,
@@ -1075,6 +1151,7 @@
 				18CF35151D5BCE6100C0A5BD /* BidsReceivedTableViewCell.m in Sources */,
 				184AF5401D76074D001DDD4B /* SignUpRequestModal.m in Sources */,
 				188853CC1D9184B7001EF67C /* AddTreatmentRequestModal.m in Sources */,
+				189B73D01DC768D5006B8949 /* AppTutorialThirdPageViewController.m in Sources */,
 				188BDA3A1DAD4B9B00387467 /* District.m in Sources */,
 				18AA90831D8D096E00DA3828 /* AdSIngleModal.m in Sources */,
 				18C928DA1DA9993800DAC0F9 /* PlaceBidViewController.m in Sources */,
@@ -1097,6 +1174,7 @@
 				1888573D1CAB19F10026995E /* HomeTableViewCell.m in Sources */,
 				18DE0EA01D46A2BB00043037 /* LoginTableViewCell.m in Sources */,
 				D4D5A1BD1D5852AC00B15CBE /* ChatListViewController.m in Sources */,
+				189B73CF1DC768D5006B8949 /* AppTutorialSecondPageViewController.m in Sources */,
 				188853D61D91A409001EF67C /* BookingsTableViewCell.m in Sources */,
 				1881F3E31DA1A728005198A2 /* PriceListViewController.m in Sources */,
 				188853DA1D91AE77001EF67C /* LocationViewController.m in Sources */,
@@ -1109,6 +1187,7 @@
 				185DC1161D5140C3007998F3 /* SideMenuTableViewCell.m in Sources */,
 				18F316501DAAE05700DD5716 /* ShowOnMapViewController.m in Sources */,
 				D482E7ED1D7811FD00BC30DA /* SignUpResponseModal.m in Sources */,
+				189B73CD1DC768D5006B8949 /* AppTutorialFirstPageViewController.m in Sources */,
 				D455C47B1C7F203900C6D1CB /* SignUpViewController.m in Sources */,
 				185B5E971D5A6D2200205F72 /* TreatmentTabTableViewCell.m in Sources */,
 				D4CA5C7E1C7DCDF7000E185A /* SplashViewController.m in Sources */,
@@ -1122,6 +1201,7 @@
 				18CF351E1D5BD23000C0A5BD /* ActiveProjectsTableViewCell.m in Sources */,
 				D482E7F01D78291B00BC30DA /* LoginRequestModal.m in Sources */,
 				188BDA321DAD4B8A00387467 /* MultiRowAnnotation.m in Sources */,
+				189B73CE1DC768D5006B8949 /* AppTutorialPageViewController.m in Sources */,
 				188BDA331DAD4B8A00387467 /* MultiRowCalloutAnnotationView.m in Sources */,
 				D4CA5C7B1C7DCDF7000E185A /* AppDelegate.m in Sources */,
 				188BDA341DAD4B8A00387467 /* MultiRowCalloutCell.m in Sources */,

@@ -30,6 +30,7 @@
 
 #define token1Key @"token1Key"
 #define token2Key @"token2Key"
+#define appRunSecondTime @"appRunSecondTime"
 
 //Customer Projects API
 
