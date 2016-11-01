@@ -386,8 +386,8 @@
     [ALApplozicSettings setColorForNavigation: [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0]];
     [ALApplozicSettings setColorForNavigationItem: [UIColor whiteColor]];
     [ALApplozicSettings hideRefreshButton:NO];
-    [ALUserDefaultsHandler setNavigationRightButtonHidden:NO];
-    [ALUserDefaultsHandler setBottomTabBarHidden:NO];
+    [ALUserDefaultsHandler setNavigationRightButtonHidden:YES];
+    [ALUserDefaultsHandler setBottomTabBarHidden:YES];
     [ALApplozicSettings setTitleForConversationScreen:@"Chats"];
     [ALApplozicSettings setCustomNavRightButtonMsgVC:NO];                   /*  SET VISIBILITY FOR REFRESH BUTTON (COMES FROM TOP IN MSG VC)   */
     [ALApplozicSettings setTitleForBackButtonMsgVC:@"Back"];                /*  SET BACK BUTTON FOR MSG VC  */
@@ -420,18 +420,18 @@
     
     /**********************************************  GROUP SETTINGS  ************************************************/
     
-    [ALApplozicSettings setGroupOption:YES];
-    [ALApplozicSettings setGroupExitOption:YES];
-    [ALApplozicSettings setGroupMemberAddOption:YES];
-    [ALApplozicSettings setGroupMemberRemoveOption:YES];
+    [ALApplozicSettings setGroupOption:NO];
+    [ALApplozicSettings setGroupExitOption:NO];
+    [ALApplozicSettings setGroupMemberAddOption:NO];
+    [ALApplozicSettings setGroupMemberRemoveOption:NO];
     /****************************************************************************************************************/
     
     
     /******************************************** NOTIIFCATION SETTINGS  ********************************************/
     
-    [ALUserDefaultsHandler setDeviceApnsType:(short)DEVELOPMENT];
+    //[ALUserDefaultsHandler setDeviceApnsType:(short)DEVELOPMENT];
     //For Distribution CERT::
-    //[ALUserDefaultsHandler setDeviceApnsType:(short)DISTRIBUTION];
+    [ALUserDefaultsHandler setDeviceApnsType:(short)DISTRIBUTION];
     
     NSString * appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"];
     [ALApplozicSettings setNotificationTitle:appName];

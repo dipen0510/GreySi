@@ -300,6 +300,20 @@
     
 }
 
+- (IBAction)chatButtonTapped:(id)sender {
+    
+    NSMutableDictionary* infoDict = [[NSMutableDictionary alloc] initWithDictionary:[[responseDict valueForKey:@"info"] objectAtIndex:0]];
+    
+    if (infoDict.count>0) {
+        NSString * userIdOfReceiver =  infoDict[@"Email"];
+        [[[SharedClass sharedInstance] chatManager] launchChatForUserWithDisplayName:userIdOfReceiver
+                                                                         withGroupId:nil  //If launched for group, pass groupId(pass userId as nil)
+                                                                  andwithDisplayName:nil //Not mendatory, if receiver is not already registered you should pass Displayname.
+                                                               andFromViewController:self];
+    }
+
+}
+
 
 #pragma mark - UITableView Datasource
 

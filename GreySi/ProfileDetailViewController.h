@@ -55,5 +55,6 @@
 - (IBAction)editProfileDescriptionButtonTapped:(id)sender;
 - (IBAction)editProfileSocialButtonTapped:(id)sender;
 - (IBAction)doneButtonTapped:(id)sender;
+- (IBAction)chatButtonTapped:(id)sender;
 
 @end
