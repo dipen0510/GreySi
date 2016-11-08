@@ -18,6 +18,8 @@
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *addressTxtField;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UIButton *currentLocationButton;
 
 - (IBAction)submitButtonTapped:(id)sender;
 - (IBAction)currentLocationButtonTapped:(id)sender;

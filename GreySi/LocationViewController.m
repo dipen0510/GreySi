@@ -19,6 +19,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    _submitButton.layer.cornerRadius = 4.;
+    _currentLocationButton.layer.cornerRadius = 4.;
+    
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     

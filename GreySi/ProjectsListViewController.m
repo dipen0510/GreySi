@@ -472,14 +472,14 @@
     ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:indexPath.row]];
     
     cell.typeLabel.text = singleProject.treatment;
-    cell.statusLabel.text = singleProject.status;
+    //cell.statusLabel.text = singleProject.status;
     cell.hairdresserNameLabel.text = singleProject.hairdresser_id;
-    cell.amountLabel.text = singleProject.budget;
+    cell.amountLabel.text = [NSString stringWithFormat:@"%@:-",singleProject.budget];
     cell.bidsLabel.text = singleProject.no_of_bids;
     cell.dateLabel.text = singleProject.post_Date;
     
     if ([singleProject.no_of_bids intValue] > 0) {
-        cell.backgroundColor = [UIColor colorWithRed:205./255. green:205./255. blue:205./255. alpha:1.0];
+        cell.backgroundColor = [UIColor colorWithRed:220./255. green:220./255. blue:220./255. alpha:1.0];
     }
     else {
         cell.backgroundColor = [UIColor whiteColor];

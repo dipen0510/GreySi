@@ -170,7 +170,7 @@
                                              format1.dateFormat = @"dd/MM/yyyy";
                                              
                                              NSDateFormatter* format2 = [[NSDateFormatter alloc] init];
-                                             format2.dateFormat = @"HH:mm:ss";
+                                             format2.dateFormat = @"HH:mm";
                                              
                                              finalSelectedDate = [format1 stringFromDate:selectedDate];
                                              finalSelectedTime = [format2 stringFromDate:selectedDate];
@@ -195,7 +195,7 @@
                                              format1.dateFormat = @"dd/MM/yyyy";
                                              
                                              NSDateFormatter* format2 = [[NSDateFormatter alloc] init];
-                                             format2.dateFormat = @"HH:mm:ss";
+                                             format2.dateFormat = @"HH:mm";
                                              
                                              finalSelectedDate = [format1 stringFromDate:selectedDate];
                                              finalSelectedTime = [format2 stringFromDate:selectedDate];
@@ -209,13 +209,13 @@
                                                                                   format1.dateFormat = @"dd/MM/yyyy";
                                                                                   
                                                                                   NSDateFormatter* format2 = [[NSDateFormatter alloc] init];
-                                                                                  format2.dateFormat = @"HH:mm:ss";
+                                                                                  format2.dateFormat = @"HH:mm";
                                                                                   
                                                                                   finalSelectedTime = [NSString stringWithFormat:@"%@-%@",finalSelectedTime,[format2 stringFromDate:selectedDate]];
                                                                                   
                                                                                   NSString *dateString = [NSDateFormatter localizedStringFromDate:selectedDate dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle];
                                                                                   NSLog(@"Picker: value: %@",dateString);
-                                                                                  [self.selectDateTimeButton setTitle:finalSelectedTime forState:UIControlStateNormal];
+                                                                                  [self.selectDateTimeButton setTitle:[NSString stringWithFormat:@"%@, %@",finalSelectedDate,finalSelectedTime] forState:UIControlStateNormal];
                                                                                   
                                                                               }
                                                                             cancelBlock:^(ActionSheetDatePicker *picker) {
@@ -355,10 +355,11 @@
     if([selectedTreamentsArr containsObject:[treatmentOptionsArr objectAtIndex:indexPath.row]]){
         [selectedTreamentsArr removeObject:[treatmentOptionsArr objectAtIndex:indexPath.row]];
     } else {
+        [selectedTreamentsArr removeAllObjects];
         [selectedTreamentsArr addObject:[treatmentOptionsArr objectAtIndex:indexPath.row]];
     }
     
-    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [tableView reloadData];
     
 }
 
