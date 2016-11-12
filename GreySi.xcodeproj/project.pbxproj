@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		183D55281DD2697700BD3170 /* th1.png in Resources */ = {isa = PBXBuildFile; fileRef = 183D55221DD2697700BD3170 /* th1.png */; };
-		183D55291DD2697700BD3170 /* th2.png in Resources */ = {isa = PBXBuildFile; fileRef = 183D55231DD2697700BD3170 /* th2.png */; };
-		183D552A1DD2697700BD3170 /* th3.png in Resources */ = {isa = PBXBuildFile; fileRef = 183D55241DD2697700BD3170 /* th3.png */; };
-		183D552B1DD2697700BD3170 /* tc1.png in Resources */ = {isa = PBXBuildFile; fileRef = 183D55251DD2697700BD3170 /* tc1.png */; };
-		183D552C1DD2697700BD3170 /* tc2.png in Resources */ = {isa = PBXBuildFile; fileRef = 183D55261DD2697700BD3170 /* tc2.png */; };
-		183D552D1DD2697700BD3170 /* tc3.png in Resources */ = {isa = PBXBuildFile; fileRef = 183D55271DD2697700BD3170 /* tc3.png */; };
+		18157D871DD7BB490087EDC2 /* CardViewNewAdTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18157D851DD7BB490087EDC2 /* CardViewNewAdTableViewCell.m */; };
+		18157D881DD7BB490087EDC2 /* CardViewNewAdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18157D861DD7BB490087EDC2 /* CardViewNewAdTableViewCell.xib */; };
+		18157D8A1DD7BDBA0087EDC2 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 18157D891DD7BDBA0087EDC2 /* circle.png */; };
+		18157D921DD7C5320087EDC2 /* th1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18157D8B1DD7C5320087EDC2 /* th1.png */; };
+		18157D931DD7C5320087EDC2 /* th2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18157D8C1DD7C5320087EDC2 /* th2.png */; };
+		18157D941DD7C5320087EDC2 /* th3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18157D8D1DD7C5320087EDC2 /* th3.png */; };
+		18157D951DD7C5320087EDC2 /* tc1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18157D8E1DD7C5320087EDC2 /* tc1.png */; };
+		18157D961DD7C5320087EDC2 /* tc2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18157D8F1DD7C5320087EDC2 /* tc2.png */; };
+		18157D971DD7C5320087EDC2 /* tc3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18157D901DD7C5320087EDC2 /* tc3.png */; };
+		18157D981DD7C5320087EDC2 /* Adbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 18157D911DD7C5320087EDC2 /* Adbackground.png */; };
 		184AF5401D76074D001DDD4B /* SignUpRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 184AF53F1D76074D001DDD4B /* SignUpRequestModal.m */; };
+		185409911DD75533004784AD /* CardViewSlideShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1854098F1DD75533004784AD /* CardViewSlideShowTableViewCell.m */; };
+		185409921DD75533004784AD /* CardViewSlideShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185409901DD75533004784AD /* CardViewSlideShowTableViewCell.xib */; };
+		185409981DD75924004784AD /* slide1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 185409971DD75924004784AD /* slide1.jpg */; };
+		1854099C1DD75932004784AD /* slide4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 185409991DD75932004784AD /* slide4.jpg */; };
+		1854099D1DD75932004784AD /* slide3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1854099A1DD75932004784AD /* slide3.jpg */; };
+		1854099E1DD75932004784AD /* slide2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1854099B1DD75932004784AD /* slide2.jpg */; };
 		185B5E921D5A6A0A00205F72 /* PostNewAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B5E911D5A6A0A00205F72 /* PostNewAdViewController.m */; };
 		185B5E971D5A6D2200205F72 /* TreatmentTabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B5E951D5A6D2200205F72 /* TreatmentTabTableViewCell.m */; };
 		185B5E981D5A6D2200205F72 /* TreatmentTabTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185B5E961D5A6D2200205F72 /* TreatmentTabTableViewCell.xib */; };
@@ -88,7 +98,6 @@
 		18A6D2FB1D7AB80E004907EB /* CustomerGetProjectsResponseModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A6D2FA1D7AB80E004907EB /* CustomerGetProjectsResponseModal.m */; };
 		18AA90831D8D096E00DA3828 /* AdSIngleModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AA90821D8D096E00DA3828 /* AdSIngleModal.m */; };
 		18AA90851D8D13BA00DA3828 /* blankProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AA90841D8D13BA00DA3828 /* blankProfile.png */; };
-		18AA9CA41CA6DB8500938952 /* profile_temp.png in Resources */ = {isa = PBXBuildFile; fileRef = 18AA9CA31CA6DB8500938952 /* profile_temp.png */; };
 		18C831921D63592500AE6058 /* SharedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C8318C1D63592500AE6058 /* SharedClass.m */; };
 		18C831951D63593A00AE6058 /* DataSyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C831941D63593A00AE6058 /* DataSyncManager.m */; };
 		18C928DA1DA9993800DAC0F9 /* PlaceBidViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18C928D91DA9993800DAC0F9 /* PlaceBidViewController.m */; };
@@ -106,6 +115,9 @@
 		18DB7D701DAEC5BA002594C8 /* new_edit_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DB7D6E1DAEC5BA002594C8 /* new_edit_profile.png */; };
 		18DE0E9D1D4697B000043037 /* GatewayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DE0E9C1D4697B000043037 /* GatewayViewController.m */; };
 		18DE0EA01D46A2BB00043037 /* LoginTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DE0E9F1D46A2BB00043037 /* LoginTableViewCell.m */; };
+		18E469621DD7A0D10065AA6D /* SlideShowCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E469601DD7A0D10065AA6D /* SlideShowCollectionViewCell.m */; };
+		18E469631DD7A0D10065AA6D /* SlideShowCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E469611DD7A0D10065AA6D /* SlideShowCollectionViewCell.xib */; };
+		18E469671DD7AD0C0065AA6D /* FXPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E469661DD7AD0C0065AA6D /* FXPageControl.m */; };
 		18F3164D1DAAC5F000DD5716 /* BookingDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F3164C1DAAC5F000DD5716 /* BookingDetailsViewController.m */; };
 		18F316501DAAE05700DD5716 /* ShowOnMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F3164F1DAAE05700DD5716 /* ShowOnMapViewController.m */; };
 		4366A1903A93415D6183C322 /* libPods-GreySi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7793179DCCE4D0DE2B3ACD /* libPods-GreySi.a */; };
@@ -180,14 +192,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		183D55221DD2697700BD3170 /* th1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th1.png; sourceTree = "<group>"; };
-		183D55231DD2697700BD3170 /* th2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th2.png; sourceTree = "<group>"; };
-		183D55241DD2697700BD3170 /* th3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th3.png; sourceTree = "<group>"; };
-		183D55251DD2697700BD3170 /* tc1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tc1.png; sourceTree = "<group>"; };
-		183D55261DD2697700BD3170 /* tc2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tc2.png; sourceTree = "<group>"; };
-		183D55271DD2697700BD3170 /* tc3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tc3.png; sourceTree = "<group>"; };
+		18157D841DD7BB490087EDC2 /* CardViewNewAdTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardViewNewAdTableViewCell.h; path = CustomControls/CardViewNewAdTableViewCell.h; sourceTree = "<group>"; };
+		18157D851DD7BB490087EDC2 /* CardViewNewAdTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardViewNewAdTableViewCell.m; path = CustomControls/CardViewNewAdTableViewCell.m; sourceTree = "<group>"; };
+		18157D861DD7BB490087EDC2 /* CardViewNewAdTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardViewNewAdTableViewCell.xib; path = CustomControls/CardViewNewAdTableViewCell.xib; sourceTree = "<group>"; };
+		18157D891DD7BDBA0087EDC2 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		18157D8B1DD7C5320087EDC2 /* th1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th1.png; sourceTree = "<group>"; };
+		18157D8C1DD7C5320087EDC2 /* th2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th2.png; sourceTree = "<group>"; };
+		18157D8D1DD7C5320087EDC2 /* th3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th3.png; sourceTree = "<group>"; };
+		18157D8E1DD7C5320087EDC2 /* tc1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tc1.png; sourceTree = "<group>"; };
+		18157D8F1DD7C5320087EDC2 /* tc2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tc2.png; sourceTree = "<group>"; };
+		18157D901DD7C5320087EDC2 /* tc3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tc3.png; sourceTree = "<group>"; };
+		18157D911DD7C5320087EDC2 /* Adbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Adbackground.png; sourceTree = "<group>"; };
 		184AF53E1D76074D001DDD4B /* SignUpRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpRequestModal.h; sourceTree = "<group>"; };
 		184AF53F1D76074D001DDD4B /* SignUpRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpRequestModal.m; sourceTree = "<group>"; };
+		1854098E1DD75533004784AD /* CardViewSlideShowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardViewSlideShowTableViewCell.h; path = CustomControls/CardViewSlideShowTableViewCell.h; sourceTree = "<group>"; };
+		1854098F1DD75533004784AD /* CardViewSlideShowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardViewSlideShowTableViewCell.m; path = CustomControls/CardViewSlideShowTableViewCell.m; sourceTree = "<group>"; };
+		185409901DD75533004784AD /* CardViewSlideShowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardViewSlideShowTableViewCell.xib; path = CustomControls/CardViewSlideShowTableViewCell.xib; sourceTree = "<group>"; };
+		185409971DD75924004784AD /* slide1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = slide1.jpg; sourceTree = "<group>"; };
+		185409991DD75932004784AD /* slide4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = slide4.jpg; sourceTree = "<group>"; };
+		1854099A1DD75932004784AD /* slide3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = slide3.jpg; sourceTree = "<group>"; };
+		1854099B1DD75932004784AD /* slide2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = slide2.jpg; sourceTree = "<group>"; };
 		185B5E901D5A6A0A00205F72 /* PostNewAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostNewAdViewController.h; sourceTree = "<group>"; };
 		185B5E911D5A6A0A00205F72 /* PostNewAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostNewAdViewController.m; sourceTree = "<group>"; };
 		185B5E941D5A6D2200205F72 /* TreatmentTabTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreatmentTabTableViewCell.h; path = CustomControls/TreatmentTabTableViewCell.h; sourceTree = "<group>"; };
@@ -297,7 +321,6 @@
 		18AA90811D8D096E00DA3828 /* AdSIngleModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSIngleModal.h; sourceTree = "<group>"; };
 		18AA90821D8D096E00DA3828 /* AdSIngleModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSIngleModal.m; sourceTree = "<group>"; };
 		18AA90841D8D13BA00DA3828 /* blankProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blankProfile.png; sourceTree = "<group>"; };
-		18AA9CA31CA6DB8500938952 /* profile_temp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_temp.png; sourceTree = "<group>"; };
 		18C8318B1D63592500AE6058 /* SharedClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedClass.h; sourceTree = "<group>"; };
 		18C8318C1D63592500AE6058 /* SharedClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedClass.m; sourceTree = "<group>"; };
 		18C831931D63593A00AE6058 /* DataSyncManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSyncManager.h; sourceTree = "<group>"; };
@@ -328,6 +351,11 @@
 		18DE0E9C1D4697B000043037 /* GatewayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GatewayViewController.m; sourceTree = "<group>"; };
 		18DE0E9E1D46A2BB00043037 /* LoginTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginTableViewCell.h; path = CustomControls/LoginTableViewCell.h; sourceTree = "<group>"; };
 		18DE0E9F1D46A2BB00043037 /* LoginTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginTableViewCell.m; path = CustomControls/LoginTableViewCell.m; sourceTree = "<group>"; };
+		18E4695F1DD7A0D10065AA6D /* SlideShowCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideShowCollectionViewCell.h; path = CustomControls/SlideShowCollectionViewCell.h; sourceTree = "<group>"; };
+		18E469601DD7A0D10065AA6D /* SlideShowCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlideShowCollectionViewCell.m; path = CustomControls/SlideShowCollectionViewCell.m; sourceTree = "<group>"; };
+		18E469611DD7A0D10065AA6D /* SlideShowCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SlideShowCollectionViewCell.xib; path = CustomControls/SlideShowCollectionViewCell.xib; sourceTree = "<group>"; };
+		18E469651DD7AD0C0065AA6D /* FXPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXPageControl.h; sourceTree = "<group>"; };
+		18E469661DD7AD0C0065AA6D /* FXPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXPageControl.m; sourceTree = "<group>"; };
 		18F3164B1DAAC5EF00DD5716 /* BookingDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookingDetailsViewController.h; sourceTree = "<group>"; };
 		18F3164C1DAAC5F000DD5716 /* BookingDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookingDetailsViewController.m; sourceTree = "<group>"; };
 		18F3164E1DAAE05700DD5716 /* ShowOnMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowOnMapViewController.h; sourceTree = "<group>"; };
@@ -442,6 +470,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		18157D831DD7BB0F0087EDC2 /* CardViewNewAdTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				18157D841DD7BB490087EDC2 /* CardViewNewAdTableViewCell.h */,
+				18157D851DD7BB490087EDC2 /* CardViewNewAdTableViewCell.m */,
+				18157D861DD7BB490087EDC2 /* CardViewNewAdTableViewCell.xib */,
+			);
+			name = CardViewNewAdTableViewCell;
+			sourceTree = "<group>";
+		};
+		1854098D1DD754F4004784AD /* CardViewSlideShowTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1854098E1DD75533004784AD /* CardViewSlideShowTableViewCell.h */,
+				1854098F1DD75533004784AD /* CardViewSlideShowTableViewCell.m */,
+				185409901DD75533004784AD /* CardViewSlideShowTableViewCell.xib */,
+			);
+			name = CardViewSlideShowTableViewCell;
+			sourceTree = "<group>";
+		};
 		185B5E931D5A6CF600205F72 /* TreatmentTabTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +503,7 @@
 		185DC1071D5136D2007998F3 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				18E469641DD7AD0C0065AA6D /* FXPageControl */,
 				188BDA261DAD4B8A00387467 /* MultiRowCalloutAnnotationView */,
 				188857261CAB17AD0026995E /* SwipeView */,
 				185DC1081D5136D2007998F3 /* SWRevealViewController */,
@@ -534,6 +583,8 @@
 		1888572A1CAB17D80026995E /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				18157D831DD7BB0F0087EDC2 /* CardViewNewAdTableViewCell */,
+				1854098D1DD754F4004784AD /* CardViewSlideShowTableViewCell */,
 				1881F3EA1DA1AFC7005198A2 /* ProfileSocialTableViewCell */,
 				1881F3E41DA1AF9B005198A2 /* ProfileReviewTableViewCell */,
 				1881F3C91D97E442005198A2 /* HairPostAdTableViewCell */,
@@ -550,6 +601,9 @@
 				1888572D1CAB18010026995E /* HomeMapView.xib */,
 				18DE0E9E1D46A2BB00043037 /* LoginTableViewCell.h */,
 				18DE0E9F1D46A2BB00043037 /* LoginTableViewCell.m */,
+				18E4695F1DD7A0D10065AA6D /* SlideShowCollectionViewCell.h */,
+				18E469601DD7A0D10065AA6D /* SlideShowCollectionViewCell.m */,
+				18E469611DD7A0D10065AA6D /* SlideShowCollectionViewCell.xib */,
 			);
 			name = CustomControls;
 			sourceTree = "<group>";
@@ -682,6 +736,15 @@
 			name = CompletedProjectsTableViewCell;
 			sourceTree = "<group>";
 		};
+		18E469641DD7AD0C0065AA6D /* FXPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				18E469651DD7AD0C0065AA6D /* FXPageControl.h */,
+				18E469661DD7AD0C0065AA6D /* FXPageControl.m */,
+			);
+			path = FXPageControl;
+			sourceTree = "<group>";
+		};
 		BC08323C21E1A2DBEAF93D7C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -812,12 +875,18 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				183D55221DD2697700BD3170 /* th1.png */,
-				183D55231DD2697700BD3170 /* th2.png */,
-				183D55241DD2697700BD3170 /* th3.png */,
-				183D55251DD2697700BD3170 /* tc1.png */,
-				183D55261DD2697700BD3170 /* tc2.png */,
-				183D55271DD2697700BD3170 /* tc3.png */,
+				18157D8B1DD7C5320087EDC2 /* th1.png */,
+				18157D8C1DD7C5320087EDC2 /* th2.png */,
+				18157D8D1DD7C5320087EDC2 /* th3.png */,
+				18157D8E1DD7C5320087EDC2 /* tc1.png */,
+				18157D8F1DD7C5320087EDC2 /* tc2.png */,
+				18157D901DD7C5320087EDC2 /* tc3.png */,
+				18157D911DD7C5320087EDC2 /* Adbackground.png */,
+				18157D891DD7BDBA0087EDC2 /* circle.png */,
+				185409991DD75932004784AD /* slide4.jpg */,
+				1854099A1DD75932004784AD /* slide3.jpg */,
+				1854099B1DD75932004784AD /* slide2.jpg */,
+				185409971DD75924004784AD /* slide1.jpg */,
 				189B73DD1DC76CC8006B8949 /* book-open-page-variant.png */,
 				189B73BF1DC76809006B8949 /* Montserrat-Black.ttf */,
 				189B73C01DC76809006B8949 /* Montserrat-Bold.ttf */,
@@ -878,7 +947,6 @@
 				D4CA5CC01C7DCF48000E185A /* tick.png */,
 				D4CA5CC11C7DCF48000E185A /* wallet.png */,
 				D4CA5CC21C7DCF48000E185A /* wallet_id.png */,
-				18AA9CA31CA6DB8500938952 /* profile_temp.png */,
 				1881F3F01DA1B479005198A2 /* web_logo.png */,
 				1881F3F11DA1B47A005198A2 /* insta_logo.png */,
 				1881F3F21DA1B47A005198A2 /* fb_logo.png */,
@@ -967,7 +1035,7 @@
 					D4CA5C721C7DCDF7000E185A = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = CZA6DXR72T;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					D4CA5C8B1C7DCDF8000E185A = {
 						CreatedOnToolsVersion = 7.2;
@@ -1012,23 +1080,27 @@
 				185DC1231D5145C9007998F3 /* projects.png in Resources */,
 				D455C4701C7EDABA00C6D1CB /* appicon.png in Resources */,
 				D4CA5CCF1C7DCF48000E185A /* menu.png in Resources */,
-				183D55281DD2697700BD3170 /* th1.png in Resources */,
+				18157D961DD7C5320087EDC2 /* tc2.png in Resources */,
 				D4CA5CC71C7DCF48000E185A /* double_arrow.png in Resources */,
 				18CF351F1D5BD23000C0A5BD /* ActiveProjectsTableViewCell.xib in Resources */,
 				D4CA5C861C7DCDF7000E185A /* LaunchScreen.storyboard in Resources */,
 				1881F3E91DA1AFBE005198A2 /* ProfileReviewTableViewCell.xib in Resources */,
 				D4104E911D9D3E0B006348D3 /* new_womens_hair_logo.png in Resources */,
-				183D552D1DD2697700BD3170 /* tc3.png in Resources */,
+				18E469631DD7A0D10065AA6D /* SlideShowCollectionViewCell.xib in Resources */,
 				185DC0FA1D4E29E7007998F3 /* appLogo.png in Resources */,
 				D4CA5CD01C7DCF48000E185A /* password.png in Resources */,
 				D4104E901D9D3E0B006348D3 /* new_padicure_logo.png in Resources */,
+				18157D981DD7C5320087EDC2 /* Adbackground.png in Resources */,
 				185DC0FE1D4E2EE4007998F3 /* registrationProfile.png in Resources */,
 				D4CA5CC61C7DCF48000E185A /* camera.png in Resources */,
 				D4CA5CD41C7DCF48000E185A /* rating.png in Resources */,
+				18157D881DD7BB490087EDC2 /* CardViewNewAdTableViewCell.xib in Resources */,
+				185409981DD75924004784AD /* slide1.jpg in Resources */,
 				D4CA5CCA1C7DCF48000E185A /* feedback_rating_full.png in Resources */,
 				D4CA5CC81C7DCF48000E185A /* email.png in Resources */,
-				183D552B1DD2697700BD3170 /* tc1.png in Resources */,
+				18157D8A1DD7BDBA0087EDC2 /* circle.png in Resources */,
 				185B5E981D5A6D2200205F72 /* TreatmentTabTableViewCell.xib in Resources */,
+				18157D971DD7C5320087EDC2 /* tc3.png in Resources */,
 				185DC11E1D514348007998F3 /* logout.png in Resources */,
 				188853D71D91A409001EF67C /* BookingsTableViewCell.xib in Resources */,
 				D4D5A1C61D5852F400B15CBE /* ChatListTableViewCell.xib in Resources */,
@@ -1036,8 +1108,10 @@
 				18DB7D6F1DAEC5BA002594C8 /* edt_profile_white.png in Resources */,
 				D4CA5C831C7DCDF7000E185A /* Assets.xcassets in Resources */,
 				D4104E8F1D9D3E0B006348D3 /* new_others_logo.png in Resources */,
+				18157D951DD7C5320087EDC2 /* tc1.png in Resources */,
 				D455C4741C7EDABA00C6D1CB /* signup.png in Resources */,
-				18AA9CA41CA6DB8500938952 /* profile_temp.png in Resources */,
+				18157D941DD7C5320087EDC2 /* th3.png in Resources */,
+				1854099E1DD75932004784AD /* slide2.jpg in Resources */,
 				1881F3CE1D97E478005198A2 /* HairPostAdTableViewCell.xib in Resources */,
 				D49BFB061DC35EF50058433A /* close.png in Resources */,
 				D4CA5CC41C7DCF48000E185A /* arrow.png in Resources */,
@@ -1057,16 +1131,17 @@
 				1888572E1CAB18010026995E /* HomeMapView.xib in Resources */,
 				18DB7D701DAEC5BA002594C8 /* new_edit_profile.png in Resources */,
 				18CF35251D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.xib in Resources */,
+				1854099C1DD75932004784AD /* slide4.jpg in Resources */,
 				1881F3F51DA1B47A005198A2 /* fb_logo.png in Resources */,
-				183D55291DD2697700BD3170 /* th2.png in Resources */,
 				188857401CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png in Resources */,
 				D4CA5CD51C7DCF48000E185A /* rating_filled_small.png in Resources */,
+				185409921DD75533004784AD /* CardViewSlideShowTableViewCell.xib in Resources */,
 				D4CA5C811C7DCDF7000E185A /* Main.storyboard in Resources */,
 				D4CA5CDA1C7DCF48000E185A /* wallet.png in Resources */,
 				D4CA5CD31C7DCF48000E185A /* rating-small.png in Resources */,
 				185DC1031D4E343C007998F3 /* myLocation.png in Resources */,
+				18157D921DD7C5320087EDC2 /* th1.png in Resources */,
 				1881F3EF1DA1AFDF005198A2 /* ProfileSocialTableViewCell.xib in Resources */,
-				183D552C1DD2697700BD3170 /* tc2.png in Resources */,
 				1881F3E01DA19859005198A2 /* addTreatMentTopMenuArrow.png in Resources */,
 				D4CA5CCE1C7DCF48000E185A /* mail.png in Resources */,
 				D4CA5CD11C7DCF48000E185A /* pin.png in Resources */,
@@ -1078,14 +1153,15 @@
 				1888573E1CAB19F10026995E /* HomeTableViewCell.xib in Resources */,
 				185DC0FC1D4E2C4C007998F3 /* splash.png in Resources */,
 				D4CA5CCB1C7DCF48000E185A /* feedback_ratinghalf.png in Resources */,
+				18157D931DD7C5320087EDC2 /* th2.png in Resources */,
 				185DC1021D4E343C007998F3 /* filter.png in Resources */,
 				D455C4711C7EDABA00C6D1CB /* background.png in Resources */,
 				18CF350D1D5BC94600C0A5BD /* PostedProjectsTableViewCell.xib in Resources */,
 				18AA90851D8D13BA00DA3828 /* blankProfile.png in Resources */,
 				D4CA5CDB1C7DCF48000E185A /* wallet_id.png in Resources */,
 				185DC1201D514348007998F3 /* postAd.png in Resources */,
+				1854099D1DD75932004784AD /* slide3.jpg in Resources */,
 				185DC11F1D514348007998F3 /* messages.png in Resources */,
-				183D552A1DD2697700BD3170 /* th3.png in Resources */,
 				1881F3F41DA1B47A005198A2 /* insta_logo.png in Resources */,
 				188853C81D917CBB001EF67C /* checked.png in Resources */,
 				D4CA5CC91C7DCF48000E185A /* feedback_rating.png in Resources */,
@@ -1201,6 +1277,7 @@
 				D455C4781C7F15C300C6D1CB /* LoginViewController.m in Sources */,
 				185B5E921D5A6A0A00205F72 /* PostNewAdViewController.m in Sources */,
 				185DC1161D5140C3007998F3 /* SideMenuTableViewCell.m in Sources */,
+				18E469671DD7AD0C0065AA6D /* FXPageControl.m in Sources */,
 				18F316501DAAE05700DD5716 /* ShowOnMapViewController.m in Sources */,
 				D482E7ED1D7811FD00BC30DA /* SignUpResponseModal.m in Sources */,
 				189B73CD1DC768D5006B8949 /* AppTutorialFirstPageViewController.m in Sources */,
@@ -1208,17 +1285,20 @@
 				185B5E971D5A6D2200205F72 /* TreatmentTabTableViewCell.m in Sources */,
 				D4CA5C7E1C7DCDF7000E185A /* SplashViewController.m in Sources */,
 				188BDA3B1DAD4B9B00387467 /* Representative.m in Sources */,
+				18157D871DD7BB490087EDC2 /* CardViewNewAdTableViewCell.m in Sources */,
 				188857311CAB18520026995E /* HomeViewController.m in Sources */,
 				185DC1281D514DEA007998F3 /* ProfileDetailViewController.m in Sources */,
 				D4A7DD771C806CE100F82033 /* WhatAreYouViewController.m in Sources */,
 				18C831921D63592500AE6058 /* SharedClass.m in Sources */,
 				18CF350C1D5BC94600C0A5BD /* PostedProjectsTableViewCell.m in Sources */,
+				18E469621DD7A0D10065AA6D /* SlideShowCollectionViewCell.m in Sources */,
 				1881F3EE1DA1AFDF005198A2 /* ProfileSocialTableViewCell.m in Sources */,
 				18CF351E1D5BD23000C0A5BD /* ActiveProjectsTableViewCell.m in Sources */,
 				D482E7F01D78291B00BC30DA /* LoginRequestModal.m in Sources */,
 				188BDA321DAD4B8A00387467 /* MultiRowAnnotation.m in Sources */,
 				189B73CE1DC768D5006B8949 /* AppTutorialPageViewController.m in Sources */,
 				188BDA331DAD4B8A00387467 /* MultiRowCalloutAnnotationView.m in Sources */,
+				185409911DD75533004784AD /* CardViewSlideShowTableViewCell.m in Sources */,
 				D4CA5C7B1C7DCDF7000E185A /* AppDelegate.m in Sources */,
 				188BDA341DAD4B8A00387467 /* MultiRowCalloutCell.m in Sources */,
 				18CF35101D5BCDA900C0A5BD /* BidsReceivedListViewController.m in Sources */,
@@ -1364,7 +1444,7 @@
 			baseConfigurationReference = D930F527C0F72C20148401A2 /* Pods-GreySi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = GreySi/PrefixHeader.pch;
@@ -1374,7 +1454,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "03aa24da-0ceb-49bc-bb4d-55b66580a467";
-				PROVISIONING_PROFILE_SPECIFIER = "GreySi Ad-Hoc";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
@@ -1384,7 +1464,7 @@
 			baseConfigurationReference = C2A3C6C8B51C1DE3923EABCA /* Pods-GreySi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = GreySi/PrefixHeader.pch;
@@ -1394,7 +1474,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "03aa24da-0ceb-49bc-bb4d-55b66580a467";
-				PROVISIONING_PROFILE_SPECIFIER = "GreySi Ad-Hoc";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;

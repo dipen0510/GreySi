@@ -13,6 +13,8 @@
 #import "ProfileSubDetailViewController.h"
 #import "ProfileDetailViewController.h"
 #import <Applozic/ALUser.h>
+#import "CardViewSlideShowTableViewCell.h"
+#import "CardViewNewAdTableViewCell.h"
 
 
 @interface HomeViewController ()<UISearchBarDelegate>
@@ -84,6 +86,7 @@
     
     addContentArr = [[NSMutableArray alloc] init];
     filteredAddContentArr = [[NSMutableArray alloc] init];
+    newAdArr = [[NSMutableArray alloc] init];
     self.homeSearchBar.delegate = self;
     self.adsTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.addButton.layer.cornerRadius = self.addButton.frame.size.height/2.;
@@ -106,6 +109,11 @@
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:appRunSecondTime];
         [self performSegueWithIdentifier:@"showTutorialSegue" sender:nil];
     }
+    
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Adbackground.png"]];
+    [tempImageView setFrame:self.adsTblView.frame];
+    
+    self.adsTblView.backgroundView = tempImageView;
     
 }
 
@@ -160,6 +168,7 @@
         
         addContentArr = [[NSMutableArray alloc] initWithArray:[responseData valueForKey:@"info"]];
         filteredAddContentArr = [[NSMutableArray alloc] initWithArray:addContentArr];
+        [self prepareNewAdArrContent];
         [self.adsTblView reloadData];
         
     }
@@ -167,6 +176,7 @@
         
         addContentArr = [[NSMutableArray alloc] initWithArray:[responseData valueForKey:@"info"]];
         filteredAddContentArr = [[NSMutableArray alloc] initWithArray:addContentArr];
+        [self prepareNewAdArrContent];
         [self.adsTblView reloadData];
         
     }
@@ -280,10 +290,37 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return filteredAddContentArr.count;
+    return filteredAddContentArr.count + newAdArr.count + 1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == 0) {
+        NSString* identifier = @"CardViewSlideShowTableViewCell";
+        CardViewSlideShowTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (cell == nil) {
+            NSArray *nib=[[NSBundle mainBundle] loadNibNamed:@"CardViewSlideShowTableViewCell" owner:self options:nil];
+            cell=[nib objectAtIndex:0];
+        }
+        
+        cell.backgroundColor = [UIColor clearColor];
+        
+        return cell;
+    }
+    
+    if (indexPath.row%5 == 1 && indexPath.row > 1) {
+        NSString* identifier = @"CardViewNewAdTableViewCell";
+        CardViewNewAdTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        
+        if (cell == nil) {
+            NSArray *nib=[[NSBundle mainBundle] loadNibNamed:@"CardViewNewAdTableViewCell" owner:self options:nil];
+            cell=[nib objectAtIndex:0];
+        }
+        
+        cell.backgroundColor = [UIColor clearColor];
+        return cell;
+    }
     
     NSString* identifier = @"HomeTableViewCell";
     HomeTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier];
@@ -296,37 +333,72 @@
     
     [self displayContentForCell:cell atIndexPath:indexPath];
     
-    
+    cell.backgroundColor = [UIColor clearColor];
     return cell;
     
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80.0;
+    
+    if ( indexPath.row == 0) {
+        return  220.;
+    }
+    
+    if (indexPath.row%5 == 1 && indexPath.row > 1) {
+        return 150.;
+    }
+    
+    return 120.0;
 }
 
 #pragma mark - UITableView Delegate -
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:true];
-    selectedIndex = indexPath.row;
-    [self performSegueWithIdentifier:@"showProfileSubDetailSegue" sender:nil];
+    
+    if (indexPath.row == 0) {
+        //DO NOTHING
+    }
+    else if (indexPath.row%5 == 1 && indexPath.row > 1) {
+        [self addButtonTapped:nil];
+    }
+    else {
+        long indexForCell = indexPath.row - 1;
+        if (indexPath.row > 5) {
+            indexForCell = indexForCell - (int)(indexPath.row/5);
+        }
+        selectedIndex = indexForCell;
+        [self performSegueWithIdentifier:@"showProfileSubDetailSegue" sender:nil];
+    }
+    
     
 }
 
 - (void) displayContentForCell:(HomeTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
+    cell.containerHomeView.layer.cornerRadius = 4.0;
+    cell.containerHomeView.layer.masksToBounds = NO;
+    cell.containerHomeView.layer.shadowOffset = CGSizeMake(0, 0);
+    cell.containerHomeView.layer.shadowRadius = 3;
+    cell.containerHomeView.layer.shadowOpacity = 0.3;
+    
+    long indexForCell = indexPath.row - 1;
+    
+    if (indexPath.row > 5) {
+        indexForCell = indexForCell - (int)(indexPath.row/5);
+    }
+    
        //POPULATE CONTENT
         
         if ([[[SharedClass sharedInstance] userObj].flag intValue]== 1) {
             
-            NSMutableDictionary* objDict = [[NSMutableDictionary alloc] initWithDictionary:[filteredAddContentArr objectAtIndex:indexPath.row]];
+            NSMutableDictionary* objDict = [[NSMutableDictionary alloc] initWithDictionary:[filteredAddContentArr objectAtIndex:indexForCell]];
             
             cell.timeLeftImageView.image = [UIImage imageNamed:@"pin.png"];
             
             cell.nameLabel.text = [objDict valueForKey:@"Name"];
             cell.serviceTypeLabel.text = [objDict valueForKey:@"Treatment"];
-            [cell.priceButton setTitle:[NSString stringWithFormat:@"$%@",[objDict valueForKey:@"Budget"]] forState:UIControlStateNormal];
+            [cell.priceButton setTitle:[NSString stringWithFormat:@"%@:-",[objDict valueForKey:@"Budget"]] forState:UIControlStateNormal];
             cell.timeLeftLabel.text = [objDict valueForKey:@"Place"];
             
             __weak UIImageView* weakImageView = cell.profileImageView;
@@ -346,14 +418,14 @@
             
         }
         else {
-            AdSIngleModal* modal = [[AdSIngleModal alloc] initWithDictionary:[filteredAddContentArr objectAtIndex:indexPath.row]];
+            AdSIngleModal* modal = [[AdSIngleModal alloc] initWithDictionary:[filteredAddContentArr objectAtIndex:indexForCell]];
             
             id budgetDict = [NSJSONSerialization JSONObjectWithData:[modal.budget dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
             id treatmentDict = [NSJSONSerialization JSONObjectWithData:[modal.treatment dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
             
             cell.nameLabel.text = modal.name;
             cell.serviceTypeLabel.text = [[[treatmentDict valueForKey:@"treatmentsArray"] objectAtIndex:0] valueForKey:@"name"];
-            [cell.priceButton setTitle:[NSString stringWithFormat:@"$%@",[[[budgetDict valueForKey:@"pricesArray"] objectAtIndex:0] valueForKey:@"name"]] forState:UIControlStateNormal];
+            [cell.priceButton setTitle:[NSString stringWithFormat:@"%@:-",[[[budgetDict valueForKey:@"pricesArray"] objectAtIndex:0] valueForKey:@"name"]] forState:UIControlStateNormal];
             cell.timeLeftLabel.text = [NSString stringWithFormat:@"%@ hours left",modal.hours];
             
             __weak UIImageView* weakImageView = cell.profileImageView;
@@ -439,7 +511,7 @@
         [self.homeSearchBar resignFirstResponder];
     }
     
-    
+    [self prepareNewAdArrContent];
     [self.adsTblView reloadData];
     
 }
@@ -606,6 +678,7 @@
         filteredAddContentArr = [[NSMutableArray alloc] initWithArray:addContentArr];
     }
     
+    [self prepareNewAdArrContent];
     [self.adsTblView reloadData];
     
 }
@@ -770,6 +843,20 @@
     {
         [_homeMapView removeAnnotations:_homeMapView.annotations];
     }
+}
+
+- (void) prepareNewAdArrContent {
+    
+    newAdArr = [[NSMutableArray alloc] init];
+    
+    for ( int i = 0; i<filteredAddContentArr.count; i++) {
+        
+        if (i%5==4) {
+            [newAdArr addObject:[NSNumber numberWithInt:i]];
+        }
+        
+    }
+    
 }
 
 @end

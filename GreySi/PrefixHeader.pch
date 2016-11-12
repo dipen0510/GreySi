@@ -19,5 +19,6 @@
 #import "SharedClass.h"
 #import "Constants.h"
 #import <UIImageView+AFNetworking.h>
+#import "SwipeView.h"
 
 #endif /* PrefixHeader_pch */

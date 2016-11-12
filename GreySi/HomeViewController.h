@@ -23,6 +23,7 @@
     NSString* budgetStr;
     NSMutableArray* budgetArr;
     NSMutableArray* treatmentArr;
+    NSMutableArray* newAdArr;
     
 }
 
