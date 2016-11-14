@@ -190,7 +190,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
             break;
             
         case 6:
-            [self showLogoutAlert];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"ShowLogoutView" object:nil];
             break;
             
         default:
@@ -199,35 +199,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     
 }
 
-- (void) showLogoutAlert {
-    
-    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil
-                                                  message:NSLocalizedString(@"Are you sure wou want to logout?", nil)
-                                                 delegate:self
-                                        cancelButtonTitle:NSLocalizedString(@"NO", nil)
-                                        otherButtonTitles:@"YES", nil];
-    [alert show];
-    
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
-    if (buttonIndex == 1) {
-        
-        ALRegisterUserClientService * alUserClientService = [[ALRegisterUserClientService alloc]init];
-        if([ALUserDefaultsHandler getDeviceKeyString]) {
-            
-            [alUserClientService logoutWithCompletionHandler:^{
-            }]; 
-        }
-        
-        
-        [[SharedClass sharedInstance] removeServiceData:kLoginService];
-        [self.navigationController popViewControllerAnimated:YES];
-        
-    }
-    
-}
 
 #pragma mark - Navigation
 

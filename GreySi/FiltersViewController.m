@@ -20,6 +20,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    _cancelButton.layer.cornerRadius = 3.0;
+    _applyButton.layer.cornerRadius = 3.0;
     [self setupInitialDataSource];
     
 }

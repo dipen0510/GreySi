@@ -493,7 +493,7 @@
     ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:indexPath.row]];
     
     cell.nameLabel.text = singleProject.name;
-    cell.amountLabel.text = [NSString stringWithFormat:@"Amount : $%@",singleProject.budget];
+    cell.amountLabel.text = [NSString stringWithFormat:@"Amount : %@:-",singleProject.budget];
     
     
     if ([[[SharedClass sharedInstance] userObj].flag intValue]==1) {
@@ -531,8 +531,8 @@
     ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:indexPath.row]];
     
     cell.nameLabel.text = singleProject.name;
-    cell.amountValueLabel.text = [NSString stringWithFormat:@"$%@",singleProject.budget];
-    cell.projectLabel.text = [NSString stringWithFormat:@"Project : %@",singleProject.treatment];
+    cell.amountValueLabel.text = [NSString stringWithFormat:@"%@:-",singleProject.budget];
+    cell.projectLabel.text = [NSString stringWithFormat:@"Treatment : %@",singleProject.treatment];
     
     if ([[[projectsArr objectAtIndex:indexPath.row] valueForKey:@"review"] intValue] == 0) {
         

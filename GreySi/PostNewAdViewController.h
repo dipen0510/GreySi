@@ -40,6 +40,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTxtView;
 @property (weak, nonatomic) IBOutlet UIButton *specificTimeButton;
 @property (weak, nonatomic) IBOutlet UIButton *timeSlotButton;
+@property (weak, nonatomic) IBOutlet UIButton *placeTabNextButton;
+@property (weak, nonatomic) IBOutlet UIButton *budgetTabAddButton;
 
 @property BOOL isOpenedFromSideMenu;
 

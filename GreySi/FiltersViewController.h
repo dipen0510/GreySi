@@ -28,6 +28,8 @@
 
 @property (strong, nonatomic) NSMutableArray* allRedundantCities;
 @property (strong, nonatomic) NSMutableArray* allRedundantTreatments;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UIButton *applyButton;
 
 - (IBAction)cancelButtonTapped:(id)sender;
 - (IBAction)applyButtonTapped:(id)sender;

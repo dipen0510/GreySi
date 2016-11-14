@@ -52,18 +52,18 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ongoing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlx-1e-CiL">
-                        <rect key="frame" x="242" y="17" width="70" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status : Ongoing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlx-1e-CiL">
+                        <rect key="frame" x="236" y="17" width="80" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="KdU-zt-y9s"/>
-                            <constraint firstAttribute="width" constant="70" id="OgD-qY-qW4"/>
+                            <constraint firstAttribute="width" constant="80" id="OgD-qY-qW4"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="qlx-1e-CiL" secondAttribute="trailing" constant="8" id="2BI-kN-p5O"/>
+                    <constraint firstAttribute="trailing" secondItem="qlx-1e-CiL" secondAttribute="trailing" constant="4" id="2BI-kN-p5O"/>
                     <constraint firstItem="LSw-HE-3wI" firstAttribute="top" secondItem="eJg-vx-RL7" secondAttribute="topMargin" constant="8" id="3Eg-3h-puS"/>
                     <constraint firstItem="pGi-yx-QLp" firstAttribute="top" secondItem="LSw-HE-3wI" secondAttribute="bottom" constant="8" id="QJ7-kO-QNp"/>
                     <constraint firstItem="LSw-HE-3wI" firstAttribute="leading" secondItem="N6v-Ir-nM1" secondAttribute="trailing" constant="8" id="W6M-Kz-iLt"/>

@@ -42,8 +42,11 @@
     //self.treatmentButton.layer.cornerRadius = 2.0;
     //self.platsButton.layer.cornerRadius = 2.0;
     //self.budgetButton.layer.cornerRadius = 2.0;
-    self.selectCityButton.layer.cornerRadius = 2.0;
-    self.selectDateTimeButton.layer.cornerRadius = 2.0;
+    self.selectCityButton.layer.cornerRadius = 3.0;
+    self.selectDateTimeButton.layer.cornerRadius = 3.0;
+    _treatmentTabNextButton.layer.cornerRadius = 3.0;
+    _placeTabNextButton.layer.cornerRadius = 3.0;
+    _budgetTabAddButton.layer.cornerRadius = 3.0;
     
     self.budgetTxtField.keyboardType = UIKeyboardTypeNumberPad;
     

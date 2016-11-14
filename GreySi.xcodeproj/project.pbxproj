@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		18157D871DD7BB490087EDC2 /* CardViewNewAdTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18157D851DD7BB490087EDC2 /* CardViewNewAdTableViewCell.m */; };
 		18157D881DD7BB490087EDC2 /* CardViewNewAdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18157D861DD7BB490087EDC2 /* CardViewNewAdTableViewCell.xib */; };
-		18157D8A1DD7BDBA0087EDC2 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 18157D891DD7BDBA0087EDC2 /* circle.png */; };
 		18157D921DD7C5320087EDC2 /* th1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18157D8B1DD7C5320087EDC2 /* th1.png */; };
 		18157D931DD7C5320087EDC2 /* th2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18157D8C1DD7C5320087EDC2 /* th2.png */; };
 		18157D941DD7C5320087EDC2 /* th3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18157D8D1DD7C5320087EDC2 /* th3.png */; };
@@ -17,6 +16,9 @@
 		18157D961DD7C5320087EDC2 /* tc2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18157D8F1DD7C5320087EDC2 /* tc2.png */; };
 		18157D971DD7C5320087EDC2 /* tc3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18157D901DD7C5320087EDC2 /* tc3.png */; };
 		18157D981DD7C5320087EDC2 /* Adbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 18157D911DD7C5320087EDC2 /* Adbackground.png */; };
+		1831C17B1DD9870300B5E01F /* LogoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1831C17A1DD9870300B5E01F /* LogoutViewController.m */; };
+		1831C17D1DD98C0900B5E01F /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1831C17C1DD98C0900B5E01F /* circle.png */; };
+		1831C17F1DD98FB500B5E01F /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 1831C17E1DD98FB500B5E01F /* filter.png */; };
 		184AF5401D76074D001DDD4B /* SignUpRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 184AF53F1D76074D001DDD4B /* SignUpRequestModal.m */; };
 		185409911DD75533004784AD /* CardViewSlideShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1854098F1DD75533004784AD /* CardViewSlideShowTableViewCell.m */; };
 		185409921DD75533004784AD /* CardViewSlideShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185409901DD75533004784AD /* CardViewSlideShowTableViewCell.xib */; };
@@ -30,7 +32,6 @@
 		185DC0FA1D4E29E7007998F3 /* appLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC0F91D4E29E7007998F3 /* appLogo.png */; };
 		185DC0FC1D4E2C4C007998F3 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC0FB1D4E2C4C007998F3 /* splash.png */; };
 		185DC0FE1D4E2EE4007998F3 /* registrationProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC0FD1D4E2EE4007998F3 /* registrationProfile.png */; };
-		185DC1021D4E343C007998F3 /* filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC0FF1D4E343C007998F3 /* filter.png */; };
 		185DC1031D4E343C007998F3 /* myLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC1001D4E343C007998F3 /* myLocation.png */; };
 		185DC1041D4E343C007998F3 /* navMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC1011D4E343C007998F3 /* navMenu.png */; };
 		185DC1061D4E4543007998F3 /* timeLeftClock.png in Resources */ = {isa = PBXBuildFile; fileRef = 185DC1051D4E4543007998F3 /* timeLeftClock.png */; };
@@ -195,7 +196,6 @@
 		18157D841DD7BB490087EDC2 /* CardViewNewAdTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardViewNewAdTableViewCell.h; path = CustomControls/CardViewNewAdTableViewCell.h; sourceTree = "<group>"; };
 		18157D851DD7BB490087EDC2 /* CardViewNewAdTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardViewNewAdTableViewCell.m; path = CustomControls/CardViewNewAdTableViewCell.m; sourceTree = "<group>"; };
 		18157D861DD7BB490087EDC2 /* CardViewNewAdTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardViewNewAdTableViewCell.xib; path = CustomControls/CardViewNewAdTableViewCell.xib; sourceTree = "<group>"; };
-		18157D891DD7BDBA0087EDC2 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
 		18157D8B1DD7C5320087EDC2 /* th1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th1.png; sourceTree = "<group>"; };
 		18157D8C1DD7C5320087EDC2 /* th2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th2.png; sourceTree = "<group>"; };
 		18157D8D1DD7C5320087EDC2 /* th3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = th3.png; sourceTree = "<group>"; };
@@ -203,6 +203,10 @@
 		18157D8F1DD7C5320087EDC2 /* tc2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tc2.png; sourceTree = "<group>"; };
 		18157D901DD7C5320087EDC2 /* tc3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tc3.png; sourceTree = "<group>"; };
 		18157D911DD7C5320087EDC2 /* Adbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Adbackground.png; sourceTree = "<group>"; };
+		1831C1791DD9870300B5E01F /* LogoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogoutViewController.h; path = CustomControls/LogoutViewController.h; sourceTree = "<group>"; };
+		1831C17A1DD9870300B5E01F /* LogoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogoutViewController.m; path = CustomControls/LogoutViewController.m; sourceTree = "<group>"; };
+		1831C17C1DD98C0900B5E01F /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		1831C17E1DD98FB500B5E01F /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
 		184AF53E1D76074D001DDD4B /* SignUpRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpRequestModal.h; sourceTree = "<group>"; };
 		184AF53F1D76074D001DDD4B /* SignUpRequestModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpRequestModal.m; sourceTree = "<group>"; };
 		1854098E1DD75533004784AD /* CardViewSlideShowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardViewSlideShowTableViewCell.h; path = CustomControls/CardViewSlideShowTableViewCell.h; sourceTree = "<group>"; };
@@ -220,7 +224,6 @@
 		185DC0F91D4E29E7007998F3 /* appLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appLogo.png; sourceTree = "<group>"; };
 		185DC0FB1D4E2C4C007998F3 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		185DC0FD1D4E2EE4007998F3 /* registrationProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registrationProfile.png; sourceTree = "<group>"; };
-		185DC0FF1D4E343C007998F3 /* filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filter.png; sourceTree = "<group>"; };
 		185DC1001D4E343C007998F3 /* myLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myLocation.png; sourceTree = "<group>"; };
 		185DC1011D4E343C007998F3 /* navMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navMenu.png; sourceTree = "<group>"; };
 		185DC1051D4E4543007998F3 /* timeLeftClock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeLeftClock.png; sourceTree = "<group>"; };
@@ -840,6 +843,8 @@
 				188BDA041DAD091400387467 /* FiltersViewController.m */,
 				188BDA3C1DAD589700387467 /* RateViewController.h */,
 				188BDA3D1DAD589700387467 /* RateViewController.m */,
+				1831C1791DD9870300B5E01F /* LogoutViewController.h */,
+				1831C17A1DD9870300B5E01F /* LogoutViewController.m */,
 			);
 			path = GreySi;
 			sourceTree = "<group>";
@@ -875,6 +880,8 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1831C17E1DD98FB500B5E01F /* filter.png */,
+				1831C17C1DD98C0900B5E01F /* circle.png */,
 				18157D8B1DD7C5320087EDC2 /* th1.png */,
 				18157D8C1DD7C5320087EDC2 /* th2.png */,
 				18157D8D1DD7C5320087EDC2 /* th3.png */,
@@ -882,7 +889,6 @@
 				18157D8F1DD7C5320087EDC2 /* tc2.png */,
 				18157D901DD7C5320087EDC2 /* tc3.png */,
 				18157D911DD7C5320087EDC2 /* Adbackground.png */,
-				18157D891DD7BDBA0087EDC2 /* circle.png */,
 				185409991DD75932004784AD /* slide4.jpg */,
 				1854099A1DD75932004784AD /* slide3.jpg */,
 				1854099B1DD75932004784AD /* slide2.jpg */,
@@ -917,7 +923,6 @@
 				185DC11B1D514348007998F3 /* postAd.png */,
 				185DC10D1D513C3E007998F3 /* mike.jpg */,
 				185DC1051D4E4543007998F3 /* timeLeftClock.png */,
-				185DC0FF1D4E343C007998F3 /* filter.png */,
 				185DC1001D4E343C007998F3 /* myLocation.png */,
 				185DC1011D4E343C007998F3 /* navMenu.png */,
 				185DC0FD1D4E2EE4007998F3 /* registrationProfile.png */,
@@ -1098,7 +1103,6 @@
 				185409981DD75924004784AD /* slide1.jpg in Resources */,
 				D4CA5CCA1C7DCF48000E185A /* feedback_rating_full.png in Resources */,
 				D4CA5CC81C7DCF48000E185A /* email.png in Resources */,
-				18157D8A1DD7BDBA0087EDC2 /* circle.png in Resources */,
 				185B5E981D5A6D2200205F72 /* TreatmentTabTableViewCell.xib in Resources */,
 				18157D971DD7C5320087EDC2 /* tc3.png in Resources */,
 				185DC11E1D514348007998F3 /* logout.png in Resources */,
@@ -1154,13 +1158,14 @@
 				185DC0FC1D4E2C4C007998F3 /* splash.png in Resources */,
 				D4CA5CCB1C7DCF48000E185A /* feedback_ratinghalf.png in Resources */,
 				18157D931DD7C5320087EDC2 /* th2.png in Resources */,
-				185DC1021D4E343C007998F3 /* filter.png in Resources */,
+				1831C17D1DD98C0900B5E01F /* circle.png in Resources */,
 				D455C4711C7EDABA00C6D1CB /* background.png in Resources */,
 				18CF350D1D5BC94600C0A5BD /* PostedProjectsTableViewCell.xib in Resources */,
 				18AA90851D8D13BA00DA3828 /* blankProfile.png in Resources */,
 				D4CA5CDB1C7DCF48000E185A /* wallet_id.png in Resources */,
 				185DC1201D514348007998F3 /* postAd.png in Resources */,
 				1854099D1DD75932004784AD /* slide3.jpg in Resources */,
+				1831C17F1DD98FB500B5E01F /* filter.png in Resources */,
 				185DC11F1D514348007998F3 /* messages.png in Resources */,
 				1881F3F41DA1B47A005198A2 /* insta_logo.png in Resources */,
 				188853C81D917CBB001EF67C /* checked.png in Resources */,
@@ -1291,6 +1296,7 @@
 				D4A7DD771C806CE100F82033 /* WhatAreYouViewController.m in Sources */,
 				18C831921D63592500AE6058 /* SharedClass.m in Sources */,
 				18CF350C1D5BC94600C0A5BD /* PostedProjectsTableViewCell.m in Sources */,
+				1831C17B1DD9870300B5E01F /* LogoutViewController.m in Sources */,
 				18E469621DD7A0D10065AA6D /* SlideShowCollectionViewCell.m in Sources */,
 				1881F3EE1DA1AFDF005198A2 /* ProfileSocialTableViewCell.m in Sources */,
 				18CF351E1D5BD23000C0A5BD /* ActiveProjectsTableViewCell.m in Sources */,

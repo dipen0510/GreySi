@@ -15,6 +15,7 @@
 #import <Applozic/ALUser.h>
 #import "CardViewSlideShowTableViewCell.h"
 #import "CardViewNewAdTableViewCell.h"
+#import "LogoutViewController.h"
 
 
 @interface HomeViewController ()<UISearchBarDelegate>
@@ -26,6 +27,7 @@
 @property FiltersViewController* filtersView;
 @property (nonatomic,strong) MKAnnotationView *selectedAnnotationView;
 @property (nonatomic,strong) MultiRowAnnotation *calloutAnnotation;
+@property LogoutViewController* logoutView;
 
 - (IBAction)backButtonTapped:(id)sender;
 
@@ -36,6 +38,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showLogoutViewPopup) name:@"ShowLogoutView" object:nil];
     
     //configure swipe view
     _swipeView.alignment = SwipeViewAlignmentCenter;
@@ -102,6 +106,10 @@
     self.filtersView = (FiltersViewController*)[filtersStoryboard instantiateViewControllerWithIdentifier:@"FiltersViewController"];
     self.filtersView.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) ;
     self.filtersView.delegate  = self;
+    
+    UIStoryboard *logoutStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    self.logoutView = (LogoutViewController*)[logoutStoryboard instantiateViewControllerWithIdentifier:@"LogoutViewController"];
+    self.logoutView.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) ;
     
     [self sideMenuSetup];
     
@@ -532,156 +540,385 @@
 
 #pragma  mark - Filter View Action
 
+
 -(void)didTapOnApplyFilterWithBudget:(NSMutableArray *)actBudgetArr withCities:(NSMutableArray *)citiesArr withTreatments:(NSMutableArray *)treatmentsArr {
-    
+
     int flag = 0;
-    
+
     self.homeSearchBar.text = @"";
 
     NSMutableArray* tmpFilterArr = [[NSMutableArray alloc] initWithArray:addContentArr];
     filteredAddContentArr = [[NSMutableArray alloc] init];
     
+    NSMutableArray* tmpSelectedTreatmentArr = [[NSMutableArray alloc] init];
+    NSMutableArray* tmpSelectedCitiesArr = [[NSMutableArray alloc] init];
+    NSMutableArray* tmpSelectedBudgetArr = [[NSMutableArray alloc] init];
+
     for (int i = 0; i<treatmentsArr.count; i++) {
-        
+
         flag = 1;
-            
+
         for (int j = 0; j<tmpFilterArr.count; j++) {
-                
+
             if ([[[tmpFilterArr valueForKey:@"Treatment"] objectAtIndex:j] containsString:[treatmentsArr objectAtIndex:i]]) {
-                
-                if (![filteredAddContentArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
-                    [filteredAddContentArr addObject:[tmpFilterArr objectAtIndex:j]];
+
+                if (![tmpSelectedTreatmentArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
+                    [tmpSelectedTreatmentArr addObject:[tmpFilterArr objectAtIndex:j]];
                 }
-                
-                    
+
+
             }
-                
+
         }
-        
+
     }
-    
+
     for (int i = 0; i<citiesArr.count; i++) {
-        
+
         flag = 1;
-                
+
         for (int j = 0; j<tmpFilterArr.count; j++) {
-                    
+
             if ([[[tmpFilterArr valueForKey:@"City"] objectAtIndex:j] containsString:[citiesArr objectAtIndex:i]]) {
-                
-                if (![filteredAddContentArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
-                    [filteredAddContentArr addObject:[tmpFilterArr objectAtIndex:j]];
+
+                if (![tmpSelectedCitiesArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
+                    [tmpSelectedCitiesArr addObject:[tmpFilterArr objectAtIndex:j]];
                 }
-                
-                
-                        
+
+
+
             }
-                    
+
         }
-                
+
     }
-    
-    
+
+
     for (int i = 0; i<actBudgetArr.count; i++) {
         flag = 1;
         NSMutableArray* tmpbudgetArr = [[NSMutableArray alloc] initWithArray:[[actBudgetArr objectAtIndex:i] componentsSeparatedByString:@" - "]];
         if (tmpbudgetArr.count > 1) {
-            
+
             int min = [[[tmpbudgetArr objectAtIndex:0] stringByReplacingOccurrencesOfString:@"$" withString:@""] intValue];
             int max = [[[tmpbudgetArr objectAtIndex:1] stringByReplacingOccurrencesOfString:@"$" withString:@""] intValue];
-            
+
             for (int j = 0; j<tmpFilterArr.count; j++) {
-                
-                
+
+
                 if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
                     int currentBudget  =[[[tmpFilterArr valueForKey:@"Budget"] objectAtIndex:j] intValue];
-                    
+
                     if (currentBudget >= min && currentBudget <max) {
-                        
-                        if (![filteredAddContentArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
-                            [filteredAddContentArr addObject:[tmpFilterArr objectAtIndex:j]];
+
+                        if (![tmpSelectedBudgetArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
+                            [tmpSelectedBudgetArr addObject:[tmpFilterArr objectAtIndex:j]];
                         }
-                        
-                        
+
+
                     }
                 }
                 else {
-                    
+
                     id budgetDict = [NSJSONSerialization JSONObjectWithData:[[[tmpFilterArr objectAtIndex:j] valueForKey:@"Budget"]  dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
                     NSMutableArray* tmpBudgetArr = [[NSMutableArray alloc] initWithArray:[budgetDict valueForKey:@"pricesArray"]];
-                    
+
                     for (int k = 0; k<tmpBudgetArr.count; k++) {
                         int currentBudget  = [[[tmpBudgetArr valueForKey:@"name"] objectAtIndex:k] intValue];
-                        
+
                         if (currentBudget >= min && currentBudget <max) {
-                            
-                            if (![filteredAddContentArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
-                                [filteredAddContentArr addObject:[tmpFilterArr objectAtIndex:j]];
+
+                            if (![tmpSelectedBudgetArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
+                                [tmpSelectedBudgetArr addObject:[tmpFilterArr objectAtIndex:j]];
                             }
-                            
-                            
+
+
                         }
                     }
-                    
-                    
+
+
+                }
+
+
+
+
+            }
+
+        }
+        else {
+            int min = [[[tmpbudgetArr objectAtIndex:0] stringByReplacingOccurrencesOfString:@"$" withString:@""] intValue];
+
+            for (int j = 0; j<tmpFilterArr.count; j++) {
+
+                if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
+                    int currentBudget  =[[[tmpFilterArr valueForKey:@"Budget"] objectAtIndex:j] intValue];
+
+                    if (currentBudget >= min ) {
+
+                        if (![tmpSelectedBudgetArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
+                            [tmpSelectedBudgetArr addObject:[tmpFilterArr objectAtIndex:j]];
+                        }
+
+
+                    }
+                }
+                else {
+
+                    id budgetDict = [NSJSONSerialization JSONObjectWithData:[[[tmpFilterArr objectAtIndex:j] valueForKey:@"Budget"]  dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+                    NSMutableArray* tmpBudgetArr = [[NSMutableArray alloc] initWithArray:[budgetDict valueForKey:@"pricesArray"]];
+
+                    for (int k = 0; k<tmpBudgetArr.count; k++) {
+                        int currentBudget  = [[[tmpBudgetArr valueForKey:@"name"] objectAtIndex:k] intValue];
+
+                        if (currentBudget >= min) {
+
+                            if (![tmpSelectedBudgetArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
+                                [tmpSelectedBudgetArr addObject:[tmpFilterArr objectAtIndex:j]];
+                            }
+
+
+                        }
+                    }
+
+
+                }
+
+
+            }
+        }
+    }
+
+    if (flag == 0) {
+        filteredAddContentArr = [[NSMutableArray alloc] initWithArray:addContentArr];
+    }
+    else {
+        
+        NSMutableSet* set1;
+        NSMutableSet* set2;
+        NSMutableSet* set3;
+        
+        if (tmpSelectedTreatmentArr.count > 0) {
+            
+            if (tmpSelectedCitiesArr.count > 0) {
+                
+                if (tmpSelectedBudgetArr.count > 0) {
+                    set1 = [NSMutableSet setWithArray:tmpSelectedTreatmentArr];
+                    set2 = [NSMutableSet setWithArray:tmpSelectedCitiesArr];
+                    set3 = [NSMutableSet setWithArray:tmpSelectedBudgetArr];
+                    [set1 intersectSet:set2]; //this will give you only the obejcts that are in both sets
+                    [set1 intersectSet:set3];
+                }
+                else {
+                    set1 = [NSMutableSet setWithArray:tmpSelectedTreatmentArr];
+                    set2 = [NSMutableSet setWithArray:tmpSelectedCitiesArr];
+                    [set1 intersectSet:set2];
                 }
                 
+            }
+            else {
                 
-                
+                if (tmpSelectedBudgetArr.count > 0) {
+                    set1 = [NSMutableSet setWithArray:tmpSelectedTreatmentArr];
+                    set3 = [NSMutableSet setWithArray:tmpSelectedBudgetArr];
+                    [set1 intersectSet:set3];
+                }
+                else {
+                    set1 = [NSMutableSet setWithArray:tmpSelectedTreatmentArr];
+                }
                 
             }
             
         }
         else {
-            int min = [[[tmpbudgetArr objectAtIndex:0] stringByReplacingOccurrencesOfString:@"$" withString:@""] intValue];
             
-            for (int j = 0; j<tmpFilterArr.count; j++) {
+            if (tmpSelectedCitiesArr.count > 0) {
                 
-                if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
-                    int currentBudget  =[[[tmpFilterArr valueForKey:@"Budget"] objectAtIndex:j] intValue];
-                    
-                    if (currentBudget >= min ) {
-                        
-                        if (![filteredAddContentArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
-                            [filteredAddContentArr addObject:[tmpFilterArr objectAtIndex:j]];
-                        }
-                        
-                        
-                    }
+                if (tmpSelectedBudgetArr.count > 0) {
+                    set1 = [NSMutableSet setWithArray:tmpSelectedCitiesArr];
+                    set2 = [NSMutableSet setWithArray:tmpSelectedBudgetArr];
+                    [set1 intersectSet:set2];
+                }
+                else {
+                    set1 = [NSMutableSet setWithArray:tmpSelectedCitiesArr];
+                }
+                
+            }
+            else {
+                
+                if (tmpSelectedBudgetArr.count > 0) {
+                    set1 = [NSMutableSet setWithArray:tmpSelectedBudgetArr];
                 }
                 else {
                     
-                    id budgetDict = [NSJSONSerialization JSONObjectWithData:[[[tmpFilterArr objectAtIndex:j] valueForKey:@"Budget"]  dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
-                    NSMutableArray* tmpBudgetArr = [[NSMutableArray alloc] initWithArray:[budgetDict valueForKey:@"pricesArray"]];
-                    
-                    for (int k = 0; k<tmpBudgetArr.count; k++) {
-                        int currentBudget  = [[[tmpBudgetArr valueForKey:@"name"] objectAtIndex:k] intValue];
-                        
-                        if (currentBudget >= min) {
-                            
-                            if (![filteredAddContentArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
-                                [filteredAddContentArr addObject:[tmpFilterArr objectAtIndex:j]];
-                            }
-                            
-                            
-                        }
-                    }
-                    
-                    
                 }
                 
-                
             }
+            
         }
+        
+        
+        
+        NSArray* result = [set1 allObjects];
+        
+        filteredAddContentArr = [[NSMutableArray alloc] initWithArray:result];
+        
     }
-    
-    if (flag == 0) {
-        filteredAddContentArr = [[NSMutableArray alloc] initWithArray:addContentArr];
-    }
-    
+
     [self prepareNewAdArrContent];
     [self.adsTblView reloadData];
-    
+
 }
+
+
+//-(void)didTapOnApplyFilterWithBudget:(NSMutableArray *)actBudgetArr withCities:(NSMutableArray *)citiesArr withTreatments:(NSMutableArray *)treatmentsArr {
+//    
+//    int flag = 0;
+//    
+//    self.homeSearchBar.text = @"";
+//
+//    NSMutableArray* tmpFilterArr = [[NSMutableArray alloc] initWithArray:addContentArr];
+//    filteredAddContentArr = [[NSMutableArray alloc] init];
+//    
+//    for (int i = 0; i<treatmentsArr.count; i++) {
+//        
+//        flag = 1;
+//            
+//        for (int j = 0; j<tmpFilterArr.count; j++) {
+//                
+//            if ([[[tmpFilterArr valueForKey:@"Treatment"] objectAtIndex:j] containsString:[treatmentsArr objectAtIndex:i]]) {
+//                
+//                if (![filteredAddContentArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
+//                    [filteredAddContentArr addObject:[tmpFilterArr objectAtIndex:j]];
+//                }
+//                
+//                    
+//            }
+//                
+//        }
+//        
+//    }
+//    
+//    for (int i = 0; i<citiesArr.count; i++) {
+//        
+//        flag = 1;
+//                
+//        for (int j = 0; j<tmpFilterArr.count; j++) {
+//                    
+//            if ([[[tmpFilterArr valueForKey:@"City"] objectAtIndex:j] containsString:[citiesArr objectAtIndex:i]]) {
+//                
+//                if (![filteredAddContentArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
+//                    [filteredAddContentArr addObject:[tmpFilterArr objectAtIndex:j]];
+//                }
+//                
+//                
+//                        
+//            }
+//                    
+//        }
+//                
+//    }
+//    
+//    
+//    for (int i = 0; i<actBudgetArr.count; i++) {
+//        flag = 1;
+//        NSMutableArray* tmpbudgetArr = [[NSMutableArray alloc] initWithArray:[[actBudgetArr objectAtIndex:i] componentsSeparatedByString:@" - "]];
+//        if (tmpbudgetArr.count > 1) {
+//            
+//            int min = [[[tmpbudgetArr objectAtIndex:0] stringByReplacingOccurrencesOfString:@"$" withString:@""] intValue];
+//            int max = [[[tmpbudgetArr objectAtIndex:1] stringByReplacingOccurrencesOfString:@"$" withString:@""] intValue];
+//            
+//            for (int j = 0; j<tmpFilterArr.count; j++) {
+//                
+//                
+//                if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
+//                    int currentBudget  =[[[tmpFilterArr valueForKey:@"Budget"] objectAtIndex:j] intValue];
+//                    
+//                    if (currentBudget >= min && currentBudget <max) {
+//                        
+//                        if (![filteredAddContentArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
+//                            [filteredAddContentArr addObject:[tmpFilterArr objectAtIndex:j]];
+//                        }
+//                        
+//                        
+//                    }
+//                }
+//                else {
+//                    
+//                    id budgetDict = [NSJSONSerialization JSONObjectWithData:[[[tmpFilterArr objectAtIndex:j] valueForKey:@"Budget"]  dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+//                    NSMutableArray* tmpBudgetArr = [[NSMutableArray alloc] initWithArray:[budgetDict valueForKey:@"pricesArray"]];
+//                    
+//                    for (int k = 0; k<tmpBudgetArr.count; k++) {
+//                        int currentBudget  = [[[tmpBudgetArr valueForKey:@"name"] objectAtIndex:k] intValue];
+//                        
+//                        if (currentBudget >= min && currentBudget <max) {
+//                            
+//                            if (![filteredAddContentArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
+//                                [filteredAddContentArr addObject:[tmpFilterArr objectAtIndex:j]];
+//                            }
+//                            
+//                            
+//                        }
+//                    }
+//                    
+//                    
+//                }
+//                
+//                
+//                
+//                
+//            }
+//            
+//        }
+//        else {
+//            int min = [[[tmpbudgetArr objectAtIndex:0] stringByReplacingOccurrencesOfString:@"$" withString:@""] intValue];
+//            
+//            for (int j = 0; j<tmpFilterArr.count; j++) {
+//                
+//                if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
+//                    int currentBudget  =[[[tmpFilterArr valueForKey:@"Budget"] objectAtIndex:j] intValue];
+//                    
+//                    if (currentBudget >= min ) {
+//                        
+//                        if (![filteredAddContentArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
+//                            [filteredAddContentArr addObject:[tmpFilterArr objectAtIndex:j]];
+//                        }
+//                        
+//                        
+//                    }
+//                }
+//                else {
+//                    
+//                    id budgetDict = [NSJSONSerialization JSONObjectWithData:[[[tmpFilterArr objectAtIndex:j] valueForKey:@"Budget"]  dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+//                    NSMutableArray* tmpBudgetArr = [[NSMutableArray alloc] initWithArray:[budgetDict valueForKey:@"pricesArray"]];
+//                    
+//                    for (int k = 0; k<tmpBudgetArr.count; k++) {
+//                        int currentBudget  = [[[tmpBudgetArr valueForKey:@"name"] objectAtIndex:k] intValue];
+//                        
+//                        if (currentBudget >= min) {
+//                            
+//                            if (![filteredAddContentArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
+//                                [filteredAddContentArr addObject:[tmpFilterArr objectAtIndex:j]];
+//                            }
+//                            
+//                            
+//                        }
+//                    }
+//                    
+//                    
+//                }
+//                
+//                
+//            }
+//        }
+//    }
+//    
+//    if (flag == 0) {
+//        filteredAddContentArr = [[NSMutableArray alloc] initWithArray:addContentArr];
+//    }
+//    
+//    [self prepareNewAdArrContent];
+//    [self.adsTblView reloadData];
+//    
+//}
 
 
 - (void) showFilterViewPopup {
@@ -856,6 +1093,60 @@
         }
         
     }
+    
+}
+
+
+#pragma mark - Logout Helpers
+
+- (void) showLogoutViewPopup {
+    
+    [self.revealViewController revealToggle:nil];
+    
+    self.logoutView.view.alpha = 0;
+    [self.view addSubview:self.logoutView.view];
+    
+    [self.logoutView.yesButton addTarget:self action:@selector(logoutViewYesButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.logoutView.noButton addTarget:self action:@selector(logoutViewNoButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^
+     {
+         self.logoutView.view.alpha = 1;
+     }
+                     completion:nil];
+    
+}
+
+- (void) logoutViewYesButtonTapped {
+    
+    ALRegisterUserClientService * alUserClientService = [[ALRegisterUserClientService alloc]init];
+    if([ALUserDefaultsHandler getDeviceKeyString]) {
+        
+        [alUserClientService logoutWithCompletionHandler:^{
+        }];
+    }
+    
+    
+    [[SharedClass sharedInstance] removeServiceData:kLoginService];
+    
+    [self logoutViewNoButtonTapped];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+- (void) logoutViewNoButtonTapped {
+    
+    [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^
+     {
+         self.logoutView.view.alpha = 0;
+     }
+                     completion:^(BOOL finished){
+                         
+                         [self.logoutView.view removeFromSuperview];
+                         
+                     }];
     
 }
 

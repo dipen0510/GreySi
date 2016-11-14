@@ -77,6 +77,8 @@
 
 - (void) displayContentForCell:(HairPostAdTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
+    cell.submitButton.layer.cornerRadius = 5.0;
+    
     if (indexPath.row == tblCount-1) {
         cell.treatmentNameTextField.hidden = YES;
         cell.priceTextField.hidden = YES;
