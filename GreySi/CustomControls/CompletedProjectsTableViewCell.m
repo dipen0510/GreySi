@@ -16,6 +16,8 @@
     
     self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height/2.;
+    self.writeAReviewLabel.layer.cornerRadius = 5.0;
+    self.writeAReviewLabel.clipsToBounds = YES;
 
 }
 

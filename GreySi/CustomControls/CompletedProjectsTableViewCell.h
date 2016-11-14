@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *projectLabel;
 @property (weak, nonatomic) IBOutlet UILabel *amountValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *writeAReviewLabel;
 
 @end

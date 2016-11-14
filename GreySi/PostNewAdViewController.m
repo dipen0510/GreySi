@@ -42,11 +42,11 @@
     //self.treatmentButton.layer.cornerRadius = 2.0;
     //self.platsButton.layer.cornerRadius = 2.0;
     //self.budgetButton.layer.cornerRadius = 2.0;
-    self.selectCityButton.layer.cornerRadius = 3.0;
-    self.selectDateTimeButton.layer.cornerRadius = 3.0;
-    _treatmentTabNextButton.layer.cornerRadius = 3.0;
-    _placeTabNextButton.layer.cornerRadius = 3.0;
-    _budgetTabAddButton.layer.cornerRadius = 3.0;
+    self.selectCityButton.layer.cornerRadius = 8.0;
+    self.selectDateTimeButton.layer.cornerRadius = 8.0;
+    _treatmentTabNextButton.layer.cornerRadius = 5.0;
+    _placeTabNextButton.layer.cornerRadius = 5.0;
+    _budgetTabAddButton.layer.cornerRadius = 5.0;
     
     self.budgetTxtField.keyboardType = UIKeyboardTypeNumberPad;
     
@@ -180,7 +180,7 @@
                                              
                                              NSString *dateString = [NSDateFormatter localizedStringFromDate:selectedDate dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle];
                                              NSLog(@"Picker: value: %@",dateString);
-                                             [self.selectDateTimeButton setTitle:dateString forState:UIControlStateNormal];
+                                             [self.selectDateTimeButton setTitle:[NSString stringWithFormat:@"%@, %@",finalSelectedDate,finalSelectedTime] forState:UIControlStateNormal];
                                              
                                          }
                                        cancelBlock:^(ActionSheetDatePicker *picker) {

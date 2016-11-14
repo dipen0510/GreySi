@@ -13,7 +13,7 @@
 @end
 
 @implementation BookingDetailsViewController
-@synthesize treatmentArr,hairDresserId;
+@synthesize treatmentArr,hairDresserId,budgetArr;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +23,11 @@
     finalSelectedDate = @"";
     finalSelectedTime = @"";
     self.listTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    _selectDateButton.layer.masksToBounds = YES;
+    _selectDateButton.layer.cornerRadius = 8.0;
+    _bookButton.layer.masksToBounds = YES;
+    _bookButton.layer.cornerRadius = 8.0;
     
 }
 
@@ -48,8 +53,14 @@
     }
     
     // Configure the cell...
-    cell.textLabel.font = [UIFont systemFontOfSize:14.0];
+    cell.textLabel.font = [UIFont fontWithName:@"Montserrat-Light" size:13.0];
+    cell.textLabel.textColor = [UIColor darkGrayColor];
     cell.textLabel.text = [[treatmentArr objectAtIndex:indexPath.row] valueForKey:@"name"];
+    cell.textLabel.adjustsFontSizeToFitWidth = YES;
+    
+    cell.detailTextLabel.font = [UIFont fontWithName:@"Montserrat-Light" size:13.0];
+    cell.detailTextLabel.textColor = [UIColor darkGrayColor];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@:-",[[budgetArr objectAtIndex:indexPath.row] valueForKey:@"name"]];
     cell.textLabel.adjustsFontSizeToFitWidth = YES;
     
     if([selectedTreatmentArr containsObject:[treatmentArr objectAtIndex:indexPath.row]]){

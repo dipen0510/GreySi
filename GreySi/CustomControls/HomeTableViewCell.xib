@@ -4,6 +4,15 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -25,32 +34,32 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Richard Sen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWA-oR-22B">
-                                <rect key="frame" x="79" y="18" width="167" height="16"/>
+                                <rect key="frame" x="79" y="10" width="167" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="nq2-Dx-mzA"/>
                                     <constraint firstAttribute="width" constant="167" id="pjd-tn-d5D"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Padicure" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="g2L-jH-szE">
-                                <rect key="frame" x="79" y="42" width="122" height="15"/>
+                                <rect key="frame" x="79" y="34" width="122" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="hcb-Uu-9BH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 hr left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfR-bp-ZT8">
-                                <rect key="frame" x="97" y="65" width="47" height="15"/>
+                                <rect key="frame" x="97" y="57" width="90" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="47" id="b4Q-ew-zfw"/>
+                                    <constraint firstAttribute="width" constant="90" id="b4Q-ew-zfw"/>
                                     <constraint firstAttribute="height" constant="15" id="q6d-J9-DyS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="9"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="9"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPu-1O-Rxr">
@@ -59,34 +68,91 @@
                                     <constraint firstAttribute="width" constant="70" id="GTk-Mu-d2S"/>
                                     <constraint firstAttribute="height" constant="30" id="aOD-rL-r4O"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <state key="normal" title="$40">
                                     <color key="titleColor" red="0.32549019610000002" green="0.6588235294" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timeLeftClock.png" translatesAutoresizingMaskIntoConstraints="NO" id="h1k-fF-2qX">
-                                <rect key="frame" x="79" y="68" width="10" height="10"/>
+                                <rect key="frame" x="79" y="60" width="10" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="TIF-Ag-FKn"/>
                                     <constraint firstAttribute="height" constant="10" id="hOY-3a-lJn"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating-small.png" translatesAutoresizingMaskIntoConstraints="NO" id="20r-Jl-xx8">
+                                <rect key="frame" x="79" y="80" width="12" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="7j6-sa-Z39"/>
+                                    <constraint firstAttribute="width" constant="12" id="k6S-EY-Neu"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating-small.png" translatesAutoresizingMaskIntoConstraints="NO" id="KGl-8W-7ac">
+                                <rect key="frame" x="99" y="80" width="12" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="7xS-1U-t1h"/>
+                                    <constraint firstAttribute="width" constant="12" id="ENP-LV-QUK"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating-small.png" translatesAutoresizingMaskIntoConstraints="NO" id="nUw-7k-AOk">
+                                <rect key="frame" x="119" y="80" width="12" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="FP0-Q4-JRP"/>
+                                    <constraint firstAttribute="width" constant="12" id="eXZ-dP-Jkt"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating-small.png" translatesAutoresizingMaskIntoConstraints="NO" id="gtX-gk-xGF">
+                                <rect key="frame" x="139" y="80" width="12" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="0Hd-Vu-4cg"/>
+                                    <constraint firstAttribute="width" constant="12" id="GNb-l0-ikq"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rating-small.png" translatesAutoresizingMaskIntoConstraints="NO" id="dJ6-Xj-K9D">
+                                <rect key="frame" x="159" y="80" width="12" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="12" id="fg3-uY-ksh"/>
+                                    <constraint firstAttribute="height" constant="12" id="vJ4-B4-7ZD"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="NHf-lU-YPn">
+                                <rect key="frame" x="226" y="65" width="37" height="15"/>
+                                <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="Ahv-Hv-VGD"/>
+                                    <constraint firstAttribute="width" constant="37" id="QDL-4z-LjB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nUw-7k-AOk" firstAttribute="top" secondItem="NfR-bp-ZT8" secondAttribute="bottom" constant="8" id="0j2-QI-GZp"/>
+                            <constraint firstItem="NHf-lU-YPn" firstAttribute="top" secondItem="KPu-1O-Rxr" secondAttribute="bottom" id="5Gq-J9-1pu"/>
+                            <constraint firstItem="nUw-7k-AOk" firstAttribute="leading" secondItem="KGl-8W-7ac" secondAttribute="trailing" constant="8" id="6B9-RA-2va"/>
+                            <constraint firstItem="20r-Jl-xx8" firstAttribute="leading" secondItem="WM0-6E-pue" secondAttribute="leading" constant="79" id="7gG-sB-nWQ"/>
+                            <constraint firstItem="gtX-gk-xGF" firstAttribute="leading" secondItem="nUw-7k-AOk" secondAttribute="trailing" constant="8" id="DAQ-I7-lGw"/>
                             <constraint firstItem="g2L-jH-szE" firstAttribute="leading" secondItem="2Tb-XC-uuB" secondAttribute="trailing" constant="8" id="DHJ-ms-GPS"/>
                             <constraint firstItem="NfR-bp-ZT8" firstAttribute="leading" secondItem="h1k-fF-2qX" secondAttribute="trailing" constant="8" id="GGe-pY-6R1"/>
                             <constraint firstItem="h1k-fF-2qX" firstAttribute="leading" secondItem="2Tb-XC-uuB" secondAttribute="trailing" constant="8" id="NMS-hb-s5x"/>
+                            <constraint firstAttribute="trailing" secondItem="NHf-lU-YPn" secondAttribute="trailing" constant="16" id="QTH-Jc-aGk"/>
+                            <constraint firstItem="gtX-gk-xGF" firstAttribute="top" secondItem="NfR-bp-ZT8" secondAttribute="bottom" constant="8" id="Rny-3F-OmC"/>
+                            <constraint firstItem="KGl-8W-7ac" firstAttribute="top" secondItem="NfR-bp-ZT8" secondAttribute="bottom" constant="8" id="TsT-zt-ydX"/>
                             <constraint firstAttribute="trailing" secondItem="KPu-1O-Rxr" secondAttribute="trailing" id="UPm-4u-Yb0"/>
                             <constraint firstItem="NfR-bp-ZT8" firstAttribute="top" secondItem="g2L-jH-szE" secondAttribute="bottom" constant="8" id="Vth-qw-Ves"/>
                             <constraint firstItem="g2L-jH-szE" firstAttribute="top" secondItem="BWA-oR-22B" secondAttribute="bottom" constant="8" id="Xe5-Xu-B6u"/>
+                            <constraint firstItem="20r-Jl-xx8" firstAttribute="top" secondItem="h1k-fF-2qX" secondAttribute="bottom" constant="10" id="YEd-96-6p0"/>
+                            <constraint firstItem="KGl-8W-7ac" firstAttribute="leading" secondItem="20r-Jl-xx8" secondAttribute="trailing" constant="8" id="Yob-jZ-nl4"/>
                             <constraint firstItem="KPu-1O-Rxr" firstAttribute="centerY" secondItem="WM0-6E-pue" secondAttribute="centerY" id="gf0-a1-djJ"/>
                             <constraint firstItem="BWA-oR-22B" firstAttribute="leading" secondItem="2Tb-XC-uuB" secondAttribute="trailing" constant="8" id="kft-X0-BE7"/>
+                            <constraint firstItem="dJ6-Xj-K9D" firstAttribute="top" secondItem="g2L-jH-szE" secondAttribute="bottom" constant="31" id="m6c-3I-O3f"/>
                             <constraint firstItem="h1k-fF-2qX" firstAttribute="top" secondItem="g2L-jH-szE" secondAttribute="bottom" constant="11" id="mEL-ww-ew3"/>
                             <constraint firstItem="2Tb-XC-uuB" firstAttribute="leading" secondItem="WM0-6E-pue" secondAttribute="leading" constant="8" id="mki-ro-TSc"/>
+                            <constraint firstItem="dJ6-Xj-K9D" firstAttribute="leading" secondItem="gtX-gk-xGF" secondAttribute="trailing" constant="8" id="tet-tx-pSm"/>
                             <constraint firstItem="KPu-1O-Rxr" firstAttribute="leading" secondItem="g2L-jH-szE" secondAttribute="trailing" constant="8" id="tgg-aT-9rA"/>
                             <constraint firstItem="2Tb-XC-uuB" firstAttribute="centerY" secondItem="WM0-6E-pue" secondAttribute="centerY" id="y4d-9d-SJu"/>
-                            <constraint firstItem="BWA-oR-22B" firstAttribute="top" secondItem="WM0-6E-pue" secondAttribute="top" constant="18" id="yDa-AQ-h0q"/>
+                            <constraint firstItem="BWA-oR-22B" firstAttribute="top" secondItem="WM0-6E-pue" secondAttribute="top" constant="10" id="yDa-AQ-h0q"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -99,18 +165,26 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="containerHomeView" destination="WM0-6E-pue" id="pyj-Nc-gn8"/>
+                <outlet property="fifthStarImgView" destination="dJ6-Xj-K9D" id="wna-XG-qDk"/>
+                <outlet property="firstStarImgView" destination="20r-Jl-xx8" id="xtp-di-0wc"/>
+                <outlet property="forthStarImgView" destination="gtX-gk-xGF" id="rwh-dv-XOi"/>
+                <outlet property="myPlaceYourPlaceLabel" destination="NHf-lU-YPn" id="4EY-EC-a8B"/>
                 <outlet property="nameLabel" destination="BWA-oR-22B" id="wV4-3U-gh5"/>
                 <outlet property="priceButton" destination="KPu-1O-Rxr" id="b4i-mi-kv2"/>
                 <outlet property="profileImageView" destination="2Tb-XC-uuB" id="UTX-A4-anV"/>
+                <outlet property="secondStarImgView" destination="KGl-8W-7ac" id="9RO-it-D5z"/>
                 <outlet property="serviceTypeLabel" destination="g2L-jH-szE" id="AL3-db-BIo"/>
+                <outlet property="thirdStarImgView" destination="nUw-7k-AOk" id="SRb-Mi-7cx"/>
                 <outlet property="timeLeftImageView" destination="h1k-fF-2qX" id="oEt-o8-dx5"/>
                 <outlet property="timeLeftLabel" destination="NfR-bp-ZT8" id="nZA-fp-tyh"/>
+                <outlet property="timeLeftLabelLeadingConstraint" destination="GGe-pY-6R1" id="UrL-xG-8Hz"/>
             </connections>
             <point key="canvasLocation" x="253" y="288"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="Screen Shot 2016-03-30 at 12.44.22 AM.png" width="80" height="80"/>
+        <image name="rating-small.png" width="32" height="30"/>
         <image name="timeLeftClock.png" width="50" height="50"/>
     </resources>
 </document>

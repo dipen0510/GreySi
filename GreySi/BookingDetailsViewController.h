@@ -19,9 +19,11 @@
 
 @property (strong, nonatomic) NSString* hairDresserId;
 @property (strong, nonatomic) NSMutableArray* treatmentArr;
+@property (strong, nonatomic) NSMutableArray* budgetArr;;
 
 @property (weak, nonatomic) IBOutlet UITableView *listTblView;
 @property (weak, nonatomic) IBOutlet UIButton *selectDateButton;
+@property (weak, nonatomic) IBOutlet UIButton *bookButton;
 
 
 

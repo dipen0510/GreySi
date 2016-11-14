@@ -5,6 +5,15 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Montserrat-Light.ttf">
+            <string>Montserrat-Light</string>
+        </mutableArray>
+        <mutableArray key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -28,8 +37,8 @@
                             <constraint firstAttribute="height" constant="16" id="7V6-GH-5ig"/>
                             <constraint firstAttribute="width" constant="167" id="l2W-Im-lwH"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount : $150 - $300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGi-yx-QLp">
@@ -37,7 +46,8 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="PP3-tm-ELS"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="11"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwY-GW-QoZ">
@@ -52,13 +62,14 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status : Ongoing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlx-1e-CiL">
-                        <rect key="frame" x="236" y="17" width="80" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status : Ongoing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="qlx-1e-CiL">
+                        <rect key="frame" x="236" y="14" width="80" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="15" id="KdU-zt-y9s"/>
+                            <constraint firstAttribute="height" constant="20" id="KdU-zt-y9s"/>
                             <constraint firstAttribute="width" constant="80" id="OgD-qY-qW4"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -67,11 +78,11 @@
                     <constraint firstItem="LSw-HE-3wI" firstAttribute="top" secondItem="eJg-vx-RL7" secondAttribute="topMargin" constant="8" id="3Eg-3h-puS"/>
                     <constraint firstItem="pGi-yx-QLp" firstAttribute="top" secondItem="LSw-HE-3wI" secondAttribute="bottom" constant="8" id="QJ7-kO-QNp"/>
                     <constraint firstItem="LSw-HE-3wI" firstAttribute="leading" secondItem="N6v-Ir-nM1" secondAttribute="trailing" constant="8" id="W6M-Kz-iLt"/>
-                    <constraint firstItem="gwY-GW-QoZ" firstAttribute="top" secondItem="eJg-vx-RL7" secondAttribute="topMargin" constant="27" id="bVB-Tl-Gd8"/>
                     <constraint firstItem="pGi-yx-QLp" firstAttribute="leading" secondItem="N6v-Ir-nM1" secondAttribute="trailing" constant="8" id="cti-Dh-1HL"/>
                     <constraint firstItem="gwY-GW-QoZ" firstAttribute="trailing" secondItem="eJg-vx-RL7" secondAttribute="trailingMargin" id="g0d-iX-mB3"/>
                     <constraint firstItem="N6v-Ir-nM1" firstAttribute="leading" secondItem="eJg-vx-RL7" secondAttribute="leadingMargin" constant="8" id="j3B-Sh-ZYa"/>
-                    <constraint firstItem="qlx-1e-CiL" firstAttribute="top" secondItem="eJg-vx-RL7" secondAttribute="top" constant="17" id="kYs-Z6-AZX"/>
+                    <constraint firstItem="qlx-1e-CiL" firstAttribute="top" secondItem="eJg-vx-RL7" secondAttribute="top" constant="14" id="kYs-Z6-AZX"/>
+                    <constraint firstItem="gwY-GW-QoZ" firstAttribute="top" secondItem="qlx-1e-CiL" secondAttribute="bottom" constant="1" id="q5H-6A-caT"/>
                     <constraint firstItem="N6v-Ir-nM1" firstAttribute="top" secondItem="eJg-vx-RL7" secondAttribute="topMargin" id="sed-Q2-YXM"/>
                     <constraint firstAttribute="trailing" secondItem="pGi-yx-QLp" secondAttribute="trailing" constant="88" id="uyV-w1-ZKH"/>
                 </constraints>

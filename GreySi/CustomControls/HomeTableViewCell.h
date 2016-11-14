@@ -17,4 +17,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLeftLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *timeLeftImageView;
 @property (weak, nonatomic) IBOutlet UIButton *priceButton;
+@property (weak, nonatomic) IBOutlet UIImageView *firstStarImgView;
+@property (weak, nonatomic) IBOutlet UIImageView *secondStarImgView;
+@property (weak, nonatomic) IBOutlet UIImageView *thirdStarImgView;
+@property (weak, nonatomic) IBOutlet UIImageView *forthStarImgView;
+@property (weak, nonatomic) IBOutlet UIImageView *fifthStarImgView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *timeLeftLabelLeadingConstraint;
+@property (weak, nonatomic) IBOutlet UILabel *myPlaceYourPlaceLabel;
 @end

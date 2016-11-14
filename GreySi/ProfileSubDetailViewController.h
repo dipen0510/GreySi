@@ -24,9 +24,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *profileNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *treatmentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *noOfBidsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *myplaceYourPlaceLabel;
+@property (weak, nonatomic) IBOutlet UITableView *priceListTblView;
 
 @property (strong, nonatomic) NSMutableDictionary* adDict;
 

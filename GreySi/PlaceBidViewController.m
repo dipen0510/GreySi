@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view.
     
     self.amountTxtField.keyboardType = UIKeyboardTypeNumberPad;
-    self.placeBidButton.layer.cornerRadius = 2.0;
+    self.placeBidButton.layer.cornerRadius = 8.0;
     
 }
 

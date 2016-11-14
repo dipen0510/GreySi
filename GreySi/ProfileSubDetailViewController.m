@@ -34,22 +34,37 @@
     
     self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height/2.;
-    self.chatButton.layer.cornerRadius = self.chatButton.frame.size.height/2.;
-    self.bookButton.layer.cornerRadius = self.chatButton.frame.size.height/2.;
     self.priceListButton.layer.cornerRadius = 2.0;
     self.priceLabel.layer.cornerRadius = 2.0;
+    
+    _priceListTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    _descriptionLabel.layer.cornerRadius = 10.0;
+    _descriptionLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed: @"Adbackground.png"]];
     
     if ([[[SharedClass sharedInstance] userObj].flag intValue]==1) {
         [self.bookButton setTitle:@"Bid" forState:UIControlStateNormal];
         self.treatmentLabel.text = adDict[@"Treatment"];
-        self.priceLabel.text = [NSString stringWithFormat:@"$%@",adDict[@"Budget"]];
+        self.priceLabel.text = [NSString stringWithFormat:@"%@:-",adDict[@"Budget"]];
         self.priceListButton.hidden = YES;
+        _priceListTblView.hidden = YES;
+        
+        if ([[adDict valueForKey:@"Place"] containsString:@"my"] || [[adDict valueForKey:@"Place"] containsString:@"My"] || [[adDict valueForKey:@"Place"] containsString:@"MY"]) {
+            self.myplaceYourPlaceLabel.text = @"MP";
+        }
+        else {
+            self.myplaceYourPlaceLabel.text = @"YP";
+        }
+
+        
     }
     else {
         [self.bookButton setTitle:@"Book" forState:UIControlStateNormal];
         self.treatmentLabel.text = treatmentStr;
-        self.priceLabel.text = budgetStr;
+        self.priceLabel.hidden = YES;
         self.priceListButton.hidden = NO;
+        _myplaceYourPlaceLabel.hidden = YES;
+        _descriptionLabel.hidden = YES;
     }
     
     
@@ -57,6 +72,8 @@
     self.profileNameLabel.text = adDict[@"Name"];
     self.descriptionLabel.text = adDict[@"Description"];
     self.locationLabel.text = [NSString stringWithFormat:@"Location : %@",adDict[@"Address"]];
+
+    [_descriptionLabel setFont:[UIFont fontWithName:@"Montserrat-Light" size:13.0]];
     
     __weak UIImageView* weakImageView = self.profileImageView;
     [self.profileImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[adDict[@"Profile_pi"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
@@ -121,6 +138,7 @@
          
          BookingDetailsViewController* controller = (BookingDetailsViewController *)[segue destinationViewController];
          controller.treatmentArr = treatmentArr;
+         controller.budgetArr = budgetArr;
          controller.hairDresserId = adDict[@"User_id"];
          
      }
@@ -172,5 +190,51 @@
 - (IBAction)showOnMapButtonTapped:(id)sender {
 }
 
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [budgetArr count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *CellIdentifier = @"ListAssetFieldCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (cell == nil) {
+        
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        
+    }
+    
+    // Configure the cell...
+    cell.textLabel.font = [UIFont fontWithName:@"Montserrat-Light" size:13.0];
+    cell.textLabel.textColor = [UIColor darkGrayColor];
+    cell.textLabel.text = [[treatmentArr objectAtIndex:indexPath.row] valueForKey:@"name"];
+    cell.textLabel.adjustsFontSizeToFitWidth = YES;
+    
+    cell.detailTextLabel.font = [UIFont fontWithName:@"Montserrat-Light" size:13.0];
+    cell.detailTextLabel.textColor = _priceLabel.textColor;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@:-",[[budgetArr objectAtIndex:indexPath.row] valueForKey:@"name"]];
+    cell.textLabel.adjustsFontSizeToFitWidth = YES;
+    
+    
+    
+    return cell;
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 60.0;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
 
 @end

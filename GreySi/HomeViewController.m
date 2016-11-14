@@ -298,12 +298,17 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return filteredAddContentArr.count + newAdArr.count + 1;
+    if ([[[SharedClass sharedInstance] userObj].flag intValue]!= 1) {
+        return filteredAddContentArr.count + newAdArr.count + 1;
+    }
+    
+    return filteredAddContentArr.count;
+    
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 0) {
+    if (indexPath.row == 0 && [[[SharedClass sharedInstance] userObj].flag intValue]!= 1) {
         NSString* identifier = @"CardViewSlideShowTableViewCell";
         CardViewSlideShowTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         
@@ -317,7 +322,7 @@
         return cell;
     }
     
-    if (indexPath.row%5 == 1 && indexPath.row > 1) {
+    if (indexPath.row%5 == 1 && indexPath.row > 1 && [[[SharedClass sharedInstance] userObj].flag intValue]!= 1) {
         NSString* identifier = @"CardViewNewAdTableViewCell";
         CardViewNewAdTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         
@@ -348,12 +353,15 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if ( indexPath.row == 0) {
-        return  220.;
-    }
-    
-    if (indexPath.row%5 == 1 && indexPath.row > 1) {
-        return 150.;
+    if ([[[SharedClass sharedInstance] userObj].flag intValue]!= 1) {
+        if ( indexPath.row == 0) {
+            return  220.;
+        }
+        
+        if (indexPath.row%5 == 1 && indexPath.row > 1) {
+            return 150.;
+        }
+
     }
     
     return 120.0;
@@ -364,20 +372,29 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:true];
     
-    if (indexPath.row == 0) {
-        //DO NOTHING
-    }
-    else if (indexPath.row%5 == 1 && indexPath.row > 1) {
-        [self addButtonTapped:nil];
+    if ([[[SharedClass sharedInstance] userObj].flag intValue]!= 1) {
+        if (indexPath.row == 0) {
+            //DO NOTHING
+        }
+        else if (indexPath.row%5 == 1 && indexPath.row > 1) {
+            [self addButtonTapped:nil];
+        }
+        else {
+            long indexForCell = indexPath.row - 1;
+            if (indexPath.row > 5) {
+                indexForCell = indexForCell - (int)(indexPath.row/5);
+            }
+            selectedIndex = indexForCell;
+            [self performSegueWithIdentifier:@"showProfileSubDetailSegue" sender:nil];
+        }
     }
     else {
-        long indexForCell = indexPath.row - 1;
-        if (indexPath.row > 5) {
-            indexForCell = indexForCell - (int)(indexPath.row/5);
-        }
-        selectedIndex = indexForCell;
-        [self performSegueWithIdentifier:@"showProfileSubDetailSegue" sender:nil];
+    
+            selectedIndex = indexPath.row;
+            [self performSegueWithIdentifier:@"showProfileSubDetailSegue" sender:nil];
+
     }
+    
     
     
 }
@@ -390,11 +407,18 @@
     cell.containerHomeView.layer.shadowRadius = 3;
     cell.containerHomeView.layer.shadowOpacity = 0.3;
     
-    long indexForCell = indexPath.row - 1;
-    
-    if (indexPath.row > 5) {
-        indexForCell = indexForCell - (int)(indexPath.row/5);
+    long indexForCell;
+    if ([[[SharedClass sharedInstance] userObj].flag intValue]!= 1) {
+        indexForCell = indexPath.row - 1;
+        
+        if (indexPath.row > 5) {
+            indexForCell = indexForCell - (int)(indexPath.row/5);
+        }
     }
+    else {
+        indexForCell = indexPath.row;
+    }
+
     
        //POPULATE CONTENT
         
@@ -402,12 +426,26 @@
             
             NSMutableDictionary* objDict = [[NSMutableDictionary alloc] initWithDictionary:[filteredAddContentArr objectAtIndex:indexForCell]];
             
-            cell.timeLeftImageView.image = [UIImage imageNamed:@"pin.png"];
+            cell.firstStarImgView.hidden = YES;
+            cell.secondStarImgView.hidden = YES;
+            cell.thirdStarImgView.hidden = YES;
+            cell.forthStarImgView.hidden = YES;
+            cell.fifthStarImgView.hidden = YES;
+            cell.timeLeftImageView.hidden = YES;
             
             cell.nameLabel.text = [objDict valueForKey:@"Name"];
             cell.serviceTypeLabel.text = [objDict valueForKey:@"Treatment"];
             [cell.priceButton setTitle:[NSString stringWithFormat:@"%@:-",[objDict valueForKey:@"Budget"]] forState:UIControlStateNormal];
-            cell.timeLeftLabel.text = [objDict valueForKey:@"Place"];
+            cell.timeLeftLabel.text = [objDict valueForKey:@"City"];
+            
+            if ([[objDict valueForKey:@"Place"] containsString:@"my"] || [[objDict valueForKey:@"Place"] containsString:@"My"] || [[objDict valueForKey:@"Place"] containsString:@"MY"]) {
+                cell.myPlaceYourPlaceLabel.text = @"MP";
+            }
+            else {
+                cell.myPlaceYourPlaceLabel.text = @"YP";
+            }
+            
+            cell.timeLeftLabelLeadingConstraint.constant = - 10;
             
             __weak UIImageView* weakImageView = cell.profileImageView;
             [cell.profileImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[[objDict valueForKey:@"Profile_pi"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
@@ -431,10 +469,13 @@
             id budgetDict = [NSJSONSerialization JSONObjectWithData:[modal.budget dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
             id treatmentDict = [NSJSONSerialization JSONObjectWithData:[modal.treatment dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
             
+            cell.myPlaceYourPlaceLabel.hidden = YES;
             cell.nameLabel.text = modal.name;
             cell.serviceTypeLabel.text = [[[treatmentDict valueForKey:@"treatmentsArray"] objectAtIndex:0] valueForKey:@"name"];
             [cell.priceButton setTitle:[NSString stringWithFormat:@"%@:-",[[[budgetDict valueForKey:@"pricesArray"] objectAtIndex:0] valueForKey:@"name"]] forState:UIControlStateNormal];
-            cell.timeLeftLabel.text = [NSString stringWithFormat:@"%@ hours left",modal.hours];
+            cell.timeLeftLabel.text = [NSString stringWithFormat:@"%@ Hours left",modal.hours];
+            
+            [self updateReviewStarUIForCell:cell withRating:[modal.average_Rating doubleValue]];
             
             __weak UIImageView* weakImageView = cell.profileImageView;
             [cell.profileImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[modal.profile_pi stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
@@ -1150,4 +1191,67 @@
     
 }
 
+
+- (void) updateReviewStarUIForCell:(HomeTableViewCell *)cell withRating:(double) avgRating {
+    
+    
+    cell.firstStarImgView.image = [UIImage imageNamed:@"feedback_rating.png"];
+    cell.secondStarImgView.image = [UIImage imageNamed:@"feedback_rating.png"];
+    cell.thirdStarImgView.image = [UIImage imageNamed:@"feedback_rating.png"];
+    cell.forthStarImgView.image = [UIImage imageNamed:@"feedback_rating.png"];
+    cell.fifthStarImgView.image = [UIImage imageNamed:@"feedback_rating.png"];
+    
+    if (avgRating>=0.5 && avgRating < 1.0) {
+        cell.firstStarImgView.image = [UIImage imageNamed:@"feedback_ratinghalf.png"];
+    }
+    else if (avgRating>=1.0 && avgRating < 1.5) {
+        cell.firstStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+    }
+    else if (avgRating>=1.5 && avgRating < 2.0) {
+        cell.firstStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.secondStarImgView.image = [UIImage imageNamed:@"feedback_ratinghalf.png"];
+    }
+    else if (avgRating>=2.0 && avgRating < 2.5) {
+        cell.firstStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.secondStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+    }
+    else if (avgRating>=2.5 && avgRating < 3.0) {
+        cell.firstStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.secondStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.thirdStarImgView.image = [UIImage imageNamed:@"feedback_ratinghalf.png"];
+    }
+    else if (avgRating>=3.0 && avgRating < 3.5) {
+        cell.firstStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.secondStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.thirdStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+    }
+    else if (avgRating>=3.5 && avgRating < 4.0) {
+        cell.firstStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.secondStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.thirdStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.forthStarImgView.image = [UIImage imageNamed:@"feedback_ratinghalf.png"];
+    }
+    else if (avgRating>=4.0 && avgRating < 4.5) {
+        cell.firstStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.secondStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.thirdStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.forthStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+    }
+    else if (avgRating>=4.5 && avgRating < 5.0) {
+        cell.firstStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.secondStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.thirdStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.forthStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.fifthStarImgView.image = [UIImage imageNamed:@"feedback_ratinghalf.png"];
+    }
+    else if (avgRating>=5.0) {
+        cell.firstStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.secondStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.thirdStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.forthStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+        cell.fifthStarImgView.image = [UIImage imageNamed:@"feedback_rating_full.png"];
+    }
+    
+    
+}
 @end

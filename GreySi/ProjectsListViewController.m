@@ -85,10 +85,10 @@
             [self startHDGetBiddedProjectsService];
             
             self.postedProjectsButton.backgroundColor = [UIColor whiteColor] ;
-            [self.postedProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
-            self.activeProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.postedProjectsButton setTitleColor:[UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0] forState:UIControlStateNormal];
+            self.activeProjectsButton.backgroundColor =  [UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0];
             [self.activeProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            self.completedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            self.completedProjectsButton.backgroundColor =  [UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0];
             [self.completedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             
             
@@ -99,10 +99,10 @@
             [self startHDGetActiveProjectsService];
             
             self.activeProjectsButton.backgroundColor = [UIColor whiteColor] ;
-            [self.activeProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
-            self.postedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.activeProjectsButton setTitleColor:[UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0] forState:UIControlStateNormal];
+            self.postedProjectsButton.backgroundColor =  [UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0];
             [self.postedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            self.completedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            self.completedProjectsButton.backgroundColor =  [UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0];
             [self.completedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             
             
@@ -112,10 +112,10 @@
             [self startHDrGetCompletedProjectsService];
             
             self.completedProjectsButton.backgroundColor = [UIColor whiteColor] ;
-            [self.completedProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
-            self.activeProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.completedProjectsButton setTitleColor:[UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0] forState:UIControlStateNormal];
+            self.activeProjectsButton.backgroundColor =  [UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0];
             [self.activeProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            self.postedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            self.postedProjectsButton.backgroundColor =  [UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0];
             [self.postedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             
         }
@@ -128,10 +128,10 @@
             [self startCustomerGetPostedProjectsService];
             
             self.postedProjectsButton.backgroundColor = [UIColor whiteColor] ;
-            [self.postedProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
-            self.activeProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.postedProjectsButton setTitleColor:[UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0] forState:UIControlStateNormal];
+            self.activeProjectsButton.backgroundColor =  [UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0];
             [self.activeProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            self.completedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            self.completedProjectsButton.backgroundColor =  [UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0];
             [self.completedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             
             
@@ -142,10 +142,10 @@
             [self startCustomerGetActiveProjectsService];
             
             self.activeProjectsButton.backgroundColor = [UIColor whiteColor] ;
-            [self.activeProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
-            self.postedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.activeProjectsButton setTitleColor:[UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0] forState:UIControlStateNormal];
+            self.postedProjectsButton.backgroundColor =  [UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0];
             [self.postedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            self.completedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            self.completedProjectsButton.backgroundColor =  [UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0];
             [self.completedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             
             
@@ -155,10 +155,10 @@
             [self startCustomerGetCompletedProjectsService];
             
             self.completedProjectsButton.backgroundColor = [UIColor whiteColor] ;
-            [self.completedProjectsButton setTitleColor:[UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0] forState:UIControlStateNormal];
-            self.activeProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            [self.completedProjectsButton setTitleColor:[UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0] forState:UIControlStateNormal];
+            self.activeProjectsButton.backgroundColor =  [UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0];
             [self.activeProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            self.postedProjectsButton.backgroundColor =  [UIColor colorWithRed:103./255. green:19./255. blue:140./255. alpha:1.0];
+            self.postedProjectsButton.backgroundColor =  [UIColor colorWithRed:123./255. green:27./255. blue:167./255. alpha:1.0];
             [self.postedProjectsButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             
         }
@@ -532,16 +532,21 @@
     
     cell.nameLabel.text = singleProject.name;
     cell.amountValueLabel.text = [NSString stringWithFormat:@"%@:-",singleProject.budget];
-    cell.projectLabel.text = [NSString stringWithFormat:@"Treatment : %@",singleProject.treatment];
+    cell.projectLabel.text = [NSString stringWithFormat:@"%@",singleProject.treatment];
     
     if ([[[projectsArr objectAtIndex:indexPath.row] valueForKey:@"review"] intValue] == 0) {
         
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        if ([[[SharedClass sharedInstance] userObj].flag intValue]==1) {
+            cell.writeAReviewLabel.hidden = YES;
+        }
+        else {
+            cell.writeAReviewLabel.hidden = NO;
+        }
         
     }
     else {
         
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.writeAReviewLabel.hidden = YES;
         
     }
     
