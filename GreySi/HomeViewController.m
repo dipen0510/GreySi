@@ -406,6 +406,8 @@
     cell.containerHomeView.layer.shadowOffset = CGSizeMake(0, 0);
     cell.containerHomeView.layer.shadowRadius = 3;
     cell.containerHomeView.layer.shadowOpacity = 0.3;
+    cell.myPlaceYourPlaceLabel.layer.cornerRadius = 2.0;
+    cell.myPlaceYourPlaceLabel.clipsToBounds = YES;
     
     long indexForCell;
     if ([[[SharedClass sharedInstance] userObj].flag intValue]!= 1) {

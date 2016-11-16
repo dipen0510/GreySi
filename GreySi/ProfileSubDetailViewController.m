@@ -36,6 +36,8 @@
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height/2.;
     self.priceListButton.layer.cornerRadius = 2.0;
     self.priceLabel.layer.cornerRadius = 2.0;
+    self.myplaceYourPlaceLabel.layer.cornerRadius = 2.0;
+    self.myplaceYourPlaceLabel.clipsToBounds = YES;
     
     _priceListTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
