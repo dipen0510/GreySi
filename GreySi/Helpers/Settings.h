@@ -45,5 +45,6 @@
 #define kHairPostAdService @"Hair_dressor_post/PostAd.php"
 #define kHairPlaceBidService @"PostBid.php"
 #define kHairProjectComplete @"CompleteBooking.php"
+#define kHairCancelBidService @"DeleteBid.php?Bid_id="
 
 #endif /* Settings_h */

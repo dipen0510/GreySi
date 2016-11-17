@@ -17,6 +17,7 @@
     NSString* selectedProjectId;
     NSString* selectedActiveProjectId;
     NSString* selectedHDId;
+    NSString* selectedBidId;
     
 }
 

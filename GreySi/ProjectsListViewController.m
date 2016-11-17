@@ -68,6 +68,10 @@
     [self setupLayoutForTabIndex:1];
 }
 
+- (void) refreshBiddedProjectTabList {
+    [self setupLayoutForTabIndex:0];
+}
+
 - (void) setupLayoutForTabIndex:(int)index {
     
     if (userType == 1) {
@@ -250,6 +254,17 @@
     
 }
 
+- (void) startHairDresserCancelBidService {
+    
+    [SVProgressHUD showWithStatus:@"Cancelling bid..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = [NSString stringWithFormat:@"%@%@",kHairCancelBidService,selectedBidId];
+    manager.delegate = self;
+    [manager startGETWebServices];
+    
+}
+
 #pragma mark - DATASYNCMANAGER Delegates
 
 -(void) didFinishServiceWithSuccess:(CustomerGetProjectsResponseModal *)responseData andServiceKey:(NSString *)requestServiceKey {
@@ -272,6 +287,10 @@
     else if ([requestServiceKey isEqualToString:kCustomerProjectComplete]) {
         [SVProgressHUD showSuccessWithStatus:@"Project Completed successfully"];
         [self performSelector:@selector(refreshActiveProjectTabList) withObject:nil afterDelay:0.3];
+    }
+    else if ([requestServiceKey containsString:kHairCancelBidService]) {
+        [SVProgressHUD showSuccessWithStatus:@"Bid cancelled successfully"];
+        [self performSelector:@selector(refreshBiddedProjectTabList) withObject:nil afterDelay:0.3];
     }
     
     
@@ -391,6 +410,24 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (selectedIndex == 0) {
+        
+        if ([[[SharedClass sharedInstance] userObj].flag intValue]==1) {
+            
+            NSString* identifier = @"CompletedProjectsTableViewCell";
+            CompletedProjectsTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+            
+            if (cell == nil) {
+                NSArray *nib=[[NSBundle mainBundle] loadNibNamed:@"CompletedProjectsTableViewCell" owner:self options:nil];
+                cell=[nib objectAtIndex:0];
+            }
+            
+            
+            [self displayContentForBiddedProjectCell:cell atIndexPath:indexPath];
+            
+            return cell;
+            
+        }
+        
         NSString* identifier = @"PostedProjectsTableViewCell";
         PostedProjectsTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         
@@ -450,6 +487,10 @@
         ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:indexPath.row]];
         selectedProjectId = singleProject.project_id;
         [self performSegueWithIdentifier:@"showBidsReceivedSegue" sender:nil];
+    }
+    if (selectedIndex == 0 && [[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
+        selectedBidId = [[projectsArr objectAtIndex:indexPath.row] valueForKey:@"Bid_id"];
+        [self startHairDresserCancelBidService];
     }
     if (selectedIndex == 2 && [[[SharedClass sharedInstance] userObj].flag intValue] != 1) {
         
@@ -551,6 +592,16 @@
     }
     
     
+    if ([[[SharedClass sharedInstance] userObj].flag intValue]==1) {
+        cell.completeTickImgView.hidden = NO;
+        cell.amountLabelFromTopConstraint.constant = 42.;
+        cell.amountValueLabel.textColor = [UIColor colorWithRed:83./255. green:168./255. blue:110./255. alpha:1.0];
+    }
+    else {
+        cell.completeTickImgView.hidden = YES;
+    }
+    
+    
     if (singleProject.profile_pic && ![singleProject.profile_pic isEqual:[NSNull null]]) {
         __weak UIImageView* weakImageView = cell.profileImageView;
         [cell.profileImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[singleProject.profile_pic stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
@@ -569,6 +620,40 @@
     
     
 
+    
+}
+
+
+- (void) displayContentForBiddedProjectCell:(CompletedProjectsTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    
+    ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:indexPath.row]];
+    
+    cell.nameLabel.text = singleProject.name;
+    cell.amountValueLabel.text = [NSString stringWithFormat:@"%@:-",singleProject.budget];
+    cell.projectLabel.text = [NSString stringWithFormat:@"%@",singleProject.treatment];
+    cell.writeAReviewLabel.hidden = NO;
+    cell.writeAReviewLabel.text = @"Cancel";
+    cell.amountValueLabel.textColor = [UIColor colorWithRed:83./255. green:168./255. blue:110./255. alpha:1.0];
+    cell.completeTickImgView.hidden = YES;
+    
+    if (singleProject.profile_pic && ![singleProject.profile_pic isEqual:[NSNull null]]) {
+        __weak UIImageView* weakImageView = cell.profileImageView;
+        [cell.profileImageView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[singleProject.profile_pic stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
+                                                                       cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                                   timeoutInterval:60.0] placeholderImage:[UIImage imageNamed:@"blankProfile"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+            
+            
+            weakImageView.alpha = 0.0;
+            weakImageView.image = image;
+            [UIView animateWithDuration:0.25
+                             animations:^{
+                                 weakImageView.alpha = 1.0;
+                             }];
+        } failure:NULL];
+    }
+    
+    
+    
     
 }
 

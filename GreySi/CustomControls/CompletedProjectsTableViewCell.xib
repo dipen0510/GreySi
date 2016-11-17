@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -72,10 +72,18 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="completeTick.png" translatesAutoresizingMaskIntoConstraints="NO" id="dAL-qz-du0">
+                        <rect key="frame" x="272" y="16" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="ICy-qd-Z8T"/>
+                            <constraint firstAttribute="height" constant="20" id="WXM-v1-JF0"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="TjR-dI-l38" firstAttribute="top" secondItem="h05-PD-vgL" secondAttribute="bottom" constant="8" id="3Oc-92-siS"/>
                     <constraint firstItem="h05-PD-vgL" firstAttribute="leading" secondItem="xow-zA-F4g" secondAttribute="trailing" constant="8" id="5gz-s0-HpM"/>
+                    <constraint firstAttribute="trailing" secondItem="dAL-qz-du0" secondAttribute="trailing" constant="28" id="5qQ-jw-J9r"/>
                     <constraint firstItem="maA-L7-iso" firstAttribute="top" secondItem="IiV-H3-kTw" secondAttribute="bottom" constant="10" id="6OR-ci-MDB"/>
                     <constraint firstItem="IiV-H3-kTw" firstAttribute="top" secondItem="oaz-lC-X7Q" secondAttribute="top" constant="16" id="QQ2-Fn-g0C"/>
                     <constraint firstItem="h05-PD-vgL" firstAttribute="top" secondItem="oaz-lC-X7Q" secondAttribute="topMargin" constant="8" id="T6Y-6Z-UJ7"/>
@@ -85,10 +93,13 @@
                     <constraint firstItem="TjR-dI-l38" firstAttribute="leading" secondItem="xow-zA-F4g" secondAttribute="trailing" constant="8" id="eJZ-PA-p7s"/>
                     <constraint firstItem="xow-zA-F4g" firstAttribute="top" secondItem="oaz-lC-X7Q" secondAttribute="topMargin" id="lDV-bN-cLu"/>
                     <constraint firstItem="xow-zA-F4g" firstAttribute="leading" secondItem="oaz-lC-X7Q" secondAttribute="leadingMargin" constant="8" id="pkG-Q4-e9h"/>
+                    <constraint firstItem="dAL-qz-du0" firstAttribute="top" secondItem="oaz-lC-X7Q" secondAttribute="top" constant="16" id="t3n-or-0qY"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="amountLabelFromTopConstraint" destination="QQ2-Fn-g0C" id="OLs-bl-y1P"/>
                 <outlet property="amountValueLabel" destination="IiV-H3-kTw" id="Qd2-yD-yo3"/>
+                <outlet property="completeTickImgView" destination="dAL-qz-du0" id="Ac8-w6-s5t"/>
                 <outlet property="nameLabel" destination="h05-PD-vgL" id="kma-7C-Vi5"/>
                 <outlet property="profileImageView" destination="xow-zA-F4g" id="Lgs-I1-sxa"/>
                 <outlet property="projectLabel" destination="TjR-dI-l38" id="DNd-E8-9Lc"/>
@@ -99,5 +110,6 @@
     </objects>
     <resources>
         <image name="Screen Shot 2016-03-30 at 12.44.22 AM.png" width="80" height="80"/>
+        <image name="completeTick.png" width="150" height="143"/>
     </resources>
 </document>

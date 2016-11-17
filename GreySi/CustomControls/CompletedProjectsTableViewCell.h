@@ -15,5 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *projectLabel;
 @property (weak, nonatomic) IBOutlet UILabel *amountValueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *writeAReviewLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *completeTickImgView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *amountLabelFromTopConstraint;
 
 @end

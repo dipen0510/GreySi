@@ -183,6 +183,7 @@
 		D4E9C4FC1DDDC7FF0013324A /* bookingyes.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4F91DDDC7FF0013324A /* bookingyes.png */; };
 		D4E9C4FD1DDDC7FF0013324A /* markascomplete.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4FA1DDDC7FF0013324A /* markascomplete.png */; };
 		D4E9C5011DDDEBEB0013324A /* bookingcancel.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C5001DDDEBEB0013324A /* bookingcancel.png */; };
+		D4E9C5031DDDF89E0013324A /* completeTick.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C5021DDDF89E0013324A /* completeTick.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -454,6 +455,7 @@
 		D4E9C4F91DDDC7FF0013324A /* bookingyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookingyes.png; sourceTree = "<group>"; };
 		D4E9C4FA1DDDC7FF0013324A /* markascomplete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = markascomplete.png; sourceTree = "<group>"; };
 		D4E9C5001DDDEBEB0013324A /* bookingcancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookingcancel.png; sourceTree = "<group>"; };
+		D4E9C5021DDDF89E0013324A /* completeTick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = completeTick.png; sourceTree = "<group>"; };
 		D930F527C0F72C20148401A2 /* Pods-GreySi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreySi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GreySi/Pods-GreySi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -900,6 +902,7 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D4E9C5021DDDF89E0013324A /* completeTick.png */,
 				D4E9C5001DDDEBEB0013324A /* bookingcancel.png */,
 				D4E9C4F81DDDC7FF0013324A /* bookingno.png */,
 				D4E9C4F91DDDC7FF0013324A /* bookingyes.png */,
@@ -1152,6 +1155,7 @@
 				1854099E1DD75932004784AD /* slide2.jpg in Resources */,
 				1881F3CE1D97E478005198A2 /* HairPostAdTableViewCell.xib in Resources */,
 				D49BFB061DC35EF50058433A /* close.png in Resources */,
+				D4E9C5031DDDF89E0013324A /* completeTick.png in Resources */,
 				D4CA5CC41C7DCF48000E185A /* arrow.png in Resources */,
 				D455C4731C7EDABA00C6D1CB /* login.png in Resources */,
 				185DC11D1D514348007998F3 /* available.png in Resources */,
