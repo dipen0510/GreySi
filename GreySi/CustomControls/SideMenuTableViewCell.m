@@ -13,6 +13,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    self.unreadMsgCountLabel.clipsToBounds = YES;
+    self.unreadMsgCountLabel.layer.cornerRadius = self.unreadMsgCountLabel.frame.size.height/2.;
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

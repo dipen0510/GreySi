@@ -48,9 +48,9 @@
     
     userType = [[[SharedClass sharedInstance] userObj].flag intValue];
     
-    self.postedProjectsButton.layer.cornerRadius = 2.0;
-    self.activeProjectsButton.layer.cornerRadius = 2.0;
-    self.completedProjectsButton.layer.cornerRadius = 2.0;
+    self.postedProjectsButton.layer.cornerRadius = 5.0;
+    self.activeProjectsButton.layer.cornerRadius = 5.0;
+    self.completedProjectsButton.layer.cornerRadius = 5.0;
     
     self.postedProjectsButton.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.postedProjectsButton.layer.borderWidth = 0.5;
@@ -207,7 +207,7 @@
 
 - (void) startHDGetBiddedProjectsService {
     
-    [SVProgressHUD showWithStatus:@"Fetching Awarded Projects..."];
+    [SVProgressHUD showWithStatus:@"Fetching Bidded Projects..."];
     
     DataSyncManager* manager = [[DataSyncManager alloc] init];
     manager.serviceKey = [NSString stringWithFormat:@"%@%@",kHairGetBiddedProjectsService,[[SharedClass sharedInstance] userObj].user_id];

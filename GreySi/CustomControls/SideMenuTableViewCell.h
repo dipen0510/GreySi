@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *tabImageView;
 @property (weak, nonatomic) IBOutlet UILabel *tabLabel;
+@property (weak, nonatomic) IBOutlet UILabel *unreadMsgCountLabel;
 
 @end

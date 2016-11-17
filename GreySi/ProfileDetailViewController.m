@@ -772,7 +772,7 @@
 - (NSString *)encodeToBase64String:(UIImage *)image {
     
     if (image) {
-        return [UIImagePNGRepresentation([self resizeImage:image]) base64EncodedStringWithOptions:0];
+        return [UIImagePNGRepresentation(image) base64EncodedStringWithOptions:0];
     }
     
     return @"";

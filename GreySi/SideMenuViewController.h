@@ -11,6 +11,7 @@
 @interface SideMenuViewController : UIViewController <UIAlertViewDelegate> {
     
     NSMutableArray* tableArr;
+    NSNumber *unreadCount;
     
 }
 

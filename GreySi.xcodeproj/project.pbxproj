@@ -173,6 +173,15 @@
 		D4D5A1C61D5852F400B15CBE /* ChatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4D5A1C41D5852F400B15CBE /* ChatListTableViewCell.xib */; };
 		D4D5A1CA1D5857C400B15CBE /* ChatDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5A1C91D5857C400B15CBE /* ChatDetailViewController.m */; };
 		D4D5A1D41D59F47A00B15CBE /* ProfileSubDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D5A1D31D59F47A00B15CBE /* ProfileSubDetailViewController.m */; };
+		D4E9C4EE1DDDB7A60013324A /* splash_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4EC1DDDB7A60013324A /* splash_background.png */; };
+		D4E9C4EF1DDDB7A60013324A /* splash_first.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4ED1DDDB7A60013324A /* splash_first.png */; };
+		D4E9C4F11DDDBA610013324A /* new_login_wid_fb.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4F01DDDBA610013324A /* new_login_wid_fb.png */; };
+		D4E9C4F31DDDBA860013324A /* login_bt.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4F21DDDBA860013324A /* login_bt.png */; };
+		D4E9C4F51DDDBB210013324A /* create_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4F41DDDBB210013324A /* create_profile.png */; };
+		D4E9C4F71DDDBD2D0013324A /* sign_up_bt_confrim.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4F61DDDBD2D0013324A /* sign_up_bt_confrim.png */; };
+		D4E9C4FB1DDDC7FF0013324A /* bookingno.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4F81DDDC7FF0013324A /* bookingno.png */; };
+		D4E9C4FC1DDDC7FF0013324A /* bookingyes.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4F91DDDC7FF0013324A /* bookingyes.png */; };
+		D4E9C4FD1DDDC7FF0013324A /* markascomplete.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4FA1DDDC7FF0013324A /* markascomplete.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -434,6 +443,15 @@
 		D4D5A1C91D5857C400B15CBE /* ChatDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatDetailViewController.m; sourceTree = "<group>"; };
 		D4D5A1D21D59F47A00B15CBE /* ProfileSubDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileSubDetailViewController.h; sourceTree = "<group>"; };
 		D4D5A1D31D59F47A00B15CBE /* ProfileSubDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileSubDetailViewController.m; sourceTree = "<group>"; };
+		D4E9C4EC1DDDB7A60013324A /* splash_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_background.png; sourceTree = "<group>"; };
+		D4E9C4ED1DDDB7A60013324A /* splash_first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_first.png; sourceTree = "<group>"; };
+		D4E9C4F01DDDBA610013324A /* new_login_wid_fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_login_wid_fb.png; sourceTree = "<group>"; };
+		D4E9C4F21DDDBA860013324A /* login_bt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_bt.png; sourceTree = "<group>"; };
+		D4E9C4F41DDDBB210013324A /* create_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create_profile.png; sourceTree = "<group>"; };
+		D4E9C4F61DDDBD2D0013324A /* sign_up_bt_confrim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sign_up_bt_confrim.png; sourceTree = "<group>"; };
+		D4E9C4F81DDDC7FF0013324A /* bookingno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookingno.png; sourceTree = "<group>"; };
+		D4E9C4F91DDDC7FF0013324A /* bookingyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookingyes.png; sourceTree = "<group>"; };
+		D4E9C4FA1DDDC7FF0013324A /* markascomplete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = markascomplete.png; sourceTree = "<group>"; };
 		D930F527C0F72C20148401A2 /* Pods-GreySi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreySi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GreySi/Pods-GreySi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -880,6 +898,15 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D4E9C4F81DDDC7FF0013324A /* bookingno.png */,
+				D4E9C4F91DDDC7FF0013324A /* bookingyes.png */,
+				D4E9C4FA1DDDC7FF0013324A /* markascomplete.png */,
+				D4E9C4F61DDDBD2D0013324A /* sign_up_bt_confrim.png */,
+				D4E9C4F41DDDBB210013324A /* create_profile.png */,
+				D4E9C4F21DDDBA860013324A /* login_bt.png */,
+				D4E9C4F01DDDBA610013324A /* new_login_wid_fb.png */,
+				D4E9C4EC1DDDB7A60013324A /* splash_background.png */,
+				D4E9C4ED1DDDB7A60013324A /* splash_first.png */,
 				1831C17E1DD98FB500B5E01F /* filter.png */,
 				1831C17C1DD98C0900B5E01F /* circle.png */,
 				18157D8B1DD7C5320087EDC2 /* th1.png */,
@@ -1094,13 +1121,17 @@
 				18E469631DD7A0D10065AA6D /* SlideShowCollectionViewCell.xib in Resources */,
 				185DC0FA1D4E29E7007998F3 /* appLogo.png in Resources */,
 				D4CA5CD01C7DCF48000E185A /* password.png in Resources */,
+				D4E9C4F51DDDBB210013324A /* create_profile.png in Resources */,
 				D4104E901D9D3E0B006348D3 /* new_padicure_logo.png in Resources */,
+				D4E9C4EE1DDDB7A60013324A /* splash_background.png in Resources */,
+				D4E9C4F11DDDBA610013324A /* new_login_wid_fb.png in Resources */,
 				18157D981DD7C5320087EDC2 /* Adbackground.png in Resources */,
 				185DC0FE1D4E2EE4007998F3 /* registrationProfile.png in Resources */,
 				D4CA5CC61C7DCF48000E185A /* camera.png in Resources */,
 				D4CA5CD41C7DCF48000E185A /* rating.png in Resources */,
 				18157D881DD7BB490087EDC2 /* CardViewNewAdTableViewCell.xib in Resources */,
 				185409981DD75924004784AD /* slide1.jpg in Resources */,
+				D4E9C4F31DDDBA860013324A /* login_bt.png in Resources */,
 				D4CA5CCA1C7DCF48000E185A /* feedback_rating_full.png in Resources */,
 				D4CA5CC81C7DCF48000E185A /* email.png in Resources */,
 				185B5E981D5A6D2200205F72 /* TreatmentTabTableViewCell.xib in Resources */,
@@ -1121,6 +1152,7 @@
 				D4CA5CC41C7DCF48000E185A /* arrow.png in Resources */,
 				D455C4731C7EDABA00C6D1CB /* login.png in Resources */,
 				185DC11D1D514348007998F3 /* available.png in Resources */,
+				D4E9C4FC1DDDC7FF0013324A /* bookingyes.png in Resources */,
 				189B73DE1DC76CC8006B8949 /* book-open-page-variant.png in Resources */,
 				185DC10E1D513C3E007998F3 /* mike.jpg in Resources */,
 				185DC1061D4E4543007998F3 /* timeLeftClock.png in Resources */,
@@ -1133,13 +1165,16 @@
 				D4CA5CD91C7DCF48000E185A /* tick.png in Resources */,
 				18CF35161D5BCE6100C0A5BD /* BidsReceivedTableViewCell.xib in Resources */,
 				1888572E1CAB18010026995E /* HomeMapView.xib in Resources */,
+				D4E9C4FD1DDDC7FF0013324A /* markascomplete.png in Resources */,
 				18DB7D701DAEC5BA002594C8 /* new_edit_profile.png in Resources */,
 				18CF35251D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.xib in Resources */,
 				1854099C1DD75932004784AD /* slide4.jpg in Resources */,
 				1881F3F51DA1B47A005198A2 /* fb_logo.png in Resources */,
+				D4E9C4F71DDDBD2D0013324A /* sign_up_bt_confrim.png in Resources */,
 				188857401CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png in Resources */,
 				D4CA5CD51C7DCF48000E185A /* rating_filled_small.png in Resources */,
 				185409921DD75533004784AD /* CardViewSlideShowTableViewCell.xib in Resources */,
+				D4E9C4FB1DDDC7FF0013324A /* bookingno.png in Resources */,
 				D4CA5C811C7DCDF7000E185A /* Main.storyboard in Resources */,
 				D4CA5CDA1C7DCF48000E185A /* wallet.png in Resources */,
 				D4CA5CD31C7DCF48000E185A /* rating-small.png in Resources */,
@@ -1158,6 +1193,7 @@
 				185DC0FC1D4E2C4C007998F3 /* splash.png in Resources */,
 				D4CA5CCB1C7DCF48000E185A /* feedback_ratinghalf.png in Resources */,
 				18157D931DD7C5320087EDC2 /* th2.png in Resources */,
+				D4E9C4EF1DDDB7A60013324A /* splash_first.png in Resources */,
 				1831C17D1DD98C0900B5E01F /* circle.png in Resources */,
 				D455C4711C7EDABA00C6D1CB /* background.png in Resources */,
 				18CF350D1D5BC94600C0A5BD /* PostedProjectsTableViewCell.xib in Resources */,

@@ -11,6 +11,8 @@
 #import "PostNewAdViewController.h"
 #import "HairPostAdViewController.h"
 #import "ProfileDetailViewController.h"
+#import "ALContactService.h"
+#import "ALUserService.h"
 
 @interface SideMenuViewController ()
 
@@ -48,6 +50,16 @@
     UITapGestureRecognizer* tapGesture1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showEditProfileScreen)];
     self.profileName.userInteractionEnabled = YES;
     [self.profileName addGestureRecognizer:tapGesture1];
+    
+    
+//    ALContactService* contactService = [ALContactService new];
+//    ALContact *contact = [contactService loadContactByKey:@"userId" value:[[SharedClass sharedInstance] userObj].email];
+//    unreadCount = [contact unreadCount];
+
+    ALUserService * alUserService = [[ALUserService alloc] init];
+    unreadCount = [alUserService getTotalUnreadCount];
+    
+    [_menuTblView reloadData];
     
     __weak UIImageView* weakImageView = self.profileImgView;
     [self.profileImgView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[[[SharedClass sharedInstance] userObj].profile_pi stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]
@@ -135,6 +147,14 @@
     
     cell.tabImageView.image = [UIImage imageNamed:[[tableArr objectAtIndex:indexPath.row] valueForKey:@"image"]];
     cell.tabLabel.text = [[tableArr objectAtIndex:indexPath.row] valueForKey:@"title"];
+    
+    if (indexPath.row == 1 && [unreadCount intValue]>0 && unreadCount) {
+        cell.unreadMsgCountLabel.hidden = NO;
+        cell.unreadMsgCountLabel.text = [NSString stringWithFormat:@"%@",unreadCount];
+    }
+    else {
+        cell.unreadMsgCountLabel.hidden = YES;
+    }
     
     return cell;
     

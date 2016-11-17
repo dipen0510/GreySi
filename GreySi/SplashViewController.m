@@ -36,6 +36,17 @@
     }
     else {
         [self performSegueWithIdentifier:@"showLoginSegue" sender:nil];
+        [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^
+         {
+             self.view.alpha = 0;
+         }
+                         completion:^(BOOL finished){
+                             
+                             
+                             
+                         }];
+        
+        
     }
     
 }

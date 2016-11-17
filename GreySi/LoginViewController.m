@@ -21,7 +21,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    [self addGradientToBGView];
+    self.view.alpha = 0.0;
+    
+    //[self addGradientToBGView];
     [self setupInitialUI];
 
 }
@@ -42,6 +44,14 @@
     
     viewCenter = self.view.center;
     showKeyboardAnimation = true;
+    
+    [UIView animateWithDuration:0.35 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^
+     {
+         self.view.alpha = 1;
+     }
+                     completion:^(BOOL finished){
+                         
+                     }];
     
 }
 
