@@ -107,6 +107,7 @@
             <connections>
                 <outlet property="acceptButotn" destination="Q4R-1W-hi3" id="Cn2-Wv-fvj"/>
                 <outlet property="cancelButton" destination="bNj-N0-POD" id="wGa-Pq-DVe"/>
+                <outlet property="cancelButtonTrailingConstraint" destination="pvS-tX-dul" id="U3P-Va-EF4"/>
                 <outlet property="completedButton" destination="quV-Vk-OHd" id="2qR-QD-LpV"/>
                 <outlet property="dateLabel" destination="rey-gp-8CQ" id="SWn-mv-5Dl"/>
                 <outlet property="headingLabel" destination="GdL-0P-XLH" id="ijp-MP-f8r"/>

@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *completedButton;
 @property (weak, nonatomic) IBOutlet UIButton *acceptButotn;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cancelButtonTrailingConstraint;
 
 @end

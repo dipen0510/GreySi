@@ -182,6 +182,7 @@
 		D4E9C4FB1DDDC7FF0013324A /* bookingno.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4F81DDDC7FF0013324A /* bookingno.png */; };
 		D4E9C4FC1DDDC7FF0013324A /* bookingyes.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4F91DDDC7FF0013324A /* bookingyes.png */; };
 		D4E9C4FD1DDDC7FF0013324A /* markascomplete.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4FA1DDDC7FF0013324A /* markascomplete.png */; };
+		D4E9C5011DDDEBEB0013324A /* bookingcancel.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C5001DDDEBEB0013324A /* bookingcancel.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -452,6 +453,7 @@
 		D4E9C4F81DDDC7FF0013324A /* bookingno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookingno.png; sourceTree = "<group>"; };
 		D4E9C4F91DDDC7FF0013324A /* bookingyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookingyes.png; sourceTree = "<group>"; };
 		D4E9C4FA1DDDC7FF0013324A /* markascomplete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = markascomplete.png; sourceTree = "<group>"; };
+		D4E9C5001DDDEBEB0013324A /* bookingcancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookingcancel.png; sourceTree = "<group>"; };
 		D930F527C0F72C20148401A2 /* Pods-GreySi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreySi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GreySi/Pods-GreySi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -898,6 +900,7 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D4E9C5001DDDEBEB0013324A /* bookingcancel.png */,
 				D4E9C4F81DDDC7FF0013324A /* bookingno.png */,
 				D4E9C4F91DDDC7FF0013324A /* bookingyes.png */,
 				D4E9C4FA1DDDC7FF0013324A /* markascomplete.png */,
@@ -1162,6 +1165,7 @@
 				185DC1041D4E343C007998F3 /* navMenu.png in Resources */,
 				185DC1251D514934007998F3 /* profileDetailBG.png in Resources */,
 				D455C4721C7EDABA00C6D1CB /* login_fb.png in Resources */,
+				D4E9C5011DDDEBEB0013324A /* bookingcancel.png in Resources */,
 				D4CA5CD91C7DCF48000E185A /* tick.png in Resources */,
 				18CF35161D5BCE6100C0A5BD /* BidsReceivedTableViewCell.xib in Resources */,
 				1888572E1CAB18010026995E /* HomeMapView.xib in Resources */,
