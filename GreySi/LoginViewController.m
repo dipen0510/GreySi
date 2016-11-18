@@ -54,7 +54,7 @@
     self.splashImgView.hidden = NO;
     self.loginBgImgView.alpha = 0.0;
     
-    [UIView animateWithDuration:1.5 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^
+    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^
      {
          self.splashImgView.alpha = 0.0;
          self.loginBgImgView.alpha = 1.0;

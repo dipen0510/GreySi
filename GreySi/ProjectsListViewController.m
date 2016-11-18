@@ -527,7 +527,13 @@
     cell.hairdresserNameLabel.text = singleProject.hairdresser_id;
     cell.amountLabel.text = [NSString stringWithFormat:@"%@:-",singleProject.budget];
     cell.bidsLabel.text = singleProject.no_of_bids;
-    cell.dateLabel.text = singleProject.post_Date;
+    
+    if ([singleProject.post_Date componentsSeparatedByString:@":"].count == 3) {
+        cell.dateLabel.text = [NSString stringWithFormat:@"%@:%@",[[singleProject.post_Date componentsSeparatedByString:@":"] objectAtIndex:0],[[singleProject.post_Date componentsSeparatedByString:@":"] objectAtIndex:1]];
+    }
+    else {
+        cell.dateLabel.text = singleProject.post_Date;
+    }
     
     if ([singleProject.no_of_bids intValue] > 0) {
         cell.backgroundColor = [UIColor colorWithRed:220./255. green:220./255. blue:220./255. alpha:1.0];

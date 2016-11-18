@@ -36,7 +36,7 @@
     
     treatmentOptionsArr = [[NSMutableArray alloc] initWithObjects:@"Womens Hair",@"Mens Hair",@"Manicure",@"Pedicure",@"Beauty",@"Massage",@"Other", nil];
     treatmentOptionsImgArr = [[NSMutableArray alloc] initWithObjects:@"new_womens_hair_logo.png",@"new_mens_hair_logo.png",@"new_manicure_logo.png",@"new_padicure_logo.png",@"new_beauty_logo.png",@"new_massage_logo.png",@"new_others_logo.png", nil];
-    cityOptionsArr = [[NSMutableArray alloc] initWithObjects:@"Stockholm",@"Manchester",@"Hamburg",@"Sussex", nil];
+    cityOptionsArr = [[NSMutableArray alloc] initWithObjects:@"Stockholm",@"Göteborg",@"Malmö",@"Uppsala", @"Blekinge",  @"Dalarna", @"Gotland", @"Halland", @"Jämtland", @"Jönköping", @"Kalmar", @"Kronoberg", @"Norrbotten", @"Skåne", @"Södermanland", @"Värmland", @"Västerbotten", @"Västernorrland", @"Västmanland", @"Västra Götaland", @"Örebro", @"Östergötland", nil];
     selectedTreamentsArr = [[NSMutableArray alloc] init];
     
     //self.treatmentButton.layer.cornerRadius = 2.0;
@@ -455,6 +455,11 @@
     obj.date = finalSelectedDate;
     obj.time = finalSelectedTime;
     obj.budget = self.budgetTxtField.text;
+    
+    if ([self.descriptionTxtView.text isEqualToString:@""]) {
+        self.descriptionTxtView.text = @" ";
+    }
+    
     obj.desc = self.descriptionTxtView.text;
     
     return [obj createRequestDictionary];

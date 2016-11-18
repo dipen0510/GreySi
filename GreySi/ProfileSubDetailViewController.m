@@ -62,7 +62,8 @@
     }
     else {
         [self.bookButton setTitle:@"Book" forState:UIControlStateNormal];
-        self.treatmentLabel.text = treatmentStr;
+//        self.treatmentLabel.text = treatmentStr;
+        self.treatmentLabel.text = adDict[@"Short_description"];
         self.priceLabel.hidden = YES;
         self.priceListButton.hidden = NO;
         _myplaceYourPlaceLabel.hidden = YES;
