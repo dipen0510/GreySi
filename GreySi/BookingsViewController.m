@@ -154,7 +154,7 @@
     [SVProgressHUD dismiss];
     UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil
                                                   message:NSLocalizedString(@"An issue occured while processing your request. Please try again later.", nil)
-                                                 delegate:self
+                                                 delegate:nil
                                         cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                         otherButtonTitles: nil];
     
@@ -167,7 +167,9 @@
     }
     
     
-    [alert show];
+    if (alert.message) {
+        [alert show];
+    }
     
     return;
     
@@ -334,7 +336,14 @@
     
     NSMutableDictionary* dict = [[NSMutableDictionary alloc] initWithDictionary:[bookingsArr objectAtIndex:sender.tag]];
     selectedProjectBookingId = [dict valueForKey:@"Booking_id"];
-    [self startHairProjectCompletedService];
+    
+    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil
+                                                  message:NSLocalizedString(@"Are you sure you want to mark this as complete?", nil)
+                                                 delegate:self
+                                        cancelButtonTitle:NSLocalizedString(@"NO", nil)
+                                        otherButtonTitles:@"YES", nil];
+
+    [alert show];
     
 }
 
@@ -358,6 +367,14 @@
     NSMutableDictionary* dict = [[NSMutableDictionary alloc] initWithDictionary:[bookingsArr objectAtIndex:sender.tag]];
     selectedProjectBookingId = [dict valueForKey:@"Booking_id"];
     [self startAcceptProjectService];
+    
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 1) {
+        [self startHairProjectCompletedService];
+    }
     
 }
 @end

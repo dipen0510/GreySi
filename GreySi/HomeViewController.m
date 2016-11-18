@@ -213,7 +213,9 @@
     }
     
     
-    [alert show];
+    if (alert.message) {
+        [alert show];
+    }
     
     return;
     
@@ -970,7 +972,6 @@
     
     self.filtersView.allRedundantCities = [filteredAddContentArr valueForKey:@"City"];
     self.filtersView.allRedundantTreatments = [filteredAddContentArr valueForKey:@"Treatment"];
-    self.filtersView.view.layer.cornerRadius = 10.0;
     
     [self.view addSubview:self.filtersView.view];
     

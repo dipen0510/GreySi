@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BookingsViewController : UIViewController <DataSyncManagerDelegate> {
+@interface BookingsViewController : UIViewController <DataSyncManagerDelegate,UIAlertViewDelegate> {
     NSMutableArray* bookingsArr;
     NSString* selectedProjectBookingId;
     NSString* selectedUserId;

@@ -20,9 +20,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    _backButton.hidden = _isBackButttonHidden;
+    
     self.reviewTvtView.layer.cornerRadius = 10.0;
     self.reviewTvtView.layer.borderColor = [UIColor colorWithRed:211./255. green:211./255. blue:211./255. alpha:1.0].CGColor;
     self.reviewTvtView.layer.borderWidth = 1.0;
+    
+    _submitButton.layer.cornerRadius = 10.0;
     
     UITapGestureRecognizer* firstTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(firstStarTapped)];
     _firstStarImgView.userInteractionEnabled = YES;
@@ -204,7 +208,9 @@
     }
     
     
-    [alert show];
+    if (alert.message) {
+        [alert show];
+    }
     
     return;
     

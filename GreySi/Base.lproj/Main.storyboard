@@ -113,7 +113,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="F6U-AS-Vdo"/>
                     <connections>
-                        <segue destination="NB4-Oo-AdA" kind="show" identifier="showHomeSegue" id="k3k-HS-NBs"/>
+                        <segue destination="NB4-Oo-AdA" kind="show" identifier="showHomeSegue" animates="NO" id="k3k-HS-NBs"/>
                         <segue destination="kw5-ph-Cc4" kind="show" identifier="showLoginSegue" animates="NO" id="Kg3-Ji-6L1"/>
                     </connections>
                 </viewController>
@@ -302,10 +302,15 @@
                                     <constraint firstAttribute="width" secondItem="1W0-x7-wtN" secondAttribute="height" multiplier="1:1" id="ldD-tY-dxc"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_first.png" translatesAutoresizingMaskIntoConstraints="NO" id="dvf-M6-W75">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="KSJ-Fe-9IL" firstAttribute="leading" secondItem="mz8-4B-P5x" secondAttribute="leading" id="4hQ-fW-hzB"/>
+                            <constraint firstItem="USi-R7-H3t" firstAttribute="top" secondItem="dvf-M6-W75" secondAttribute="bottom" id="4xV-Wl-haD"/>
                             <constraint firstItem="LTg-f6-cxM" firstAttribute="top" secondItem="MxQ-Am-mxu" secondAttribute="bottom" constant="20" id="5Nc-Wc-fkF"/>
+                            <constraint firstAttribute="trailing" secondItem="dvf-M6-W75" secondAttribute="trailing" id="65C-Cx-nOG"/>
                             <constraint firstItem="5Vy-gH-3Vx" firstAttribute="centerX" secondItem="mz8-4B-P5x" secondAttribute="centerX" id="6nb-Vt-OcZ"/>
                             <constraint firstItem="gpF-wH-nBB" firstAttribute="top" secondItem="5Vy-gH-3Vx" secondAttribute="bottom" constant="23" id="95e-bG-AUC"/>
                             <constraint firstItem="MxQ-Am-mxu" firstAttribute="centerX" secondItem="mz8-4B-P5x" secondAttribute="centerX" id="9Ti-NO-2lm"/>
@@ -313,19 +318,23 @@
                             <constraint firstItem="KSJ-Fe-9IL" firstAttribute="top" secondItem="mz8-4B-P5x" secondAttribute="top" id="GlF-fB-hCn"/>
                             <constraint firstItem="USi-R7-H3t" firstAttribute="top" secondItem="KSJ-Fe-9IL" secondAttribute="bottom" id="I5e-At-YDZ"/>
                             <constraint firstItem="USi-R7-H3t" firstAttribute="top" secondItem="VFK-e7-NJv" secondAttribute="bottom" constant="63" id="Lm8-g5-Ske"/>
+                            <constraint firstItem="dvf-M6-W75" firstAttribute="leading" secondItem="mz8-4B-P5x" secondAttribute="leading" id="X5g-Cz-SCf"/>
                             <constraint firstItem="1W0-x7-wtN" firstAttribute="top" secondItem="mz8-4B-P5x" secondAttribute="top" constant="80" id="cpQ-FZ-gZX"/>
                             <constraint firstItem="5Vy-gH-3Vx" firstAttribute="top" secondItem="1W0-x7-wtN" secondAttribute="bottom" constant="8" id="d4a-Xn-4EV"/>
                             <constraint firstAttribute="trailing" secondItem="KSJ-Fe-9IL" secondAttribute="trailing" id="ixW-4K-moV"/>
                             <constraint firstItem="MxQ-Am-mxu" firstAttribute="top" secondItem="gpF-wH-nBB" secondAttribute="bottom" constant="20" id="ngx-1R-k4s"/>
                             <constraint firstItem="LTg-f6-cxM" firstAttribute="centerX" secondItem="mz8-4B-P5x" secondAttribute="centerX" id="pJG-yZ-ck0"/>
+                            <constraint firstItem="dvf-M6-W75" firstAttribute="top" secondItem="mz8-4B-P5x" secondAttribute="top" id="pX9-IQ-XKD"/>
                             <constraint firstItem="VFK-e7-NJv" firstAttribute="centerX" secondItem="mz8-4B-P5x" secondAttribute="centerX" id="tnb-VH-AMp"/>
                             <constraint firstItem="1W0-x7-wtN" firstAttribute="centerX" secondItem="mz8-4B-P5x" secondAttribute="centerX" id="tyy-Zd-Ei4"/>
                             <constraint firstItem="VFK-e7-NJv" firstAttribute="top" secondItem="LTg-f6-cxM" secondAttribute="bottom" constant="23" id="yVa-4e-1hu"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginBgImgView" destination="KSJ-Fe-9IL" id="gj2-ER-Xri"/>
                         <outlet property="loginButton" destination="gpF-wH-nBB" id="fwO-tf-zaj"/>
                         <outlet property="loginTableView" destination="5Vy-gH-3Vx" id="dru-ud-xRj"/>
+                        <outlet property="splashImgView" destination="dvf-M6-W75" id="mtU-mr-Kcz"/>
                         <segue destination="NB4-Oo-AdA" kind="show" identifier="showHomeSegue" id="2gC-jJ-EHN"/>
                     </connections>
                 </viewController>
@@ -2178,6 +2187,8 @@
                     <connections>
                         <outlet property="applyButton" destination="PG4-oW-zn4" id="IB2-Pa-dOQ"/>
                         <outlet property="cancelButton" destination="Sd4-9f-N9h" id="07N-u1-Zyi"/>
+                        <outlet property="filterContentView" destination="xry-8p-Jtv" id="eVH-bH-kly"/>
+                        <outlet property="filterHeaderView" destination="5dV-2S-JaN" id="vEu-Jf-8pZ"/>
                         <outlet property="filterTableView" destination="rvx-jr-jB2" id="hrk-8k-G6Q"/>
                     </connections>
                 </viewController>
@@ -2206,7 +2217,7 @@
                                             <constraint firstAttribute="height" constant="52" id="IYA-XV-HXl"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="15"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q88-7X-7JI">
@@ -2274,7 +2285,7 @@
                         <viewControllerLayoutGuide type="bottom" id="LHr-qn-5Ee"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cMp-Is-WTb">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Epb-Ie-7Wk">
@@ -2378,7 +2389,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctZ-Ze-snM">
-                                <rect key="frame" x="240" y="1050" width="120" height="30"/>
+                                <rect key="frame" x="240" y="550" width="120" height="30"/>
                                 <color key="backgroundColor" red="0.58823529409999997" green="0.094117647060000004" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4SW-wu-VJi"/>
@@ -2420,11 +2431,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="7Y7-HX-4HT" id="ySI-qF-L4P"/>
                         <outlet property="fifthStarImgView" destination="Xhj-Y5-t41" id="kl0-Um-erS"/>
                         <outlet property="firstStarImgView" destination="ySE-YK-FUz" id="pJZ-YO-ck8"/>
                         <outlet property="forthStarImgView" destination="L2v-7D-o2Y" id="gTV-3B-6hp"/>
                         <outlet property="reviewTvtView" destination="KHh-L2-Qhv" id="bgZ-9M-Ev1"/>
                         <outlet property="secondStarImgView" destination="rmF-eg-96V" id="BeN-M3-onX"/>
+                        <outlet property="submitButton" destination="ctZ-Ze-snM" id="GEJ-sf-Y5a"/>
                         <outlet property="thirdStarImgView" destination="zNN-5w-V3s" id="Uut-3e-g2V"/>
                     </connections>
                 </viewController>
@@ -2942,6 +2955,7 @@
                         <outlet property="projectsTableView" destination="t9u-dR-xFe" id="gMQ-Kq-ArX"/>
                         <segue destination="TC3-ZY-Bt1" kind="show" identifier="showBidsReceivedSegue" id="Erz-G8-7UQ"/>
                         <segue destination="aoK-lu-PcQ" kind="show" identifier="showRateSegue" id="esa-Ng-gfF"/>
+                        <segue destination="aoK-lu-PcQ" kind="show" identifier="showRateSegueWithoutBack" id="LIN-Kl-Xs7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PuG-JJ-Iyd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3453,11 +3467,11 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="PXr-S9-ifq"/>
-        <segue reference="2gC-jJ-EHN"/>
+        <segue reference="k3k-HS-NBs"/>
         <segue reference="Kg3-Ji-6L1"/>
-        <segue reference="kW0-NS-bL4"/>
-        <segue reference="NlX-VC-1Do"/>
         <segue reference="RXH-fE-Buq"/>
-        <segue reference="zuq-yH-NPM"/>
+        <segue reference="NlX-VC-1Do"/>
+        <segue reference="kW0-NS-bL4"/>
+        <segue reference="LIN-Kl-Xs7"/>
     </inferredMetricsTieBreakers>
 </document>

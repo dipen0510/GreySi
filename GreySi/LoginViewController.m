@@ -20,12 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    self.view.alpha = 0.0;
     
     //[self addGradientToBGView];
-    [self setupInitialUI];
 
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    [self setupInitialUI];
+    
 }
 
 - (void) addGradientToBGView {
@@ -45,12 +50,17 @@
     viewCenter = self.view.center;
     showKeyboardAnimation = true;
     
-    [UIView animateWithDuration:0.35 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^
+    self.splashImgView.alpha = 1.0;
+    self.splashImgView.hidden = NO;
+    self.loginBgImgView.alpha = 0.0;
+    
+    [UIView animateWithDuration:1.5 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^
      {
-         self.view.alpha = 1;
+         self.splashImgView.alpha = 0.0;
+         self.loginBgImgView.alpha = 1.0;
      }
                      completion:^(BOOL finished){
-                         
+                         self.splashImgView.hidden = YES;
                      }];
     
 }
@@ -108,7 +118,9 @@
     }
     
     
-    [alert show];
+    if (alert.message) {
+        [alert show];
+    }
     
     return;
     

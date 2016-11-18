@@ -20,9 +20,13 @@
 @property (weak, nonatomic) IBOutlet UIImageView *forthStarImgView;
 @property (weak, nonatomic) IBOutlet UIImageView *fifthStarImgView;
 @property (weak, nonatomic) IBOutlet UITextView *reviewTvtView;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 @property (strong, nonatomic) NSString* projectId;
 @property (strong, nonatomic) NSString* hairDresserId;
+
+@property BOOL isBackButttonHidden;
 
 - (IBAction)submitButtonTapped:(id)sender;
 - (IBAction)backButtonTapped:(id)sender;

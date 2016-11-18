@@ -20,6 +20,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *loginTableView;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIImageView *splashImgView;
+@property (weak, nonatomic) IBOutlet UIImageView *loginBgImgView;
 
 - (IBAction)backButtonTapped:(id)sender;
 - (IBAction)submitButtonTapped:(id)sender;

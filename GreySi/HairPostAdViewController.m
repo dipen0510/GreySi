@@ -159,7 +159,9 @@
     }
     
     
-    [alert show];
+    if (alert.message) {
+        [alert show];
+    }
     
     return;
     

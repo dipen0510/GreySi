@@ -30,6 +30,8 @@
 @property (strong, nonatomic) NSMutableArray* allRedundantTreatments;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIButton *applyButton;
+@property (weak, nonatomic) IBOutlet UIView *filterContentView;
+@property (weak, nonatomic) IBOutlet UIView *filterHeaderView;
 
 - (IBAction)cancelButtonTapped:(id)sender;
 - (IBAction)applyButtonTapped:(id)sender;

@@ -233,7 +233,9 @@
         [alert setMessage:@"Please enter valid address to continue"];
     }
     
-    [alert show];
+    if (alert.message) {
+        [alert show];
+    }
     
     return;
     

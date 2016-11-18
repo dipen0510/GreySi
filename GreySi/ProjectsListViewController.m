@@ -287,6 +287,7 @@
     else if ([requestServiceKey isEqualToString:kCustomerProjectComplete]) {
         [SVProgressHUD showSuccessWithStatus:@"Project Completed successfully"];
         [self performSelector:@selector(refreshActiveProjectTabList) withObject:nil afterDelay:0.3];
+        [self performSegueWithIdentifier:@"showRateSegueWithoutBack" sender:nil];
     }
     else if ([requestServiceKey containsString:kHairCancelBidService]) {
         [SVProgressHUD showSuccessWithStatus:@"Bid cancelled successfully"];
@@ -315,8 +316,9 @@
         [alert setTitle:NSLocalizedString(@"Connection unsuccessful", nil)];
     }
     
-    
-    [alert show];
+    if (alert.message) {
+        [alert show];
+    }
     
     return;
     
@@ -354,6 +356,13 @@
         controller.projectId = selectedProjectId;
         controller.hairDresserId = selectedHDId;
         
+    }
+    if ([segue.identifier isEqualToString:@"showRateSegueWithoutBack"]) {
+        
+        RateViewController* controller = (RateViewController *)[segue destinationViewController];
+        controller.projectId = selectedActiveProjectId;
+        controller.hairDresserId = selectedHDId;
+        controller.isBackButttonHidden = YES;
     }
     
 }
@@ -394,6 +403,7 @@
     
     ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:sender.tag]];
     selectedActiveProjectId = singleProject.project_id;
+    selectedHDId = singleProject.hairdresser_id;
     [self startCustomerProjectCompletedService];
     
 }

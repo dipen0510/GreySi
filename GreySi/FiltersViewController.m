@@ -20,8 +20,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _cancelButton.layer.cornerRadius = 3.0;
-    _applyButton.layer.cornerRadius = 3.0;
+    _filterContentView.layer.cornerRadius = 10.0;
+    _cancelButton.layer.cornerRadius = 5.0;
+    _applyButton.layer.cornerRadius = 5.0;
+    
+    UIBezierPath *maskPath;
+    maskPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(_filterHeaderView.bounds.origin.x, _filterHeaderView.bounds.origin.y, _filterHeaderView.bounds.size.width, _filterHeaderView.bounds.size.height + 8.0)
+                                     byRoundingCorners:(UIRectCornerTopRight|UIRectCornerTopLeft)
+                                           cornerRadii:CGSizeMake(10.0, 10.0)];
+    
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.view.bounds;
+    maskLayer.path = maskPath.CGPath;
+    _filterHeaderView.layer.mask = maskLayer;
+    
     [self setupInitialDataSource];
     
 }
