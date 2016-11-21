@@ -21,7 +21,7 @@
     [dict setObject:password forKey:registerPasswordKey];
     [dict setObject:flag forKey:registerFlagKey];
     [dict setObject:profilePic forKey:registerProfilePiKey];
-    [dict setObject:@"Dummy123" forKey:registerPicNameKey];
+    [dict setObject:[[SharedClass sharedInstance] getCurrentUTCFormatDate] forKey:registerPicNameKey];
     
     if ([[NSUserDefaults standardUserDefaults] valueForKey:@"kDeviceToken"]) {
         [dict setObject:[[NSUserDefaults standardUserDefaults] valueForKey:@"kDeviceToken"] forKey:registerGCMIdKey];

@@ -40,6 +40,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *treatmentTxtField;
 @property (weak, nonatomic) IBOutlet UITextView *descriptioNTxtField;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionStaticLabel;
+@property (weak, nonatomic) IBOutlet UIView *descriptionSeparatorView;
+@property (weak, nonatomic) IBOutlet UILabel *reviewStaticLabel;
+@property (weak, nonatomic) IBOutlet UIView *reviewSeparatorView;
+@property (weak, nonatomic) IBOutlet UILabel *socialStaticLabel;
+@property (weak, nonatomic) IBOutlet UIView *socialSeparatorView;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *contenScrollView;
 

@@ -118,7 +118,7 @@
     signUpObj.email = emailText;
     signUpObj.password = passwordText;
     signUpObj.flag = [NSString stringWithFormat:@"%d",userType];
-    signUpObj.profilePic = [self encodeToBase64String:profileImage];
+    signUpObj.profilePic = @" ";//[self encodeToBase64String:profileImage];
     
     return [signUpObj createRequestDictionary];
     
@@ -231,10 +231,10 @@
         
         [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your name", nil)];
     }
-    else if (!profileImage) {
-        
-        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your profile image", nil)];
-    }
+//    else if (!profileImage) {
+//        
+//        [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your profile image", nil)];
+//    }
     else {
         [SVProgressHUD showWithStatus:@"Registering..."];
         [self startSignUpService];

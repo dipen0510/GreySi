@@ -53,6 +53,34 @@
         _editProfileTreatmentButton.hidden = NO;
         _editProfileDescriptionButton.hidden = NO;
         _editProfileSocialButton.hidden = NO;
+        
+        if ([[[SharedClass sharedInstance] userObj].flag intValue]!=1) {
+            
+            _treatmentTxtField.hidden = YES;
+            _completedProjectsLabel.hidden = YES;
+            _firstStarImgView.hidden = YES;
+            _secondStarImgView.hidden = YES;
+            _thirdStarImgView.hidden = YES;
+            _forthStarImgView.hidden = YES;
+            _fifthStarImgView.hidden = YES;
+            _starOutOfProjectsLabel.hidden = YES;
+            _descriptioNTxtField.hidden = YES;
+            _socialTblView.hidden = YES;
+            _reviewTblView.hidden = YES;
+            _descriptionStaticLabel.hidden = YES;
+            _descriptionSeparatorView.hidden = YES;
+            _socialStaticLabel.hidden = YES;
+            _socialSeparatorView.hidden = YES;
+            _reviewStaticLabel.hidden = YES;
+            _reviewSeparatorView.hidden = YES;
+            _editProfileTreatmentButton.hidden = YES;
+            _editProfileDescriptionButton.hidden = YES;
+            _editProfileSocialButton.hidden = YES;
+            
+            _contenScrollView.scrollEnabled = NO;
+            
+        }
+        
     }
     else {
         _editProfileImageButton.hidden = YES;
@@ -277,9 +305,12 @@
     self.doneButton.hidden = YES;
     _editProfileImageButton.hidden = NO;
     _editProfileNameButton.hidden = NO;
-    _editProfileTreatmentButton.hidden = NO;
-    _editProfileDescriptionButton.hidden = NO;
-    _editProfileSocialButton.hidden = NO;
+    
+    if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
+        _editProfileTreatmentButton.hidden = NO;
+        _editProfileDescriptionButton.hidden = NO;
+        _editProfileSocialButton.hidden = NO;
+    }
     
     [self.view endEditing:YES];
     self.profileNameTxtField.userInteractionEnabled = NO;

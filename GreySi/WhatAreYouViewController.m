@@ -35,8 +35,12 @@
 
 - (void) setupInitialUI {
     
-    self.hairdresserButton.layer.cornerRadius = 5.0;
-    self.customerButton.layer.cornerRadius = 5.0;
+    self.hairdresserButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.hairdresserButton.layer.borderWidth = 1.0;
+    self.customerButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.customerButton.layer.borderWidth = 1.0;
+    self.hairdresserButton.layer.cornerRadius = 10.0;
+    self.customerButton.layer.cornerRadius = 10.0;
     
 }
 

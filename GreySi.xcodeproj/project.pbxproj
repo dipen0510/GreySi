@@ -184,6 +184,8 @@
 		D4E9C4FD1DDDC7FF0013324A /* markascomplete.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4FA1DDDC7FF0013324A /* markascomplete.png */; };
 		D4E9C5011DDDEBEB0013324A /* bookingcancel.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C5001DDDEBEB0013324A /* bookingcancel.png */; };
 		D4E9C5031DDDF89E0013324A /* completeTick.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C5021DDDF89E0013324A /* completeTick.png */; };
+		D4EF0C3A1DE3071C00CA9A0F /* chooseType.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EF0C391DE3071C00CA9A0F /* chooseType.png */; };
+		D4EF0C3D1DE30E0F00CA9A0F /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EF0C3C1DE30E0F00CA9A0F /* ForgotPasswordViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -456,6 +458,9 @@
 		D4E9C4FA1DDDC7FF0013324A /* markascomplete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = markascomplete.png; sourceTree = "<group>"; };
 		D4E9C5001DDDEBEB0013324A /* bookingcancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookingcancel.png; sourceTree = "<group>"; };
 		D4E9C5021DDDF89E0013324A /* completeTick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = completeTick.png; sourceTree = "<group>"; };
+		D4EF0C391DE3071C00CA9A0F /* chooseType.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chooseType.png; sourceTree = "<group>"; };
+		D4EF0C3B1DE30E0F00CA9A0F /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
+		D4EF0C3C1DE30E0F00CA9A0F /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		D930F527C0F72C20148401A2 /* Pods-GreySi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreySi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GreySi/Pods-GreySi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -867,6 +872,8 @@
 				188BDA3D1DAD589700387467 /* RateViewController.m */,
 				1831C1791DD9870300B5E01F /* LogoutViewController.h */,
 				1831C17A1DD9870300B5E01F /* LogoutViewController.m */,
+				D4EF0C3B1DE30E0F00CA9A0F /* ForgotPasswordViewController.h */,
+				D4EF0C3C1DE30E0F00CA9A0F /* ForgotPasswordViewController.m */,
 			);
 			path = GreySi;
 			sourceTree = "<group>";
@@ -902,6 +909,7 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D4EF0C391DE3071C00CA9A0F /* chooseType.png */,
 				D4E9C5021DDDF89E0013324A /* completeTick.png */,
 				D4E9C5001DDDEBEB0013324A /* bookingcancel.png */,
 				D4E9C4F81DDDC7FF0013324A /* bookingno.png */,
@@ -1183,6 +1191,7 @@
 				D4CA5CD51C7DCF48000E185A /* rating_filled_small.png in Resources */,
 				185409921DD75533004784AD /* CardViewSlideShowTableViewCell.xib in Resources */,
 				D4E9C4FB1DDDC7FF0013324A /* bookingno.png in Resources */,
+				D4EF0C3A1DE3071C00CA9A0F /* chooseType.png in Resources */,
 				D4CA5C811C7DCDF7000E185A /* Main.storyboard in Resources */,
 				D4CA5CDA1C7DCF48000E185A /* wallet.png in Resources */,
 				D4CA5CD31C7DCF48000E185A /* rating-small.png in Resources */,
@@ -1288,6 +1297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4EF0C3D1DE30E0F00CA9A0F /* ForgotPasswordViewController.m in Sources */,
 				18CF35151D5BCE6100C0A5BD /* BidsReceivedTableViewCell.m in Sources */,
 				189B73E71DC77500006B8949 /* ALChatManager.m in Sources */,
 				184AF5401D76074D001DDD4B /* SignUpRequestModal.m in Sources */,
@@ -1503,7 +1513,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "03aa24da-0ceb-49bc-bb4d-55b66580a467";
+				PROVISIONING_PROFILE = "de329c54-dd5e-47c1-8c58-f4f0032384c9";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
@@ -1523,7 +1533,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "03aa24da-0ceb-49bc-bb4d-55b66580a467";
+				PROVISIONING_PROFILE = "de329c54-dd5e-47c1-8c58-f4f0032384c9";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};

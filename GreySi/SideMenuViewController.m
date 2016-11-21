@@ -244,9 +244,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
         
         ProfileDetailViewController* controller = (ProfileDetailViewController *)[segue destinationViewController];
         controller.userId = [[SharedClass sharedInstance] userObj].user_id;
-        if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
+//        if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
             controller.isEditable = YES;
-        }
+//        }
         controller.isOpenedFromSideMenu = YES;
     }
 
@@ -254,9 +254,9 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (void) showEditProfileScreen {
     
-    if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
+//    if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
         [self performSegueWithIdentifier:@"showEditProfileSegue" sender:nil];
-    }
+//    }
     
     
 }

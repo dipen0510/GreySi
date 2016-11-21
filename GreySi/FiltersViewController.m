@@ -84,7 +84,7 @@
 
 - (void) setupInitialDataSource {
     
-    budgetArr = [[NSMutableArray alloc] initWithObjects:@"$0 - $150",@"$150 - $300",@"$300 - $450",@"$450 - $700",@"$700 - $1000",@"$1000+", nil];
+    budgetArr = [[NSMutableArray alloc] initWithObjects:@"0 - 150",@"150 - 300",@"300 - 450",@"450 - 700",@"700 - 1000",@"1000+", nil];
     
     
 //    citiesArr = [[NSMutableArray alloc] initWithObjects:@"Stockholm",@"Manchester",@"Hamburg",@"Sussex", nil];
