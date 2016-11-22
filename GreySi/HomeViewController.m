@@ -290,8 +290,25 @@
 - (void) profileImageTapped:(UITapGestureRecognizer *) sender {
     
     if ([[[SharedClass sharedInstance] userObj].flag intValue]!=1) {
-        selectedIndex = sender.view.tag;
-        [self performSegueWithIdentifier:@"showProfileSegue" sender:nil];
+        
+        
+        if (sender.view.tag == 0) {
+            //DO NOTHING
+        }
+        else if (sender.view.tag%5 == 1 && sender.view.tag > 1) {
+            
+        }
+        else {
+            long indexForCell = sender.view.tag - 1;
+            if (sender.view.tag > 5) {
+                indexForCell = indexForCell - (int)(sender.view.tag/5);
+            }
+            selectedIndex = indexForCell;
+            [self performSegueWithIdentifier:@"showProfileSegue" sender:nil];
+        }
+        
+//        selectedIndex = sender.view.tag;
+//        [self performSegueWithIdentifier:@"showProfileSegue" sender:nil];
     }
     
 }
@@ -527,7 +544,7 @@
     if ([segue.identifier isEqualToString:@"showProfileSegue"]) {
         
         ProfileDetailViewController* controller = (ProfileDetailViewController *)[segue destinationViewController];
-        controller.userId = [[filteredAddContentArr objectAtIndex:selectedIndex] valueForKey:@"User_id"];
+        controller.userId = [[filteredAddContentArr objectAtIndex:selectedIndex] valueForKey:@"User_Id"];
         
     }
     

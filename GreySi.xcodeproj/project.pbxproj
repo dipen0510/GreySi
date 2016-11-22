@@ -404,7 +404,7 @@
 		D4A7DD761C806CE100F82033 /* WhatAreYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhatAreYouViewController.m; sourceTree = "<group>"; };
 		D4A7DD781C806CF900F82033 /* DocumentReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentReviewViewController.h; sourceTree = "<group>"; };
 		D4A7DD791C806CF900F82033 /* DocumentReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentReviewViewController.m; sourceTree = "<group>"; };
-		D4CA5C731C7DCDF7000E185A /* GreySi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreySi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4CA5C731C7DCDF7000E185A /* Greysi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greysi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CA5C771C7DCDF7000E185A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D4CA5C791C7DCDF7000E185A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D4CA5C7A1C7DCDF7000E185A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -799,7 +799,7 @@
 		D4CA5C741C7DCDF7000E185A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D4CA5C731C7DCDF7000E185A /* GreySi.app */,
+				D4CA5C731C7DCDF7000E185A /* Greysi.app */,
 				D4CA5C8C1C7DCDF8000E185A /* GreySiTests.xctest */,
 				D4CA5C971C7DCDF8000E185A /* GreySiUITests.xctest */,
 			);
@@ -1030,7 +1030,7 @@
 			);
 			name = GreySi;
 			productName = GreySi;
-			productReference = D4CA5C731C7DCDF7000E185A /* GreySi.app */;
+			productReference = D4CA5C731C7DCDF7000E185A /* Greysi.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D4CA5C8B1C7DCDF8000E185A /* GreySiTests */ = {
@@ -1080,7 +1080,7 @@
 				TargetAttributes = {
 					D4CA5C721C7DCDF7000E185A = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = CZA6DXR72T;
+						DevelopmentTeam = B7W283739C;
 						ProvisioningStyle = Automatic;
 					};
 					D4CA5C8B1C7DCDF8000E185A = {
@@ -1504,16 +1504,16 @@
 			baseConfigurationReference = D930F527C0F72C20148401A2 /* Pods-GreySi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Adham Amiri (B7W283739C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adham Amiri (B7W283739C)";
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = GreySi/PrefixHeader.pch;
 				INFOPLIST_FILE = GreySi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "de329c54-dd5e-47c1-8c58-f4f0032384c9";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alpha-stardeep.GreySi";
+				PRODUCT_NAME = Greysi;
+				PROVISIONING_PROFILE = "f8c2d47b-c92a-4061-9266-a46136f7364e";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
@@ -1524,16 +1524,16 @@
 			baseConfigurationReference = C2A3C6C8B51C1DE3923EABCA /* Pods-GreySi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Adham Amiri (B7W283739C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adham Amiri (B7W283739C)";
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = GreySi/PrefixHeader.pch;
 				INFOPLIST_FILE = GreySi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "de329c54-dd5e-47c1-8c58-f4f0032384c9";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alpha-stardeep.GreySi";
+				PRODUCT_NAME = Greysi;
+				PROVISIONING_PROFILE = "f8c2d47b-c92a-4061-9266-a46136f7364e";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
