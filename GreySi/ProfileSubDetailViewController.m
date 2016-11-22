@@ -142,7 +142,7 @@
          BookingDetailsViewController* controller = (BookingDetailsViewController *)[segue destinationViewController];
          controller.treatmentArr = treatmentArr;
          controller.budgetArr = budgetArr;
-         controller.hairDresserId = adDict[@"User_id"];
+         controller.hairDresserId = adDict[@"User_Id"];
          
      }
      else if ([segue.identifier isEqualToString:@"showMapSegue"]) {

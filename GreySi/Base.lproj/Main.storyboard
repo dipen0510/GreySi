@@ -351,7 +351,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="KSJ-Fe-9IL">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxQ-Am-mxu">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxQ-Am-mxu">
                                 <rect key="frame" x="200" y="427" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="BpJ-OC-T6E"/>
@@ -361,7 +361,7 @@
                                 <state key="normal" image="new_login_wid_fb.png"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTg-f6-cxM">
-                                <rect key="frame" x="279" y="487" width="42" height="21"/>
+                                <rect key="frame" x="279" y="447" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="9sp-BE-d5F"/>
                                     <constraint firstAttribute="width" constant="42" id="feZ-z3-Qff"/>
@@ -384,7 +384,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFK-e7-NJv">
-                                <rect key="frame" x="206" y="531" width="189" height="26"/>
+                                <rect key="frame" x="206" y="491" width="189" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="189" id="5do-Uq-OVJ"/>
                                     <constraint firstAttribute="height" constant="26" id="TvN-wY-9Db"/>
@@ -472,7 +472,7 @@
                         <constraints>
                             <constraint firstItem="KSJ-Fe-9IL" firstAttribute="leading" secondItem="mz8-4B-P5x" secondAttribute="leading" id="4hQ-fW-hzB"/>
                             <constraint firstItem="USi-R7-H3t" firstAttribute="top" secondItem="dvf-M6-W75" secondAttribute="bottom" id="4xV-Wl-haD"/>
-                            <constraint firstItem="LTg-f6-cxM" firstAttribute="top" secondItem="MxQ-Am-mxu" secondAttribute="bottom" constant="20" id="5Nc-Wc-fkF"/>
+                            <constraint firstItem="LTg-f6-cxM" firstAttribute="top" secondItem="MxQ-Am-mxu" secondAttribute="bottom" constant="-20" id="5Nc-Wc-fkF"/>
                             <constraint firstAttribute="trailing" secondItem="dvf-M6-W75" secondAttribute="trailing" id="65C-Cx-nOG"/>
                             <constraint firstItem="5Vy-gH-3Vx" firstAttribute="centerX" secondItem="mz8-4B-P5x" secondAttribute="centerX" id="6nb-Vt-OcZ"/>
                             <constraint firstItem="gpF-wH-nBB" firstAttribute="top" secondItem="5Vy-gH-3Vx" secondAttribute="bottom" constant="23" id="95e-bG-AUC"/>
@@ -480,7 +480,7 @@
                             <constraint firstItem="gpF-wH-nBB" firstAttribute="centerX" secondItem="mz8-4B-P5x" secondAttribute="centerX" id="DQU-U2-85Q"/>
                             <constraint firstItem="KSJ-Fe-9IL" firstAttribute="top" secondItem="mz8-4B-P5x" secondAttribute="top" id="GlF-fB-hCn"/>
                             <constraint firstItem="USi-R7-H3t" firstAttribute="top" secondItem="KSJ-Fe-9IL" secondAttribute="bottom" id="I5e-At-YDZ"/>
-                            <constraint firstItem="USi-R7-H3t" firstAttribute="top" secondItem="VFK-e7-NJv" secondAttribute="bottom" constant="43" id="Lm8-g5-Ske"/>
+                            <constraint firstItem="USi-R7-H3t" firstAttribute="top" secondItem="VFK-e7-NJv" secondAttribute="bottom" constant="83" id="Lm8-g5-Ske"/>
                             <constraint firstItem="dvf-M6-W75" firstAttribute="leading" secondItem="mz8-4B-P5x" secondAttribute="leading" id="X5g-Cz-SCf"/>
                             <constraint firstItem="1W0-x7-wtN" firstAttribute="top" secondItem="mz8-4B-P5x" secondAttribute="top" constant="60" id="cpQ-FZ-gZX"/>
                             <constraint firstItem="5Vy-gH-3Vx" firstAttribute="top" secondItem="1W0-x7-wtN" secondAttribute="bottom" constant="8" id="d4a-Xn-4EV"/>

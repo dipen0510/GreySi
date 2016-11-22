@@ -124,7 +124,7 @@
                                          
                                         NSString *dateString = [NSDateFormatter localizedStringFromDate:selectedDate dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterMediumStyle];
                                          NSLog(@"Picker: value: %@",dateString);
-                                         [self.selectDateButton setTitle:finalSelectedDate forState:UIControlStateNormal];
+                                         [self.selectDateButton setTitle:[NSString stringWithFormat:@"%@ %@",finalSelectedDate,finalSelectedTime] forState:UIControlStateNormal];
                                          
                                      }
                                    cancelBlock:^(ActionSheetDatePicker *picker) {

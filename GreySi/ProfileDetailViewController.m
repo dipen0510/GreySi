@@ -244,7 +244,7 @@
     self.profileNameTxtField.userInteractionEnabled = YES;
     [self.profileNameTxtField becomeFirstResponder];
     
-    [self.contenScrollView setContentInset:UIEdgeInsetsMake(0, 0, 224, 0)];
+    [self.contenScrollView setContentInset:UIEdgeInsetsMake(0, 0, 245, 0)];
 }
 
 - (IBAction)editProfileTreatmentButtonTapped:(id)sender {
@@ -258,7 +258,7 @@
     self.treatmentTxtField.userInteractionEnabled = YES;
     [self.treatmentTxtField becomeFirstResponder];
     
-    [self.contenScrollView setContentInset:UIEdgeInsetsMake(0, 0, 224, 0)];
+    [self.contenScrollView setContentInset:UIEdgeInsetsMake(0, 0, 245, 0)];
 }
 
 - (IBAction)editProfileDescriptionButtonTapped:(id)sender {
@@ -272,7 +272,7 @@
     self.descriptioNTxtField.userInteractionEnabled = YES;
     [self.descriptioNTxtField becomeFirstResponder];
     
-    [self.contenScrollView setContentInset:UIEdgeInsetsMake(0, 0, 224, 0)];
+    [self.contenScrollView setContentInset:UIEdgeInsetsMake(0, 0, 245, 0)];
 }
 
 - (IBAction)editProfileSocialButtonTapped:(id)sender {
@@ -294,7 +294,7 @@
     
     [fbCell.headingTxtField becomeFirstResponder];
     
-    [self.contenScrollView setContentInset:UIEdgeInsetsMake(0, 0, 224, 0)];
+    [self.contenScrollView setContentInset:UIEdgeInsetsMake(0, 0, 245, 0)];
     
     [self.contenScrollView scrollRectToVisible:CGRectMake(self.contenScrollView.contentSize.width - 1,self.contenScrollView.contentSize.height - 1, 1, 1) animated:YES];
     
