@@ -65,6 +65,63 @@
 }
 
 
+-(void)startPOSTWebServicesForProfileUploadWithParams:(NSMutableDictionary *)postData
+{
+    
+    NSURL* url;
+    url = [NSURL URLWithString:DomainBaseURL];
+    
+    UIImage* image = [[UIImage alloc] init];
+    image = [postData valueForKey:@"Profile_pi"];
+    [postData removeObjectForKey:@"Profile_pi"];
+    
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
+    
+    manager.requestSerializer = [AFJSONRequestSerializer serializerWithWritingOptions:NSJSONWritingPrettyPrinted];
+    
+    manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+    
+    
+    [manager POST:self.serviceKey parameters:postData constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        
+        NSData* data = UIImageJPEGRepresentation(image,1.0);
+        
+        [formData appendPartWithFileData:data
+                                    name:@"myFile"
+                                fileName:@"myFile" mimeType:@"image/png"];
+        
+    } progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        
+        //if ([responseObject isKindOfClass:[NSDictionary class]]) {
+        
+        if ([[responseObject valueForKey:@"status"] intValue] == 1 || [[responseObject valueForKey:@"result"] intValue] == 1) {
+            
+            if ([delegate respondsToSelector:@selector(didFinishServiceWithSuccess:andServiceKey:)]) {
+                [delegate didFinishServiceWithSuccess:[self prepareResponseObjectForServiceKey:self.serviceKey withData:responseObject] andServiceKey:self.serviceKey];
+            }
+        }
+        else {
+            //if ([delegate respondsToSelector:@selector(didFinishServiceWithFailure:)]) {
+            [delegate didFinishServiceWithFailure:[responseObject valueForKey:@"msg"]];
+            //}
+            
+        }
+        
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        if ([delegate respondsToSelector:@selector(didFinishServiceWithFailure:)]) {
+            [delegate didFinishServiceWithFailure:NSLocalizedString(@"Verify your internet connection and try again", nil)];
+        }
+        
+        
+    }];
+    
+    
+}
+
+
 
 -(void)startGETWebServices
 {

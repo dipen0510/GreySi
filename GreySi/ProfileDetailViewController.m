@@ -528,7 +528,7 @@
     DataSyncManager* manager = [[DataSyncManager alloc] init];
     manager.serviceKey = kUploadProfileService;
     manager.delegate = self;
-    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForUploadProfile]];
+    [manager startPOSTWebServicesForProfileUploadWithParams:[self prepareDictionaryForUploadProfile]];
     
 }
 
@@ -621,7 +621,8 @@
     [dict setObject:fbCell.headingTxtField.text forKey:@"FB"];
     [dict setObject:twitterCell.headingTxtField.text forKey:@"Twitter"];
     [dict setObject:WebCell.headingTxtField.text forKey:@"Website"];
-    [dict setObject:[self encodeToBase64String:profileImage] forKey:@"Profile_pi"];
+//    [dict setObject:[self encodeToBase64String:profileImage] forKey:@"Profile_pi"];
+    [dict setObject:profileImage forKey:@"Profile_pi"];
     [dict setObject:[[SharedClass sharedInstance] getCurrentUTCFormatDate] forKey:@"Pic_Name"];
     [dict setObject:@"1" forKey:@"Available"];
     

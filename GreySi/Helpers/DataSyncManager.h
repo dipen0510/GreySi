@@ -27,6 +27,7 @@
 
 
 -(void)startPOSTWebServicesWithParams:(NSMutableDictionary *)postData;
+-(void)startPOSTWebServicesForProfileUploadWithParams:(NSMutableDictionary *)postData;
 -(void)startGETWebServices;
 
 @end
