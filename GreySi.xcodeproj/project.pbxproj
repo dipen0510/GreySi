@@ -1095,7 +1095,7 @@
 				TargetAttributes = {
 					D4CA5C721C7DCDF7000E185A = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = CZA6DXR72T;
+						DevelopmentTeam = B7W283739C;
 						ProvisioningStyle = Automatic;
 					};
 					D4CA5C8B1C7DCDF8000E185A = {
@@ -1525,15 +1525,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adham Amiri (B7W283739C)";
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = GreySi/PrefixHeader.pch;
 				INFOPLIST_FILE = GreySi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alpha-stardeep.GreySi";
 				PRODUCT_NAME = Greysi;
-				PROVISIONING_PROFILE = "03aa24da-0ceb-49bc-bb4d-55b66580a467";
+				PROVISIONING_PROFILE = "f8c2d47b-c92a-4061-9266-a46136f7364e";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
@@ -1545,15 +1545,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adham Amiri (B7W283739C)";
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = GreySi/PrefixHeader.pch;
 				INFOPLIST_FILE = GreySi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alpha-stardeep.GreySi";
 				PRODUCT_NAME = Greysi;
-				PROVISIONING_PROFILE = "03aa24da-0ceb-49bc-bb4d-55b66580a467";
+				PROVISIONING_PROFILE = "f8c2d47b-c92a-4061-9266-a46136f7364e";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
