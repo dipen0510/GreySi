@@ -2331,7 +2331,7 @@
                                             <constraint firstAttribute="width" constant="92" id="w5L-Se-HXN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
-                                        <state key="normal" title="Cancel">
+                                        <state key="normal" title="Avbryt">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>

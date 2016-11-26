@@ -61,6 +61,13 @@
 		1881F3F51DA1B47A005198A2 /* fb_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1881F3F21DA1B47A005198A2 /* fb_logo.png */; };
 		1882745D1DEA0D0E00949D36 /* tc2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1882745C1DEA0D0E00949D36 /* tc2.png */; };
 		1882745F1DEA1C0D00949D36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1882745E1DEA1C0D00949D36 /* Localizable.strings */; };
+		188274611DEA24E100949D36 /* login_bt.png in Resources */ = {isa = PBXBuildFile; fileRef = 188274601DEA24E100949D36 /* login_bt.png */; };
+		188274681DEA24F800949D36 /* create_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 188274621DEA24F800949D36 /* create_profile.png */; };
+		188274691DEA24F800949D36 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 188274631DEA24F800949D36 /* 3.png */; };
+		1882746A1DEA24F800949D36 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 188274641DEA24F800949D36 /* 4.png */; };
+		1882746B1DEA24F800949D36 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 188274651DEA24F800949D36 /* 5.png */; };
+		1882746C1DEA24F800949D36 /* markascomplete.png in Resources */ = {isa = PBXBuildFile; fileRef = 188274661DEA24F800949D36 /* markascomplete.png */; };
+		1882746D1DEA24F800949D36 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 188274671DEA24F800949D36 /* 7.png */; };
 		188853C81D917CBB001EF67C /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 188853C61D917CBB001EF67C /* checked.png */; };
 		188853C91D917CBB001EF67C /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 188853C71D917CBB001EF67C /* unchecked.png */; };
 		188853CC1D9184B7001EF67C /* AddTreatmentRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 188853CB1D9184B7001EF67C /* AddTreatmentRequestModal.m */; };
@@ -177,12 +184,9 @@
 		D4E9C4EE1DDDB7A60013324A /* splash_background.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4EC1DDDB7A60013324A /* splash_background.png */; };
 		D4E9C4EF1DDDB7A60013324A /* splash_first.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4ED1DDDB7A60013324A /* splash_first.png */; };
 		D4E9C4F11DDDBA610013324A /* new_login_wid_fb.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4F01DDDBA610013324A /* new_login_wid_fb.png */; };
-		D4E9C4F31DDDBA860013324A /* login_bt.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4F21DDDBA860013324A /* login_bt.png */; };
-		D4E9C4F51DDDBB210013324A /* create_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4F41DDDBB210013324A /* create_profile.png */; };
 		D4E9C4F71DDDBD2D0013324A /* sign_up_bt_confrim.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4F61DDDBD2D0013324A /* sign_up_bt_confrim.png */; };
 		D4E9C4FB1DDDC7FF0013324A /* bookingno.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4F81DDDC7FF0013324A /* bookingno.png */; };
 		D4E9C4FC1DDDC7FF0013324A /* bookingyes.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4F91DDDC7FF0013324A /* bookingyes.png */; };
-		D4E9C4FD1DDDC7FF0013324A /* markascomplete.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C4FA1DDDC7FF0013324A /* markascomplete.png */; };
 		D4E9C5011DDDEBEB0013324A /* bookingcancel.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C5001DDDEBEB0013324A /* bookingcancel.png */; };
 		D4E9C5031DDDF89E0013324A /* completeTick.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C5021DDDF89E0013324A /* completeTick.png */; };
 		D4EF0C3A1DE3071C00CA9A0F /* chooseType.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EF0C391DE3071C00CA9A0F /* chooseType.png */; };
@@ -275,6 +279,13 @@
 		1881F3F21DA1B47A005198A2 /* fb_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_logo.png; sourceTree = "<group>"; };
 		1882745C1DEA0D0E00949D36 /* tc2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tc2.png; sourceTree = "<group>"; };
 		1882745E1DEA1C0D00949D36 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		188274601DEA24E100949D36 /* login_bt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_bt.png; sourceTree = "<group>"; };
+		188274621DEA24F800949D36 /* create_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create_profile.png; sourceTree = "<group>"; };
+		188274631DEA24F800949D36 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		188274641DEA24F800949D36 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		188274651DEA24F800949D36 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		188274661DEA24F800949D36 /* markascomplete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = markascomplete.png; sourceTree = "<group>"; };
+		188274671DEA24F800949D36 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		188853C61D917CBB001EF67C /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
 		188853C71D917CBB001EF67C /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
 		188853CA1D9184B7001EF67C /* AddTreatmentRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTreatmentRequestModal.h; sourceTree = "<group>"; };
@@ -452,12 +463,9 @@
 		D4E9C4EC1DDDB7A60013324A /* splash_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_background.png; sourceTree = "<group>"; };
 		D4E9C4ED1DDDB7A60013324A /* splash_first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash_first.png; sourceTree = "<group>"; };
 		D4E9C4F01DDDBA610013324A /* new_login_wid_fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_login_wid_fb.png; sourceTree = "<group>"; };
-		D4E9C4F21DDDBA860013324A /* login_bt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_bt.png; sourceTree = "<group>"; };
-		D4E9C4F41DDDBB210013324A /* create_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create_profile.png; sourceTree = "<group>"; };
 		D4E9C4F61DDDBD2D0013324A /* sign_up_bt_confrim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sign_up_bt_confrim.png; sourceTree = "<group>"; };
 		D4E9C4F81DDDC7FF0013324A /* bookingno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookingno.png; sourceTree = "<group>"; };
 		D4E9C4F91DDDC7FF0013324A /* bookingyes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookingyes.png; sourceTree = "<group>"; };
-		D4E9C4FA1DDDC7FF0013324A /* markascomplete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = markascomplete.png; sourceTree = "<group>"; };
 		D4E9C5001DDDEBEB0013324A /* bookingcancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookingcancel.png; sourceTree = "<group>"; };
 		D4E9C5021DDDF89E0013324A /* completeTick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = completeTick.png; sourceTree = "<group>"; };
 		D4EF0C391DE3071C00CA9A0F /* chooseType.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chooseType.png; sourceTree = "<group>"; };
@@ -912,15 +920,19 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				188274621DEA24F800949D36 /* create_profile.png */,
+				188274631DEA24F800949D36 /* 3.png */,
+				188274641DEA24F800949D36 /* 4.png */,
+				188274651DEA24F800949D36 /* 5.png */,
+				188274661DEA24F800949D36 /* markascomplete.png */,
+				188274671DEA24F800949D36 /* 7.png */,
+				188274601DEA24E100949D36 /* login_bt.png */,
 				D4EF0C391DE3071C00CA9A0F /* chooseType.png */,
 				D4E9C5021DDDF89E0013324A /* completeTick.png */,
 				D4E9C5001DDDEBEB0013324A /* bookingcancel.png */,
 				D4E9C4F81DDDC7FF0013324A /* bookingno.png */,
 				D4E9C4F91DDDC7FF0013324A /* bookingyes.png */,
-				D4E9C4FA1DDDC7FF0013324A /* markascomplete.png */,
 				D4E9C4F61DDDBD2D0013324A /* sign_up_bt_confrim.png */,
-				D4E9C4F41DDDBB210013324A /* create_profile.png */,
-				D4E9C4F21DDDBA860013324A /* login_bt.png */,
 				D4E9C4F01DDDBA610013324A /* new_login_wid_fb.png */,
 				D4E9C4EC1DDDB7A60013324A /* splash_background.png */,
 				D4E9C4ED1DDDB7A60013324A /* splash_first.png */,
@@ -1137,7 +1149,6 @@
 				18E469631DD7A0D10065AA6D /* SlideShowCollectionViewCell.xib in Resources */,
 				185DC0FA1D4E29E7007998F3 /* appLogo.png in Resources */,
 				D4CA5CD01C7DCF48000E185A /* password.png in Resources */,
-				D4E9C4F51DDDBB210013324A /* create_profile.png in Resources */,
 				D4104E901D9D3E0B006348D3 /* new_padicure_logo.png in Resources */,
 				1882745D1DEA0D0E00949D36 /* tc2.png in Resources */,
 				D4E9C4EE1DDDB7A60013324A /* splash_background.png in Resources */,
@@ -1148,9 +1159,9 @@
 				D4CA5CD41C7DCF48000E185A /* rating.png in Resources */,
 				18157D881DD7BB490087EDC2 /* CardViewNewAdTableViewCell.xib in Resources */,
 				185409981DD75924004784AD /* slide1.jpg in Resources */,
-				D4E9C4F31DDDBA860013324A /* login_bt.png in Resources */,
 				D4CA5CCA1C7DCF48000E185A /* feedback_rating_full.png in Resources */,
 				D4CA5CC81C7DCF48000E185A /* email.png in Resources */,
+				1882746C1DEA24F800949D36 /* markascomplete.png in Resources */,
 				185B5E981D5A6D2200205F72 /* TreatmentTabTableViewCell.xib in Resources */,
 				18157D971DD7C5320087EDC2 /* tc3.png in Resources */,
 				185DC11E1D514348007998F3 /* logout.png in Resources */,
@@ -1162,11 +1173,13 @@
 				D4104E8F1D9D3E0B006348D3 /* new_others_logo.png in Resources */,
 				18157D951DD7C5320087EDC2 /* tc1.png in Resources */,
 				D455C4741C7EDABA00C6D1CB /* signup.png in Resources */,
+				188274681DEA24F800949D36 /* create_profile.png in Resources */,
 				18157D941DD7C5320087EDC2 /* th3.png in Resources */,
 				1854099E1DD75932004784AD /* slide2.jpg in Resources */,
 				1881F3CE1D97E478005198A2 /* HairPostAdTableViewCell.xib in Resources */,
 				D49BFB061DC35EF50058433A /* close.png in Resources */,
 				D4E9C5031DDDF89E0013324A /* completeTick.png in Resources */,
+				188274611DEA24E100949D36 /* login_bt.png in Resources */,
 				D4CA5CC41C7DCF48000E185A /* arrow.png in Resources */,
 				D455C4731C7EDABA00C6D1CB /* login.png in Resources */,
 				185DC11D1D514348007998F3 /* available.png in Resources */,
@@ -1175,6 +1188,7 @@
 				185DC10E1D513C3E007998F3 /* mike.jpg in Resources */,
 				185DC1061D4E4543007998F3 /* timeLeftClock.png in Resources */,
 				188853D11D91A2B0001EF67C /* booking_navigation_drawer_image.png in Resources */,
+				188274691DEA24F800949D36 /* 3.png in Resources */,
 				D4104E931D9D3E3E006348D3 /* new_beauty_logo.png in Resources */,
 				1888572C1CAB17F90026995E /* HomeTableView.xib in Resources */,
 				185DC1041D4E343C007998F3 /* navMenu.png in Resources */,
@@ -1184,7 +1198,7 @@
 				D4CA5CD91C7DCF48000E185A /* tick.png in Resources */,
 				18CF35161D5BCE6100C0A5BD /* BidsReceivedTableViewCell.xib in Resources */,
 				1888572E1CAB18010026995E /* HomeMapView.xib in Resources */,
-				D4E9C4FD1DDDC7FF0013324A /* markascomplete.png in Resources */,
+				1882746A1DEA24F800949D36 /* 4.png in Resources */,
 				18DB7D701DAEC5BA002594C8 /* new_edit_profile.png in Resources */,
 				18CF35251D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.xib in Resources */,
 				1854099C1DD75932004784AD /* slide4.jpg in Resources */,
@@ -1192,6 +1206,7 @@
 				D4E9C4F71DDDBD2D0013324A /* sign_up_bt_confrim.png in Resources */,
 				188857401CAB1C650026995E /* Screen Shot 2016-03-30 at 12.44.22 AM.png in Resources */,
 				D4CA5CD51C7DCF48000E185A /* rating_filled_small.png in Resources */,
+				1882746D1DEA24F800949D36 /* 7.png in Resources */,
 				185409921DD75533004784AD /* CardViewSlideShowTableViewCell.xib in Resources */,
 				D4E9C4FB1DDDC7FF0013324A /* bookingno.png in Resources */,
 				D4EF0C3A1DE3071C00CA9A0F /* chooseType.png in Resources */,
@@ -1227,6 +1242,7 @@
 				1881F3F41DA1B47A005198A2 /* insta_logo.png in Resources */,
 				188853C81D917CBB001EF67C /* checked.png in Resources */,
 				D4CA5CC91C7DCF48000E185A /* feedback_rating.png in Resources */,
+				1882746B1DEA24F800949D36 /* 5.png in Resources */,
 				D4104E8E1D9D3E0B006348D3 /* new_mens_hair_logo.png in Resources */,
 				D4CA5CD61C7DCF48000E185A /* search.png in Resources */,
 			);
