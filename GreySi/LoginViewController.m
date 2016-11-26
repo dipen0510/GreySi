@@ -171,12 +171,12 @@
     }
     
     if (indexPath.row) {
-        cell.txtField.placeholder = @"PassWord";
+        cell.txtField.placeholder = @"Lösenord";
         cell.separatorView.hidden = YES;
         cell.txtField.secureTextEntry = YES;
     }
     else {
-        cell.txtField.placeholder = @"Email";
+        cell.txtField.placeholder = @"E-post";
         cell.separatorView.hidden = NO;
     }
     

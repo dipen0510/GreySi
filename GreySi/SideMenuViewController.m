@@ -81,27 +81,27 @@
     
     tableArr = [[NSMutableArray alloc] init];
     NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
-    [dict setObject:@"PROJECTS" forKey:@"title"];
+    [dict setObject:@"Behandlingar" forKey:@"title"];
     [dict setObject:@"projects.png" forKey:@"image"];
     [tableArr addObject:dict];
     
     NSMutableDictionary* dict1 = [[NSMutableDictionary alloc] init];
-    [dict1 setObject:@"MESSAGES" forKey:@"title"];
+    [dict1 setObject:@"Meddelanden" forKey:@"title"];
     [dict1 setObject:@"messages.png" forKey:@"image"];
     [tableArr addObject:dict1];
     
     NSMutableDictionary* dict3 = [[NSMutableDictionary alloc] init];
-    [dict3 setObject:@"POST AN AD" forKey:@"title"];
+    [dict3 setObject:@"Lägg in annons" forKey:@"title"];
     [dict3 setObject:@"postAd.png" forKey:@"image"];
     [tableArr addObject:dict3];
     
     NSMutableDictionary* dict4 = [[NSMutableDictionary alloc] init];
-    [dict4 setObject:@"BOOKINGS" forKey:@"title"];
+    [dict4 setObject:@"Bokningar" forKey:@"title"];
     [dict4 setObject:@"booking_navigation_drawer_image.png" forKey:@"image"];
     [tableArr addObject:dict4];
     
     NSMutableDictionary* dict5 = [[NSMutableDictionary alloc] init];
-    [dict5 setObject:@"LOCATION" forKey:@"title"];
+    [dict5 setObject:@"Min plats" forKey:@"title"];
     [dict5 setObject:@"myLocation.png" forKey:@"image"];
     [tableArr addObject:dict5];
     
@@ -111,7 +111,7 @@
     [tableArr addObject:dict6];
     
     NSMutableDictionary* dict2 = [[NSMutableDictionary alloc] init];
-    [dict2 setObject:@"LOG OUT" forKey:@"title"];
+    [dict2 setObject:@"Logga ut" forKey:@"title"];
     [dict2 setObject:@"logout.png" forKey:@"image"];
     [tableArr addObject:dict2];
     

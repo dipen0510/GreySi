@@ -494,7 +494,7 @@
             cell.nameLabel.text = modal.name;
             cell.serviceTypeLabel.text = [[[treatmentDict valueForKey:@"treatmentsArray"] objectAtIndex:0] valueForKey:@"name"];
             [cell.priceButton setTitle:[NSString stringWithFormat:@"%@:-",[[[budgetDict valueForKey:@"pricesArray"] objectAtIndex:0] valueForKey:@"name"]] forState:UIControlStateNormal];
-            cell.timeLeftLabel.text = [NSString stringWithFormat:@"%@ Hours left",modal.hours];
+            cell.timeLeftLabel.text = [NSString stringWithFormat:@"%@ timmar kvar",modal.hours];
             
             [self updateReviewStarUIForCell:cell withRating:[modal.average_Rating doubleValue]];
             

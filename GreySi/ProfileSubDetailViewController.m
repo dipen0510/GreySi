@@ -45,7 +45,7 @@
     _descriptionLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed: @"Adbackground.png"]];
     
     if ([[[SharedClass sharedInstance] userObj].flag intValue]==1) {
-        [self.bookButton setTitle:@"Bid" forState:UIControlStateNormal];
+        [self.bookButton setTitle:@"Ditt pris" forState:UIControlStateNormal];
         self.treatmentLabel.text = adDict[@"Treatment"];
         self.priceLabel.text = [NSString stringWithFormat:@"%@:-",adDict[@"Budget"]];
         self.priceListButton.hidden = YES;
@@ -61,7 +61,7 @@
         
     }
     else {
-        [self.bookButton setTitle:@"Book" forState:UIControlStateNormal];
+        [self.bookButton setTitle:@"boka" forState:UIControlStateNormal];
 //        self.treatmentLabel.text = treatmentStr;
         self.treatmentLabel.text = adDict[@"Short_description"];
         self.priceLabel.hidden = YES;

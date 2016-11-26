@@ -32,7 +32,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount : $150" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQ0-hc-5FR">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summa : $150" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQ0-hc-5FR">
                         <rect key="frame" x="87" y="40" width="145" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="QHI-j1-5ks"/>
@@ -48,7 +48,7 @@
                             <constraint firstAttribute="height" constant="25" id="hxf-Tl-qZ3"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
-                        <state key="normal" title="Award">
+                        <state key="normal" title="Tilldela">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>

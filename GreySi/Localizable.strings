@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  GreySi
+
+  Created by Dipen Sekhsaria on 27/11/16.
+  Copyright © 2016 GreyScissors. All rights reserved.
+*/
+
+"Yes" = "Ja";
+"YES" = "Ja";
+"No" = "Nej";
+"NO" = "Nej";
+"Select Date & Time" = "Datum & Tid"

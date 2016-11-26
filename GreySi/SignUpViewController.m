@@ -143,20 +143,20 @@
     }
     
     if (indexPath.row == 0) {
-        cell.txtField.placeholder = @"Name";
+        cell.txtField.placeholder = @"Namn";
         cell.separatorView.hidden = NO;
     }
     else if (indexPath.row == 1) {
-        cell.txtField.placeholder = @"Email";
+        cell.txtField.placeholder = @"E-post";
         cell.separatorView.hidden = NO;
     }
     else if (indexPath.row == 2) {
-        cell.txtField.placeholder = @"Password";
+        cell.txtField.placeholder = @"Lösenord";
         cell.txtField.secureTextEntry = YES;
         cell.separatorView.hidden = NO;
     }
     else if (indexPath.row == 3) {
-        cell.txtField.placeholder = @"Confirm Password";
+        cell.txtField.placeholder = @"Bekräfta Lösenord";
         cell.txtField.secureTextEntry = YES;
         cell.separatorView.hidden = YES;
     }

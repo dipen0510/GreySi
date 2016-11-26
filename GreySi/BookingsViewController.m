@@ -338,10 +338,10 @@
     selectedProjectBookingId = [dict valueForKey:@"Booking_id"];
     
     UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil
-                                                  message:NSLocalizedString(@"Are you sure you want to mark this as complete?", nil)
+                                                  message:NSLocalizedString(@"Är du säker på att du vill markera behandlingen som färdig?", nil)
                                                  delegate:self
                                         cancelButtonTitle:NSLocalizedString(@"NO", nil)
-                                        otherButtonTitles:@"YES", nil];
+                                        otherButtonTitles:NSLocalizedString(@"YES",nil), nil];
 
     [alert show];
     

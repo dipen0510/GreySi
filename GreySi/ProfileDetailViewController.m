@@ -107,8 +107,8 @@
     
     self.profileNameTxtField.text = [infoDict valueForKey:@"Name"];
     self.treatmentTxtField.text = [infoDict valueForKey:@"Short_description"];
-    self.completedProjectsLabel.text = [NSString stringWithFormat:@"Completed Projects : %@",[responseDict valueForKey:@"completed_projects"]];
-    self.starOutOfProjectsLabel.text = [NSString stringWithFormat:@"%0.2f star from %@ projects",[[responseDict valueForKey:@"average_rating"] floatValue],[responseDict valueForKey:@"completed_projects"]];
+    self.completedProjectsLabel.text = [NSString stringWithFormat:@"Färdiga behandlingar : %@",[responseDict valueForKey:@"completed_projects"]];
+    self.starOutOfProjectsLabel.text = [NSString stringWithFormat:@"Betyg %0.2f, Recensioner %@",[[responseDict valueForKey:@"average_rating"] floatValue],[responseDict valueForKey:@"completed_projects"]];
     self.descriptioNTxtField.text = [infoDict valueForKey:@"Long_description"];
     
     __weak UIImageView* weakImageView = self.profileImgView;

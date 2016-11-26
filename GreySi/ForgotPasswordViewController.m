@@ -52,7 +52,7 @@
 -(void) didFinishServiceWithSuccess:(SignUpResponseModal *)responseData andServiceKey:(NSString *)requestServiceKey {
     
     [SVProgressHUD dismiss];
-    [SVProgressHUD showSuccessWithStatus:@"New password sent to the email provided."];
+    [SVProgressHUD showSuccessWithStatus:@"Ett nytt lösenord har skickats till din e-post."];
     
     if ([requestServiceKey isEqualToString:kForgotPasswordService]) {
         
@@ -132,7 +132,7 @@
         cell = (LoginTableViewCell *)[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    cell.txtField.placeholder = @"Email";
+    cell.txtField.placeholder = @"E-post";
     cell.separatorView.hidden = NO;
     cell.txtField.delegate = self;
     

@@ -60,6 +60,7 @@
 		1881F3F41DA1B47A005198A2 /* insta_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1881F3F11DA1B47A005198A2 /* insta_logo.png */; };
 		1881F3F51DA1B47A005198A2 /* fb_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1881F3F21DA1B47A005198A2 /* fb_logo.png */; };
 		1882745D1DEA0D0E00949D36 /* tc2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1882745C1DEA0D0E00949D36 /* tc2.png */; };
+		1882745F1DEA1C0D00949D36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1882745E1DEA1C0D00949D36 /* Localizable.strings */; };
 		188853C81D917CBB001EF67C /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 188853C61D917CBB001EF67C /* checked.png */; };
 		188853C91D917CBB001EF67C /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 188853C71D917CBB001EF67C /* unchecked.png */; };
 		188853CC1D9184B7001EF67C /* AddTreatmentRequestModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 188853CB1D9184B7001EF67C /* AddTreatmentRequestModal.m */; };
@@ -273,6 +274,7 @@
 		1881F3F11DA1B47A005198A2 /* insta_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = insta_logo.png; sourceTree = "<group>"; };
 		1881F3F21DA1B47A005198A2 /* fb_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_logo.png; sourceTree = "<group>"; };
 		1882745C1DEA0D0E00949D36 /* tc2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tc2.png; sourceTree = "<group>"; };
+		1882745E1DEA1C0D00949D36 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		188853C61D917CBB001EF67C /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
 		188853C71D917CBB001EF67C /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
 		188853CA1D9184B7001EF67C /* AddTreatmentRequestModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTreatmentRequestModal.h; sourceTree = "<group>"; };
@@ -884,6 +886,7 @@
 				D4CA5C871C7DCDF7000E185A /* Info.plist */,
 				D4CA5C771C7DCDF7000E185A /* main.m */,
 				188857411CAB20C60026995E /* PrefixHeader.pch */,
+				1882745E1DEA1C0D00949D36 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1080,7 +1083,7 @@
 				TargetAttributes = {
 					D4CA5C721C7DCDF7000E185A = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = B7W283739C;
+						DevelopmentTeam = CZA6DXR72T;
 						ProvisioningStyle = Automatic;
 					};
 					D4CA5C8B1C7DCDF8000E185A = {
@@ -1203,6 +1206,7 @@
 				D4CA5CD11C7DCF48000E185A /* pin.png in Resources */,
 				D4104E8C1D9D3E0B006348D3 /* new_manicure_logo.png in Resources */,
 				185DC1171D5140C3007998F3 /* SideMenuTableViewCell.xib in Resources */,
+				1882745F1DEA1C0D00949D36 /* Localizable.strings in Resources */,
 				D49BFB051DC35EF50058433A /* check.png in Resources */,
 				D4104E8D1D9D3E0B006348D3 /* new_massage_logo.png in Resources */,
 				188853C91D917CBB001EF67C /* unchecked.png in Resources */,
@@ -1504,16 +1508,16 @@
 			baseConfigurationReference = D930F527C0F72C20148401A2 /* Pods-GreySi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Adham Amiri (B7W283739C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adham Amiri (B7W283739C)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = GreySi/PrefixHeader.pch;
 				INFOPLIST_FILE = GreySi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alpha-stardeep.GreySi";
+				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = Greysi;
-				PROVISIONING_PROFILE = "f8c2d47b-c92a-4061-9266-a46136f7364e";
+				PROVISIONING_PROFILE = "03aa24da-0ceb-49bc-bb4d-55b66580a467";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
@@ -1524,16 +1528,16 @@
 			baseConfigurationReference = C2A3C6C8B51C1DE3923EABCA /* Pods-GreySi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Adham Amiri (B7W283739C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adham Amiri (B7W283739C)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = GreySi/PrefixHeader.pch;
 				INFOPLIST_FILE = GreySi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alpha-stardeep.GreySi";
+				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = Greysi;
-				PROVISIONING_PROFILE = "f8c2d47b-c92a-4061-9266-a46136f7364e";
+				PROVISIONING_PROFILE = "03aa24da-0ceb-49bc-bb4d-55b66580a467";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};

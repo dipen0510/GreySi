@@ -34,7 +34,7 @@
 
 - (void) setupUI {
     
-    treatmentOptionsArr = [[NSMutableArray alloc] initWithObjects:@"Womens Hair",@"Mens Hair",@"Manicure",@"Pedicure",@"Beauty",@"Massage",@"Other", nil];
+    treatmentOptionsArr = [[NSMutableArray alloc] initWithObjects:@"Dam",@"Herr",@"Manikyr",@"Pedikyr",@"Skönhet",@"Massage",@"Övrigt", nil];
     treatmentOptionsImgArr = [[NSMutableArray alloc] initWithObjects:@"new_womens_hair_logo.png",@"new_mens_hair_logo.png",@"new_manicure_logo.png",@"new_padicure_logo.png",@"new_beauty_logo.png",@"new_massage_logo.png",@"new_others_logo.png", nil];
     cityOptionsArr = [[NSMutableArray alloc] initWithObjects:@"Stockholm",@"Göteborg",@"Malmö",@"Uppsala", @"Blekinge",  @"Dalarna", @"Gotland", @"Halland", @"Jämtland", @"Jönköping", @"Kalmar", @"Kronoberg", @"Norrbotten", @"Skåne", @"Södermanland", @"Värmland", @"Västerbotten", @"Västernorrland", @"Västmanland", @"Västra Götaland", @"Örebro", @"Östergötland", nil];
     selectedTreamentsArr = [[NSMutableArray alloc] init];
@@ -280,7 +280,7 @@
 
 - (IBAction)placeTabNextButtonTapped:(id)sender {
     
-    if ([self.selectCityButton.titleLabel.text isEqualToString:@"Select a City"] || [self.selectDateTimeButton.titleLabel.text isEqualToString:@"Select Date & Time"] || (!self.myPlaceButton.isSelected && !self.yourPlaceButton.isSelected)) {
+    if ([self.selectCityButton.titleLabel.text isEqualToString:@"Select a City"] || [self.selectDateTimeButton.titleLabel.text isEqualToString:NSLocalizedString(@"Select Date & Time",nil)] || (!self.myPlaceButton.isSelected && !self.yourPlaceButton.isSelected)) {
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Select Options" message:@"Please select all options to proceed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
@@ -300,7 +300,7 @@
     
     [self.timeSlotButton setSelected:NO];
     [self.specificTimeButton setSelected:YES];
-    [self.selectDateTimeButton setTitle:@"Select Date & Time" forState:UIControlStateNormal];
+    [self.selectDateTimeButton setTitle:NSLocalizedString(@"Select Date & Time",nil) forState:UIControlStateNormal];
     
 }
 
@@ -308,7 +308,7 @@
     
     [self.specificTimeButton setSelected:NO];
     [self.timeSlotButton setSelected:YES];
-    [self.selectDateTimeButton setTitle:@"Select Date & Time" forState:UIControlStateNormal];
+    [self.selectDateTimeButton setTitle:NSLocalizedString(@"Select Date & Time",nil) forState:UIControlStateNormal];
     
 }
 
@@ -451,7 +451,7 @@
     obj.user_id = [[SharedClass sharedInstance] userObj].user_id;
     obj.treatment = [selectedTreamentsArr componentsJoinedByString:@","];
     obj.city = self.selectCityButton.titleLabel.text;
-    obj.place = (self.myPlaceButton.selected) ? @"My Place" : @"Your Place";
+    obj.place = (self.myPlaceButton.selected) ? @"Hos mig" : @"Hos dig";
     obj.date = finalSelectedDate;
     obj.time = finalSelectedTime;
     obj.budget = self.budgetTxtField.text;

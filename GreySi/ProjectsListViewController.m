@@ -77,7 +77,7 @@
     if (userType == 1) {
         
         if (userType == 1) {
-            [self.postedProjectsButton setTitle:@"Bidded Projects" forState:UIControlStateNormal];
+            [self.postedProjectsButton setTitle:@"Lämnade priser" forState:UIControlStateNormal];
         }
         else  {
             [self.postedProjectsButton setTitle:@"Awarded Projects" forState:UIControlStateNormal];
@@ -550,7 +550,7 @@
     ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:indexPath.row]];
     
     cell.nameLabel.text = singleProject.name;
-    cell.amountLabel.text = [NSString stringWithFormat:@"Amount : %@:-",singleProject.budget];
+    cell.amountLabel.text = [NSString stringWithFormat:@"Summa : %@:-",singleProject.budget];
     
     
     if ([[[SharedClass sharedInstance] userObj].flag intValue]==1) {

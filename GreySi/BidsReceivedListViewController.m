@@ -107,7 +107,7 @@
     NSMutableDictionary* dict = [bidsArr objectAtIndex:indexPath.row];
     
     cell.nameLabel.text = dict[@"Name"];
-    cell.amountLabel.text = [NSString stringWithFormat:@"Amount : %@:-",dict[@"Amount"]];
+    cell.amountLabel.text = [NSString stringWithFormat:@"Summa : %@:-",dict[@"Amount"]];
     cell.awardButton.tag = indexPath.row;
     [cell.awardButton addTarget:self action:@selector(awardProjectButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     
