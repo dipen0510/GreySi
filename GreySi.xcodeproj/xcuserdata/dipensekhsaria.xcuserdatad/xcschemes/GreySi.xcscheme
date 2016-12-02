@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D4CA5C721C7DCDF7000E185A"
-               BuildableName = "GreySi.app"
+               BuildableName = "Greysi.app"
                BlueprintName = "GreySi"
                ReferencedContainer = "container:GreySi.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D4CA5C721C7DCDF7000E185A"
-            BuildableName = "GreySi.app"
+            BuildableName = "Greysi.app"
             BlueprintName = "GreySi"
             ReferencedContainer = "container:GreySi.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D4CA5C721C7DCDF7000E185A"
-            BuildableName = "GreySi.app"
+            BuildableName = "Greysi.app"
             BlueprintName = "GreySi"
             ReferencedContainer = "container:GreySi.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D4CA5C721C7DCDF7000E185A"
-            BuildableName = "GreySi.app"
+            BuildableName = "Greysi.app"
             BlueprintName = "GreySi"
             ReferencedContainer = "container:GreySi.xcodeproj">
          </BuildableReference>

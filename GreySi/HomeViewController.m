@@ -670,7 +670,7 @@
                 if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
                     int currentBudget  =[[[tmpFilterArr valueForKey:@"Budget"] objectAtIndex:j] intValue];
 
-                    if (currentBudget >= min && currentBudget <max) {
+                    if (currentBudget >= min && currentBudget <=max) {
 
                         if (![tmpSelectedBudgetArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
                             [tmpSelectedBudgetArr addObject:[tmpFilterArr objectAtIndex:j]];
@@ -687,7 +687,7 @@
                     for (int k = 0; k<tmpBudgetArr.count; k++) {
                         int currentBudget  = [[[tmpBudgetArr valueForKey:@"name"] objectAtIndex:k] intValue];
 
-                        if (currentBudget >= min && currentBudget <max) {
+                        if (currentBudget >= min && currentBudget <=max) {
 
                             if (![tmpSelectedBudgetArr containsObject:[tmpFilterArr objectAtIndex:j]]) {
                                 [tmpSelectedBudgetArr addObject:[tmpFilterArr objectAtIndex:j]];

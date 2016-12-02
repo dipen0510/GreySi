@@ -446,7 +446,7 @@
     /********************************************* CHAT VIEW SETTINGS  **********************************************/
     
     [ALApplozicSettings setVisibilityForNoMoreConversationMsgVC:NO];        /*  SET VISIBILITY NO MORE CONVERSATION (COMES FROM TOP IN MSG VC)  */
-    [ALApplozicSettings setEmptyConversationText:@"You have no conversations yet"]; /*  SET TEXT FOR EMPTY CONVERSATION    */
+    [ALApplozicSettings setEmptyConversationText:@"Du har inga meddelanden"]; /*  SET TEXT FOR EMPTY CONVERSATION    */
     [ALApplozicSettings setVisibilityForOnlineIndicator:YES];               /*  SET VISIBILITY FOR ONLINE INDICATOR */
     UIColor * sendButtonColor = [UIColor colorWithRed:66.0/255 green:173.0/255 blue:247.0/255 alpha:1]; /*  SET COLOR FOR SEND BUTTON   */
     [ALApplozicSettings setColorForSendButton:sendButtonColor];

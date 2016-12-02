@@ -137,6 +137,7 @@
 		D4104E901D9D3E0B006348D3 /* new_padicure_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D4104E8A1D9D3E0B006348D3 /* new_padicure_logo.png */; };
 		D4104E911D9D3E0B006348D3 /* new_womens_hair_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D4104E8B1D9D3E0B006348D3 /* new_womens_hair_logo.png */; };
 		D4104E931D9D3E3E006348D3 /* new_beauty_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D4104E921D9D3E3E006348D3 /* new_beauty_logo.png */; };
+		D44179E61DF1838900FE7FBF /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D44179E51DF1838900FE7FBF /* arrow.png */; };
 		D455C4701C7EDABA00C6D1CB /* appicon.png in Resources */ = {isa = PBXBuildFile; fileRef = D455C46A1C7EDABA00C6D1CB /* appicon.png */; };
 		D455C4711C7EDABA00C6D1CB /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D455C46B1C7EDABA00C6D1CB /* background.png */; };
 		D455C4721C7EDABA00C6D1CB /* login_fb.png in Resources */ = {isa = PBXBuildFile; fileRef = D455C46C1C7EDABA00C6D1CB /* login_fb.png */; };
@@ -158,7 +159,6 @@
 		D4CA5C861C7DCDF7000E185A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4CA5C841C7DCDF7000E185A /* LaunchScreen.storyboard */; };
 		D4CA5C911C7DCDF8000E185A /* GreySiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CA5C901C7DCDF8000E185A /* GreySiTests.m */; };
 		D4CA5C9C1C7DCDF8000E185A /* GreySiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CA5C9B1C7DCDF8000E185A /* GreySiUITests.m */; };
-		D4CA5CC41C7DCF48000E185A /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CA5CAB1C7DCF48000E185A /* arrow.png */; };
 		D4CA5CC61C7DCF48000E185A /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CA5CAD1C7DCF48000E185A /* camera.png */; };
 		D4CA5CC71C7DCF48000E185A /* double_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CA5CAE1C7DCF48000E185A /* double_arrow.png */; };
 		D4CA5CC81C7DCF48000E185A /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CA5CAF1C7DCF48000E185A /* email.png */; };
@@ -398,6 +398,7 @@
 		D4104E8A1D9D3E0B006348D3 /* new_padicure_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_padicure_logo.png; sourceTree = "<group>"; };
 		D4104E8B1D9D3E0B006348D3 /* new_womens_hair_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_womens_hair_logo.png; sourceTree = "<group>"; };
 		D4104E921D9D3E3E006348D3 /* new_beauty_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_beauty_logo.png; sourceTree = "<group>"; };
+		D44179E51DF1838900FE7FBF /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		D455C46A1C7EDABA00C6D1CB /* appicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon.png; sourceTree = "<group>"; };
 		D455C46B1C7EDABA00C6D1CB /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		D455C46C1C7EDABA00C6D1CB /* login_fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_fb.png; sourceTree = "<group>"; };
@@ -433,7 +434,6 @@
 		D4CA5C971C7DCDF8000E185A /* GreySiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreySiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CA5C9B1C7DCDF8000E185A /* GreySiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GreySiUITests.m; sourceTree = "<group>"; };
 		D4CA5C9D1C7DCDF8000E185A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D4CA5CAB1C7DCF48000E185A /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		D4CA5CAD1C7DCF48000E185A /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		D4CA5CAE1C7DCF48000E185A /* double_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = double_arrow.png; sourceTree = "<group>"; };
 		D4CA5CAF1C7DCF48000E185A /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
@@ -990,7 +990,6 @@
 				D455C46C1C7EDABA00C6D1CB /* login_fb.png */,
 				D455C46D1C7EDABA00C6D1CB /* login.png */,
 				D455C46E1C7EDABA00C6D1CB /* signup.png */,
-				D4CA5CAB1C7DCF48000E185A /* arrow.png */,
 				D4CA5CAD1C7DCF48000E185A /* camera.png */,
 				D4CA5CAE1C7DCF48000E185A /* double_arrow.png */,
 				D4CA5CAF1C7DCF48000E185A /* email.png */,
@@ -1011,6 +1010,7 @@
 				1881F3F01DA1B479005198A2 /* web_logo.png */,
 				1881F3F11DA1B47A005198A2 /* insta_logo.png */,
 				1881F3F21DA1B47A005198A2 /* fb_logo.png */,
+				D44179E51DF1838900FE7FBF /* arrow.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1156,6 +1156,7 @@
 				18157D981DD7C5320087EDC2 /* Adbackground.png in Resources */,
 				185DC0FE1D4E2EE4007998F3 /* registrationProfile.png in Resources */,
 				D4CA5CC61C7DCF48000E185A /* camera.png in Resources */,
+				D44179E61DF1838900FE7FBF /* arrow.png in Resources */,
 				D4CA5CD41C7DCF48000E185A /* rating.png in Resources */,
 				18157D881DD7BB490087EDC2 /* CardViewNewAdTableViewCell.xib in Resources */,
 				185409981DD75924004784AD /* slide1.jpg in Resources */,
@@ -1180,7 +1181,6 @@
 				D49BFB061DC35EF50058433A /* close.png in Resources */,
 				D4E9C5031DDDF89E0013324A /* completeTick.png in Resources */,
 				188274611DEA24E100949D36 /* login_bt.png in Resources */,
-				D4CA5CC41C7DCF48000E185A /* arrow.png in Resources */,
 				D455C4731C7EDABA00C6D1CB /* login.png in Resources */,
 				185DC11D1D514348007998F3 /* available.png in Resources */,
 				D4E9C4FC1DDDC7FF0013324A /* bookingyes.png in Resources */,
@@ -1524,16 +1524,16 @@
 			baseConfigurationReference = D930F527C0F72C20148401A2 /* Pods-GreySi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adham Amiri (B7W283739C)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = GreySi/PrefixHeader.pch;
 				INFOPLIST_FILE = GreySi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alpha-stardeep.GreySi";
+				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = Greysi;
-				PROVISIONING_PROFILE = "f8c2d47b-c92a-4061-9266-a46136f7364e";
+				PROVISIONING_PROFILE = "de329c54-dd5e-47c1-8c58-f4f0032384c9";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
@@ -1544,16 +1544,16 @@
 			baseConfigurationReference = C2A3C6C8B51C1DE3923EABCA /* Pods-GreySi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adham Amiri (B7W283739C)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = GreySi/PrefixHeader.pch;
 				INFOPLIST_FILE = GreySi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alpha-stardeep.GreySi";
+				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = Greysi;
-				PROVISIONING_PROFILE = "f8c2d47b-c92a-4061-9266-a46136f7364e";
+				PROVISIONING_PROFILE = "de329c54-dd5e-47c1-8c58-f4f0032384c9";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};

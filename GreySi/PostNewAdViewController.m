@@ -75,6 +75,8 @@
 
 - (void) setupLayoutForTabIndex:(int)index {
     
+    selectedIndex = index;
+    
     if (index == 0) {
         
 //        self.treatmentButton.backgroundColor = [UIColor colorWithRed:202./255. green:202./255. blue:202./255. alpha:1.0];
@@ -242,6 +244,27 @@
 
 - (IBAction)backButtonTapped:(id)sender {
     
+    if (selectedIndex == 2) {
+        [self setupLayoutForTabIndex:1];
+    }
+    else if (selectedIndex == 1) {
+        [self setupLayoutForTabIndex:0];
+    }
+    else {
+        if (isOpenedFromSideMenu) {
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+            HomeViewController* controller = (HomeViewController*)[mainStoryboard instantiateViewControllerWithIdentifier:@"homeViewController"];
+            [self.revealViewController setFrontViewController:controller animated:YES];
+        }
+        else {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
+    
+}
+
+- (void) backButtonAfterAPISuccess {
+    
     if (isOpenedFromSideMenu) {
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
         HomeViewController* controller = (HomeViewController*)[mainStoryboard instantiateViewControllerWithIdentifier:@"homeViewController"];
@@ -250,7 +273,6 @@
     else {
         [self.navigationController popViewControllerAnimated:YES];
     }
-    
     
 }
 
@@ -407,7 +429,7 @@
     [SVProgressHUD showSuccessWithStatus:@"Ad Posted Successfully"];
     
     if ([requestServiceKey isEqualToString:kCustomerAddTreatmentService]) {
-        [self performSelector:@selector(backButtonTapped:) withObject:nil afterDelay:0.3];
+        [self performSelector:@selector(backButtonAfterAPISuccess) withObject:nil afterDelay:0.3];
     }
     
     

@@ -168,13 +168,13 @@
     label.textColor = [UIColor blackColor];
     [label setFont:[UIFont boldSystemFontOfSize:16.0]];
     if (section == 0) {
-        label.text = @"Budget Range";
+        label.text = @"Budget";
     }
     else if (section == 1) {
-        label.text = @"Cities";
+        label.text = @"Stad";
     }
     else if (section == 2) {
-        label.text = @"Treatments";
+        label.text = @"Behandling";
     }
     
     [view addSubview:label];

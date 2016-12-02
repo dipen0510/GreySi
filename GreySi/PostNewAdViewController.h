@@ -17,6 +17,7 @@
     NSMutableArray* selectedTreamentsArr;
     NSString* finalSelectedDate;
     NSString* finalSelectedTime;
+    int selectedIndex;
     
 }
 

@@ -51,12 +51,11 @@
 
 -(void) didFinishServiceWithSuccess:(SignUpResponseModal *)responseData andServiceKey:(NSString *)requestServiceKey {
     
-    [SVProgressHUD dismiss];
-    [SVProgressHUD showSuccessWithStatus:@"Ett nytt lösenord har skickats till din e-post."];
-    
+   
     if ([requestServiceKey isEqualToString:kForgotPasswordService]) {
         
-        [self backButtonTapped:nil];
+        [SVProgressHUD showSuccessWithStatus:@"Ett nytt lösenord har skickats till din e-post."];
+        [self performSelector:@selector(backButtonTapped:) withObject:nil afterDelay:0.3];
         
     }
     
@@ -245,11 +244,12 @@
 - (BOOL)validateEmailWithString:(NSString*)email {
     
     
-    return true;
+//    return true;
     
-//    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,4}";
-//    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-//    return [emailTest evaluateWithObject:email];
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:email];
+    
 }
 
 /*
