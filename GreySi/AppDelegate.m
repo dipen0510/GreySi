@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ALPushNotificationService.h"
 #import "ALAppLocalNotifications.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate ()
 
@@ -33,6 +34,10 @@
     ALAppLocalNotifications *localNotification = [ALAppLocalNotifications appLocalNotificationHandler];
     [localNotification dataConnectionNotificationHandler];
     
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
+    
     // Override point for customization after application launch.
     NSLog(@"launchOptions: %@", launchOptions);
     if (launchOptions != nil) {
@@ -50,6 +55,19 @@
     }
     
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary *)options {
+    
+    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                                  openURL:url
+                                                        sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                               annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
+                    ];
+    // Add any custom logic here.
+    return handled;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -79,6 +97,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [FBSDKAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

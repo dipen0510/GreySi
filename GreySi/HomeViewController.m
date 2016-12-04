@@ -72,7 +72,10 @@
     [alUser setUserId:[[SharedClass sharedInstance] userObj].email]; //NOTE : +,*,? are not allowed chars in userId.
     [alUser setDisplayName:[[SharedClass sharedInstance] userObj].name]; // Display name of user
     [alUser setContactNumber:@""];// formatted contact no
-    [alUser setImageLink:[[[SharedClass sharedInstance] userObj].profile_pi stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];// User's profile image link.
+    
+    if (![[[SharedClass sharedInstance] userObj].profile_pi isEqual:[NSNull null]]) {
+        [alUser setImageLink:[[[SharedClass sharedInstance] userObj].profile_pi stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];// User's profile image link.
+    }
     
     ALChatManager * chatManager = [[ALChatManager alloc] init];
     [chatManager registerUser:alUser];
@@ -116,14 +119,15 @@
     if (![[NSUserDefaults standardUserDefaults] boolForKey:appRunSecondTime]) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:appRunSecondTime];
         [self performSegueWithIdentifier:@"showTutorialSegue" sender:nil];
+        
     }
     
     UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Adbackground.png"]];
     [tempImageView setFrame:self.adsTblView.frame];
     
     self.adsTblView.backgroundView = tempImageView;
-    
 }
+
 
 - (void)sideMenuSetup
 {
@@ -1275,4 +1279,6 @@
     
     
 }
+
+
 @end

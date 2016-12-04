@@ -15,6 +15,8 @@
 
 @implementation WhatAreYouViewController
 
+@synthesize isFBLoginType,fbId,fbEmail,fbName;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -58,14 +60,26 @@
 - (IBAction)hairDresserButtonTapped:(id)sender {
     
     userType = 1;
-    [self performSegueWithIdentifier:@"showRegisterSegue" sender:nil];
+    
+    if (isFBLoginType) {
+        [self startLoginWithFBService];
+    }
+    else {
+        [self performSegueWithIdentifier:@"showRegisterSegue" sender:nil];
+    }
     
 }
 
 - (IBAction)customerButtonTapped:(id)sender {
     
     userType = 2;
-    [self performSegueWithIdentifier:@"showRegisterSegue" sender:nil];
+    
+    if (isFBLoginType) {
+        [self startLoginWithFBService];
+    }
+    else {
+        [self performSegueWithIdentifier:@"showRegisterSegue" sender:nil];
+    }
     
 }
 
@@ -83,6 +97,86 @@
         controller.userType = userType;
         
     }
+    
+}
+
+
+- (void) startLoginWithFBService {
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kLoginWithFB;
+    manager.delegate = self;
+    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForLoginWithFB]];
+    
+}
+
+#pragma mark - DATASYNCMANAGER Delegates
+
+-(void) didFinishServiceWithSuccess:(id)responseData andServiceKey:(NSString *)requestServiceKey {
+    
+    if ([requestServiceKey containsString:kLoginWithFB]) {
+        
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showSuccessWithStatus:@"Login Successful"];
+        
+        [[SharedClass sharedInstance] setUserObj:responseData];
+        
+        [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
+        
+    }
+    
+    
+    
+}
+
+
+- (void) didFinishServiceWithFailure:(NSString *)errorMsg {
+    
+    
+    [SVProgressHUD dismiss];
+    UIAlertView* alert=[[UIAlertView alloc] initWithTitle:nil
+                                                  message:NSLocalizedString(@"An issue occured while processing your request. Please try again later.", nil)
+                                                 delegate:self
+                                        cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                        otherButtonTitles: nil];
+    
+    if (![errorMsg isEqualToString:@""]) {
+        [alert setMessage:errorMsg];
+    }
+    
+    if ([errorMsg isEqualToString:NSLocalizedString(@"Verify your internet connection and try again", nil)]) {
+        [alert setTitle:NSLocalizedString(@"Connection unsuccessful", nil)];
+    }
+    
+    
+    if (alert.message) {
+        [alert show];
+    }
+    
+    return;
+    
+}
+
+#pragma mark - Modalobject
+
+- (NSMutableDictionary *) prepareDictionaryForLoginWithFB {
+    
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+    
+    [dict setObject:fbName forKey:@"Name"];
+    [dict setObject:fbEmail forKey:@"Email"];
+    [dict setObject:fbId forKey:@"Fb_id"];
+    [dict setObject:[NSString stringWithFormat:@"%d",userType] forKey:@"Flag"];
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"kDeviceToken"]) {
+        [dict setObject:[[NSUserDefaults standardUserDefaults] valueForKey:@"kDeviceToken"] forKey:registerGCMIdKey];
+    }
+    else {
+        [dict setObject:@"1234567890" forKey:registerGCMIdKey];
+    }
+    [dict setObject:@"2" forKey:registerDeviceTypeKey];
+    [dict setObject:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] forKey:registerVersionCodeKey];
+    
+    return dict;
     
 }
 

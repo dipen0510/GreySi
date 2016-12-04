@@ -30,7 +30,15 @@
     
     if (attendStr) {
         NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:attendStr];
-        SignUpResponseModal* userObj = [[SignUpResponseModal alloc] initWithDictionary:[[dict valueForKey:@"info"] objectAtIndex:0]];
+        SignUpResponseModal* userObj;
+        
+        if ([[dict valueForKey:@"status"] intValue] == 2) {
+            userObj = [[SignUpResponseModal alloc] initWithDictionary:[[dict valueForKey:@"updated_records"] objectAtIndex:0]];
+        }
+        else {
+            userObj = [[SignUpResponseModal alloc] initWithDictionary:[[dict valueForKey:@"info"] objectAtIndex:0]];
+        }
+        
         [[SharedClass sharedInstance] setUserObj:userObj];
         [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
     }

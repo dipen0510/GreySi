@@ -24,7 +24,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2016-03-30 at 12.44.22 AM.png" translatesAutoresizingMaskIntoConstraints="NO" id="N6v-Ir-nM1">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blankProfile.png" translatesAutoresizingMaskIntoConstraints="NO" id="N6v-Ir-nM1">
                         <rect key="frame" x="16" y="8" width="63" height="63"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="63" id="Pxi-rx-jLB"/>
@@ -97,6 +97,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Screen Shot 2016-03-30 at 12.44.22 AM.png" width="80" height="80"/>
+        <image name="blankProfile.png" width="220" height="220"/>
     </resources>
 </document>

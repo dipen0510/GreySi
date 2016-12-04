@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -15,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2016-03-30 at 12.44.22 AM.png" translatesAutoresizingMaskIntoConstraints="NO" id="RNz-7g-IdX">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blankProfile.png" translatesAutoresizingMaskIntoConstraints="NO" id="RNz-7g-IdX">
                         <rect key="frame" x="16" y="8" width="63" height="63"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="63" id="q2H-aG-mbG"/>
@@ -73,6 +72,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Screen Shot 2016-03-30 at 12.44.22 AM.png" width="80" height="80"/>
+        <image name="blankProfile.png" width="80" height="80"/>
     </resources>
 </document>

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fTN-rk-2jx">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fTN-rk-2jx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -354,17 +354,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="KSJ-Fe-9IL">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxQ-Am-mxu">
-                                <rect key="frame" x="200" y="427" width="200" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxQ-Am-mxu">
+                                <rect key="frame" x="200" y="425" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="BpJ-OC-T6E"/>
                                     <constraint firstAttribute="width" constant="200" id="MQD-MR-Vmg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" image="new_login_wid_fb.png"/>
+                                <connections>
+                                    <action selector="fbLoginButtonTapped:" destination="kw5-ph-Cc4" eventType="touchUpInside" id="Rpg-Gm-X4W"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eller" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTg-f6-cxM">
-                                <rect key="frame" x="279" y="447" width="42" height="21"/>
+                                <rect key="frame" x="279" y="473" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="9sp-BE-d5F"/>
                                     <constraint firstAttribute="width" constant="42" id="feZ-z3-Qff"/>
@@ -374,10 +377,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpF-wH-nBB">
-                                <rect key="frame" x="244" y="351" width="112" height="26"/>
+                                <rect key="frame" x="225" y="346" width="151" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="AhY-9t-q3i"/>
-                                    <constraint firstAttribute="width" constant="112" id="UUi-ue-2HE"/>
+                                    <constraint firstAttribute="height" constant="29" id="AhY-9t-q3i"/>
+                                    <constraint firstAttribute="width" constant="151" id="UUi-ue-2HE"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="login_bt.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -387,20 +390,20 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFK-e7-NJv">
-                                <rect key="frame" x="206" y="491" width="189" height="26"/>
+                                <rect key="frame" x="203" y="517" width="194" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="189" id="5do-Uq-OVJ"/>
-                                    <constraint firstAttribute="height" constant="26" id="TvN-wY-9Db"/>
+                                    <constraint firstAttribute="width" constant="194" id="5do-Uq-OVJ"/>
+                                    <constraint firstAttribute="height" constant="33" id="TvN-wY-9Db"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="create_profile.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Wmm-MD-HuB" kind="show" id="ls9-GI-yOt"/>
+                                    <segue destination="Wmm-MD-HuB" kind="show" identifier="showWhatAreYouSegue" id="ls9-GI-yOt"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Vy-gH-3Vx">
-                                <rect key="frame" x="200" y="228" width="200" height="100"/>
+                                <rect key="frame" x="200" y="223" width="200" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Nzx-Mh-D5v"/>
@@ -449,13 +452,13 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="1W0-x7-wtN">
-                                <rect key="frame" x="220" y="60" width="160" height="160"/>
+                                <rect key="frame" x="223" y="60" width="155" height="155"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1W0-x7-wtN" secondAttribute="height" multiplier="1:1" id="ldD-tY-dxc"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beG-jC-jFR">
-                                <rect key="frame" x="200" y="389" width="200" height="30"/>
+                                <rect key="frame" x="200" y="387" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="TXk-4D-nz8"/>
                                     <constraint firstAttribute="height" constant="30" id="mjZ-dp-2Rk"/>
@@ -475,7 +478,7 @@
                         <constraints>
                             <constraint firstItem="KSJ-Fe-9IL" firstAttribute="leading" secondItem="mz8-4B-P5x" secondAttribute="leading" id="4hQ-fW-hzB"/>
                             <constraint firstItem="USi-R7-H3t" firstAttribute="top" secondItem="dvf-M6-W75" secondAttribute="bottom" id="4xV-Wl-haD"/>
-                            <constraint firstItem="LTg-f6-cxM" firstAttribute="top" secondItem="MxQ-Am-mxu" secondAttribute="bottom" constant="-20" id="5Nc-Wc-fkF"/>
+                            <constraint firstItem="LTg-f6-cxM" firstAttribute="top" secondItem="MxQ-Am-mxu" secondAttribute="bottom" constant="8" id="5Nc-Wc-fkF"/>
                             <constraint firstAttribute="trailing" secondItem="dvf-M6-W75" secondAttribute="trailing" id="65C-Cx-nOG"/>
                             <constraint firstItem="5Vy-gH-3Vx" firstAttribute="centerX" secondItem="mz8-4B-P5x" secondAttribute="centerX" id="6nb-Vt-OcZ"/>
                             <constraint firstItem="gpF-wH-nBB" firstAttribute="top" secondItem="5Vy-gH-3Vx" secondAttribute="bottom" constant="23" id="95e-bG-AUC"/>
@@ -483,7 +486,7 @@
                             <constraint firstItem="gpF-wH-nBB" firstAttribute="centerX" secondItem="mz8-4B-P5x" secondAttribute="centerX" id="DQU-U2-85Q"/>
                             <constraint firstItem="KSJ-Fe-9IL" firstAttribute="top" secondItem="mz8-4B-P5x" secondAttribute="top" id="GlF-fB-hCn"/>
                             <constraint firstItem="USi-R7-H3t" firstAttribute="top" secondItem="KSJ-Fe-9IL" secondAttribute="bottom" id="I5e-At-YDZ"/>
-                            <constraint firstItem="USi-R7-H3t" firstAttribute="top" secondItem="VFK-e7-NJv" secondAttribute="bottom" constant="83" id="Lm8-g5-Ske"/>
+                            <constraint firstItem="USi-R7-H3t" firstAttribute="top" secondItem="VFK-e7-NJv" secondAttribute="bottom" constant="50" id="Lm8-g5-Ske"/>
                             <constraint firstItem="dvf-M6-W75" firstAttribute="leading" secondItem="mz8-4B-P5x" secondAttribute="leading" id="X5g-Cz-SCf"/>
                             <constraint firstItem="1W0-x7-wtN" firstAttribute="top" secondItem="mz8-4B-P5x" secondAttribute="top" constant="60" id="cpQ-FZ-gZX"/>
                             <constraint firstItem="5Vy-gH-3Vx" firstAttribute="top" secondItem="1W0-x7-wtN" secondAttribute="bottom" constant="8" id="d4a-Xn-4EV"/>
@@ -499,6 +502,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="fbLoginButton" destination="MxQ-Am-mxu" id="SpA-aa-Am3"/>
                         <outlet property="loginBgImgView" destination="KSJ-Fe-9IL" id="gj2-ER-Xri"/>
                         <outlet property="loginButton" destination="gpF-wH-nBB" id="fwO-tf-zaj"/>
                         <outlet property="loginTableView" destination="5Vy-gH-3Vx" id="dru-ud-xRj"/>
@@ -618,7 +622,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mike.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="0tB-0W-lRV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blankProfile.png" translatesAutoresizingMaskIntoConstraints="NO" id="0tB-0W-lRV">
                                 <rect key="frame" x="215" y="36" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="el5-XA-lCH"/>
@@ -1609,6 +1613,7 @@
                         <outlet property="customerButton" destination="qhQ-uJ-JcW" id="DZH-kY-hmy"/>
                         <outlet property="hairdresserButton" destination="4rd-mj-h9Y" id="v35-9n-gko"/>
                         <segue destination="vQG-dM-JZT" kind="show" identifier="showRegisterSegue" id="dDr-wJ-Tjf"/>
+                        <segue destination="NB4-Oo-AdA" kind="show" identifier="showHomeSegue" id="UhE-pw-HP9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y11-WG-jCu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1701,7 +1706,7 @@
                                                     <action selector="chatButtonTapped:" destination="5Pw-SX-wxx" eventType="touchUpInside" id="VbZ-eZ-Qco"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mike.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8k2-eS-stD">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blankProfile.png" translatesAutoresizingMaskIntoConstraints="NO" id="8k2-eS-stD">
                                                 <rect key="frame" x="250" y="37" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="dFg-Bh-hZG"/>
@@ -2110,7 +2115,7 @@
                                     <constraint firstAttribute="bottom" secondItem="oCZ-wP-b6K" secondAttribute="bottom" constant="22" id="d3g-pv-GAs"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mike.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Sz5-Qf-Ma0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blankProfile.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sz5-Qf-Ma0">
                                 <rect key="frame" x="20" y="102" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="QSw-uD-KPd"/>
@@ -3638,6 +3643,7 @@
     <resources>
         <image name="appLogo.png" width="700" height="700"/>
         <image name="arrow.png" width="512" height="512"/>
+        <image name="blankProfile.png" width="220" height="220"/>
         <image name="checked.png" width="34" height="30"/>
         <image name="chooseType.png" width="1242" height="2208"/>
         <image name="create_profile.png" width="388" height="67"/>
@@ -3645,7 +3651,6 @@
         <image name="feedback_rating.png" width="98" height="92"/>
         <image name="filter.png" width="96" height="94"/>
         <image name="login_bt.png" width="303" height="58"/>
-        <image name="mike.jpg" width="512" height="512"/>
         <image name="myLocation.png" width="120" height="120"/>
         <image name="navMenu.png" width="120" height="120"/>
         <image name="new_edit_profile.png" width="48" height="48"/>
@@ -3660,11 +3665,11 @@
         <image name="unchecked.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Lul-N9-o4p"/>
-        <segue reference="Kg3-Ji-6L1"/>
-        <segue reference="kW0-NS-bL4"/>
-        <segue reference="PXr-S9-ifq"/>
         <segue reference="NlX-VC-1Do"/>
+        <segue reference="UhE-pw-HP9"/>
+        <segue reference="Kg3-Ji-6L1"/>
+        <segue reference="CoU-mK-MpI"/>
+        <segue reference="PXr-S9-ifq"/>
         <segue reference="RXH-fE-Buq"/>
         <segue reference="zuq-yH-NPM"/>
     </inferredMetricsTieBreakers>

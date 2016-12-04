@@ -58,6 +58,7 @@
             self.myplaceYourPlaceLabel.text = @"YP";
         }
 
+        self.locationLabel.text = [NSString stringWithFormat:@"%@ %@\nLocation : %@",adDict[@"Date"],adDict[@"Time"],adDict[@"Address"]];
         
     }
     else {
@@ -68,13 +69,13 @@
         self.priceListButton.hidden = NO;
         _myplaceYourPlaceLabel.hidden = YES;
         _descriptionLabel.hidden = YES;
+        self.locationLabel.text = [NSString stringWithFormat:@"Location : %@",adDict[@"Address"]];
     }
     
     
     self.noOfBidsLabel.text = @"";
     self.profileNameLabel.text = adDict[@"Name"];
     self.descriptionLabel.text = adDict[@"Description"];
-    self.locationLabel.text = [NSString stringWithFormat:@"Location : %@",adDict[@"Address"]];
 
     [_descriptionLabel setFont:[UIFont fontWithName:@"Montserrat-Light" size:13.0]];
     

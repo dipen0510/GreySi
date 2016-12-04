@@ -10,6 +10,7 @@
 #import "LoginTableViewCell.h"
 #import "LoginRequestModal.h"
 #import "SignUpResponseModal.h"
+#import "WhatAreYouViewController.h";
 
 @interface LoginViewController ()
 
@@ -79,18 +80,52 @@
     
 }
 
+- (void) startCheckIfEmailExistsService {
+    
+    [SVProgressHUD showWithStatus:@"Logging In..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = [NSString stringWithFormat:@"%@%@",kCheckIfEmailExists,fbEmail];;
+    manager.delegate = self;
+    [manager startGETWebServices];
+    
+}
+
+- (void) startLoginWithFBService {
+    
+    [SVProgressHUD showWithStatus:@"Logging In..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kLoginWithFB;
+    manager.delegate = self;
+    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForLoginWithFB]];
+    
+}
+
 #pragma mark - DATASYNCMANAGER Delegates
 
--(void) didFinishServiceWithSuccess:(SignUpResponseModal *)responseData andServiceKey:(NSString *)requestServiceKey {
+-(void) didFinishServiceWithSuccess:(id)responseData andServiceKey:(NSString *)requestServiceKey {
     
-    [SVProgressHUD dismiss];
-    [SVProgressHUD showSuccessWithStatus:@"Login Successful"];
-    
-    if ([requestServiceKey isEqualToString:kLoginService]) {
+    if ([requestServiceKey isEqualToString:kLoginService] || [requestServiceKey isEqualToString:kLoginWithFB]) {
+        
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showSuccessWithStatus:@"Login Successful"];
         
         [[SharedClass sharedInstance] setUserObj:responseData];
         
         [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
+        
+    }
+    if ([requestServiceKey containsString:kCheckIfEmailExists]) {
+        
+        if ([responseData[@"result"] intValue] == 0) {
+            [SVProgressHUD dismiss];
+            [self performSegueWithIdentifier:@"showWhatAreYouSegue" sender:nil];
+        }
+        else {
+            fbFlag = [[responseData[@"info"] objectAtIndex:0] valueForKey:@"Flag"];
+            [self startLoginWithFBService];
+        }
         
     }
     
@@ -139,6 +174,27 @@
     signUpObj.password = passwordText;
     
     return [signUpObj createRequestDictionary];
+    
+}
+
+- (NSMutableDictionary *) prepareDictionaryForLoginWithFB {
+    
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+    
+    [dict setObject:fbName forKey:@"Name"];
+    [dict setObject:fbEmail forKey:@"Email"];
+    [dict setObject:fbId forKey:@"Fb_id"];
+    [dict setObject:fbFlag forKey:@"Flag"];
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"kDeviceToken"]) {
+        [dict setObject:[[NSUserDefaults standardUserDefaults] valueForKey:@"kDeviceToken"] forKey:registerGCMIdKey];
+    }
+    else {
+        [dict setObject:@"1234567890" forKey:registerGCMIdKey];
+    }
+    [dict setObject:@"2" forKey:registerDeviceTypeKey];
+    [dict setObject:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] forKey:registerVersionCodeKey];
+    
+    return dict;
     
 }
 
@@ -245,6 +301,18 @@
     
 }
 
+- (IBAction)fbLoginButtonTapped:(id)sender {
+    
+    if ([FBSDKAccessToken currentAccessToken]) {
+        // User is logged in, do work such as go to next view controller.
+        [self getFBUserDetails];
+    }
+    else {
+        [self loginWithFB];
+    }
+    
+}
+
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
@@ -304,6 +372,62 @@
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:email];
+}
+
+#pragma mark - FB Helpers
+
+- (void) loginWithFB {
+    
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login
+     logInWithReadPermissions: @[@"public_profile", @"email", @"user_friends"]
+     fromViewController:self
+     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         if (error) {
+             NSLog(@"Process error");
+         } else if (result.isCancelled) {
+             NSLog(@"Cancelled");
+         } else {
+             NSLog(@"Logged in");
+             [self getFBUserDetails];
+         }
+     }];
+    
+}
+
+- (void) getFBUserDetails {
+    
+    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"email,name,first_name"}]
+     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+         if (!error) {
+             NSLog(@"fetched user:%@", result);
+             NSLog(@"%@",result[@"email"]);
+             fbName = result[@"name"];
+             fbEmail = result[@"email"];
+             fbId = result[@"id"];
+             
+             [self startCheckIfEmailExistsService];
+             
+         }
+     }];
+    
+    
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"showWhatAreYouSegue"]) {
+        
+        WhatAreYouViewController* controller = (WhatAreYouViewController *)[segue destinationViewController];
+        
+        controller.isFBLoginType = YES;
+        controller.fbName = fbName;
+        controller.fbEmail = fbEmail;
+        controller.fbId = fbId;
+        
+    }
+    
 }
 
 @end

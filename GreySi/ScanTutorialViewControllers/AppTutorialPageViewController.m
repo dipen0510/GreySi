@@ -57,11 +57,17 @@
 - (void)didTapDoneButton {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self showLocationAlert];
     
 }
 
 
-
+- (void) showLocationAlert {
+    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:@"Var vänlig och välj din plats genom att klicka på \"Min plats\" i sidmenyn." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
+    
+}
 
 
 #pragma mark - Page View Controller Helper

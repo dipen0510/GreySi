@@ -25,6 +25,10 @@
 
 #define kForgotPasswordService @"ForgotPassword.php"
 
+#define kCheckIfEmailExists @"CheckEmail.php?Email="
+#define kLoginWithFB @"LoginWithFB.php"
+
+
 // CUSTOMER
 #define kCustomerGetAdService @"Hair_dressor_post/GetAd.php"
 #define kCustomerGetPostedProjectsService @"Customer_Projects/PostedProjects.php?User_id="

@@ -53,8 +53,8 @@
     outgoingBubbleImageView = [factory outgoingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleLightGrayColor]];
     incomingBubbleImageView = [factory incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleLightGrayColor]];
     
-    outgoingAvtarImageView = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"mike.jpg"] diameter:60.0];
-    incomingAvtarImageView = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"Screen Shot 2016-03-30 at 12.44.22 AM.png"] diameter:60.0];
+    outgoingAvtarImageView = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"blankProfile.png"] diameter:60.0];
+    incomingAvtarImageView = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"blankProfile.png"] diameter:60.0];
     
     
 }

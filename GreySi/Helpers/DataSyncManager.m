@@ -38,7 +38,7 @@
         
         //if ([responseObject isKindOfClass:[NSDictionary class]]) {
             
-            if ([[responseObject valueForKey:@"status"] intValue] == 1 || [[responseObject valueForKey:@"result"] intValue] == 1) {
+            if ([[responseObject valueForKey:@"status"] intValue] == 1 || [[responseObject valueForKey:@"result"] intValue] == 1 || [[responseObject valueForKey:@"status"] intValue] == 2) {
                 
                 if ([delegate respondsToSelector:@selector(didFinishServiceWithSuccess:andServiceKey:)]) {
                     [delegate didFinishServiceWithSuccess:[self prepareResponseObjectForServiceKey:self.serviceKey withData:responseObject] andServiceKey:self.serviceKey];
@@ -136,16 +136,22 @@
     
     [manager GET:self.serviceKey parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
-        if ([[responseObject valueForKey:@"status"] intValue] == 1 || [[responseObject valueForKey:@"result"] intValue] == 1) {
+        if ([[responseObject valueForKey:@"status"] intValue] == 1 || [[responseObject valueForKey:@"result"] intValue] == 1 ) {
             
             if ([delegate respondsToSelector:@selector(didFinishServiceWithSuccess:andServiceKey:)]) {
                 [delegate didFinishServiceWithSuccess:[self prepareResponseObjectForServiceKey:self.serviceKey withData:responseObject] andServiceKey:self.serviceKey];
             }
         }
         else {
-            //if ([delegate respondsToSelector:@selector(didFinishServiceWithFailure:)]) {
-            [delegate didFinishServiceWithFailure:[responseObject valueForKey:@"msg"]];
-            //}
+            
+            if ([self.serviceKey containsString:kCheckIfEmailExists]) {
+                if ([delegate respondsToSelector:@selector(didFinishServiceWithSuccess:andServiceKey:)]) {
+                    [delegate didFinishServiceWithSuccess:[self prepareResponseObjectForServiceKey:self.serviceKey withData:responseObject] andServiceKey:self.serviceKey];
+                }
+            }
+            else {
+                [delegate didFinishServiceWithFailure:[responseObject valueForKey:@"msg"]];
+            }
             
         }
         
@@ -164,7 +170,7 @@
 
 - (id) prepareResponseObjectForServiceKey:(NSString *) responseServiceKey withData:(id)responseObj {
     
-    if ([responseServiceKey isEqualToString:kSignUpService] || [responseServiceKey isEqualToString:kLoginService]) {
+    if ([responseServiceKey isEqualToString:kSignUpService] || [responseServiceKey isEqualToString:kLoginService] || [responseServiceKey isEqualToString:kLoginWithFB]) {
         
         NSError* error = nil;
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:responseObj options:NSJSONWritingPrettyPrinted error:&error];
@@ -172,7 +178,15 @@
         
         [[SharedClass sharedInstance] saveData:jsonString ForService:kLoginService];
         
-        SignUpResponseModal* response = [[SignUpResponseModal alloc] initWithDictionary:[[responseObj valueForKey:@"info"] objectAtIndex:0]];
+        SignUpResponseModal* response;
+        
+        if ([[responseObj valueForKey:@"status"] intValue] == 2) {
+            response = [[SignUpResponseModal alloc] initWithDictionary:[[responseObj valueForKey:@"updated_records"] objectAtIndex:0]];
+        }
+        else {
+            response = [[SignUpResponseModal alloc] initWithDictionary:[[responseObj valueForKey:@"info"] objectAtIndex:0]];
+        }
+        
         return response;
         
     }

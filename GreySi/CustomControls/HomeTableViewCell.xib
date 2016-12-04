@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -26,7 +25,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WM0-6E-pue">
                         <rect key="frame" x="20" y="10" width="279" height="100"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2016-03-30 at 12.44.22 AM.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Tb-XC-uuB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blankProfile.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Tb-XC-uuB">
                                 <rect key="frame" x="8" y="18" width="63" height="63"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="63" id="A4y-4A-wUa"/>
@@ -183,7 +182,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Screen Shot 2016-03-30 at 12.44.22 AM.png" width="80" height="80"/>
+        <image name="blankProfile.png" width="80" height="80"/>
         <image name="rating-small.png" width="32" height="30"/>
         <image name="timeLeftClock.png" width="50" height="50"/>
     </resources>
