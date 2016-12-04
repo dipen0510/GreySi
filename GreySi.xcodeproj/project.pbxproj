@@ -29,6 +29,7 @@
 		185718AB1DF2E01200DF5B72 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185718A71DF2E01200DF5B72 /* FBSDKCoreKit.framework */; };
 		185718AC1DF2E01200DF5B72 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185718A81DF2E01200DF5B72 /* FBSDKLoginKit.framework */; };
 		185718AD1DF2E01200DF5B72 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 185718A91DF2E01200DF5B72 /* FBSDKShareKit.framework */; };
+		185718AF1DF4063B00DF5B72 /* skapa.png in Resources */ = {isa = PBXBuildFile; fileRef = 185718AE1DF4063B00DF5B72 /* skapa.png */; };
 		185B5E921D5A6A0A00205F72 /* PostNewAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B5E911D5A6A0A00205F72 /* PostNewAdViewController.m */; };
 		185B5E971D5A6D2200205F72 /* TreatmentTabTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B5E951D5A6D2200205F72 /* TreatmentTabTableViewCell.m */; };
 		185B5E981D5A6D2200205F72 /* TreatmentTabTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185B5E961D5A6D2200205F72 /* TreatmentTabTableViewCell.xib */; };
@@ -234,6 +235,7 @@
 		185718A71DF2E01200DF5B72 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		185718A81DF2E01200DF5B72 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		185718A91DF2E01200DF5B72 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		185718AE1DF4063B00DF5B72 /* skapa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skapa.png; sourceTree = "<group>"; };
 		185B5E901D5A6A0A00205F72 /* PostNewAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostNewAdViewController.h; sourceTree = "<group>"; };
 		185B5E911D5A6A0A00205F72 /* PostNewAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostNewAdViewController.m; sourceTree = "<group>"; };
 		185B5E941D5A6D2200205F72 /* TreatmentTabTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TreatmentTabTableViewCell.h; path = CustomControls/TreatmentTabTableViewCell.h; sourceTree = "<group>"; };
@@ -930,6 +932,7 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				185718AE1DF4063B00DF5B72 /* skapa.png */,
 				188274621DEA24F800949D36 /* create_profile.png */,
 				188274631DEA24F800949D36 /* 3.png */,
 				188274641DEA24F800949D36 /* 4.png */,
@@ -1196,6 +1199,7 @@
 				D4CA5CD91C7DCF48000E185A /* tick.png in Resources */,
 				18CF35161D5BCE6100C0A5BD /* BidsReceivedTableViewCell.xib in Resources */,
 				1888572E1CAB18010026995E /* HomeMapView.xib in Resources */,
+				185718AF1DF4063B00DF5B72 /* skapa.png in Resources */,
 				1882746A1DEA24F800949D36 /* 4.png in Resources */,
 				18DB7D701DAEC5BA002594C8 /* new_edit_profile.png in Resources */,
 				18CF35251D5BD4B300C0A5BD /* CompletedProjectsTableViewCell.xib in Resources */,
