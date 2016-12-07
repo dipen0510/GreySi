@@ -57,8 +57,11 @@
 - (void)didTapDoneButton {
     
     [self dismissViewControllerAnimated:YES completion:nil];
-    [self showLocationAlert];
     
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:isLocationAvailable]) {
+        [self showLocationAlert];
+    }
+
 }
 
 

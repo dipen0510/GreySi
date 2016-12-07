@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fTN-rk-2jx">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fTN-rk-2jx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -41,6 +41,7 @@
             <string>Montserrat-Light</string>
         </mutableArray>
         <mutableArray key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
@@ -304,7 +305,7 @@
                                     <constraint firstAttribute="height" constant="30" id="t4c-RB-Vf8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
-                                <state key="normal" title="Create New Password">
+                                <state key="normal" title="Skicka nytt lösenord">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -801,7 +802,7 @@
                                             <constraint firstAttribute="height" constant="30" id="Lq9-cl-JGX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
-                                        <state key="normal" title="Treatment">
+                                        <state key="normal" title="Behandling">
                                             <color key="titleColor" red="0.4823529412" green="0.1058823529" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -1512,7 +1513,7 @@
                                             <action selector="backButtonTapped:" destination="Wmm-MD-HuB" eventType="touchUpInside" id="QJv-LH-DMf"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What Are You?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLx-nB-S1F">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jag är" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLx-nB-S1F">
                                         <rect key="frame" x="233" y="35" width="134" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="134" id="N7g-d2-ExJ"/>
@@ -2096,7 +2097,7 @@
                                             <action selector="backButtonTapped:" destination="98q-Nk-LCc" eventType="touchUpInside" id="QpN-7g-KaV"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GreySi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkc-iY-IE5">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Greysi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkc-iY-IE5">
                                         <rect key="frame" x="258" y="37" width="84" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="I5L-Iq-xx7"/>
@@ -2181,12 +2182,21 @@
                                     <segue destination="6f3-jW-TwA" kind="show" identifier="showMapSegue" id="X80-mk-vs9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location : Stockholm" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="lOZ-i4-T7Q">
-                                <rect key="frame" x="20" y="425" width="445" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stockholm" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="lOZ-i4-T7Q">
+                                <rect key="frame" x="92" y="425" width="373" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="reA-ml-6ie"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plats : " lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="pGM-Rc-Lqn">
+                                <rect key="frame" x="50" y="425" width="42" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="Rq6-rA-I8n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2197,11 +2207,11 @@
                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="ePs-0s-thj">
-                                <rect key="frame" x="20" y="481" width="37" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hos mig" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="ePs-0s-thj">
+                                <rect key="frame" x="20" y="481" width="50" height="15"/>
                                 <color key="backgroundColor" red="0.7843137255" green="0.7843137255" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="37" id="pg9-Sq-DWl"/>
+                                    <constraint firstAttribute="width" constant="50" id="pg9-Sq-DWl"/>
                                     <constraint firstAttribute="height" constant="15" id="tMT-Ig-uhq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
@@ -2225,6 +2235,13 @@
                                 <color key="textColor" red="0.32549019610000002" green="0.6588235294" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.png" translatesAutoresizingMaskIntoConstraints="NO" id="QrH-T9-yfq">
+                                <rect key="frame" x="20" y="434" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="Cg5-1O-7Wy"/>
+                                    <constraint firstAttribute="width" constant="22" id="cjX-2W-75N"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -2234,9 +2251,11 @@
                             <constraint firstItem="u0L-Zj-3Wi" firstAttribute="leading" secondItem="OQ9-dr-8SP" secondAttribute="trailing" constant="8" id="3nR-vC-X82"/>
                             <constraint firstItem="k9V-Vp-PQS" firstAttribute="top" secondItem="KXN-h5-yXo" secondAttribute="bottom" id="4FJ-Z2-W3o"/>
                             <constraint firstItem="PVd-14-d06" firstAttribute="top" secondItem="luR-sW-1ul" secondAttribute="top" id="98Q-Tx-WiZ"/>
+                            <constraint firstItem="lOZ-i4-T7Q" firstAttribute="top" secondItem="pGM-Rc-Lqn" secondAttribute="top" id="9ea-OJ-d12"/>
                             <constraint firstItem="ePs-0s-thj" firstAttribute="top" secondItem="lOZ-i4-T7Q" secondAttribute="bottom" constant="16" id="9vg-ut-cyl"/>
                             <constraint firstItem="ejl-0Z-e57" firstAttribute="leading" secondItem="KXN-h5-yXo" secondAttribute="trailing" id="BeO-TU-aUS"/>
                             <constraint firstItem="ePs-0s-thj" firstAttribute="leading" secondItem="luR-sW-1ul" secondAttribute="leading" constant="20" id="CZc-Fp-ctd"/>
+                            <constraint firstItem="lOZ-i4-T7Q" firstAttribute="height" secondItem="pGM-Rc-Lqn" secondAttribute="height" id="CzJ-DW-dGP"/>
                             <constraint firstItem="7yT-Aa-wko" firstAttribute="leading" secondItem="luR-sW-1ul" secondAttribute="leading" constant="20" id="D1K-Ul-B3B"/>
                             <constraint firstItem="H47-62-Wls" firstAttribute="leading" secondItem="Sz5-Qf-Ma0" secondAttribute="trailing" constant="8" id="EnR-vW-JgI"/>
                             <constraint firstItem="7yT-Aa-wko" firstAttribute="top" secondItem="Sz5-Qf-Ma0" secondAttribute="bottom" constant="54" id="EoC-vV-dxw"/>
@@ -2249,10 +2268,10 @@
                             <constraint firstItem="Sz5-Qf-Ma0" firstAttribute="leading" secondItem="luR-sW-1ul" secondAttribute="leading" constant="20" id="VvK-8W-3wO"/>
                             <constraint firstItem="H47-62-Wls" firstAttribute="top" secondItem="OQ9-dr-8SP" secondAttribute="bottom" constant="8" id="W8R-AZ-J15"/>
                             <constraint firstAttribute="trailing" secondItem="Q4O-HC-HbK" secondAttribute="trailing" constant="20" id="WYy-Za-3T2"/>
+                            <constraint firstItem="pGM-Rc-Lqn" firstAttribute="leading" secondItem="luR-sW-1ul" secondAttribute="leading" constant="50" id="WlA-gd-afB"/>
                             <constraint firstItem="H47-62-Wls" firstAttribute="trailing" secondItem="OQ9-dr-8SP" secondAttribute="trailing" id="Xtq-am-V7r"/>
                             <constraint firstAttribute="trailing" secondItem="PVd-14-d06" secondAttribute="trailing" id="cgE-i2-YHR"/>
                             <constraint firstItem="Q4O-HC-HbK" firstAttribute="top" secondItem="Sz5-Qf-Ma0" secondAttribute="bottom" constant="54" id="dEM-Ol-Csz"/>
-                            <constraint firstItem="lOZ-i4-T7Q" firstAttribute="leading" secondItem="luR-sW-1ul" secondAttribute="leading" constant="20" id="eEe-DT-nqJ"/>
                             <constraint firstAttribute="trailing" secondItem="u0L-Zj-3Wi" secondAttribute="trailing" constant="20" id="eIE-eD-VCk"/>
                             <constraint firstItem="KXN-h5-yXo" firstAttribute="leading" secondItem="luR-sW-1ul" secondAttribute="leading" id="fpz-U6-Fpa"/>
                             <constraint firstItem="ejl-0Z-e57" firstAttribute="top" secondItem="DPx-bS-7Vg" secondAttribute="bottom" constant="90" id="gYm-x7-QOZ"/>
@@ -2260,8 +2279,11 @@
                             <constraint firstItem="PVd-14-d06" firstAttribute="leading" secondItem="luR-sW-1ul" secondAttribute="leading" id="ijg-T3-Cdj"/>
                             <constraint firstItem="ejl-0Z-e57" firstAttribute="height" secondItem="KXN-h5-yXo" secondAttribute="height" id="kmL-23-KQB"/>
                             <constraint firstItem="OQ9-dr-8SP" firstAttribute="leading" secondItem="Sz5-Qf-Ma0" secondAttribute="trailing" constant="8" id="law-4R-6DC"/>
+                            <constraint firstItem="QrH-T9-yfq" firstAttribute="centerY" secondItem="pGM-Rc-Lqn" secondAttribute="centerY" id="oCx-G7-gVn"/>
                             <constraint firstItem="Sz5-Qf-Ma0" firstAttribute="top" secondItem="PVd-14-d06" secondAttribute="bottom" constant="18" id="oF2-eW-4XU"/>
                             <constraint firstItem="lOZ-i4-T7Q" firstAttribute="top" secondItem="Q4O-HC-HbK" secondAttribute="bottom" constant="64" id="qkQ-Ai-vUD"/>
+                            <constraint firstItem="lOZ-i4-T7Q" firstAttribute="leading" secondItem="pGM-Rc-Lqn" secondAttribute="trailing" id="ult-6C-SIF"/>
+                            <constraint firstItem="QrH-T9-yfq" firstAttribute="leading" secondItem="luR-sW-1ul" secondAttribute="leading" constant="20" id="vxJ-19-MbQ"/>
                             <constraint firstItem="k9V-Vp-PQS" firstAttribute="top" secondItem="ejl-0Z-e57" secondAttribute="bottom" id="w4T-fe-Rtc"/>
                         </constraints>
                     </view>
@@ -2485,7 +2507,7 @@
                         <viewControllerLayoutGuide type="bottom" id="LHr-qn-5Ee"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cMp-Is-WTb">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Epb-Ie-7Wk">
@@ -2589,7 +2611,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctZ-Ze-snM">
-                                <rect key="frame" x="240" y="1050" width="120" height="30"/>
+                                <rect key="frame" x="240" y="550" width="120" height="30"/>
                                 <color key="backgroundColor" red="0.58823529409999997" green="0.094117647060000004" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4SW-wu-VJi"/>
@@ -3041,7 +3063,7 @@
                                             <action selector="backButtonTapped:" destination="VIi-9p-dfO" eventType="touchUpInside" id="e3b-es-vyE"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projects List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VQ-x7-4vj">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bokningar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VQ-x7-4vj">
                                         <rect key="frame" x="250" y="37" width="100" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="RG6-GF-roj"/>
@@ -3066,13 +3088,13 @@
                                 <rect key="frame" x="0.0" y="84" width="600" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eys-7j-nLL">
-                                        <rect key="frame" x="20" y="5" width="180" height="30"/>
+                                        <rect key="frame" x="12" y="5" width="185" height="30"/>
                                         <color key="backgroundColor" red="0.4823529412" green="0.1058823529" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="AjV-Hi-Ptx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
-                                        <state key="normal" title="Upplagda behandlingar">
+                                        <state key="normal" title="Upplagda Bokningar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -3080,13 +3102,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKp-an-X2N">
-                                        <rect key="frame" x="210" y="5" width="180" height="30"/>
+                                        <rect key="frame" x="207" y="5" width="186" height="30"/>
                                         <color key="backgroundColor" red="0.4823529412" green="0.1058823529" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="vEt-WR-M8P"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
-                                        <state key="normal" title="Aktiva behandlingar">
+                                        <state key="normal" title="Aktiva Bokningar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -3094,13 +3116,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEG-Jq-O4p">
-                                        <rect key="frame" x="400" y="5" width="180" height="30"/>
+                                        <rect key="frame" x="403" y="5" width="185" height="30"/>
                                         <color key="backgroundColor" red="0.4823529412" green="0.1058823529" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="ayN-SH-cgb"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
-                                        <state key="normal" title="Färdiga behandlingar">
+                                        <state key="normal" title="Fardiga Bokningar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -3111,7 +3133,7 @@
                                 <color key="backgroundColor" red="0.4823529412" green="0.1058823529" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="mEG-Jq-O4p" firstAttribute="leading" secondItem="RKp-an-X2N" secondAttribute="trailing" constant="10" id="0yQ-Qn-7gq"/>
-                                    <constraint firstAttribute="trailing" secondItem="mEG-Jq-O4p" secondAttribute="trailing" constant="20" id="766-AD-hys"/>
+                                    <constraint firstAttribute="trailing" secondItem="mEG-Jq-O4p" secondAttribute="trailing" constant="12" id="766-AD-hys"/>
                                     <constraint firstAttribute="height" constant="40" id="OYh-kD-cuy"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="QkM-vH-uHw"/>
                                     <constraint firstItem="mEG-Jq-O4p" firstAttribute="width" secondItem="eys-7j-nLL" secondAttribute="width" id="T8L-3A-vPW"/>
@@ -3120,7 +3142,7 @@
                                     <constraint firstItem="RKp-an-X2N" firstAttribute="leading" secondItem="eys-7j-nLL" secondAttribute="trailing" constant="10" id="fpC-5d-1Ql"/>
                                     <constraint firstItem="RKp-an-X2N" firstAttribute="top" secondItem="2cu-vz-Fet" secondAttribute="top" constant="5" id="kKS-jP-f5e"/>
                                     <constraint firstItem="mEG-Jq-O4p" firstAttribute="top" secondItem="2cu-vz-Fet" secondAttribute="top" constant="5" id="vUJ-SA-lxP"/>
-                                    <constraint firstItem="eys-7j-nLL" firstAttribute="leading" secondItem="2cu-vz-Fet" secondAttribute="leading" constant="20" id="vfY-us-Dm7"/>
+                                    <constraint firstItem="eys-7j-nLL" firstAttribute="leading" secondItem="2cu-vz-Fet" secondAttribute="leading" constant="12" id="vfY-us-Dm7"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t9u-dR-xFe">
@@ -3413,7 +3435,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="sD8-Q0-TL6"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type your address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hx0-Ro-TrC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ange Adress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hx0-Ro-TrC">
                                 <rect key="frame" x="190" y="96" width="220" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="5hH-Oa-gFe"/>
@@ -3651,6 +3673,7 @@
         <image name="edt_profile_white.png" width="48" height="48"/>
         <image name="feedback_rating.png" width="98" height="92"/>
         <image name="filter.png" width="96" height="94"/>
+        <image name="location.png" width="128" height="128"/>
         <image name="login_bt.png" width="303" height="58"/>
         <image name="myLocation.png" width="120" height="120"/>
         <image name="navMenu.png" width="120" height="120"/>
@@ -3666,13 +3689,13 @@
         <image name="unchecked.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NlX-VC-1Do"/>
         <segue reference="2gC-jJ-EHN"/>
         <segue reference="Kg3-Ji-6L1"/>
         <segue reference="Zat-zs-HAR"/>
         <segue reference="CoU-mK-MpI"/>
-        <segue reference="PXr-S9-ifq"/>
         <segue reference="RXH-fE-Buq"/>
-        <segue reference="zuq-yH-NPM"/>
+        <segue reference="PXr-S9-ifq"/>
+        <segue reference="NlX-VC-1Do"/>
+        <segue reference="esa-Ng-gfF"/>
     </inferredMetricsTieBreakers>
 </document>

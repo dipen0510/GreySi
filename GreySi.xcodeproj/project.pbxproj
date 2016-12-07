@@ -150,6 +150,7 @@
 		D49BFB061DC35EF50058433A /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BFB041DC35EF50058433A /* close.png */; };
 		D4A7DD771C806CE100F82033 /* WhatAreYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A7DD761C806CE100F82033 /* WhatAreYouViewController.m */; };
 		D4A7DD7A1C806CF900F82033 /* DocumentReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A7DD791C806CF900F82033 /* DocumentReviewViewController.m */; };
+		D4CA2B941DF851FD008762A9 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CA2B931DF851FD008762A9 /* location.png */; };
 		D4CA5C781C7DCDF7000E185A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CA5C771C7DCDF7000E185A /* main.m */; };
 		D4CA5C7B1C7DCDF7000E185A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CA5C7A1C7DCDF7000E185A /* AppDelegate.m */; };
 		D4CA5C7E1C7DCDF7000E185A /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CA5C7D1C7DCDF7000E185A /* SplashViewController.m */; };
@@ -415,6 +416,7 @@
 		D4A7DD761C806CE100F82033 /* WhatAreYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhatAreYouViewController.m; sourceTree = "<group>"; };
 		D4A7DD781C806CF900F82033 /* DocumentReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentReviewViewController.h; sourceTree = "<group>"; };
 		D4A7DD791C806CF900F82033 /* DocumentReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentReviewViewController.m; sourceTree = "<group>"; };
+		D4CA2B931DF851FD008762A9 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		D4CA5C731C7DCDF7000E185A /* Greysi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greysi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CA5C771C7DCDF7000E185A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D4CA5C791C7DCDF7000E185A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -932,6 +934,7 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D4CA2B931DF851FD008762A9 /* location.png */,
 				185718AE1DF4063B00DF5B72 /* skapa.png */,
 				188274621DEA24F800949D36 /* create_profile.png */,
 				188274631DEA24F800949D36 /* 3.png */,
@@ -1195,6 +1198,7 @@
 				185DC1041D4E343C007998F3 /* navMenu.png in Resources */,
 				185DC1251D514934007998F3 /* profileDetailBG.png in Resources */,
 				D455C4721C7EDABA00C6D1CB /* login_fb.png in Resources */,
+				D4CA2B941DF851FD008762A9 /* location.png in Resources */,
 				D4E9C5011DDDEBEB0013324A /* bookingcancel.png in Resources */,
 				D4CA5CD91C7DCF48000E185A /* tick.png in Resources */,
 				18CF35161D5BCE6100C0A5BD /* BidsReceivedTableViewCell.xib in Resources */,
@@ -1538,7 +1542,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = Greysi;
-				PROVISIONING_PROFILE = "03aa24da-0ceb-49bc-bb4d-55b66580a467";
+				PROVISIONING_PROFILE = "de329c54-dd5e-47c1-8c58-f4f0032384c9";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
@@ -1563,7 +1567,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = Greysi;
-				PROVISIONING_PROFILE = "03aa24da-0ceb-49bc-bb4d-55b66580a467";
+				PROVISIONING_PROFILE = "de329c54-dd5e-47c1-8c58-f4f0032384c9";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};

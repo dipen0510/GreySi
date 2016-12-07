@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,6 +7,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Montserrat-Light.ttf">
+            <string>Montserrat-Light</string>
             <string>Montserrat-Light</string>
         </mutableArray>
         <mutableArray key="Montserrat-Regular.ttf">
@@ -32,7 +33,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Richard Sen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSw-HE-3wI">
-                        <rect key="frame" x="87" y="16" width="167" height="16"/>
+                        <rect key="frame" x="87" y="8" width="167" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="7V6-GH-5ig"/>
                             <constraint firstAttribute="width" constant="167" id="l2W-Im-lwH"/>
@@ -42,7 +43,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summa : $150 - $300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGi-yx-QLp">
-                        <rect key="frame" x="87" y="40" width="145" height="15"/>
+                        <rect key="frame" x="87" y="32" width="145" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="PP3-tm-ELS"/>
                         </constraints>
@@ -72,12 +73,25 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summa : $150 - $300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tco-tu-IIa">
+                        <rect key="frame" x="87" y="55" width="145" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="HXD-QE-WEF"/>
+                            <constraint firstAttribute="height" constant="15" id="tCM-Fe-QL3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="11"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="qlx-1e-CiL" secondAttribute="trailing" constant="4" id="2BI-kN-p5O"/>
-                    <constraint firstItem="LSw-HE-3wI" firstAttribute="top" secondItem="eJg-vx-RL7" secondAttribute="topMargin" constant="8" id="3Eg-3h-puS"/>
+                    <constraint firstItem="LSw-HE-3wI" firstAttribute="top" secondItem="eJg-vx-RL7" secondAttribute="topMargin" id="3Eg-3h-puS"/>
+                    <constraint firstItem="tco-tu-IIa" firstAttribute="leading" secondItem="N6v-Ir-nM1" secondAttribute="trailing" constant="8" id="HDf-Da-QlB"/>
                     <constraint firstItem="pGi-yx-QLp" firstAttribute="top" secondItem="LSw-HE-3wI" secondAttribute="bottom" constant="8" id="QJ7-kO-QNp"/>
+                    <constraint firstItem="gwY-GW-QoZ" firstAttribute="leading" secondItem="tco-tu-IIa" secondAttribute="trailing" constant="10" id="VOO-FT-3MH"/>
                     <constraint firstItem="LSw-HE-3wI" firstAttribute="leading" secondItem="N6v-Ir-nM1" secondAttribute="trailing" constant="8" id="W6M-Kz-iLt"/>
+                    <constraint firstItem="tco-tu-IIa" firstAttribute="top" secondItem="pGi-yx-QLp" secondAttribute="bottom" constant="8" id="WbH-fE-cbp"/>
                     <constraint firstItem="pGi-yx-QLp" firstAttribute="leading" secondItem="N6v-Ir-nM1" secondAttribute="trailing" constant="8" id="cti-Dh-1HL"/>
                     <constraint firstItem="gwY-GW-QoZ" firstAttribute="trailing" secondItem="eJg-vx-RL7" secondAttribute="trailingMargin" id="g0d-iX-mB3"/>
                     <constraint firstItem="N6v-Ir-nM1" firstAttribute="leading" secondItem="eJg-vx-RL7" secondAttribute="leadingMargin" constant="8" id="j3B-Sh-ZYa"/>
@@ -90,6 +104,7 @@
             <connections>
                 <outlet property="amountLabel" destination="pGi-yx-QLp" id="pqc-bm-yxE"/>
                 <outlet property="completedButton" destination="gwY-GW-QoZ" id="8hi-tu-9BM"/>
+                <outlet property="dateTimeLabel" destination="tco-tu-IIa" id="vvR-jC-G9L"/>
                 <outlet property="nameLabel" destination="LSw-HE-3wI" id="p2E-In-kic"/>
                 <outlet property="profileImageView" destination="N6v-Ir-nM1" id="FB9-Sa-FCi"/>
             </connections>

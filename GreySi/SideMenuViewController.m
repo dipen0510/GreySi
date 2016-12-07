@@ -84,7 +84,7 @@
     
     tableArr = [[NSMutableArray alloc] init];
     NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
-    [dict setObject:@"Behandlingar" forKey:@"title"];
+    [dict setObject:@"Bokningar" forKey:@"title"];
     [dict setObject:@"projects.png" forKey:@"image"];
     [tableArr addObject:dict];
     
@@ -99,7 +99,7 @@
     [tableArr addObject:dict3];
     
     NSMutableDictionary* dict4 = [[NSMutableDictionary alloc] init];
-    [dict4 setObject:@"Bokningar" forKey:@"title"];
+    [dict4 setObject:@"Förfrågningar" forKey:@"title"];
     [dict4 setObject:@"booking_navigation_drawer_image.png" forKey:@"image"];
     [tableArr addObject:dict4];
     

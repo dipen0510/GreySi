@@ -52,10 +52,10 @@
         _priceListTblView.hidden = YES;
         
         if ([[adDict valueForKey:@"Place"] containsString:@"my"] || [[adDict valueForKey:@"Place"] containsString:@"My"] || [[adDict valueForKey:@"Place"] containsString:@"MY"]) {
-            self.myplaceYourPlaceLabel.text = @"MP";
+            self.myplaceYourPlaceLabel.text = @"Hos mig";
         }
         else {
-            self.myplaceYourPlaceLabel.text = @"YP";
+            self.myplaceYourPlaceLabel.text = @"Hos dig";
         }
 
         self.locationLabel.text = [NSString stringWithFormat:@"%@ %@\nLocation : %@",adDict[@"Date"],adDict[@"Time"],adDict[@"Address"]];
@@ -69,7 +69,7 @@
         self.priceListButton.hidden = NO;
         _myplaceYourPlaceLabel.hidden = YES;
         _descriptionLabel.hidden = YES;
-        self.locationLabel.text = [NSString stringWithFormat:@"Location : %@",adDict[@"Address"]];
+        self.locationLabel.text = [NSString stringWithFormat:@"%@",adDict[@"Address"]];
     }
     
     

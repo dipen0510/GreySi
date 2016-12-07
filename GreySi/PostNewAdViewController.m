@@ -282,7 +282,7 @@
         [self setupLayoutForTabIndex:1];
     }
     else {
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Select Treatment" message:@"Please select at least one treatment to proceed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Välj behandling" message:@"Välj en behandling för att fortsätta" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
     

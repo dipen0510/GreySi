@@ -77,12 +77,8 @@
     if (userType == 1) {
         
         if (userType == 1) {
-            [self.postedProjectsButton setTitle:@"Lämnade priser" forState:UIControlStateNormal];
+            [self.postedProjectsButton setTitle:@"Lämnade Bokningar" forState:UIControlStateNormal];
         }
-        else  {
-            [self.postedProjectsButton setTitle:@"Awarded Projects" forState:UIControlStateNormal];
-        }
-        
         
         if (index == 0) {
             
@@ -551,7 +547,7 @@
     
     cell.nameLabel.text = singleProject.name;
     cell.amountLabel.text = [NSString stringWithFormat:@"Summa : %@:-",singleProject.budget];
-    
+    cell.dateTimeLabel.text = [NSString stringWithFormat:@"%@ %@",singleProject.date,singleProject.time];
     
     if ([[[SharedClass sharedInstance] userObj].flag intValue]==1) {
         cell.completedButton.hidden = YES;

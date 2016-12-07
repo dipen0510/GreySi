@@ -31,6 +31,7 @@
 #define token1Key @"token1Key"
 #define token2Key @"token2Key"
 #define appRunSecondTime @"appRunSecondTime"
+#define isLocationAvailable @"isLocationAvailable"
 
 //Customer Projects API
 

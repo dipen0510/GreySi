@@ -200,6 +200,7 @@
         [SVProgressHUD showSuccessWithStatus:@"Location fetched succesfully"];
         
         self.addressTxtField.text = [[[responseData valueForKey:@"info"] objectAtIndex:0] valueForKey:@"Address"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:isLocationAvailable];
         
     }
     else {

@@ -464,10 +464,10 @@
             cell.timeLeftLabel.text = [objDict valueForKey:@"City"];
             
             if ([[objDict valueForKey:@"Place"] containsString:@"my"] || [[objDict valueForKey:@"Place"] containsString:@"My"] || [[objDict valueForKey:@"Place"] containsString:@"MY"]) {
-                cell.myPlaceYourPlaceLabel.text = @"MP";
+                cell.myPlaceYourPlaceLabel.text = @"Hos mig";
             }
             else {
-                cell.myPlaceYourPlaceLabel.text = @"YP";
+                cell.myPlaceYourPlaceLabel.text = @"Hos dig";
             }
             
             cell.timeLeftLabelLeadingConstraint.constant = - 10;
