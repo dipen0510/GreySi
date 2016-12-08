@@ -524,11 +524,11 @@
     cell.amountLabel.text = [NSString stringWithFormat:@"%@:-",singleProject.budget];
     cell.bidsLabel.text = singleProject.no_of_bids;
     
-    if ([singleProject.post_Date componentsSeparatedByString:@":"].count == 3) {
-        cell.dateLabel.text = [NSString stringWithFormat:@"%@:%@",[[singleProject.post_Date componentsSeparatedByString:@":"] objectAtIndex:0],[[singleProject.post_Date componentsSeparatedByString:@":"] objectAtIndex:1]];
+    if ([singleProject.time componentsSeparatedByString:@":"].count == 3) {
+        cell.dateLabel.text = [NSString stringWithFormat:@"%@ %@:%@",singleProject.date,[[singleProject.time componentsSeparatedByString:@":"] objectAtIndex:0],[[singleProject.time componentsSeparatedByString:@":"] objectAtIndex:1]];
     }
     else {
-        cell.dateLabel.text = singleProject.post_Date;
+        cell.dateLabel.text = [NSString stringWithFormat:@"%@ %@",singleProject.date,singleProject.time];
     }
     
     if ([singleProject.no_of_bids intValue] > 0) {

@@ -1542,7 +1542,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = Greysi;
-				PROVISIONING_PROFILE = "de329c54-dd5e-47c1-8c58-f4f0032384c9";
+				PROVISIONING_PROFILE = "03aa24da-0ceb-49bc-bb4d-55b66580a467";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
@@ -1567,7 +1567,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = Greysi;
-				PROVISIONING_PROFILE = "de329c54-dd5e-47c1-8c58-f4f0032384c9";
+				PROVISIONING_PROFILE = "03aa24da-0ceb-49bc-bb4d-55b66580a467";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
