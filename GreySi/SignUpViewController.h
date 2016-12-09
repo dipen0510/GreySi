@@ -16,6 +16,7 @@
     NSString* emailText;
     NSString* nameText;
     NSString* passwordText;
+    NSString* confirmPasswordText;
     
     BOOL showKeyboardAnimation;
     CGPoint viewCenter;

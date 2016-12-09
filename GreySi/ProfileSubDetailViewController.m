@@ -45,7 +45,7 @@
     _descriptionLabel.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed: @"Adbackground.png"]];
     
     if ([[[SharedClass sharedInstance] userObj].flag intValue]==1) {
-        [self.bookButton setTitle:@"Ditt pris" forState:UIControlStateNormal];
+        [self.bookButton setTitle:@"Lämna ditt pris" forState:UIControlStateNormal];
         self.treatmentLabel.text = adDict[@"Treatment"];
         self.priceLabel.text = [NSString stringWithFormat:@"%@:-",adDict[@"Budget"]];
         self.priceListButton.hidden = YES;

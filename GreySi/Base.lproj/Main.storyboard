@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fTN-rk-2jx">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fTN-rk-2jx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -564,10 +564,10 @@
                                             <action selector="backButtonTapped:" destination="MKL-dc-GRK" eventType="touchUpInside" id="PPa-GF-VZw"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post Ad" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73D-jB-8Cb">
-                                        <rect key="frame" x="258" y="32" width="84" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Utannonsera behandlingar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73D-jB-8Cb">
+                                        <rect key="frame" x="175" y="32" width="250" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="84" id="I39-vs-K4G"/>
+                                            <constraint firstAttribute="width" constant="250" id="I39-vs-K4G"/>
                                             <constraint firstAttribute="height" constant="24" id="wUd-qq-8T2"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
@@ -816,7 +816,7 @@
                                             <constraint firstAttribute="height" constant="30" id="mVP-IC-P1Z"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
-                                        <state key="normal" title="plats">
+                                        <state key="normal" title="Plats">
                                             <color key="titleColor" red="0.4823529412" green="0.1058823529" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -830,7 +830,7 @@
                                             <constraint firstAttribute="height" constant="30" id="WGf-Tc-Sct"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
-                                        <state key="normal" title="budget">
+                                        <state key="normal" title="Budget">
                                             <color key="titleColor" red="0.4823529412" green="0.1058823529" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -1017,7 +1017,7 @@
                                             <constraint firstAttribute="height" constant="40" id="UvZ-cO-2Z1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="12"/>
-                                        <state key="normal" title="datum och tid">
+                                        <state key="normal" title="Datum och tid">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -1084,14 +1084,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAL-xn-7nZ">
-                                        <rect key="frame" x="237" y="406" width="126" height="30"/>
+                                        <rect key="frame" x="213" y="396" width="175" height="40"/>
                                         <color key="backgroundColor" red="0.58823529409999997" green="0.094117647060000004" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="56r-U9-dX3"/>
-                                            <constraint firstAttribute="width" constant="126" id="tqu-HO-xO1"/>
+                                            <constraint firstAttribute="height" constant="40" id="56r-U9-dX3"/>
+                                            <constraint firstAttribute="width" constant="175" id="tqu-HO-xO1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
-                                        <state key="normal" title="Add">
+                                        <state key="normal" title="Lägg upp annons">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -2454,7 +2454,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uMn-Vz-Agh">
-                                        <rect key="frame" x="120" y="88" width="120" height="40"/>
+                                        <rect key="frame" x="121" y="88" width="119" height="40"/>
                                         <color key="backgroundColor" red="0.4823529412" green="0.1058823529" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="MFe-BC-tof"/>
@@ -2471,7 +2471,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Kgc-mc-Uik" secondAttribute="trailing" constant="35" id="7sa-2e-Wbh"/>
                                     <constraint firstItem="uMn-Vz-Agh" firstAttribute="height" secondItem="q88-7X-7JI" secondAttribute="height" id="80E-bX-ELM"/>
                                     <constraint firstItem="Kgc-mc-Uik" firstAttribute="leading" secondItem="eNb-US-t2j" secondAttribute="leading" constant="35" id="TRh-SR-XlT"/>
-                                    <constraint firstItem="uMn-Vz-Agh" firstAttribute="leading" secondItem="q88-7X-7JI" secondAttribute="trailing" id="VZO-SF-UCI"/>
+                                    <constraint firstItem="uMn-Vz-Agh" firstAttribute="leading" secondItem="q88-7X-7JI" secondAttribute="trailing" constant="1" id="VZO-SF-UCI"/>
                                     <constraint firstItem="q88-7X-7JI" firstAttribute="leading" secondItem="eNb-US-t2j" secondAttribute="leading" id="Vz1-56-4Sx"/>
                                     <constraint firstAttribute="bottom" secondItem="q88-7X-7JI" secondAttribute="bottom" id="gZR-XE-yUL"/>
                                     <constraint firstItem="Kgc-mc-Uik" firstAttribute="top" secondItem="eNb-US-t2j" secondAttribute="top" constant="15" id="geE-qN-Ppl"/>
@@ -2769,7 +2769,7 @@
                                             <action selector="backButtonTapped:" destination="ZeK-m8-hTc" eventType="touchUpInside" id="giP-ZR-76f"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write Bid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfe-AN-kU9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lämna ditt pris" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfe-AN-kU9">
                                         <rect key="frame" x="201" y="46" width="197" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="kcP-lO-msj"/>
@@ -2970,7 +2970,7 @@
                                     <constraint firstAttribute="width" constant="180" id="wvv-wY-eDs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
-                                <state key="normal" title="datum och tid">
+                                <state key="normal" title="Datum och tid">
                                     <color key="titleColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -3230,11 +3230,11 @@
                                             <action selector="backButtonTapped:" destination="Rrg-AZ-xg1" eventType="touchUpInside" id="eO0-KS-Y0K"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bokningar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cx-Bm-hQe">
-                                        <rect key="frame" x="255" y="32" width="90" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Förfrågningar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cx-Bm-hQe">
+                                        <rect key="frame" x="240" y="32" width="120" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="clV-cI-Fag"/>
-                                            <constraint firstAttribute="width" constant="90" id="ed5-JL-eMq"/>
+                                            <constraint firstAttribute="width" constant="120" id="ed5-JL-eMq"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>

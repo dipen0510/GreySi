@@ -209,7 +209,7 @@
     passwordText = tmpCell.txtField.text;
     
     tmpCell = (LoginTableViewCell *)[_registerTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
-    
+    confirmPasswordText = tmpCell.txtField.text;
     
     BOOL emailIsValid = [self validateEmailWithString:emailText];
     
@@ -230,6 +230,11 @@
     else if ([nameText isEqualToString:@""]) {
         
         [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your name", nil)];
+    }
+    else if (![passwordText isEqualToString:confirmPasswordText]) {
+        
+        [self didFinishServiceWithFailure:NSLocalizedString(@"Password and Confirm Password does not match", nil)];
+        
     }
 //    else if (!profileImage) {
 //        
