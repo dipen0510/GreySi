@@ -5,6 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -134,6 +139,18 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBn-iN-oNG">
+                        <rect key="frame" x="29" y="54" width="96" height="18"/>
+                        <color key="backgroundColor" red="0.4823529412" green="0.1058823529" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="96" id="Nry-qa-wl6"/>
+                            <constraint firstAttribute="height" constant="18" id="pup-Bx-USU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
+                        <state key="normal" title="Avbryt">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="4ay-51-Bna" firstAttribute="leading" secondItem="4HS-B4-Ur7" secondAttribute="trailing" constant="8" id="2ub-vP-ZIX"/>
@@ -147,6 +164,7 @@
                     <constraint firstItem="WZF-5N-1FA" firstAttribute="top" secondItem="Bfl-zW-IrT" secondAttribute="bottom" constant="8" id="OXC-RV-35d"/>
                     <constraint firstItem="Jdh-zK-DGx" firstAttribute="top" secondItem="4HS-B4-Ur7" secondAttribute="bottom" constant="8" id="PDA-eZ-gxT"/>
                     <constraint firstItem="Pee-XE-duS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="Qim-o8-Kvm"/>
+                    <constraint firstItem="pBn-iN-oNG" firstAttribute="top" secondItem="4ay-51-Bna" secondAttribute="bottom" constant="7" id="RuX-qn-FMS"/>
                     <constraint firstItem="buL-ai-e30" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="SxY-h5-vlf"/>
                     <constraint firstItem="Pee-XE-duS" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ZjK-Sz-k1N"/>
                     <constraint firstItem="4HS-B4-Ur7" firstAttribute="top" secondItem="xoi-r9-dCf" secondAttribute="bottom" constant="8" id="bmn-ti-eCc"/>
@@ -155,6 +173,7 @@
                     <constraint firstItem="xWI-a4-IfP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="elO-6t-Ilv"/>
                     <constraint firstItem="Pee-XE-duS" firstAttribute="leading" secondItem="buL-ai-e30" secondAttribute="trailing" constant="8" id="jmX-M7-OJg"/>
                     <constraint firstItem="xoi-r9-dCf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ley-GE-la6"/>
+                    <constraint firstItem="pBn-iN-oNG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="21" id="muK-zi-mGB"/>
                     <constraint firstItem="xWI-a4-IfP" firstAttribute="leading" secondItem="xoi-r9-dCf" secondAttribute="trailing" constant="8" id="n2u-rl-UA9"/>
                     <constraint firstItem="4HS-B4-Ur7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="oK0-YT-DUH"/>
                     <constraint firstItem="buL-ai-e30" firstAttribute="leading" secondItem="xWI-a4-IfP" secondAttribute="trailing" constant="4" id="rum-BE-enN"/>
@@ -166,6 +185,7 @@
             <connections>
                 <outlet property="amountLabel" destination="Pee-XE-duS" id="GIG-ce-oLF"/>
                 <outlet property="bidsLabel" destination="Bfl-zW-IrT" id="jfe-Xl-gF7"/>
+                <outlet property="cancelButton" destination="pBn-iN-oNG" id="M61-47-QgJ"/>
                 <outlet property="dateLabel" destination="WZF-5N-1FA" id="STm-Aw-ZhQ"/>
                 <outlet property="hairdresserNameLabel" destination="nhc-99-r3h" id="E5X-Kx-yyD"/>
                 <outlet property="statusLabel" destination="4ay-51-Bna" id="2L2-eK-rOs"/>

@@ -72,6 +72,10 @@
     [self setupLayoutForTabIndex:0];
 }
 
+- (void) refreshPostedProjectTabList {
+    [self setupLayoutForTabIndex:0];
+}
+
 - (void) setupLayoutForTabIndex:(int)index {
     
     if (userType == 1) {
@@ -261,6 +265,17 @@
     
 }
 
+- (void) startCustomerDeleteProjectServiceWithProjectId:(NSString *)projectId {
+    
+    [SVProgressHUD showWithStatus:@"Cancelling Project..."];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = [NSString stringWithFormat:@"%@%@",kCustomerDeleteProjectService,projectId];
+    manager.delegate = self;
+    [manager startGETWebServices];
+    
+}
+
 #pragma mark - DATASYNCMANAGER Delegates
 
 -(void) didFinishServiceWithSuccess:(CustomerGetProjectsResponseModal *)responseData andServiceKey:(NSString *)requestServiceKey {
@@ -288,6 +303,10 @@
     else if ([requestServiceKey containsString:kHairCancelBidService]) {
         [SVProgressHUD showSuccessWithStatus:@"Bid cancelled successfully"];
         [self performSelector:@selector(refreshBiddedProjectTabList) withObject:nil afterDelay:0.3];
+    }
+    else if ([requestServiceKey containsString:kCustomerDeleteProjectService]) {
+        [SVProgressHUD showSuccessWithStatus:@"Project cancelled successfully"];
+        [self performSelector:@selector(refreshPostedProjectTabList) withObject:nil afterDelay:0.3];
     }
     
     
@@ -401,6 +420,13 @@
     selectedActiveProjectId = singleProject.project_id;
     selectedHDId = singleProject.hairdresser_id;
     [self startCustomerProjectCompletedService];
+    
+}
+
+- (void) postedProjectsCancelProjectButtonTapped:(UIButton *)sender {
+    
+    ProjectsSingleModal* singleProject = [[ProjectsSingleModal alloc] initWithDictionary:[projectsArr objectAtIndex:sender.tag]];
+    [self startCustomerDeleteProjectServiceWithProjectId:singleProject.project_id];
     
 }
 
@@ -523,6 +549,9 @@
     cell.hairdresserNameLabel.text = singleProject.hairdresser_id;
     cell.amountLabel.text = [NSString stringWithFormat:@"%@:-",singleProject.budget];
     cell.bidsLabel.text = singleProject.no_of_bids;
+    
+    cell.cancelButton.tag = indexPath.row;
+    [cell.cancelButton addTarget:self action:@selector(postedProjectsCancelProjectButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     
     if ([singleProject.time componentsSeparatedByString:@":"].count == 3) {
         cell.dateLabel.text = [NSString stringWithFormat:@"%@ %@:%@",singleProject.date,[[singleProject.time componentsSeparatedByString:@":"] objectAtIndex:0],[[singleProject.time componentsSeparatedByString:@":"] objectAtIndex:1]];

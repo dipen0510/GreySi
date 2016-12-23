@@ -13,6 +13,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    _cancelButton.layer.cornerRadius = 5.0;
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -41,6 +41,7 @@
 #define kCustomerBookProjectService @"PostBooking.php"
 #define kCustomerProjectComplete @"Complete_Project_Section/TreatmentComplete.php"
 #define kCustomerPostReviewService @"Reviews/PostReview.php"
+#define kCustomerDeleteProjectService @"deleteProject.php?Project_id="
 
 //HAIRDRESSER
 #define kHairFetchProjectsService @"FetchProject.php"
