@@ -49,6 +49,7 @@
     
     [self setupInitialUI];
     [self setupChatUser];
+    [self setupRadialMenu];
     
     if ([[[SharedClass sharedInstance] userObj].flag intValue] == 1) {
         [self startHairFetchProjectsService];
@@ -140,6 +141,34 @@
         [self.view addGestureRecognizer:revealViewController.tapGestureRecognizer];
         [revealViewController setFrontViewShadowRadius:10.0];
     }
+}
+
+- (void) setupRadialMenu {
+    
+    CKRadialMenu *_radialMenuButton = [[CKRadialMenu alloc] initWithFrame:CGRectMake(self.view.center.x-25, self.view.frame.size.height - 80, 50, 50)];
+    
+    UIImageView* firstButtonImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"firstButton.png"]];
+    firstButtonImage.userInteractionEnabled = YES;
+    firstButtonImage.frame = CGRectMake(0, 0, 50.0, 50.0);
+    UIImageView* secondButtonImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"secondButton.png"]];
+    secondButtonImage.userInteractionEnabled = YES;
+    secondButtonImage.frame = CGRectMake(0, 0, 50.0, 50.0);
+    UIImageView* thirdButtonImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"thirdButton.png"]];
+    thirdButtonImage.userInteractionEnabled = YES;
+    thirdButtonImage.frame = CGRectMake(0, 0, 50.0, 50.0);
+    UIImageView* forthButtonImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"forthButton.png"]];
+    forthButtonImage.userInteractionEnabled = YES;
+    forthButtonImage.frame = CGRectMake(0, 0, 50.0, 50.0);
+    
+    _radialMenuButton.delegate = self;
+    _radialMenuButton.centerView.backgroundColor = [UIColor clearColor];
+    [_radialMenuButton addPopoutView:firstButtonImage withIndentifier:@"ONE"];
+    [_radialMenuButton addPopoutView:secondButtonImage withIndentifier:@"TWO"];
+    [_radialMenuButton addPopoutView:thirdButtonImage withIndentifier:@"THREE"];
+    [_radialMenuButton addPopoutView:forthButtonImage withIndentifier:@"FOUR"];
+    [self.view addSubview:_radialMenuButton];
+//    [_radialMenuButton enableDevelopmentMode];
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -1280,5 +1309,9 @@
     
 }
 
+-(void)radialMenu:(CKRadialMenu *)radialMenu didSelectPopoutWithIndentifier:(NSString *)identifier{
+    NSLog(@"Delegate notified of press on popout \"%@\"", identifier);
+    
+}
 
 @end

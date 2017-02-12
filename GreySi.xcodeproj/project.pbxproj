@@ -190,6 +190,12 @@
 		D4E9C5031DDDF89E0013324A /* completeTick.png in Resources */ = {isa = PBXBuildFile; fileRef = D4E9C5021DDDF89E0013324A /* completeTick.png */; };
 		D4EF0C3A1DE3071C00CA9A0F /* chooseType.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EF0C391DE3071C00CA9A0F /* chooseType.png */; };
 		D4EF0C3D1DE30E0F00CA9A0F /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EF0C3C1DE30E0F00CA9A0F /* ForgotPasswordViewController.m */; };
+		D4FF331C1E5043D900016261 /* CKRadialMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D4FF331B1E5043D900016261 /* CKRadialMenu.m */; };
+		D4FF33221E504A4600016261 /* centerButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D4FF331D1E504A4600016261 /* centerButton.png */; };
+		D4FF33231E504A4600016261 /* firstButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D4FF331E1E504A4600016261 /* firstButton.png */; };
+		D4FF33241E504A4600016261 /* forthButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D4FF331F1E504A4600016261 /* forthButton.png */; };
+		D4FF33251E504A4600016261 /* secondButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D4FF33201E504A4600016261 /* secondButton.png */; };
+		D4FF33261E504A4600016261 /* thirdButton.png in Resources */ = {isa = PBXBuildFile; fileRef = D4FF33211E504A4600016261 /* thirdButton.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -469,6 +475,13 @@
 		D4EF0C391DE3071C00CA9A0F /* chooseType.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chooseType.png; sourceTree = "<group>"; };
 		D4EF0C3B1DE30E0F00CA9A0F /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		D4EF0C3C1DE30E0F00CA9A0F /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
+		D4FF331A1E5043D900016261 /* CKRadialMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRadialMenu.h; sourceTree = "<group>"; };
+		D4FF331B1E5043D900016261 /* CKRadialMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRadialMenu.m; sourceTree = "<group>"; };
+		D4FF331D1E504A4600016261 /* centerButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = centerButton.png; sourceTree = "<group>"; };
+		D4FF331E1E504A4600016261 /* firstButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = firstButton.png; sourceTree = "<group>"; };
+		D4FF331F1E504A4600016261 /* forthButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forthButton.png; sourceTree = "<group>"; };
+		D4FF33201E504A4600016261 /* secondButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = secondButton.png; sourceTree = "<group>"; };
+		D4FF33211E504A4600016261 /* thirdButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thirdButton.png; sourceTree = "<group>"; };
 		D930F527C0F72C20148401A2 /* Pods-GreySi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreySi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GreySi/Pods-GreySi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -556,6 +569,7 @@
 		185DC1071D5136D2007998F3 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				D4FF33191E5043C700016261 /* RadialMenu */,
 				185718A51DF2DFFD00DF5B72 /* Facebook */,
 				18E469641DD7AD0C0065AA6D /* FXPageControl */,
 				188BDA261DAD4B8A00387467 /* MultiRowCalloutAnnotationView */,
@@ -934,6 +948,11 @@
 		D4CA5CA91C7DCF48000E185A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D4FF331D1E504A4600016261 /* centerButton.png */,
+				D4FF331E1E504A4600016261 /* firstButton.png */,
+				D4FF331F1E504A4600016261 /* forthButton.png */,
+				D4FF33201E504A4600016261 /* secondButton.png */,
+				D4FF33211E504A4600016261 /* thirdButton.png */,
 				D4CA2B931DF851FD008762A9 /* location.png */,
 				185718AE1DF4063B00DF5B72 /* skapa.png */,
 				188274621DEA24F800949D36 /* create_profile.png */,
@@ -1032,6 +1051,15 @@
 				D4D5A1C41D5852F400B15CBE /* ChatListTableViewCell.xib */,
 			);
 			name = ChatListTableViewCell;
+			sourceTree = "<group>";
+		};
+		D4FF33191E5043C700016261 /* RadialMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D4FF331A1E5043D900016261 /* CKRadialMenu.h */,
+				D4FF331B1E5043D900016261 /* CKRadialMenu.m */,
+			);
+			name = RadialMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1175,9 +1203,11 @@
 				185DC11E1D514348007998F3 /* logout.png in Resources */,
 				188853D71D91A409001EF67C /* BookingsTableViewCell.xib in Resources */,
 				D4D5A1C61D5852F400B15CBE /* ChatListTableViewCell.xib in Resources */,
+				D4FF33241E504A4600016261 /* forthButton.png in Resources */,
 				1881F3F31DA1B47A005198A2 /* web_logo.png in Resources */,
 				18DB7D6F1DAEC5BA002594C8 /* edt_profile_white.png in Resources */,
 				D4CA5C831C7DCDF7000E185A /* Assets.xcassets in Resources */,
+				D4FF33221E504A4600016261 /* centerButton.png in Resources */,
 				D4104E8F1D9D3E0B006348D3 /* new_others_logo.png in Resources */,
 				18157D951DD7C5320087EDC2 /* tc1.png in Resources */,
 				188274681DEA24F800949D36 /* create_profile.png in Resources */,
@@ -1197,6 +1227,7 @@
 				1888572C1CAB17F90026995E /* HomeTableView.xib in Resources */,
 				185DC1041D4E343C007998F3 /* navMenu.png in Resources */,
 				185DC1251D514934007998F3 /* profileDetailBG.png in Resources */,
+				D4FF33261E504A4600016261 /* thirdButton.png in Resources */,
 				D455C4721C7EDABA00C6D1CB /* login_fb.png in Resources */,
 				D4CA2B941DF851FD008762A9 /* location.png in Resources */,
 				D4E9C5011DDDEBEB0013324A /* bookingcancel.png in Resources */,
@@ -1211,6 +1242,7 @@
 				1881F3F51DA1B47A005198A2 /* fb_logo.png in Resources */,
 				D4E9C4F71DDDBD2D0013324A /* sign_up_bt_confrim.png in Resources */,
 				D4CA5CD51C7DCF48000E185A /* rating_filled_small.png in Resources */,
+				D4FF33251E504A4600016261 /* secondButton.png in Resources */,
 				1882746D1DEA24F800949D36 /* 7.png in Resources */,
 				185409921DD75533004784AD /* CardViewSlideShowTableViewCell.xib in Resources */,
 				D4E9C4FB1DDDC7FF0013324A /* bookingno.png in Resources */,
@@ -1240,6 +1272,7 @@
 				18AA90851D8D13BA00DA3828 /* blankProfile.png in Resources */,
 				D4CA5CDB1C7DCF48000E185A /* wallet_id.png in Resources */,
 				185DC1201D514348007998F3 /* postAd.png in Resources */,
+				D4FF33231E504A4600016261 /* firstButton.png in Resources */,
 				1854099D1DD75932004784AD /* slide3.jpg in Resources */,
 				1831C17F1DD98FB500B5E01F /* filter.png in Resources */,
 				185DC11F1D514348007998F3 /* messages.png in Resources */,
@@ -1346,6 +1379,7 @@
 				18A6D2F81D7AB70E004907EB /* ProjectsSingleModal.m in Sources */,
 				D4D5A1CA1D5857C400B15CBE /* ChatDetailViewController.m in Sources */,
 				18F3164D1DAAC5F000DD5716 /* BookingDetailsViewController.m in Sources */,
+				D4FF331C1E5043D900016261 /* CKRadialMenu.m in Sources */,
 				1888573D1CAB19F10026995E /* HomeTableViewCell.m in Sources */,
 				18DE0EA01D46A2BB00043037 /* LoginTableViewCell.m in Sources */,
 				D4D5A1BD1D5852AC00B15CBE /* ChatListViewController.m in Sources */,
@@ -1542,7 +1576,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = Greysi;
-				PROVISIONING_PROFILE = "03aa24da-0ceb-49bc-bb4d-55b66580a467";
+				PROVISIONING_PROFILE = "89431c42-9e0b-442b-b652-8d08594f495f";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
@@ -1567,7 +1601,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
 				PRODUCT_NAME = Greysi;
-				PROVISIONING_PROFILE = "03aa24da-0ceb-49bc-bb4d-55b66580a467";
+				PROVISIONING_PROFILE = "89431c42-9e0b-442b-b652-8d08594f495f";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};

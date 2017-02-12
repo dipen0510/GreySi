@@ -13,9 +13,10 @@
 #import "GenericPinAnnotationView.h"
 #import "MultiRowCalloutAnnotationView.h"
 #import "MultiRowAnnotation.h"
+#import "CKRadialMenu.h"
 
 
-@interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, DataSyncManagerDelegate, FiltersViewDelegate, MKMapViewDelegate> {
+@interface HomeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, DataSyncManagerDelegate, FiltersViewDelegate, MKMapViewDelegate,CKRadialMenuDelegate> {
     
     NSMutableArray* addContentArr;
     NSMutableArray* filteredAddContentArr;
