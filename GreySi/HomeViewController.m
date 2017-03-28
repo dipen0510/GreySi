@@ -166,7 +166,7 @@
     [_radialMenuButton addPopoutView:secondButtonImage withIndentifier:@"TWO"];
     [_radialMenuButton addPopoutView:thirdButtonImage withIndentifier:@"THREE"];
     [_radialMenuButton addPopoutView:forthButtonImage withIndentifier:@"FOUR"];
-    [self.view addSubview:_radialMenuButton];
+//    [self.view addSubview:_radialMenuButton];                         //COMMENTED FOR v1
 //    [_radialMenuButton enableDevelopmentMode];
     
 }

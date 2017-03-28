@@ -40,15 +40,33 @@
             
             if ([[responseObject valueForKey:@"status"] intValue] == 1 || [[responseObject valueForKey:@"result"] intValue] == 1 || [[responseObject valueForKey:@"status"] intValue] == 2) {
                 
-                if ([delegate respondsToSelector:@selector(didFinishServiceWithSuccess:andServiceKey:)]) {
-                    [delegate didFinishServiceWithSuccess:[self prepareResponseObjectForServiceKey:self.serviceKey withData:responseObject] andServiceKey:self.serviceKey];
+                if ([self.serviceKey isEqualToString:kSignUpService]) {
+                    
+                    if (([[responseObject valueForKey:@"status"] intValue] == 1 || [[responseObject valueForKey:@"result"] intValue] == 1)) {
+                        if ([delegate respondsToSelector:@selector(didFinishServiceWithSuccess:andServiceKey:)]) {
+                            [delegate didFinishServiceWithSuccess:[self prepareResponseObjectForServiceKey:self.serviceKey withData:responseObject] andServiceKey:self.serviceKey];
+                        }
+                        else {
+                           [delegate didFinishServiceWithFailure:[responseObject valueForKey:@"msg"]];
+                            
+                        }
+                    }
+                    else {
+                        [delegate didFinishServiceWithFailure:[responseObject valueForKey:@"msg"]];
+                    }
+                }
+                else {
+                    
+                    if ([delegate respondsToSelector:@selector(didFinishServiceWithSuccess:andServiceKey:)]) {
+                        [delegate didFinishServiceWithSuccess:[self prepareResponseObjectForServiceKey:self.serviceKey withData:responseObject] andServiceKey:self.serviceKey];
+                    }
+                    else {
+                        [delegate didFinishServiceWithFailure:[responseObject valueForKey:@"msg"]];
+                    }
                 }
             }
             else {
-            //if ([delegate respondsToSelector:@selector(didFinishServiceWithFailure:)]) {
                 [delegate didFinishServiceWithFailure:[responseObject valueForKey:@"msg"]];
-            //}
-            
             }
         
         

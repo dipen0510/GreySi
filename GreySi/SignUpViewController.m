@@ -227,6 +227,10 @@
         
         [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your password", nil)];
     }
+    else if (passwordText.length<6) {
+        
+        [self didFinishServiceWithFailure:NSLocalizedString(@"Your Password should be minimum 6 characters", nil)];
+    }
     else if ([nameText isEqualToString:@""]) {
         
         [self didFinishServiceWithFailure:NSLocalizedString(@"Please enter your name", nil)];
