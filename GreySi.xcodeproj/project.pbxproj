@@ -150,6 +150,9 @@
 		D49BFB061DC35EF50058433A /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = D49BFB041DC35EF50058433A /* close.png */; };
 		D4A7DD771C806CE100F82033 /* WhatAreYouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A7DD761C806CE100F82033 /* WhatAreYouViewController.m */; };
 		D4A7DD7A1C806CF900F82033 /* DocumentReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A7DD791C806CF900F82033 /* DocumentReviewViewController.m */; };
+		D4B2F2AF1E8D905A009DEC5C /* OneSignal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B2F2AC1E8D905A009DEC5C /* OneSignal.framework */; };
+		D4B2F2B01E8D905A009DEC5C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D4B2F2AD1E8D905A009DEC5C /* LICENSE */; };
+		D4B2F2B11E8D905A009DEC5C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D4B2F2AE1E8D905A009DEC5C /* README.md */; };
 		D4CA2B941DF851FD008762A9 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = D4CA2B931DF851FD008762A9 /* location.png */; };
 		D4CA5C781C7DCDF7000E185A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CA5C771C7DCDF7000E185A /* main.m */; };
 		D4CA5C7B1C7DCDF7000E185A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4CA5C7A1C7DCDF7000E185A /* AppDelegate.m */; };
@@ -422,6 +425,9 @@
 		D4A7DD761C806CE100F82033 /* WhatAreYouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhatAreYouViewController.m; sourceTree = "<group>"; };
 		D4A7DD781C806CF900F82033 /* DocumentReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocumentReviewViewController.h; sourceTree = "<group>"; };
 		D4A7DD791C806CF900F82033 /* DocumentReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocumentReviewViewController.m; sourceTree = "<group>"; };
+		D4B2F2AC1E8D905A009DEC5C /* OneSignal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OneSignal.framework; sourceTree = "<group>"; };
+		D4B2F2AD1E8D905A009DEC5C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D4B2F2AE1E8D905A009DEC5C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D4CA2B931DF851FD008762A9 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		D4CA5C731C7DCDF7000E185A /* Greysi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Greysi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CA5C771C7DCDF7000E185A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -494,6 +500,7 @@
 				185718AB1DF2E01200DF5B72 /* FBSDKCoreKit.framework in Frameworks */,
 				185718AD1DF2E01200DF5B72 /* FBSDKShareKit.framework in Frameworks */,
 				185718AC1DF2E01200DF5B72 /* FBSDKLoginKit.framework in Frameworks */,
+				D4B2F2AF1E8D905A009DEC5C /* OneSignal.framework in Frameworks */,
 				188857331CAB18FF0026995E /* MapKit.framework in Frameworks */,
 				4366A1903A93415D6183C322 /* libPods-GreySi.a in Frameworks */,
 			);
@@ -569,6 +576,7 @@
 		185DC1071D5136D2007998F3 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				D4B2F2A91E8D905A009DEC5C /* OneSignal */,
 				D4FF33191E5043C700016261 /* RadialMenu */,
 				185718A51DF2DFFD00DF5B72 /* Facebook */,
 				18E469641DD7AD0C0065AA6D /* FXPageControl */,
@@ -820,6 +828,32 @@
 				C2A3C6C8B51C1DE3923EABCA /* Pods-GreySi.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D4B2F2A91E8D905A009DEC5C /* OneSignal */ = {
+			isa = PBXGroup;
+			children = (
+				D4B2F2AA1E8D905A009DEC5C /* iOS_SDK */,
+				D4B2F2AD1E8D905A009DEC5C /* LICENSE */,
+				D4B2F2AE1E8D905A009DEC5C /* README.md */,
+			);
+			path = OneSignal;
+			sourceTree = "<group>";
+		};
+		D4B2F2AA1E8D905A009DEC5C /* iOS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				D4B2F2AB1E8D905A009DEC5C /* Framework */,
+			);
+			path = iOS_SDK;
+			sourceTree = "<group>";
+		};
+		D4B2F2AB1E8D905A009DEC5C /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				D4B2F2AC1E8D905A009DEC5C /* OneSignal.framework */,
+			);
+			path = Framework;
 			sourceTree = "<group>";
 		};
 		D4CA5C6A1C7DCDF6000E185A = {
@@ -1272,6 +1306,7 @@
 				18AA90851D8D13BA00DA3828 /* blankProfile.png in Resources */,
 				D4CA5CDB1C7DCF48000E185A /* wallet_id.png in Resources */,
 				185DC1201D514348007998F3 /* postAd.png in Resources */,
+				D4B2F2B01E8D905A009DEC5C /* LICENSE in Resources */,
 				D4FF33231E504A4600016261 /* firstButton.png in Resources */,
 				1854099D1DD75932004784AD /* slide3.jpg in Resources */,
 				1831C17F1DD98FB500B5E01F /* filter.png in Resources */,
@@ -1408,6 +1443,7 @@
 				D4A7DD771C806CE100F82033 /* WhatAreYouViewController.m in Sources */,
 				18C831921D63592500AE6058 /* SharedClass.m in Sources */,
 				18CF350C1D5BC94600C0A5BD /* PostedProjectsTableViewCell.m in Sources */,
+				D4B2F2B11E8D905A009DEC5C /* README.md in Sources */,
 				1831C17B1DD9870300B5E01F /* LogoutViewController.m in Sources */,
 				18E469621DD7A0D10065AA6D /* SlideShowCollectionViewCell.m in Sources */,
 				1881F3EE1DA1AFDF005198A2 /* ProfileSocialTableViewCell.m in Sources */,
@@ -1562,21 +1598,22 @@
 			baseConfigurationReference = D930F527C0F72C20148401A2 /* Pods-GreySi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Adham Amiri (B7W283739C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adham Amiri (B7W283739C)";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GreySi/Library",
+					"$(PROJECT_DIR)/GreySi/Library/OneSignal/iOS_SDK/Framework",
 				);
 				GCC_PREFIX_HEADER = GreySi/PrefixHeader.pch;
 				INFOPLIST_FILE = GreySi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alpha-stardeep.GreySi";
 				PRODUCT_NAME = Greysi;
-				PROVISIONING_PROFILE = "89431c42-9e0b-442b-b652-8d08594f495f";
+				PROVISIONING_PROFILE = "69e48128-2371-430a-8ee3-1cb995a7cb75";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
@@ -1587,21 +1624,22 @@
 			baseConfigurationReference = C2A3C6C8B51C1DE3923EABCA /* Pods-GreySi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Adham Amiri (B7W283739C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Adham Amiri (B7W283739C)";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GreySi/Library",
+					"$(PROJECT_DIR)/GreySi/Library/OneSignal/iOS_SDK/Framework",
 				);
 				GCC_PREFIX_HEADER = GreySi/PrefixHeader.pch;
 				INFOPLIST_FILE = GreySi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.GreySi;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alpha-stardeep.GreySi";
 				PRODUCT_NAME = Greysi;
-				PROVISIONING_PROFILE = "89431c42-9e0b-442b-b652-8d08594f495f";
+				PROVISIONING_PROFILE = "69e48128-2371-430a-8ee3-1cb995a7cb75";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};

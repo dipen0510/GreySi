@@ -10,6 +10,8 @@
 #import "ALPushNotificationService.h"
 #import "ALAppLocalNotifications.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <OneSignal/OneSignal.h>
+//#import ""
 
 @interface AppDelegate ()
 
@@ -37,6 +39,8 @@
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     [FBSDKProfile enableUpdatesOnAccessTokenChange:YES];
+    
+    [OneSignal initWithLaunchOptions:launchOptions appId:@"ce735899-a393-4014-a40a-b12f7e576fb5"];
     
     // Override point for customization after application launch.
     NSLog(@"launchOptions: %@", launchOptions);

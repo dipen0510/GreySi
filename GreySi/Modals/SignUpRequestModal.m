@@ -7,6 +7,7 @@
 //
 
 #import "SignUpRequestModal.h"
+#import <OneSignal/OneSignal.h>
 
 @implementation SignUpRequestModal
 
@@ -23,12 +24,25 @@
     [dict setObject:profilePic forKey:registerProfilePiKey];
     [dict setObject:[[SharedClass sharedInstance] getCurrentUTCFormatDate] forKey:registerPicNameKey];
     
-    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"kDeviceToken"]) {
-        [dict setObject:[[NSUserDefaults standardUserDefaults] valueForKey:@"kDeviceToken"] forKey:registerGCMIdKey];
-    }
-    else {
-        [dict setObject:@"1234567890" forKey:registerGCMIdKey];
-    }
+    
+    [OneSignal IdsAvailable:^(NSString* userId, NSString* pushToken) {
+        NSLog(@"UserId:%@", userId);
+        if (pushToken != nil) {
+            NSLog(@"pushToken:%@", pushToken);
+            [dict setObject:pushToken forKey:registerGCMIdKey];
+        }
+        else {
+            [dict setObject:@"1234567890" forKey:registerGCMIdKey];
+        }
+    }];
+    
+    
+//    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"kDeviceToken"]) {
+//        [dict setObject:[[NSUserDefaults standardUserDefaults] valueForKey:@"kDeviceToken"] forKey:registerGCMIdKey];
+//    }
+//    else {
+//        [dict setObject:@"1234567890" forKey:registerGCMIdKey];
+//    }
     
     [dict setObject:@"2" forKey:registerDeviceTypeKey];
     [dict setObject:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] forKey:registerVersionCodeKey];
