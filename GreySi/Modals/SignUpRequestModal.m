@@ -27,9 +27,9 @@
     
     [OneSignal IdsAvailable:^(NSString* userId, NSString* pushToken) {
         NSLog(@"UserId:%@", userId);
-        if (pushToken != nil) {
-            NSLog(@"pushToken:%@", pushToken);
-            [dict setObject:pushToken forKey:registerGCMIdKey];
+        if (userId != nil) {
+//            NSLog(@"pushToken:%@", pushToken);
+            [dict setObject:userId forKey:registerGCMIdKey];
         }
         else {
             [dict setObject:@"1234567890" forKey:registerGCMIdKey];
